@@ -1711,9 +1711,9 @@
 <!-- Spotlight Image Main Home -->
     <include name="BingieSpotlightCornerImage">
         <param name="top" default="0"/>
-        <param name="right" default="-320"/>
-        <param name="width" default="1920"/>
-        <param name="height" default="1080"/>
+        <param name="right" default="-2"/>
+        <param name="width" default="1600"/>
+        <param name="height" default="800"/>
         <definition>
             <control type="image">
                 <nested />
