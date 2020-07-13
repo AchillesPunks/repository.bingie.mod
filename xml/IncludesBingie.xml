@@ -1477,7 +1477,7 @@
         <control type="image">
             <nested />
             <visible>$PARAM[visibility]</visible>
-            <top>645</top>
+            <top>655</top>
             <include condition="!Skin.HasSetting(EnhancedHome_Circular)">No_Circular_Left</include>
             <left>0</left>
             <width>$PARAM[width]</width>
