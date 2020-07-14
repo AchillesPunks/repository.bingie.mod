@@ -751,7 +751,7 @@
                     <param name="orientation" value="$PARAM[orientation]" />
                     <param name="layout" value="$PARAM[layout]" />
                     <param name="layoutwidth" value="$PARAM[layoutwidth]" />
-                    <param name="layoutheight" value="$PARAM[layoutheight]" />
+                    <param name="layoutheight" value="225]" />
                     <param name="force_visible" value="!String.IsEmpty(Window(home).Property(CustomSearch))" />
                     <param name="force_tags" value="$PARAM[force_tags]" />
                     <param name="visibility" value="$PARAM[visibility]" />
