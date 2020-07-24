@@ -2976,18 +2976,7 @@
                     <aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
                     <visible>Player.HasVideo + [!String.IsEmpty(Player.Art(poster)) | !String.IsEmpty(Player.Art(tvshow.poster))]</visible>
                </control>
-<!-- Clearart Top Right Corner -->
-			   <control type="image">
-                     <visible>false</visible>             <!-- True = On / False = Off -->
-					 <posx>1500</posx>
-                     <posy>20</posy>
-                     <width>356</width>
-                     <height>200</height>
-                     <fadetime>200</fadetime>
-                     <texture background="true">$VAR[OSDInfoImage]</texture>
-                     <aspectratio align="left" aligny="top">keep</aspectratio>
-                     <visible>[!String.IsEmpty(Player.Art(clearlogo)) | !String.IsEmpty(Player.Art(clearart)) | !String.IsEmpty(Player.Art(tvshow.clearlogo)) | !String.IsEmpty(Player.Art(tvshow.clearart))]</visible>
-                </control>
+
 <!--Poster - Video Cover OSD Pause-->
 			<control type="image" id="39623">
 				<posx>254</posx>
