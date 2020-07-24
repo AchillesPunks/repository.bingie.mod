@@ -2960,7 +2960,7 @@
 				</control>
 <!-- Discart OSD Info-->
                 <control type="image">
-                    <visible>false</visible>              <!-- True = On / False = Off -->
+                    <visible>true</visible>              <!-- True = On / False = Off -->
 					<posx>265</posx>
                     <posy>230</posy>
                     <width>300</width>
@@ -3034,7 +3034,7 @@
 
 <!-- Clear Logo Title - Your Watching -->				
 				<control type="image">
-					<visible>true</visible>              <!-- True = On / False = Off -->
+					<visible>false</visible>              <!-- True = On / False = Off -->
 					<width>400</width>
 					<height>150</height>
 					<align>left</align>
@@ -3043,7 +3043,7 @@
 				</control>
 <!-- Clearart Title - Your Watching -->
 				<control type="image">
-					<visible>false</visible>              <!-- True = On / False = Off -->
+					<visible>true</visible>              <!-- True = On / False = Off -->
 					<width>400</width>
 					<height>250</height>
 					<align>left</align>
