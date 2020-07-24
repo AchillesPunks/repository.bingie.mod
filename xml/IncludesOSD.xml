@@ -2961,7 +2961,7 @@
 <!-- Discart OSD Info-->
                 <control type="image">
                     <visible>true</visible>              <!-- True = On / False = Off -->
-					<posx>265</posx>
+		    <posx>265</posx>
                     <posy>230</posy>
                     <width>300</width>
                     <height>300</height>
@@ -2969,8 +2969,8 @@
                     <fadetime>300</fadetime>
                     <bordersize>20</bordersize>
 <!-- Animation to Move Discart to the Left when Playtime hits> 1 hour -->
-				    <animation end="-45,0" time="0" effect="slide" condition="[Player.Seeking + [!String.IsEqual(Player.SeekTime(hh),00) | [VideoPlayer.HasEpg + !String.IsEqual(PVR.EpgEventSeekTime(hh),00)]]] | [VideoPlayer.HasEPG + !String.IsEqual(PVR.EpgEventElapsedTime(hh),00)] | !String.IsEqual(Player.Time(hh),00)">Conditional</animation>
-				    <animation effect="rotate" end="-360" center="auto" time="12000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+		    <animation end="-45,0" time="0" effect="slide" condition="[Player.Seeking + [!String.IsEqual(Player.SeekTime(hh),00) | [VideoPlayer.HasEpg + !String.IsEqual(PVR.EpgEventSeekTime(hh),00)]]] | [VideoPlayer.HasEPG + !String.IsEqual(PVR.EpgEventElapsedTime(hh),00)] | !String.IsEqual(Player.Time(hh),00)">Conditional</animation>
+		    <animation effect="rotate" end="-360" center="auto" time="12000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
                     <animation effect="fade" start="0" end="100" delay="800" time="1200" reversible="false"/>
                     <texture background="true" diffuse="diffuse/cdmask_medium_new.png" fallback="defaultcovers/cd_medium.png" border="5">$VAR[PlayerDiscArtImage]</texture>
                     <aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
@@ -3002,7 +3002,7 @@
 <!-- Animation to Move Whole Control to the Left when Playtime hits> 1 hour -->
 				<animation end="-45,0" time="0" effect="slide" condition="[Player.Seeking + [!String.IsEqual(Player.SeekTime(hh),00) | [VideoPlayer.HasEpg + !String.IsEqual(PVR.EpgEventSeekTime(hh),00)]]] | [VideoPlayer.HasEPG + !String.IsEqual(PVR.EpgEventElapsedTime(hh),00)] | !String.IsEqual(Player.Time(hh),00)">Conditional</animation>
 				<include content="posx" condition="VideoPlayer.HasEpg">
-					<param name="posx" value="406" />
+				<param name="posx" value="406" />
 				</include>
 				<!-- hide for trailers -->
 				<visible>!String.Contains(VideoPlayer.Title, -trailer.)</visible>
