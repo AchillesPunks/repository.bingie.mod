@@ -16,17 +16,8 @@
                 <include>BingieLeftDefs</include>
                 <top>650</top>
                 <width>1660</width>
-                <!-- Content Header -->
-                <control type="textbox">
-                    <width>100%</width>
-                    <height>40</height>
-                    <font>Reg29</font>
-                    <align>left</align>
-                    <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-                    <label>$VAR[BingieMainContentHeader,[B],[/B]]</label>
-                    <visible>Integer.IsGreater(Container(523).NumItems,0)</visible>
-                </control>
-
+                
+<!-- Content Header -->
                 <include condition="!Skin.HasSetting(View523_UseFixedLayout) | !Skin.HasSetting(View_523_HorizontalNavigation)" content="Bingie_Main_Landscape_View">
                     <param name="containerType" value="panel" />
                 </include>
@@ -154,7 +145,8 @@
                     <include content="LibraryAutoTrailerButton" condition="Skin.HasSetting(DetailsAutoTrailer)">
                         <param name="interval" value="$INFO[Skin.String(details_auto_trailer_interval)]" />
                     </include>
-                    <animation effect="zoom" end="103,103" center="auto" time="100" condition="Skin.HasSetting(View523_DisableFixedBingieFrame) + Skin.HasSetting(View523_EnableZoomEffect)">focus</animation>
+<!-- Zoom Effect on Poster -->
+					<animation effect="zoom" end="135,135" center="auto" time="100" condition="Skin.HasSetting(View523_DisableFixedBingieFrame) + Skin.HasSetting(View523_EnableZoomEffect)">focus</animation>
                 </control>
             </focusedlayout>
         </control>

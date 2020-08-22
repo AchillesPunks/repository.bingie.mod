@@ -487,7 +487,6 @@
 					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
 					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 					<label>$VAR[PlayTime]</label>
-					
 				</control>
 				<control type="label">
 					<!--Play Time-->
@@ -565,7 +564,6 @@
 				<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
 				<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 				<label>$VAR[TotalDuration,[B]$LOCALIZE[180]: [/B]]</label>
-				
 			</control>
             
             <!-- OSD label 3 -->
@@ -1016,7 +1014,7 @@
 					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
 					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 					<label>[B]$VAR[PlayerActionLabelBingie][/B]</label>
-				</control> -->
+				</control>
 				
 				<!-- Live TV Info -->
 				<control type="label">
@@ -2961,7 +2959,7 @@
 <!-- Discart OSD Info-->
                 <control type="image">
                     <visible>true</visible>              <!-- True = On / False = Off -->
-		    <posx>265</posx>
+					<posx>265</posx>
                     <posy>230</posy>
                     <width>300</width>
                     <height>300</height>
@@ -2969,14 +2967,25 @@
                     <fadetime>300</fadetime>
                     <bordersize>20</bordersize>
 <!-- Animation to Move Discart to the Left when Playtime hits> 1 hour -->
-		    <animation end="-45,0" time="0" effect="slide" condition="[Player.Seeking + [!String.IsEqual(Player.SeekTime(hh),00) | [VideoPlayer.HasEpg + !String.IsEqual(PVR.EpgEventSeekTime(hh),00)]]] | [VideoPlayer.HasEPG + !String.IsEqual(PVR.EpgEventElapsedTime(hh),00)] | !String.IsEqual(Player.Time(hh),00)">Conditional</animation>
-		    <animation effect="rotate" end="-360" center="auto" time="12000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+				    <animation end="-45,0" time="0" effect="slide" condition="[Player.Seeking + [!String.IsEqual(Player.SeekTime(hh),00) | [VideoPlayer.HasEpg + !String.IsEqual(PVR.EpgEventSeekTime(hh),00)]]] | [VideoPlayer.HasEPG + !String.IsEqual(PVR.EpgEventElapsedTime(hh),00)] | !String.IsEqual(Player.Time(hh),00)">Conditional</animation>
+				    <animation effect="rotate" end="-360" center="auto" time="12000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
                     <animation effect="fade" start="0" end="100" delay="800" time="1200" reversible="false"/>
                     <texture background="true" diffuse="diffuse/cdmask_medium_new.png" fallback="defaultcovers/cd_medium.png" border="5">$VAR[PlayerDiscArtImage]</texture>
                     <aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
                     <visible>Player.HasVideo + [!String.IsEmpty(Player.Art(poster)) | !String.IsEmpty(Player.Art(tvshow.poster))]</visible>
                </control>
-
+<!-- Clearart Top Right Corner -->
+			   <control type="image">
+                     <visible>false</visible>             <!-- True = On / False = Off -->
+					 <posx>1500</posx>
+                     <posy>20</posy>
+                     <width>356</width>
+                     <height>200</height>
+                     <fadetime>200</fadetime>
+                     <texture background="true">$VAR[OSDInfoImage]</texture>
+                     <aspectratio align="left" aligny="top">keep</aspectratio>
+                     <visible>[!String.IsEmpty(Player.Art(clearlogo)) | !String.IsEmpty(Player.Art(clearart)) | !String.IsEmpty(Player.Art(tvshow.clearlogo)) | !String.IsEmpty(Player.Art(tvshow.clearart))]</visible>
+                </control>
 <!--Poster - Video Cover OSD Pause-->
 			<control type="image" id="39623">
 				<posx>254</posx>
@@ -3002,7 +3011,7 @@
 <!-- Animation to Move Whole Control to the Left when Playtime hits> 1 hour -->
 				<animation end="-45,0" time="0" effect="slide" condition="[Player.Seeking + [!String.IsEqual(Player.SeekTime(hh),00) | [VideoPlayer.HasEpg + !String.IsEqual(PVR.EpgEventSeekTime(hh),00)]]] | [VideoPlayer.HasEPG + !String.IsEqual(PVR.EpgEventElapsedTime(hh),00)] | !String.IsEqual(Player.Time(hh),00)">Conditional</animation>
 				<include content="posx" condition="VideoPlayer.HasEpg">
-				<param name="posx" value="406" />
+					<param name="posx" value="406" />
 				</include>
 				<!-- hide for trailers -->
 				<visible>!String.Contains(VideoPlayer.Title, -trailer.)</visible>
@@ -3602,14 +3611,14 @@
 			</include>
 		</control>
 	</include>
-
+<!--Player Seek Time Pop Up/Action Label-->
 	<include name="JumpIndicatorMinimal">
 		<control type="group">
 			<bottom>250</bottom>
 			<height>70</height>
 			<align>center</align>
 			<include content="JumpIndicator">
-				<param name="visibility" value="true" />
+				<param name="visibility" value="false" />       <!-- Remove JumpIndicator -->
 				<param name="centerleft" value="50%" />
 				<param name="image" value="$VAR[jump_indicator_image]" />
 				<param name="font" value="Light16" />

@@ -6,7 +6,6 @@
     <control type="group">
       <visible>Control.IsVisible(57)</visible>
       <include>animation_view_change</include>
-      
 	  <control type="panel" id="57">
         <viewtype label="31426">icons</viewtype>
           <include content="View_Forced">

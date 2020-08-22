@@ -4591,6 +4591,16 @@
             <size>75</size>
         </font>
         <font>
+            <name>Reg80</name>
+            <filename>Regular-new.ttf</filename>
+            <size>80</size>
+        </font>
+		<font>
+            <name>Reg85</name>
+            <filename>Regular-new.ttf</filename>
+            <size>85</size>
+        </font>
+		<font>
             <name>Reg100</name>
             <filename>Regular-new.ttf</filename>
             <size>100</size>

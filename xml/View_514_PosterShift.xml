@@ -83,10 +83,11 @@
 			<visible>Control.IsVisible(514)</visible>
 			<include>animation_view_change</include>
 			
-			<!-- movie details normal -->
+<!-- Movie Information Details Normal -->
 			<control type="group" id="88882">
 				<include>MovieDetailsTop</include>
-                <height>1220</height>
+                <top>-100</top>
+				<height>1220</height>
 				<visible>Control.IsVisible(514)</visible>
                 <visible>Skin.String(View514_DisplayInfo,normal) | [Skin.String(View514_DisplayInfo,normal_delayed) + System.IdleTime(4)]</visible>
 				<animation effect="slide" start="0,2000" end="0" time="1500" tween="cubic" easing="inout">Visible</animation>

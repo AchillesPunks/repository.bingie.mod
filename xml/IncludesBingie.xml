@@ -7,8 +7,8 @@
         <animation effect="slide" end="0,-310" time="300" condition="Control.IsVisible(1508) + Integer.IsGreater(Container(77777).Position,0)">Conditional</animation>
         <animation effect="slide" end="0,$PARAM[FixedAnimationHeight]" time="300" condition="Integer.IsGreater(Container(77777).Position,2)">Conditional</animation>
 <!-- Highlight Slide Animation 3rd Widget -->
-		<animation effect="slide" end="0,-754" time="300" condition="Skin.HasSetting(EnableHighlightWidget) + Integer.IsGreater(Container(77777).Position,4)">Conditional</animation>
-        <animation effect="slide" end="0,$PARAM[FixedAnimationHeight]" time="300" condition="!Skin.HasSetting(EnableHighlightWidget) + Integer.IsGreater(Container(77777).Position,4)">Conditional</animation>
+		<!--<animation effect="slide" end="0,-754" time="300" condition="Skin.HasSetting(EnableHighlightWidget) + Integer.IsGreater(Container(77777).Position,4)">Conditional</animation>-->
+        <animation effect="slide" end="0,$PARAM[FixedAnimationHeight]" time="300" condition="Integer.IsGreater(Container(77777).Position,4)">Conditional</animation>
         <animation effect="slide" end="0,$PARAM[FixedAnimationHeight]" time="300" condition="Integer.IsGreater(Container(77777).Position,6)">Conditional</animation>
         <animation effect="slide" end="0,$PARAM[FixedAnimationHeight]" time="300" condition="Integer.IsGreater(Container(77777).Position,8)">Conditional</animation>
         <animation effect="slide" end="0,$PARAM[FixedAnimationHeight]" time="300" condition="Integer.IsGreater(Container(77777).Position,10)">Conditional</animation>
@@ -106,7 +106,7 @@
         </include>
         <include content="Fixed_Focus_Navigation" condition="String.IsEqual(Skin.String(widgetstyle),smallposter) + !Window.IsActive(1116)">
             <param name="widgetid" value="$PARAM[widgetid]"/>
-            <param name="FixedAnimationHeight" value="-293"/>
+            <param name="FixedAnimationHeight" value="-440"/>
         </include>
         <include content="Fixed_Focus_Navigation" condition="String.IsEqual(Skin.String(widgetstyle),square) + !Window.IsActive(1116)">
             <param name="widgetid" value="$PARAM[widgetid]"/>
@@ -125,10 +125,10 @@
             <param name="FixedAnimationHeight" value="-420"/>
         </include>
 <!-- Highlight Fixed Focus -->
-		<include content="Fixed_Focus_Navigation" condition="String.IsEqual(Skin.String(widgetstyle),highlight)">
+		<!--<include content="Fixed_Focus_Navigation" condition="String.IsEqual(Skin.String(widgetstyle),highlight)">
             <param name="widgetid" value="$PARAM[widgetid]"/>
             <param name="FixedAnimationHeight" value="-754"/>
-        </include>
+        </include>-->
         
 		<include content="Fixed_Focus_Navigation" condition="String.IsEqual(Skin.String(widgetstyle),banner) + !Window.IsActive(1116)">
             <param name="widgetid" value="$PARAM[widgetid]"/>
@@ -1956,17 +1956,17 @@
                     <include>SpotlightRowDetails</include>
                 </control>
 
-<!-- Bingie Sublabel (Tagline/Watch Bingie library View) -->
+<!-- Bingie Sublabel (Tagline/Watch Season Now/Bingie library View) -->
                 <control type="label" id="823">
                     <visible>!Container.Content(episodes)</visible>
                     <visible>!String.IsEmpty(Control.GetLabel(823))</visible>
                     <top>40</top>
 					<height>0</height>
                     <width>820</width>
-                    <font>Reg28</font>
+                    <font>Bold30</font>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor>
+                    <textcolor>white</textcolor>
                     <label>$VAR[BingieSublabel]</label>
                     <include>Default_Visible_Fade</include>
                 </control>

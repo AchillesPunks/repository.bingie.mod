@@ -3,7 +3,7 @@
 <includes>
 
     <include name="View_58_LargePoster">
-        <!--Panel-->
+        <!--Panel Group-->
         <control type="group">
             <visible>Control.IsVisible(58)</visible>
             <include>animation_view_change</include>
@@ -17,12 +17,12 @@
 				<colordiffuse>$VAR[ViewDetailsPanelColor]</colordiffuse>
             </control>
 					
-			<!--Info-->
+			<!--Text Info-->
 			<control type="grouplist">
-				<itemgap>0</itemgap>
+				<itemgap>10</itemgap>
 				<orientation>vertical</orientation>
                 <visible>Integer.IsGreater(Container.NumItems,0)</visible>
-				<posx>550</posx>
+				<posx>600</posx>
 				<posy>10</posy>
 				<control type="label">
 					<height>33</height>
@@ -54,7 +54,7 @@
 				</control>
 			</control>
             
-            <!--cdart image-->
+<!--CDART IMAGE-->
             <control type="image">
                 <width>520</width>
                 <height>520</height>
@@ -70,7 +70,7 @@
                 <visible>Integer.IsGreater(Container.NumItems,0)</visible>
             </control>
 			
-			<!-- ID="58" -->
+			<!-- POSTER -->
 			<control type="panel" id="58">
 				<right>1380</right>
 				<bottom>-20</bottom>
@@ -89,23 +89,23 @@
 				<focusposition>0</focusposition>
 				<orientation>horizontal</orientation>
 				<preloaditems>2</preloaditems>
-				<itemlayout height="946" width="520">
+				<itemlayout height="870" width="580">
 					<control type="group">
 						<posy>200</posy>
 						<control type="image">
 							<!--Poster-->
-							<width>520</width>
-							<height>746</height>
+							<width>580</width>
+							<height>870</height>
 							<include condition="!Skin.HasSetting(EmbyCovertArtEnabled)">poster_shadow</include>
-							<bordersize>20</bordersize>
+							<bordersize>50</bordersize>
 							<texture background="true" diffuse="diffuse/poster.png" fallback="colors/color_keyboard.png">$VAR[PosterThumbList]</texture>
 							<aspectratio align="right" aligny="center">stretch</aspectratio>
 						</control>
 						<control type="group">
 							<left>20</left>
 							<top>20</top>
-							<width>480</width>
-							<height>706</height>
+							<width>580</width>
+							<height>870</height>
                             <include condition="!Window.IsActive(Home)">PosterTagOverlay</include>
 							<include condition="Skin.HasSetting(CaseOverlays)">PosterCaseOverlay</include>
 					    </control>
@@ -117,29 +117,29 @@
 						</control>
 					</control>
 				</itemlayout>
-				<focusedlayout height="946" width="520">
+				<focusedlayout height="870" width="580">
 					<control type="group">
 						<posy>200</posy>
 						<control type="image">
 							<!--Poster-->
-							<width>520</width>
+							<width>580</width>
 							<height>870</height>
 							<include condition="!Skin.HasSetting(EmbyCovertArtEnabled)">poster_shadow</include>
-							<bordersize>20</bordersize>
+							<bordersize>50</bordersize>
 							<texture background="true" diffuse="diffuse/poster.png" fallback="colors/color_keyboard.png">$VAR[PosterThumbList]</texture>
 							<aspectratio align="right" aligny="center">stretch</aspectratio>
 						</control>
 						<control type="group">
-							<left>20</left>
-							<top>20</top>
-							<width>480</width>
-							<height>706</height>
+							<left>60</left>
+							<top>45</top>
+							<width>580</width>
+							<height>870</height>
                             <include condition="!Window.IsActive(Home)">PosterTagOverlay</include>
 							<include condition="Skin.HasSetting(CaseOverlays)">PosterCaseOverlay</include>
 					    </control>
 						<control type="group">
-						<right>20</right>
-						<top>19</top>
+						<right>60</right>
+						<top>45</top>
 						<include>WatchedIndicatorLarge</include>
 						</control>
 					</control>

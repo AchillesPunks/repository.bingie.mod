@@ -236,17 +236,8 @@
                 <label>$LOCALIZE[31064]</label>
                 <visible>!Container(117).IsUpdating + !Integer.IsGreater(Container(117).NumItems,0)</visible>
             </control>
-            <!-- Back Arrow -->
-            <control type="image">
-                <left>-60</left>
-                <top>95</top>
-                <width>60</width>
-                <height>85</height>
-                <texture background="true">bingie/back_arrow.png</texture>
-                <colordiffuse>$INFO[Skin.String(BingiePrimaryTextColor)]</colordiffuse>
-                <visible>Integer.IsGreater(Container(117).NumItems,0) | !Container(117).IsUpdating</visible>
-            </control>
-            <!-- Fixed Frame -->
+                       
+<!-- Fixed Frame -->
             <include content="Bingie_Main_View_Fixed_Frame" condition="Skin.HasSetting(EnableFixedFrameWidgets)">
                 <param name="containerid" value="117" />
                 <param name="top" value="40" />

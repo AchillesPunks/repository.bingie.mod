@@ -8,22 +8,6 @@
 		
         <include>MovieDetailsLeft</include>
 
-<!-- Fanart Image Added to View-->
-            <control type="multiimage">
-                <include>FullscreenDimensions</include>
-                <texture border="15">diffuse/bgpanel.png</texture>
-			    <colordiffuse>31ffffff</colordiffuse>
-				<imagepath background="true">$VAR[backgroundVar]</imagepath>
-                <aspectratio>scale</aspectratio>
-                <fadetime>350</fadetime>
-                <include>fanartSpeed</include>
-                <randomize>true</randomize>
-                <loop>yes</loop>
-<!-- Background Animation in Background Settings -->
-                <animation effect="zoom" start="110" end="130" center="auto" time="12000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(BackgroundAnimation)">Conditional</animation>
-                <animation effect="slide" start="-10,-10" end="10,10" time="8000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(BackgroundAnimation)">Conditional</animation>
-			 </control>
-		
 		<control type="panel" id="505">
             <animation effect="slide" end="-625" time="250" condition="Skin.HasSetting(View505_ShowInfoRight)">Conditional</animation>
 			<right>40</right>

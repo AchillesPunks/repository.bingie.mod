@@ -63,7 +63,7 @@
 		<value condition="!String.IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>
 		<value>$INFO[ListItem.Art(tvshow.fanart)]</value>
 	</variable>
-	<!-- Variable for choice between Season Landscape or Poster Try to turn this into a skin property later-->
+<!-- Choice between Season Landscape or Poster Try to turn this into a skin property later-->
 	<variable name="View525SeasonLandscapeOrPoster">
 		<!-- <value>poster</value> -->
 		<value>landscape</value>
@@ -382,14 +382,14 @@
                 <animation effect="fade" start="100" end="90" time="0" condition="true">Conditional</animation>
             </control>-->
 
-            <!--studio logo -->
+<!--Studio Logo -->
             <control type="image">							<!--  id="6990"> -->
-                <visible>false</visible>						<!-- !String.IsEmpty(Control.GetLabel(6990))</visible> -->
-                <left>430</left>       						<!-- My Original Value 150 -->
-                <width>300</width>
-                <height>120</height>
-                <bottom>15</bottom>
-                <aspectratio aligny="center" align="right">keep</aspectratio>
+                <visible>true</visible>						<!-- !String.IsEmpty(Control.GetLabel(6990))</visible> -->
+                <left>95</left>
+                <width>450</width>
+                <height>160</height>
+                <bottom>30</bottom>
+                <aspectratio aligny="top" align="right">keep</aspectratio>
                 <include condition="!String.Contains(Skin.String(SkinHelper.StudioLogos.Path),colo)">videoInfoColorDiffuse</include>
                 <texture background="true">$VAR[StudioLogoImg]</texture>
             </control>

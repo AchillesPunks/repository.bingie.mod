@@ -63,11 +63,11 @@
             <param name="multiRows" value="$PARAM[multiRows]" />
         </include>
         <!-- Highlight Widget -->
-		<include content="widget_layout_highlight" condition="String.IsEqual(Skin.String(widgetstyle),highlight)">
+		<!--<include content="widget_layout_highlight" condition="String.IsEqual(Skin.String(widgetstyle),highlight)">
             <param name="widgetid" value="$PARAM[widgetid]"/>
             <param name="widgetTags" value="$PARAM[widgetTags]"/>
             <param name="multiRows" value="$PARAM[multiRows]" />
-        </include>
+        </include>-->
     </include>
     <include name="widget_layout_None">
         <include content="widget_layout_default">
@@ -77,7 +77,7 @@
         </include>
     </include>
 
-<!-- Widget Poster Layout -->
+<!-- Widget Poster Unfocused Layout -->
     <include name="widget_layout_poster">
         <include condition="$PARAM[multiRows]">widget_layout_poster_multi</include>
         <height>340</height>
@@ -101,7 +101,8 @@
                <include>Poster_New_Episodes_Tag_Overlay</include>
             </control>
         </itemlayout>
-        <focusedlayout height="340" width="240">
+<!-- Widget Poster Focused Layout -->        
+		<focusedlayout height="340" width="240">
             <control type="group">
                 <include content="left" condition="String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(EnhancedHome_Circular)">
                     <param name="left" value="bingie_no_circular_posx"/>
@@ -149,7 +150,123 @@
         <height>760</height>
     </include>
     
-    <!-- widget poster details layout -->
+<!-- Widget Poster Small Layout -->
+    <include name="widget_layout_smallposter">
+        <include condition="$PARAM[multiRows]">widget_layout_SmallPoster_multi</include>
+        <height>400</height>
+        <include condition="String.IsEmpty(Window(Home).Property(bingieviews))">widget_layout_smallposter_animation</include>
+        <itemlayout height="400" width="300" condition="!$EXP[IsVerticalLayout]">
+            <control type="group">
+                <include content="left" condition="String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(EnhancedHome_Circular)">
+                    <param name="left" value="bingie_no_circular_posx"/>
+                </include>
+                <width>300</width>
+                <height>400</height>
+                <include>SmallPosterPanelLayout</include>
+                <control type="group">
+                    <description>widget label overlay</description>
+                    <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),disable)">SmallPosterTagOverlay</include>
+                    <include condition="String.IsEqual(Skin.String(Widgets_DisplayTags),auto)">PosterTagOverlayVisibility</include>
+                    <include content="$PARAM[widgetTags]" condition="String.IsEqual(Skin.String(Widgets_DisplayTags),override)">
+                        <param name="prefix" value="Poster"/>
+                    </include>
+                </control>
+            </control>
+        </itemlayout>
+        <focusedlayout height="400" width="300" condition="!$EXP[IsVerticalLayout] + !Control.HasFocus($PARAM[widgetid])">
+            <control type="group">
+                <include content="left" condition="String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(EnhancedHome_Circular)">
+                    <param name="left" value="bingie_no_circular_posx"/>
+                </include>
+                <width>300</width>
+                <height>400</height>
+                <include>SmallPosterPanelLayout</include>
+                <control type="group">
+                    <description>widget label overlay</description>
+                    <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),disable)">SmallPosterTagOverlay</include>
+                    <include condition="String.IsEqual(Skin.String(Widgets_DisplayTags),auto)">PosterTagOverlayVisibility</include>
+                    <include content="$PARAM[widgetTags]" condition="String.IsEqual(Skin.String(Widgets_DisplayTags),override)">
+                        <param name="prefix" value="Poster"/>
+                    </include>
+                </control>
+            </control>
+        </focusedlayout>
+        <focusedlayout height="400" width="300" condition="!$EXP[IsVerticalLayout] + Control.HasFocus($PARAM[widgetid])">
+            <control type="group">
+                <include content="left" condition="String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(EnhancedHome_Circular)">
+                    <param name="left" value="bingie_no_circular_posx"/>
+                </include>
+                <width>300</width>
+                <height>400</height>
+                <animation effect="zoom" center="auto" start="100" end="105" time="160" tween="quadratic" condition="Skin.HasSetting(WidgetsZoomFocus)">Focus</animation>
+                <include>SmallPosterPanelLayoutFocus</include>
+                <control type="group">
+                    <description>widget label overlay</description>
+                    <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),disable)">SmallPosterTagOverlay</include>
+                    <include condition="String.IsEqual(Skin.String(Widgets_DisplayTags),auto)">PosterTagOverlayVisibility</include>
+                    <include content="$PARAM[widgetTags]" condition="String.IsEqual(Skin.String(Widgets_DisplayTags),override)">
+                        <param name="prefix" value="Poster"/>
+                    </include>
+                </control>
+                <include content="HiddenWidgetButton">
+                    <param name="widgetstyle" value="smallposter"/>
+                    <param name="widgetid" value="$PARAM[widgetid]"/>
+                </include>
+            </control>
+        </focusedlayout>
+        
+        <itemlayout height="400" width="300" condition="$EXP[IsVerticalLayout]">
+            <control type="group">
+                <width>300</width>
+                <height>400</height>
+                <include>SmallPosterPanelLayout</include>
+                <control type="group">
+                    <description>widget label overlay</description>
+                    <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),disable)">SmallPosterTagOverlay</include>
+                    <include condition="String.IsEqual(Skin.String(Widgets_DisplayTags),auto)">PosterTagOverlayVisibility</include>
+                    <include content="$PARAM[widgetTags]" condition="String.IsEqual(Skin.String(Widgets_DisplayTags),override)">
+                        <param name="prefix" value="Poster"/>
+                    </include>
+                </control>
+            </control>
+        </itemlayout>
+        <focusedlayout height="400" width="300" condition="$EXP[IsVerticalLayout] + !Control.HasFocus($PARAM[widgetid])">
+            <control type="group">
+                <width>300</width>
+                <height>400</height>
+                <include>SmallPosterPanelLayout</include>
+                <control type="group">
+                    <description>widget label overlay</description>
+                    <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),disable)">SmallPosterTagOverlay</include>
+                    <include condition="String.IsEqual(Skin.String(Widgets_DisplayTags),auto)">PosterTagOverlayVisibility</include>
+                    <include content="$PARAM[widgetTags]" condition="String.IsEqual(Skin.String(Widgets_DisplayTags),override)">
+                        <param name="prefix" value="Poster"/>
+                    </include>
+                </control>
+            </control>
+        </focusedlayout>
+        <focusedlayout height="400" width="300" condition="$EXP[IsVerticalLayout] + Control.HasFocus($PARAM[widgetid])">
+            <control type="group">
+                <width>300</width>
+                <height>400</height>
+                <include>SmallPosterPanelLayoutFocus</include>
+                <animation effect="zoom" center="auto" start="100" end="105" time="160" tween="quadratic" condition="Skin.HasSetting(WidgetsZoomFocus)">Focus</animation>
+                <control type="group">
+                    <description>widget label overlay</description>
+                    <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),disable)">SmallPosterTagOverlay</include>
+                    <include condition="String.IsEqual(Skin.String(Widgets_DisplayTags),auto)">PosterTagOverlayVisibility</include>
+                    <include content="$PARAM[widgetTags]" condition="String.IsEqual(Skin.String(Widgets_DisplayTags),override)">
+                        <param name="prefix" value="Poster"/>
+                    </include>
+                </control>
+                <include content="HiddenWidgetButton">
+                    <param name="widgetstyle" value="smallposter"/>
+                    <param name="widgetid" value="$PARAM[widgetid]"/>
+                </include>
+            </control>
+        </focusedlayout>   
+	
+	<!-- widget poster details layout -->
     <include name="widget_layout_posterdetails">
         <include condition="String.IsEmpty(Window(Home).Property(bingieviews))">widget_layout_posterdetails_animation</include>
         <height>380</height>
@@ -212,8 +329,8 @@
         </focusedlayout>
 	</include>
 
+<!-- wide box widget -->
     <include name="widget_layout_posterdetails_widebox">
-        <!-- wide box widget -->
         <control type="group">
             <control type="image">
                 <texture border="5">diffuse/panel.png</texture>
@@ -254,122 +371,7 @@
     
     </include>
     
-    <!-- widget small poster layout -->
-    <include name="widget_layout_smallposter">
-        <include condition="$PARAM[multiRows]">widget_layout_smallposter_multi</include>
-        <height>253</height>
-        <include condition="String.IsEmpty(Window(Home).Property(bingieviews))">widget_layout_smallposter_animation</include>
-        <itemlayout height="253" width="182" condition="!$EXP[IsVerticalLayout]">
-            <control type="group">
-                <include content="left" condition="String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(EnhancedHome_Circular)">
-                    <param name="left" value="bingie_no_circular_posx"/>
-                </include>
-                <width>162</width>
-                <height>240</height>
-                <include>SmallPosterPanelLayout</include>
-                <control type="group">
-                    <description>widget label overlay</description>
-                    <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),disable)">SmallPosterTagOverlay</include>
-                    <include condition="String.IsEqual(Skin.String(Widgets_DisplayTags),auto)">PosterTagOverlayVisibility</include>
-                    <include content="$PARAM[widgetTags]" condition="String.IsEqual(Skin.String(Widgets_DisplayTags),override)">
-                        <param name="prefix" value="Poster"/>
-                    </include>
-                </control>
-            </control>
-        </itemlayout>
-        <focusedlayout height="253" width="182" condition="!$EXP[IsVerticalLayout] + !Control.HasFocus($PARAM[widgetid])">
-            <control type="group">
-                <include content="left" condition="String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(EnhancedHome_Circular)">
-                    <param name="left" value="bingie_no_circular_posx"/>
-                </include>
-                <width>162</width>
-                <height>240</height>
-                <include>SmallPosterPanelLayout</include>
-                <control type="group">
-                    <description>widget label overlay</description>
-                    <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),disable)">SmallPosterTagOverlay</include>
-                    <include condition="String.IsEqual(Skin.String(Widgets_DisplayTags),auto)">PosterTagOverlayVisibility</include>
-                    <include content="$PARAM[widgetTags]" condition="String.IsEqual(Skin.String(Widgets_DisplayTags),override)">
-                        <param name="prefix" value="Poster"/>
-                    </include>
-                </control>
-            </control>
-        </focusedlayout>
-        <focusedlayout height="253" width="182" condition="!$EXP[IsVerticalLayout] + Control.HasFocus($PARAM[widgetid])">
-            <control type="group">
-                <include content="left" condition="String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(EnhancedHome_Circular)">
-                    <param name="left" value="bingie_no_circular_posx"/>
-                </include>
-                <width>162</width>
-                <height>240</height>
-                <animation effect="zoom" center="auto" start="100" end="105" time="160" tween="quadratic" condition="Skin.HasSetting(WidgetsZoomFocus)">Focus</animation>
-                <include>SmallPosterPanelLayoutFocus</include>
-                <control type="group">
-                    <description>widget label overlay</description>
-                    <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),disable)">SmallPosterTagOverlay</include>
-                    <include condition="String.IsEqual(Skin.String(Widgets_DisplayTags),auto)">PosterTagOverlayVisibility</include>
-                    <include content="$PARAM[widgetTags]" condition="String.IsEqual(Skin.String(Widgets_DisplayTags),override)">
-                        <param name="prefix" value="Poster"/>
-                    </include>
-                </control>
-                <include content="HiddenWidgetButton">
-                    <param name="widgetstyle" value="smallposter"/>
-                    <param name="widgetid" value="$PARAM[widgetid]"/>
-                </include>
-            </control>
-        </focusedlayout>
-        
-        <itemlayout height="253" width="162" condition="$EXP[IsVerticalLayout]">
-            <control type="group">
-                <width>162</width>
-                <height>240</height>
-                <include>SmallPosterPanelLayout</include>
-                <control type="group">
-                    <description>widget label overlay</description>
-                    <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),disable)">SmallPosterTagOverlay</include>
-                    <include condition="String.IsEqual(Skin.String(Widgets_DisplayTags),auto)">PosterTagOverlayVisibility</include>
-                    <include content="$PARAM[widgetTags]" condition="String.IsEqual(Skin.String(Widgets_DisplayTags),override)">
-                        <param name="prefix" value="Poster"/>
-                    </include>
-                </control>
-            </control>
-        </itemlayout>
-        <focusedlayout height="253" width="162" condition="$EXP[IsVerticalLayout] + !Control.HasFocus($PARAM[widgetid])">
-            <control type="group">
-                <width>162</width>
-                <height>240</height>
-                <include>SmallPosterPanelLayout</include>
-                <control type="group">
-                    <description>widget label overlay</description>
-                    <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),disable)">SmallPosterTagOverlay</include>
-                    <include condition="String.IsEqual(Skin.String(Widgets_DisplayTags),auto)">PosterTagOverlayVisibility</include>
-                    <include content="$PARAM[widgetTags]" condition="String.IsEqual(Skin.String(Widgets_DisplayTags),override)">
-                        <param name="prefix" value="Poster"/>
-                    </include>
-                </control>
-            </control>
-        </focusedlayout>
-        <focusedlayout height="253" width="162" condition="$EXP[IsVerticalLayout] + Control.HasFocus($PARAM[widgetid])">
-            <control type="group">
-                <width>162</width>
-                <height>240</height>
-                <include>SmallPosterPanelLayoutFocus</include>
-                <animation effect="zoom" center="auto" start="100" end="105" time="160" tween="quadratic" condition="Skin.HasSetting(WidgetsZoomFocus)">Focus</animation>
-                <control type="group">
-                    <description>widget label overlay</description>
-                    <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),disable)">SmallPosterTagOverlay</include>
-                    <include condition="String.IsEqual(Skin.String(Widgets_DisplayTags),auto)">PosterTagOverlayVisibility</include>
-                    <include content="$PARAM[widgetTags]" condition="String.IsEqual(Skin.String(Widgets_DisplayTags),override)">
-                        <param name="prefix" value="Poster"/>
-                    </include>
-                </control>
-                <include content="HiddenWidgetButton">
-                    <param name="widgetstyle" value="smallposter"/>
-                    <param name="widgetid" value="$PARAM[widgetid]"/>
-                </include>
-            </control>
-        </focusedlayout>
-        
+    
         <animation effect="slide" start="0" end="140" time="0" condition="Skin.HasSetting(WidgetAlignRight) + $EXP[IsVerticalLayout] + Skin.HasSetting(VerticalHomeLargeWidget) + !Integer.IsGreater(Container($PARAM[widgetid]).NumItems,7)">Conditional</animation>
         
         <animation effect="slide" start="0" end="182" time="0" condition="Skin.HasSetting(WidgetAlignRight) + !$EXP[IsVerticalLayout] + !Integer.IsGreater(Container($PARAM[widgetid]).NumItems,9)">Conditional</animation>

@@ -282,7 +282,7 @@
 
     <include name="SearchKeyDefs">
         <align>center</align>
-        <font>Reg28</font>
+        <font>Reg34</font>
         <textoffsetx>0</textoffsetx>
         <selectedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</selectedcolor>
         <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>

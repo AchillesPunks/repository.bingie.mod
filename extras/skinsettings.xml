@@ -1,5 +1,5 @@
 <settings>
-    <!-- bingie home -->
+    <!-- Bingie Home -->
     <setting id="HomeLayout" value="bingie" label="[UPPERCASE]$LOCALIZE[31100][/UPPERCASE]" condition="" icon="special://skin/extras/viewthumbs/homelayout_bingie.jpg" description="$LOCALIZE[31544][CR][I]By cartman.dos[/I][CR][B]$LOCALIZE[15109][/B]" default="true">
         <onselect condition="True">Skin.Reset(OpenSubMenuOnClick)</onselect>
         <onselect condition="True">Skin.SetString(widgetstyle,poster)</onselect>
@@ -192,7 +192,7 @@
     <setting id="widgetstyle" value="posterdetails" label="$LOCALIZE[31939]" condition="!String.IsEqual(Skin.String(HomeLayout),win10)" icon="special://skin/extras/viewthumbs/widget_posterdetails.jpg" description=""/>
 
 <!-- Highlight Layout-->
-	<setting id="widgetstyle" value="highlight" label="$LOCALIZE[31061]" condition="String.IsEqual(Skin.String(HomeLayout),bingie)" icon="special://skin/extras/viewthumbs/widget_highlight.jpg" description=""/>
+	<!--<setting id="widgetstyle" value="highlight" label="$LOCALIZE[31061]" condition="String.IsEqual(Skin.String(HomeLayout),bingie)" icon="special://skin/extras/viewthumbs/widget_highlight.jpg" description=""/>-->
 
     <!-- widgetsortby -->
     <setting id="widgetsortby" value="" label="$LOCALIZE[16018]"/>
@@ -365,9 +365,9 @@
 
     <!-- clearlogo location -->
     <setting id="ClearLogoLocation" value="topleft" label="$LOCALIZE[31329]" condition="" icon="" description=""/>
-    <setting id="ClearLogoLocation" value="topcenter" label="$LOCALIZE[31330]" condition="!Skin.HasSetting(ShowMovieTitleHeader)" icon="" description=""/>
+    <setting id="ClearLogoLocation" value="topcenter" label="$LOCALIZE[31330]" condition="!Skin.HasSetting(ShowMovieTitleHeader)" icon="" description="" default="true"/>
     <setting id="ClearLogoLocation" value="topright" label="$LOCALIZE[31331]" condition="" icon="" description=""/>
-    <setting id="ClearLogoLocation" value="footer" label="$LOCALIZE[31328]" condition="!skin.hastheme(classic)" icon="" description="" default="true"/>
+    <setting id="ClearLogoLocation" value="footer" label="$LOCALIZE[31328]" condition="!skin.hastheme(classic)" icon="" description=""/>
     <setting id="ClearLogoLocation" value="disabled" label="$LOCALIZE[1223]" condition="" icon="" description=""/>
 
     <!-- default osd button -->
@@ -421,16 +421,18 @@
     <setting id="CaseOverlays.Fallback" value="HD1080" label="$LOCALIZE[31964]" condition="" icon="" description=""/>
     <setting id="CaseOverlays.Fallback" value="Clear" label="$LOCALIZE[192]" condition="" icon="" description=""/>
 
-    <!--thumbs border size unfocused-->
+    <!--Thumbs Border UnFocused Size-->
     <setting id="thumbsborder_unfocused" value="0" label="$LOCALIZE[1223]" condition="" icon="" description="" default="true" />
     <setting id="thumbsborder_unfocused" value="2" label="$LOCALIZE[31729]" condition="" icon="" description=""/>
     <setting id="thumbsborder_unfocused" value="4" label="$LOCALIZE[31729]" condition="" icon="" description=""/>
     <setting id="thumbsborder_unfocused" value="6" label="$LOCALIZE[31729]" condition="" icon="" description=""/>
+	<setting id="thumbsborder_unfocused" value="8" label="$LOCALIZE[31729]" condition="" icon="" description=""/>
 
-    <!--thumbs border size focused-->
+    <!--Thumbs Border Focused Size-->
     <setting id="thumbsborder_focused" value="2" label="$LOCALIZE[31729]" condition="" icon="" description=""/>
     <setting id="thumbsborder_focused" value="4" label="$LOCALIZE[31729]" condition="" icon="" description="" default="true" />
     <setting id="thumbsborder_focused" value="6" label="$LOCALIZE[31729]" condition="" icon="" description=""/>
+	<setting id="thumbsborder_focused" value="8" label="$LOCALIZE[31729]" condition="" icon="" description=""/>
 
     <!-- default focus position for home -->
     <setting id="home.defaultfocus" value="" label="$LOCALIZE[231]" condition="" icon="" description="" default="true"/>
@@ -447,9 +449,9 @@
     <setting id="home.defaultfocus" value="10" label="$LOCALIZE[31728]" condition="" icon="" description=""/>
 
     <!-- Default Color Palette -->
-    <setting id="defaultcolorpalette" value="basic" label="$ADDON[script.skin.helper.colorpicker 32142]" condition="" icon="special://skin/extras/viewthumbs/defaultcolorpalette_basic.jpg" description="" default="true"/>
+    <setting id="defaultcolorpalette" value="basic" label="$ADDON[script.skin.helper.colorpicker 32142]" condition="" icon="special://skin/extras/viewthumbs/defaultcolorpalette_basic.jpg" description=""/>
     <setting id="defaultcolorpalette" value="rainbow" label="$ADDON[script.skin.helper.colorpicker 32143]" condition="" icon="special://skin/extras/viewthumbs/defaultcolorpalette_rainbow.jpg" description=""/>
-    <setting id="defaultcolorpalette" value="material-design" label="$ADDON[script.skin.helper.colorpicker 32144]" condition="" icon="special://skin/extras/viewthumbs/defaultcolorpalette_material-design.jpg" description=""/>
+    <setting id="defaultcolorpalette" value="material-design" label="$ADDON[script.skin.helper.colorpicker 32144]" condition="" icon="special://skin/extras/viewthumbs/defaultcolorpalette_material-design.jpg" description="" default="true"/>
     <setting id="defaultcolorpalette" value="webcolors" label="$ADDON[script.skin.helper.colorpicker 32145]" condition="" icon="special://skin/extras/viewthumbs/defaultcolorpalette_webcolors.jpg" description=""/>
 
     <!-- Volume Indicator Style -->

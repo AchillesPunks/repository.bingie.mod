@@ -66,7 +66,7 @@
 
 <!-- Highlight Details Section Remove for Black Sreen -->
             <control type="group">
-                <!-- <visible>!String.IsEqual(window(home).Property(widgetstyle),highlight)</visible> -->
+          <!-- <visible>!String.IsEqual(window(home).Property(widgetstyle),highlight)</visible> -->
                 <width>1920</width>
                 <height>525</height>
                 <visible>!Skin.HasSetting(BingieHomeDisableFirstRow)</visible>
@@ -91,10 +91,10 @@
 <!--SPOTLIGHT CLEARLOGO/TEXT/BUTTONS MOVEMENT-->
                     <height>2000</height>
                     <include>BingieLeftDefs</include>
-                    <top>200</top>
+                    <top>250</top>
                     <orientation>vertical</orientation>
                     <usecontrolcoords>true</usecontrolcoords>
-                    <itemgap>-30</itemgap>         <!--  -70  -->
+                    <itemgap>-70</itemgap>         <!--  -70  -->
 <!-- Title Clearlogo Spotlight-->
                     <control type="image" id="150885">
                         <height>260</height>                       <!-- default - 240 - -->
@@ -118,22 +118,21 @@
                     </control>
                     <!-- Buttons -->
                     <include content="Spotlight_Buttons">
-                        <param name="top" value="275"
-						/>
+					<param name="top" value="250"/>   <!-- Default - 275 -->
                     </include>
                    
-<!-- Plot -->
+<!-- HOME SPOTLIGHT PLOT INFO -->
                     <control type="textbox">
                         <visible>Skin.HasSetting(ShowPlotInBingieSpotlight) | !$EXP[IsPlayingUnrecognizedContent]</visible>
                         <animation effect="fade" time="500">VisibleChange</animation>
                         <include>Default_Visible_Fade</include>
 <!--Text/Button - Gap -->                        
-                        <top>-180</top>    <!-- Added to adjust to Remove Watch Now -->       <height min="50" max="105">auto</height>
+                        <top>-150</top>    <!-- Added to adjust to Remove Watch Now -->       <height min="50" max="105">auto</height>
                         <width max="720">auto</width>
                         <align>left</align>
                         <font>Reg28</font>
                         <textcolor>d9ffffff</textcolor>
-                        <shadowcolor>FF000000</shadowcolor>
+                        <shadowcolor>d9ffffff</shadowcolor>
                         <label>$VAR[BingieSpotlightPlot]</label>
                     </control>
                 </control>
@@ -239,7 +238,7 @@
                         </control>
                     </control>
 
-<!-- BINGIE HOME PLOT -->
+<!-- BINGIE HOME PLOT NOT SPOTLIGHT -->
                    <control type="textbox" id="90009">
                         <visible>!$EXP[IsEpisodeDBType]</visible>
                         <include>Default_Visible_Fade</include>
@@ -250,8 +249,9 @@
                         <width max="820">auto</width>          <!-- default - 620 - -->
                         <align>left</align>                   <!-- default  -justify -->
                         <font>Reg28</font>
-                        <textcolor>$VAR[BingiePlotTextColor]</textcolor>
-                        <label>$VAR[BingiePlot]</label>
+                        <textcolor>ffd0d0d0</textcolor>
+                        <shadowcolor>ffd0d0d0</shadowcolor>
+						<label>$VAR[BingiePlot]</label>
                     </control>
 
                     <!-- Additional Info -->

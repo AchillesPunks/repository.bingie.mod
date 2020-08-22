@@ -24,7 +24,7 @@
     </include>
 
     <include name="startupskinsettingsvalues">
-        <!-- initialize 3th party addons -->
+        <!-- initialize 3rd party addons -->
         <onload condition="System.HasAddon(script.games.rom.collection.browser)">RunScript(script.games.rom.collection.browser,limit=10)</onload>
         <onload>SetProperty(startupDone,loaded,Home)</onload>
     </include>
