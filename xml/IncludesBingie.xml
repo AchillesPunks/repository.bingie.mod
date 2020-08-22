@@ -398,7 +398,7 @@
 <!-- Red Circle More Details - Under Movie Info -->
 				  <control type="textbox" id="84">
                       <animation effect="fade" time="150">Visible</animation>
-                      <height min="60" max="100">auto</height>  <!-- Cast Info Display/3 Text Lines -->			  
+                      <height min="60" max="75">auto</height>  <!-- Cast Info Display/3 Text Lines -->			  
                       <width>700</width>
                       <label>$VAR[BingieMoreDetails]</label>
                       <textcolor>$INFO[Skin.String(BingieSecondaryTextColor)]</textcolor>
@@ -1561,7 +1561,7 @@
         <control type="list" id="$PARAM[widgetid]">
             <visible>Container($PARAM[widgetid]).IsUpdating | Integer.IsGreater(Container($PARAM[widgetid]).NumItems,0)</visible>
             <orientation>horizontal</orientation>
-            <height>200</height>                                             <!-- default 260 -->
+            <height>240</height>                                             <!-- default 260 -->
             <preloaditems>1</preloaditems>
             <include content="SetFixedVerticalNavigationProps">
                 <param name="widgetid" value="$PARAM[widgetid]"/>

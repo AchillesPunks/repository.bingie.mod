@@ -91,7 +91,7 @@
 <!--SPOTLIGHT CLEARLOGO/TEXT/BUTTONS-->
                     <height>2000</height>
                     <include>BingieLeftDefs</include>
-                    <top>255</top>  <!--spotlight content improvements--> 
+                    <top>240</top>  <!--spotlight content improvements--> 
                     <orientation>vertical</orientation>
                     <usecontrolcoords>true</usecontrolcoords>
                     <itemgap>-40</itemgap> <!--spotlight content improvements-->
@@ -120,34 +120,34 @@
 					<!-- Watch Now --> <!--spotlight content improvements-->
                     <control type="label">
                         <top>0</top>
-                        <height>140</height>
+                        <height>100</height>
                         <width max="800">auto</width>
                         <align>left</align>
                         <aligny>center</aligny>
                         <font>Bold34</font>
 						<textcolor>white</textcolor>
                         <!-- <textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor> -->
-                        <label>$VAR[BingieSpotlightSublabel]</label>
+                        <label></label>
                     </control>
 					
-					<!-- Plot - spotlight content widget -->
+<!-- HOME SPOTLIGHT PLOT INFO -->
                     <control type="textbox">
                         <visible>Skin.HasSetting(ShowPlotInBingieSpotlight) | !$EXP[IsPlayingUnrecognizedContent]</visible>
                         <animation effect="fade" time="500">VisibleChange</animation>
                         <include>Default_Visible_Fade</include>
-						<top>0</top>
+						<top>10</top>
 						<height min="50" max="115">auto</height> <!--spotlight content improvements-->
                         <width max="720">auto</width>
                         <align>left</align>
                         <font>Reg28</font>
-                        <textcolor>white</textcolor> <!--spotlight content improvements-->
-                        <!-- <shadowcolor>FF000000</shadowcolor> -->
+                        <textcolor>white</textcolor>
+                        <shadowcolor>0</shadowcolor>
                         <label>$VAR[BingieSpotlightPlot]</label>
 					</control>
 					
                     <!-- Buttons -->
                     <include content="Spotlight_Buttons">
-                        <param name="top" value="60"/>  <!--spotlight content improvements-->
+                        <param name="top" value="70"/>  <!--spotlight content improvements-->
                     </include>
 				</control>
 
@@ -250,7 +250,7 @@
                                 <textcolor>$INFO[Skin.String(BingieSecondaryTextColor)]</textcolor>
                                 <label>$VAR[PercentRemained,,% $LOCALIZE[31059]]</label>
                             </control>
-                        </control>
+                         </control>
                     </control>
 
                     <!-- Plot -->
