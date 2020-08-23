@@ -70,11 +70,11 @@
 			<property name="widgetType.6">movies</property>
 			<property name="widgetPath.6">special://skin/playlists/horrormovies.xsp</property>
 			<property name="widgetName.6">Horror Movies</property>
-			<property name="widget.7">mylist</property>
+			<property name="widget.7">Playlist</property>
 			<property name="widgetTarget.7">videos</property>
-			<property name="widgetType.7">video</property>
-			<property name="widgetPath.7">$INCLUDE[MyListWidget]</property>
-			<property name="widgetName.7">My List</property>
+			<property name="widgetType.7">tvshows</property>
+			<property name="widgetPath.7">special://skin/playlists/anime.xsp</property>
+			<property name="widgetName.7">Anime</property>
 			<property name="widgetstyle.7">None</property>
 			<property name="widgetstyle.7.name">None (use global setting)</property>
 			<property name="widgetstyle.7Name">None (use global setting)</property>
@@ -166,6 +166,16 @@
 			<property name="widgetstyle.2">highlight</property>
 			<property name="widgetstyle.2.name">Highlight Layout</property>
 			<property name="widgetstyle.2Name">Highlight Layout</property>
+			<property name="widget">Playlist</property>
+			<property name="widgetName">SyFy TV Shows</property>
+			<property name="widgetType">tvshows</property>
+			<property name="widgetTarget">videos</property>
+			<property name="widgetPath">special://skin/playlists/syfyseries.xsp</property>
+			<property name="widget.1">Playlist</property>
+			<property name="widgetName.1">Netflix Original Series</property>
+			<property name="widgetType.1">tvshows</property>
+			<property name="widgetTarget.1">videos</property>
+			<property name="widgetPath.1">special://skin/playlists/netflixoriginalseries.xsp</property>
 			<onclick condition="String.IsEqual(Skin.String(HomeLayout),bingie) + $EXP[IsPlayingUnrecognizedContent]">PlayerControl(Stop)</onclick>
 			<onclick condition="[String.IsEmpty(Container(4445).NumItems) | Integer.IsEqual(Container(4445).NumItems,0)] | ![Skin.HasSetting(OpenSubMenuOnClick) | String.IsEqual(Skin.String(HomeLayout),win10)]">ActivateWindow(1110,return)</onclick>
 			<property name="path">ActivateWindow(1110,return)</property>
@@ -198,14 +208,30 @@
 			<property name="widgetLimit">$NUMBER[500]</property>
 			<property name="widgetLimit.name">500</property>
 			<property name="widgetLimitName">500</property>
-			<property name="widget">categories</property>
-			<property name="widgetName">Categories</property>
-			<property name="widgetType">static</property>
-			<property name="widgetTarget">static</property>
-			<property name="widgetPath">$INCLUDE[CategoriesWidget]</property>
-			<property name="widgetstyle">landscape</property>
-			<property name="widgetstyle.name">Landscape</property>
-			<property name="widgetstyleName">Landscape</property>
+			<property name="widget">Playlist</property>
+			<property name="widgetName">Horror Movies</property>
+			<property name="widgetType">movies</property>
+			<property name="widgetTarget">videos</property>
+			<property name="widgetPath">special://skin/playlists/horrormovies.xsp</property>
+			<property name="widgetstyle">None</property>
+			<property name="widgetstyle.name">None (use global setting)</property>
+			<property name="widgetstyleName">None (use global setting)</property>
+			<property name="widget.1">mylist</property>
+			<property name="widgetName.1">My List</property>
+			<property name="widgetType.1">video</property>
+			<property name="widgetTarget.1">videos</property>
+			<property name="widgetPath.1">$INCLUDE[MyListWidget]</property>
+			<property name="widgetstyle.1">None</property>
+			<property name="widgetstyle.1.name">None (use global setting)</property>
+			<property name="widgetstyle.1Name">None (use global setting)</property>
+			<property name="widget.2">categories</property>
+			<property name="widgetName.2">Categories</property>
+			<property name="widgetType.2">static</property>
+			<property name="widgetTarget.2">static</property>
+			<property name="widgetPath.2">$INCLUDE[CategoriesWidget]</property>
+			<property name="widgetstyle.2">landscape</property>
+			<property name="widgetstyle.2.name">Landscape</property>
+			<property name="widgetstyle.2Name">Landscape</property>
 			<onclick condition="String.IsEqual(Skin.String(HomeLayout),bingie) + $EXP[IsPlayingUnrecognizedContent]">PlayerControl(Stop)</onclick>
 			<onclick condition="[String.IsEmpty(Container(4445).NumItems) | Integer.IsEqual(Container(4445).NumItems,0)] | ![Skin.HasSetting(OpenSubMenuOnClick) | String.IsEqual(Skin.String(HomeLayout),win10)]">ActivateWindow(1111,return)</onclick>
 			<property name="path">ActivateWindow(1111,return)</property>
@@ -1592,17 +1618,17 @@
 		<include condition="true + true + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]" content="widget_header_multi">
 			<param name="widgetid" value="2580" />
 			<param name="submenuid" value="num-10000" />
-			<param name="widgetName" value="My List" />
+			<param name="widgetName" value="Anime" />
 		</include>
 		<include condition="true" content="widget_base">
 			<param name="containerType" value="panel" />
-			<param name="contentStyle" value="mylist" />
+			<param name="contentStyle" value="normal" />
 			<param name="widgetid" value="2580" />
-			<param name="widgetName" value="My List" />
+			<param name="widgetName" value="Anime" />
 			<param name="submenuid" value="num-10000" />
 			<param name="widgetTags" value="WidgetTagOverlayAuto" />
 			<param name="widgetTarget" value="videos" />
-			<param name="widgetPath" value="$INCLUDE[MyListWidget]" />
+			<param name="widgetPath" value="special://skin/playlists/anime.xsp" />
 			<param name="widgetStyle" value="widget_layout_None" />
 			<param name="widgetSortBy" value="" />
 			<param name="widgetSortOrder" value="" />
@@ -1612,19 +1638,215 @@
 			<param name="multiRows" value="false + $EXP[IsVerticalLayout]" />
 		</include>
 		<include condition="![true + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]] + !String.IsEqual(Skin.String(HomeLayout),win10) + true" content="widget_header_single">
-			<param name="mainmenuid" value="5" />
-			<param name="submenuid" value="movies" />
+			<param name="mainmenuid" value="4" />
+			<param name="submenuid" value="tvshows" />
 			<param name="hasWidget0" value="true" />
-			<param name="hasWidget1" value="false" />
+			<param name="hasWidget1" value="true" />
 			<param name="hasWidget2" value="false" />
 			<param name="hasWidget3" value="false" />
 			<param name="hasWidget4" value="false" />
 			<param name="hasWidget5" value="false" />
 			<param name="hasWidget6" value="false" />
 			<param name="hasWidget7" value="false" />
-			<param name="widgetStyle1" value="landscape" />
+			<param name="widgetStyle1" value="default" />
 			<param name="widgetStyle2" value="default" />
-			<param name="widgetStyle3" value="default" />
+			<param name="widgetStyle3" value="highlight" />
+			<param name="widgetStyle4" value="default" />
+			<param name="widgetStyle5" value="default" />
+			<param name="widgetStyle6" value="default" />
+			<param name="widgetStyle7" value="default" />
+			<param name="widgetStyle8" value="default" />
+		</include>
+		<include condition="true + true + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]" content="widget_header_multi">
+			<param name="widgetid" value="4510" />
+			<param name="submenuid" value="tvshows" />
+			<param name="widgetName" value="SyFy TV Shows" />
+		</include>
+		<include condition="true" content="widget_base">
+			<param name="containerType" value="panel" />
+			<param name="contentStyle" value="normal" />
+			<param name="widgetid" value="4510" />
+			<param name="widgetName" value="SyFy TV Shows" />
+			<param name="submenuid" value="tvshows" />
+			<param name="widgetTags" value="WidgetTagOverlayAuto" />
+			<param name="widgetTarget" value="videos" />
+			<param name="widgetPath" value="special://skin/playlists/syfyseries.xsp" />
+			<param name="widgetStyle" value="widget_layout_default" />
+			<param name="widgetSortBy" value="" />
+			<param name="widgetSortOrder" value="" />
+			<param name="widgetLimit" value="$INFO[Skin.String(WidgetsGlobalLimit)]" />
+			<param name="widgetInfoPanel" value="top" />
+			<param name="visibility" value="[true + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]] | String.IsEqual(Skin.String(HomeLayout),win10) | [![true + [$EXP[IsVerticalLayout] | String.IsEqual(Skin.String(HomeLayout),bingie)]] + [Skin.String(widgetvalue-tvshows,0) | String.IsEmpty(Skin.String(widgetvalue-tvshows))]]" />
+			<param name="multiRows" value="false + $EXP[IsVerticalLayout]" />
+		</include>
+		<include condition="true + true + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]" content="widget_header_multi">
+			<param name="widgetid" value="4520" />
+			<param name="submenuid" value="tvshows" />
+			<param name="widgetName" value="Netflix Original Series" />
+		</include>
+		<include condition="true" content="widget_base">
+			<param name="containerType" value="panel" />
+			<param name="contentStyle" value="normal" />
+			<param name="widgetid" value="4520" />
+			<param name="widgetName" value="Netflix Original Series" />
+			<param name="submenuid" value="tvshows" />
+			<param name="widgetTags" value="WidgetTagOverlayAuto" />
+			<param name="widgetTarget" value="videos" />
+			<param name="widgetPath" value="special://skin/playlists/netflixoriginalseries.xsp" />
+			<param name="widgetStyle" value="widget_layout_default" />
+			<param name="widgetSortBy" value="" />
+			<param name="widgetSortOrder" value="" />
+			<param name="widgetLimit" value="$INFO[Skin.String(WidgetsGlobalLimit)]" />
+			<param name="widgetInfoPanel" value="top" />
+			<param name="visibility" value="[true + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]] | String.IsEqual(Skin.String(HomeLayout),win10) | [![true + [$EXP[IsVerticalLayout] | String.IsEqual(Skin.String(HomeLayout),bingie)]] + Skin.String(widgetvalue-tvshows,1)]" />
+			<param name="multiRows" value="false + $EXP[IsVerticalLayout]" />
+		</include>
+		<include condition="true + false + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]" content="widget_header_multi">
+			<param name="widgetid" value="4530" />
+			<param name="submenuid" value="tvshows" />
+			<param name="widgetName" value="" />
+		</include>
+		<include condition="false" content="widget_base">
+			<param name="containerType" value="panel" />
+			<param name="contentStyle" value="normal" />
+			<param name="widgetid" value="4530" />
+			<param name="widgetName" value="" />
+			<param name="submenuid" value="tvshows" />
+			<param name="widgetTags" value="WidgetTagOverlayAuto" />
+			<param name="widgetTarget" value="" />
+			<param name="widgetPath" value="" />
+			<param name="widgetStyle" value="widget_layout_highlight" />
+			<param name="widgetSortBy" value="" />
+			<param name="widgetSortOrder" value="" />
+			<param name="widgetLimit" value="$INFO[Skin.String(WidgetsGlobalLimit)]" />
+			<param name="widgetInfoPanel" value="top" />
+			<param name="visibility" value="[true + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]] | String.IsEqual(Skin.String(HomeLayout),win10) | [![true + [$EXP[IsVerticalLayout] | String.IsEqual(Skin.String(HomeLayout),bingie)]] + Skin.String(widgetvalue-tvshows,2)]" />
+			<param name="multiRows" value="false + $EXP[IsVerticalLayout]" />
+		</include>
+		<include condition="true + false + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]" content="widget_header_multi">
+			<param name="widgetid" value="4540" />
+			<param name="submenuid" value="tvshows" />
+			<param name="widgetName" value="" />
+		</include>
+		<include condition="false" content="widget_base">
+			<param name="containerType" value="panel" />
+			<param name="contentStyle" value="normal" />
+			<param name="widgetid" value="4540" />
+			<param name="widgetName" value="" />
+			<param name="submenuid" value="tvshows" />
+			<param name="widgetTags" value="WidgetTagOverlayAuto" />
+			<param name="widgetTarget" value="" />
+			<param name="widgetPath" value="" />
+			<param name="widgetStyle" value="widget_layout_default" />
+			<param name="widgetSortBy" value="" />
+			<param name="widgetSortOrder" value="" />
+			<param name="widgetLimit" value="$INFO[Skin.String(WidgetsGlobalLimit)]" />
+			<param name="widgetInfoPanel" value="top" />
+			<param name="visibility" value="[true + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]] | String.IsEqual(Skin.String(HomeLayout),win10) | [![true + [$EXP[IsVerticalLayout] | String.IsEqual(Skin.String(HomeLayout),bingie)]] + Skin.String(widgetvalue-tvshows,3)]" />
+			<param name="multiRows" value="false + $EXP[IsVerticalLayout]" />
+		</include>
+		<include condition="true + false + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]" content="widget_header_multi">
+			<param name="widgetid" value="4550" />
+			<param name="submenuid" value="tvshows" />
+			<param name="widgetName" value="" />
+		</include>
+		<include condition="false" content="widget_base">
+			<param name="containerType" value="panel" />
+			<param name="contentStyle" value="normal" />
+			<param name="widgetid" value="4550" />
+			<param name="widgetName" value="" />
+			<param name="submenuid" value="tvshows" />
+			<param name="widgetTags" value="WidgetTagOverlayAuto" />
+			<param name="widgetTarget" value="" />
+			<param name="widgetPath" value="" />
+			<param name="widgetStyle" value="widget_layout_default" />
+			<param name="widgetSortBy" value="" />
+			<param name="widgetSortOrder" value="" />
+			<param name="widgetLimit" value="$INFO[Skin.String(WidgetsGlobalLimit)]" />
+			<param name="widgetInfoPanel" value="top" />
+			<param name="visibility" value="[true + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]] | String.IsEqual(Skin.String(HomeLayout),win10) | [![true + [$EXP[IsVerticalLayout] | String.IsEqual(Skin.String(HomeLayout),bingie)]] + Skin.String(widgetvalue-tvshows,4)]" />
+			<param name="multiRows" value="false + $EXP[IsVerticalLayout]" />
+		</include>
+		<include condition="true + false + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]" content="widget_header_multi">
+			<param name="widgetid" value="4560" />
+			<param name="submenuid" value="tvshows" />
+			<param name="widgetName" value="" />
+		</include>
+		<include condition="false" content="widget_base">
+			<param name="containerType" value="panel" />
+			<param name="contentStyle" value="normal" />
+			<param name="widgetid" value="4560" />
+			<param name="widgetName" value="" />
+			<param name="submenuid" value="tvshows" />
+			<param name="widgetTags" value="WidgetTagOverlayAuto" />
+			<param name="widgetTarget" value="" />
+			<param name="widgetPath" value="" />
+			<param name="widgetStyle" value="widget_layout_default" />
+			<param name="widgetSortBy" value="" />
+			<param name="widgetSortOrder" value="" />
+			<param name="widgetLimit" value="$INFO[Skin.String(WidgetsGlobalLimit)]" />
+			<param name="widgetInfoPanel" value="top" />
+			<param name="visibility" value="[true + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]] | String.IsEqual(Skin.String(HomeLayout),win10) | [![true + [$EXP[IsVerticalLayout] | String.IsEqual(Skin.String(HomeLayout),bingie)]] + Skin.String(widgetvalue-tvshows,5)]" />
+			<param name="multiRows" value="false + $EXP[IsVerticalLayout]" />
+		</include>
+		<include condition="true + false + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]" content="widget_header_multi">
+			<param name="widgetid" value="4570" />
+			<param name="submenuid" value="tvshows" />
+			<param name="widgetName" value="" />
+		</include>
+		<include condition="false" content="widget_base">
+			<param name="containerType" value="panel" />
+			<param name="contentStyle" value="normal" />
+			<param name="widgetid" value="4570" />
+			<param name="widgetName" value="" />
+			<param name="submenuid" value="tvshows" />
+			<param name="widgetTags" value="WidgetTagOverlayAuto" />
+			<param name="widgetTarget" value="" />
+			<param name="widgetPath" value="" />
+			<param name="widgetStyle" value="widget_layout_default" />
+			<param name="widgetSortBy" value="" />
+			<param name="widgetSortOrder" value="" />
+			<param name="widgetLimit" value="$INFO[Skin.String(WidgetsGlobalLimit)]" />
+			<param name="widgetInfoPanel" value="top" />
+			<param name="visibility" value="[true + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]] | String.IsEqual(Skin.String(HomeLayout),win10) | [![true + [$EXP[IsVerticalLayout] | String.IsEqual(Skin.String(HomeLayout),bingie)]] + Skin.String(widgetvalue-tvshows,6)]" />
+			<param name="multiRows" value="false + $EXP[IsVerticalLayout]" />
+		</include>
+		<include condition="true + false + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]" content="widget_header_multi">
+			<param name="widgetid" value="4580" />
+			<param name="submenuid" value="tvshows" />
+			<param name="widgetName" value="" />
+		</include>
+		<include condition="false" content="widget_base">
+			<param name="containerType" value="panel" />
+			<param name="contentStyle" value="normal" />
+			<param name="widgetid" value="4580" />
+			<param name="widgetName" value="" />
+			<param name="submenuid" value="tvshows" />
+			<param name="widgetTags" value="WidgetTagOverlayAuto" />
+			<param name="widgetTarget" value="" />
+			<param name="widgetPath" value="" />
+			<param name="widgetStyle" value="widget_layout_default" />
+			<param name="widgetSortBy" value="" />
+			<param name="widgetSortOrder" value="" />
+			<param name="widgetLimit" value="$INFO[Skin.String(WidgetsGlobalLimit)]" />
+			<param name="widgetInfoPanel" value="top" />
+			<param name="visibility" value="[true + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]] | String.IsEqual(Skin.String(HomeLayout),win10) | [![true + [$EXP[IsVerticalLayout] | String.IsEqual(Skin.String(HomeLayout),bingie)]] + Skin.String(widgetvalue-tvshows,7)]" />
+			<param name="multiRows" value="false + $EXP[IsVerticalLayout]" />
+		</include>
+		<include condition="![true + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]] + !String.IsEqual(Skin.String(HomeLayout),win10) + true" content="widget_header_single">
+			<param name="mainmenuid" value="5" />
+			<param name="submenuid" value="movies" />
+			<param name="hasWidget0" value="true" />
+			<param name="hasWidget1" value="true" />
+			<param name="hasWidget2" value="true" />
+			<param name="hasWidget3" value="false" />
+			<param name="hasWidget4" value="false" />
+			<param name="hasWidget5" value="false" />
+			<param name="hasWidget6" value="false" />
+			<param name="hasWidget7" value="false" />
+			<param name="widgetStyle1" value="None" />
+			<param name="widgetStyle2" value="None" />
+			<param name="widgetStyle3" value="landscape" />
 			<param name="widgetStyle4" value="default" />
 			<param name="widgetStyle5" value="default" />
 			<param name="widgetStyle6" value="default" />
@@ -1634,18 +1856,18 @@
 		<include condition="true + true + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]" content="widget_header_multi">
 			<param name="widgetid" value="5510" />
 			<param name="submenuid" value="movies" />
-			<param name="widgetName" value="Categories" />
+			<param name="widgetName" value="Horror Movies" />
 		</include>
 		<include condition="true" content="widget_base">
 			<param name="containerType" value="panel" />
-			<param name="contentStyle" value="categories" />
+			<param name="contentStyle" value="normal" />
 			<param name="widgetid" value="5510" />
-			<param name="widgetName" value="Categories" />
+			<param name="widgetName" value="Horror Movies" />
 			<param name="submenuid" value="movies" />
 			<param name="widgetTags" value="WidgetTagOverlayAuto" />
-			<param name="widgetTarget" value="static" />
-			<param name="widgetPath" value="$INCLUDE[CategoriesWidget]" />
-			<param name="widgetStyle" value="widget_layout_landscape" />
+			<param name="widgetTarget" value="videos" />
+			<param name="widgetPath" value="special://skin/playlists/horrormovies.xsp" />
+			<param name="widgetStyle" value="widget_layout_None" />
 			<param name="widgetSortBy" value="" />
 			<param name="widgetSortOrder" value="" />
 			<param name="widgetLimit" value="$NUMBER[500]" />
@@ -1653,21 +1875,21 @@
 			<param name="visibility" value="[true + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]] | String.IsEqual(Skin.String(HomeLayout),win10) | [![true + [$EXP[IsVerticalLayout] | String.IsEqual(Skin.String(HomeLayout),bingie)]] + [Skin.String(widgetvalue-movies,0) | String.IsEmpty(Skin.String(widgetvalue-movies))]]" />
 			<param name="multiRows" value="false + $EXP[IsVerticalLayout]" />
 		</include>
-		<include condition="true + false + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]" content="widget_header_multi">
+		<include condition="true + true + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]" content="widget_header_multi">
 			<param name="widgetid" value="5520" />
 			<param name="submenuid" value="movies" />
-			<param name="widgetName" value="" />
+			<param name="widgetName" value="My List" />
 		</include>
-		<include condition="false" content="widget_base">
+		<include condition="true" content="widget_base">
 			<param name="containerType" value="panel" />
-			<param name="contentStyle" value="normal" />
+			<param name="contentStyle" value="mylist" />
 			<param name="widgetid" value="5520" />
-			<param name="widgetName" value="" />
+			<param name="widgetName" value="My List" />
 			<param name="submenuid" value="movies" />
 			<param name="widgetTags" value="WidgetTagOverlayAuto" />
-			<param name="widgetTarget" value="" />
-			<param name="widgetPath" value="" />
-			<param name="widgetStyle" value="widget_layout_default" />
+			<param name="widgetTarget" value="videos" />
+			<param name="widgetPath" value="$INCLUDE[MyListWidget]" />
+			<param name="widgetStyle" value="widget_layout_None" />
 			<param name="widgetSortBy" value="" />
 			<param name="widgetSortOrder" value="" />
 			<param name="widgetLimit" value="$INFO[Skin.String(WidgetsGlobalLimit)]" />
@@ -1675,21 +1897,21 @@
 			<param name="visibility" value="[true + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]] | String.IsEqual(Skin.String(HomeLayout),win10) | [![true + [$EXP[IsVerticalLayout] | String.IsEqual(Skin.String(HomeLayout),bingie)]] + Skin.String(widgetvalue-movies,1)]" />
 			<param name="multiRows" value="false + $EXP[IsVerticalLayout]" />
 		</include>
-		<include condition="true + false + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]" content="widget_header_multi">
+		<include condition="true + true + [String.IsEqual(Skin.String(HomeLayout),bingie) | $EXP[IsVerticalLayout]]" content="widget_header_multi">
 			<param name="widgetid" value="5530" />
 			<param name="submenuid" value="movies" />
-			<param name="widgetName" value="" />
+			<param name="widgetName" value="Categories" />
 		</include>
-		<include condition="false" content="widget_base">
+		<include condition="true" content="widget_base">
 			<param name="containerType" value="panel" />
-			<param name="contentStyle" value="normal" />
+			<param name="contentStyle" value="categories" />
 			<param name="widgetid" value="5530" />
-			<param name="widgetName" value="" />
+			<param name="widgetName" value="Categories" />
 			<param name="submenuid" value="movies" />
 			<param name="widgetTags" value="WidgetTagOverlayAuto" />
-			<param name="widgetTarget" value="" />
-			<param name="widgetPath" value="" />
-			<param name="widgetStyle" value="widget_layout_default" />
+			<param name="widgetTarget" value="static" />
+			<param name="widgetPath" value="$INCLUDE[CategoriesWidget]" />
+			<param name="widgetStyle" value="widget_layout_landscape" />
 			<param name="widgetSortBy" value="" />
 			<param name="widgetSortOrder" value="" />
 			<param name="widgetLimit" value="$INFO[Skin.String(WidgetsGlobalLimit)]" />
@@ -1974,7 +2196,7 @@
 		<value condition="!String.IsEmpty(Window(Home).property(skinhelper-refreshvideowidgetsbusy))">special://skin/extras/emptywidget.xsp</value>
 		<value condition="!String.IsEmpty(Window(Home).property(favwidgetrefresh))">special://skin/extras/emptywidget.xsp</value>
 		<value condition="Window.IsActive(fullscreenvideo)">special://skin/extras/emptywidget.xsp</value>
-		<value />
+		<value>special://skin/playlists/anime.xsp</value>
 	</variable>
 	<variable name="widgetinfolabel-2580">
 		<value condition="String.Contains(Container(2580).ListItem.Property(DBTYPE), systeminfo)">$INFO[Container(2580).ListItem.label] $INFO[Container(2580).ListItem.label2]</value>
@@ -1992,7 +2214,7 @@
 		<value condition="!String.IsEmpty(Container(2580).ListItem.StartTime)">$INFO[Container(2580).ListItem.ChannelName,, • ]$INFO[Container(2580).ListItem.StartTime,, - ]$INFO[Container(2580).ListItem.EndTime,, • ]$INFO[Container(2580).ListItem.Genre]</value>
 	</variable>
 	<variable name="widgetlabel-2">
-		<value condition="String.IsEqual(Skin.String(widgetvalue-num-10000),7)">My List</value>
+		<value condition="String.IsEqual(Skin.String(widgetvalue-num-10000),7)">Anime</value>
 		<value condition="String.IsEqual(Skin.String(widgetvalue-num-10000),6)">Horror Movies</value>
 		<value condition="String.IsEqual(Skin.String(widgetvalue-num-10000),5)">$ADDON[script.skin.helper.widgets 32022]</value>
 		<value condition="String.IsEqual(Skin.String(widgetvalue-num-10000),4)">$LOCALIZE[31532]</value>
@@ -2001,11 +2223,189 @@
 		<value condition="String.IsEqual(Skin.String(widgetvalue-num-10000),1)">$LOCALIZE[31127]</value>
 		<value>Continue Watching for You</value>
 	</variable>
+	<variable name="4510-refresh">
+		<value condition="!String.IsEmpty(Window(Home).property(skinhelper-refreshvideowidgetsbusy))">special://skin/extras/emptywidget.xsp</value>
+		<value condition="!String.IsEmpty(Window(Home).property(favwidgetrefresh))">special://skin/extras/emptywidget.xsp</value>
+		<value condition="Window.isactive(fullscreenvideo)">special://skin/extras/emptywidget.xsp</value>
+		<value>special://skin/playlists/syfyseries.xsp</value>
+	</variable>
+	<variable name="widgetinfolabel-4510">
+		<value condition="String.Contains(Container(4510).ListItem.Property(DBTYPE), systeminfo)">$INFO[Container(4510).ListItem.label] $INFO[Container(4510).ListItem.label2]</value>
+		<value condition="!String.IsEmpty(Container(4510).ListItem.Title) + String.Contains(Container(4510).ListItem.FolderPath, pvr://)">$INFO[Container(4510).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4510).ListItem.Season) + !String.IsEmpty(Container(4510).ListItem.Episode) + !String.Contains(Container(4510).ListItem.TvShowTitle,Container(4510).ListItem.Title)">[UPPERCASE]S$INFO[Container(4510).ListItem.Season]E$INFO[Container(4510).ListItem.Episode]:[/UPPERCASE] $INFO[Container(4510).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4510).ListItem.Title)">$INFO[Container(4510).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4510).ListItem.Label)">$INFO[Container(4510).ListItem.Label]</value>
+	</variable>
+	<variable name="widgetsubtitle-4510">
+		<value condition="!String.IsEmpty(Container(4510).ListItem.TvShowTitle) + !String.IsEmpty(Container(4510).ListItem.Genre)">$INFO[Container(4510).ListItem.TvShowTitle,, • ]$INFO[Container(4510).ListItem.Year,, • ]$INFO[Container(4510).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4510).ListItem.TvShowTitle)">$INFO[Container(4510).ListItem.TvShowTitle,, • ]$INFO[Container(4510).ListItem.Premiered,, • ]$INFO[Container(4510).ListItem.Duration,,min.]</value>
+		<value condition="!String.IsEmpty(Container(4510).ListItem.Year)">$INFO[Container(4510).ListItem.Year,, • ]$INFO[Container(4510).ListItem.Duration,,min. • ]$INFO[Container(4510).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4510).ListItem.Artist) + !String.IsEmpty(Container(4510).ListItem.Album)">$INFO[Container(4510).ListItem.Artist,, • ]$INFO[Container(4510).ListItem.Album,, • ]$INFO[Container(4510).ListItem.Duration]</value>
+		<value condition="!String.IsEmpty(Container(4510).ListItem.Property(StartTime))">$INFO[Container(4510).ListItem.Property(ChannelName),, • ]$INFO[Container(4510).ListItem.Property(StartTime),, - ]$INFO[Container(4510).ListItem.Property(EndTime),, • ]$INFO[Container(4510).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4510).ListItem.StartTime)">$INFO[Container(4510).ListItem.ChannelName,, • ]$INFO[Container(4510).ListItem.StartTime,, - ]$INFO[Container(4510).ListItem.EndTime,, • ]$INFO[Container(4510).ListItem.Genre]</value>
+	</variable>
+	<variable name="4520-refresh">
+		<value condition="!String.IsEmpty(Window(Home).property(skinhelper-refreshvideowidgetsbusy))">special://skin/extras/emptywidget.xsp</value>
+		<value condition="!String.IsEmpty(Window(Home).property(favwidgetrefresh))">special://skin/extras/emptywidget.xsp</value>
+		<value condition="Window.IsActive(fullscreenvideo)">special://skin/extras/emptywidget.xsp</value>
+		<value>special://skin/playlists/netflixoriginalseries.xsp</value>
+	</variable>
+	<variable name="widgetinfolabel-4520">
+		<value condition="String.Contains(Container(4520).ListItem.Property(DBTYPE), systeminfo)">$INFO[Container(4520).ListItem.label] $INFO[Container(4520).ListItem.label2]</value>
+		<value condition="!String.IsEmpty(Container(4520).ListItem.Title) + String.Contains(Container(4520).ListItem.FolderPath, pvr://)">$INFO[Container(4520).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4520).ListItem.Season) + !String.IsEmpty(Container(4520).ListItem.Episode) + !String.Contains(Container(4520).ListItem.TvShowTitle,Container(4520).ListItem.Title)">[UPPERCASE]S$INFO[Container(4520).ListItem.Season]E$INFO[Container(4520).ListItem.Episode]:[/UPPERCASE] $INFO[Container(4520).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4520).ListItem.Title)">$INFO[Container(4520).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4520).ListItem.Label)">$INFO[Container(4520).ListItem.Label]</value>
+	</variable>
+	<variable name="widgetsubtitle-4520">
+		<value condition="!String.IsEmpty(Container(4520).ListItem.TvShowTitle) + !String.IsEmpty(Container(4520).ListItem.Genre)">$INFO[Container(4520).ListItem.TvShowTitle,, • ]$INFO[Container(4520).ListItem.Year,, • ]$INFO[Container(4520).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4520).ListItem.TvShowTitle)">$INFO[Container(4520).ListItem.TvShowTitle,, • ]$INFO[Container(4520).ListItem.Premiered,, • ]$INFO[Container(4520).ListItem.Duration,,min.]</value>
+		<value condition="!String.IsEmpty(Container(4520).ListItem.Year)">$INFO[Container(4520).ListItem.Year,, • ]$INFO[Container(4520).ListItem.Duration,,min. • ]$INFO[Container(4520).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4520).ListItem.Artist) + !String.IsEmpty(Container(4520).ListItem.Album)">$INFO[Container(4520).ListItem.Artist,, • ]$INFO[Container(4520).ListItem.Album,, • ]$INFO[Container(4520).ListItem.Duration]</value>
+		<value condition="!String.IsEmpty(Container(4520).ListItem.Property(StartTime))">$INFO[Container(4520).ListItem.Property(ChannelName),, • ]$INFO[Container(4520).ListItem.Property(StartTime),, - ]$INFO[Container(4520).ListItem.Property(EndTime),, • ]$INFO[Container(4520).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4520).ListItem.StartTime)">$INFO[Container(4520).ListItem.ChannelName,, • ]$INFO[Container(4520).ListItem.StartTime,, - ]$INFO[Container(4520).ListItem.EndTime,, • ]$INFO[Container(4520).ListItem.Genre]</value>
+	</variable>
+	<variable name="4530-refresh">
+		<value condition="!String.IsEmpty(Window(Home).property(skinhelper-refreshvideowidgetsbusy))">special://skin/extras/emptywidget.xsp</value>
+		<value condition="!String.IsEmpty(Window(Home).property(favwidgetrefresh))">special://skin/extras/emptywidget.xsp</value>
+		<value condition="Window.IsActive(fullscreenvideo)">special://skin/extras/emptywidget.xsp</value>
+		<value />
+	</variable>
+	<variable name="widgetinfolabel-4530">
+		<value condition="String.Contains(Container(4530).ListItem.Property(DBTYPE), systeminfo)">$INFO[Container(4530).ListItem.label] $INFO[Container(4530).ListItem.label2]</value>
+		<value condition="!String.IsEmpty(Container(4530).ListItem.Title) + String.Contains(Container(4530).ListItem.FolderPath, pvr://)">$INFO[Container(4530).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4530).ListItem.Season) + !String.IsEmpty(Container(4530).ListItem.Episode) + !String.Contains(Container(4530).ListItem.TvShowTitle,Container(4530).ListItem.Title)">[UPPERCASE]S$INFO[Container(4530).ListItem.Season]E$INFO[Container(4530).ListItem.Episode]:[/UPPERCASE] $INFO[Container(4530).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4530).ListItem.Title)">$INFO[Container(4530).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4530).ListItem.Label)">$INFO[Container(4530).ListItem.Label]</value>
+	</variable>
+	<variable name="widgetsubtitle-4530">
+		<value condition="!String.IsEmpty(Container(4530).ListItem.TvShowTitle) + !String.IsEmpty(Container(4530).ListItem.Genre)">$INFO[Container(4530).ListItem.TvShowTitle,, • ]$INFO[Container(4530).ListItem.Year,, • ]$INFO[Container(4530).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4530).ListItem.TvShowTitle)">$INFO[Container(4530).ListItem.TvShowTitle,, • ]$INFO[Container(4530).ListItem.Premiered,, • ]$INFO[Container(4530).ListItem.Duration,,min.]</value>
+		<value condition="!String.IsEmpty(Container(4530).ListItem.Year)">$INFO[Container(4530).ListItem.Year,, • ]$INFO[Container(4530).ListItem.Duration,,min. • ]$INFO[Container(4530).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4530).ListItem.Artist) + !String.IsEmpty(Container(4530).ListItem.Album)">$INFO[Container(4530).ListItem.Artist,, • ]$INFO[Container(4530).ListItem.Album,, • ]$INFO[Container(4530).ListItem.Duration]</value>
+		<value condition="!String.IsEmpty(Container(4530).ListItem.Property(StartTime))">$INFO[Container(4530).ListItem.Property(ChannelName),, • ]$INFO[Container(4530).ListItem.Property(StartTime),, - ]$INFO[Container(4530).ListItem.Property(EndTime),, • ]$INFO[Container(4530).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4530).ListItem.StartTime)">$INFO[Container(4530).ListItem.ChannelName,, • ]$INFO[Container(4530).ListItem.StartTime,, - ]$INFO[Container(4530).ListItem.EndTime,, • ]$INFO[Container(4530).ListItem.Genre]</value>
+	</variable>
+	<variable name="4540-refresh">
+		<value condition="!String.IsEmpty(Window(Home).property(skinhelper-refreshvideowidgetsbusy))">special://skin/extras/emptywidget.xsp</value>
+		<value condition="!String.IsEmpty(Window(Home).property(favwidgetrefresh))">special://skin/extras/emptywidget.xsp</value>
+		<value condition="Window.IsActive(fullscreenvideo)">special://skin/extras/emptywidget.xsp</value>
+		<value />
+	</variable>
+	<variable name="widgetinfolabel-4540">
+		<value condition="String.Contains(Container(4540).ListItem.Property(DBTYPE), systeminfo)">$INFO[Container(4540).ListItem.label] $INFO[Container(4540).ListItem.label2]</value>
+		<value condition="!String.IsEmpty(Container(4540).ListItem.Title) + String.Contains(Container(4540).ListItem.FolderPath, pvr://)">$INFO[Container(4540).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4540).ListItem.Season) + !String.IsEmpty(Container(4540).ListItem.Episode) + !String.Contains(Container(4540).ListItem.TvShowTitle,Container(4540).ListItem.Title)">[UPPERCASE]S$INFO[Container(4540).ListItem.Season]E$INFO[Container(4540).ListItem.Episode]:[/UPPERCASE] $INFO[Container(4540).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4540).ListItem.Title)">$INFO[Container(4540).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4540).ListItem.Label)">$INFO[Container(4540).ListItem.Label]</value>
+	</variable>
+	<variable name="widgetsubtitle-4540">
+		<value condition="!String.IsEmpty(Container(4540).ListItem.TvShowTitle) + !String.IsEmpty(Container(4540).ListItem.Genre)">$INFO[Container(4540).ListItem.TvShowTitle,, • ]$INFO[Container(4540).ListItem.Year,, • ]$INFO[Container(4540).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4540).ListItem.TvShowTitle)">$INFO[Container(4540).ListItem.TvShowTitle,, • ]$INFO[Container(4540).ListItem.Premiered,, • ]$INFO[Container(4540).ListItem.Duration,,min.]</value>
+		<value condition="!String.IsEmpty(Container(4540).ListItem.Year)">$INFO[Container(4540).ListItem.Year,, • ]$INFO[Container(4540).ListItem.Duration,,min. • ]$INFO[Container(4540).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4540).ListItem.Artist) + !String.IsEmpty(Container(4540).ListItem.Album)">$INFO[Container(4540).ListItem.Artist,, • ]$INFO[Container(4540).ListItem.Album,, • ]$INFO[Container(4540).ListItem.Duration]</value>
+		<value condition="!String.IsEmpty(Container(4540).ListItem.Property(StartTime))">$INFO[Container(4540).ListItem.Property(ChannelName),, • ]$INFO[Container(4540).ListItem.Property(StartTime),, - ]$INFO[Container(4540).ListItem.Property(EndTime),, • ]$INFO[Container(4540).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4540).ListItem.StartTime)">$INFO[Container(4540).ListItem.ChannelName,, • ]$INFO[Container(4540).ListItem.StartTime,, - ]$INFO[Container(4540).ListItem.EndTime,, • ]$INFO[Container(4540).ListItem.Genre]</value>
+	</variable>
+	<variable name="4550-refresh">
+		<value condition="!String.IsEmpty(Window(Home).property(skinhelper-refreshvideowidgetsbusy))">special://skin/extras/emptywidget.xsp</value>
+		<value condition="!String.IsEmpty(Window(Home).property(favwidgetrefresh))">special://skin/extras/emptywidget.xsp</value>
+		<value condition="Window.IsActive(fullscreenvideo)">special://skin/extras/emptywidget.xsp</value>
+		<value />
+	</variable>
+	<variable name="widgetinfolabel-4550">
+		<value condition="String.Contains(Container(4550).ListItem.Property(DBTYPE), systeminfo)">$INFO[Container(4550).ListItem.label] $INFO[Container(4550).ListItem.label2]</value>
+		<value condition="!String.IsEmpty(Container(4550).ListItem.Title) + String.Contains(Container(4550).ListItem.FolderPath, pvr://)">$INFO[Container(4550).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4550).ListItem.Season) + !String.IsEmpty(Container(4550).ListItem.Episode) + !String.Contains(Container(4550).ListItem.TvShowTitle,Container(4550).ListItem.Title)">[UPPERCASE]S$INFO[Container(4550).ListItem.Season]E$INFO[Container(4550).ListItem.Episode]:[/UPPERCASE] $INFO[Container(4550).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4550).ListItem.Title)">$INFO[Container(4550).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4550).ListItem.Label)">$INFO[Container(4550).ListItem.Label]</value>
+	</variable>
+	<variable name="widgetsubtitle-4550">
+		<value condition="!String.IsEmpty(Container(4550).ListItem.TvShowTitle) + !String.IsEmpty(Container(4550).ListItem.Genre)">$INFO[Container(4550).ListItem.TvShowTitle,, • ]$INFO[Container(4550).ListItem.Year,, • ]$INFO[Container(4550).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4550).ListItem.TvShowTitle)">$INFO[Container(4550).ListItem.TvShowTitle,, • ]$INFO[Container(4550).ListItem.Premiered,, • ]$INFO[Container(4550).ListItem.Duration,,min.]</value>
+		<value condition="!String.IsEmpty(Container(4550).ListItem.Year)">$INFO[Container(4550).ListItem.Year,, • ]$INFO[Container(4550).ListItem.Duration,,min. • ]$INFO[Container(4550).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4550).ListItem.Artist) + !String.IsEmpty(Container(4550).ListItem.Album)">$INFO[Container(4550).ListItem.Artist,, • ]$INFO[Container(4550).ListItem.Album,, • ]$INFO[Container(4550).ListItem.Duration]</value>
+		<value condition="!String.IsEmpty(Container(4550).ListItem.Property(StartTime))">$INFO[Container(4550).ListItem.Property(ChannelName),, • ]$INFO[Container(4550).ListItem.Property(StartTime),, - ]$INFO[Container(4550).ListItem.Property(EndTime),, • ]$INFO[Container(4550).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4550).ListItem.StartTime)">$INFO[Container(4550).ListItem.ChannelName,, • ]$INFO[Container(4550).ListItem.StartTime,, - ]$INFO[Container(4550).ListItem.EndTime,, • ]$INFO[Container(4550).ListItem.Genre]</value>
+	</variable>
+	<variable name="4560-refresh">
+		<value condition="!String.IsEmpty(Window(Home).property(skinhelper-refreshvideowidgetsbusy))">special://skin/extras/emptywidget.xsp</value>
+		<value condition="!String.IsEmpty(Window(Home).property(favwidgetrefresh))">special://skin/extras/emptywidget.xsp</value>
+		<value condition="Window.IsActive(fullscreenvideo)">special://skin/extras/emptywidget.xsp</value>
+		<value />
+	</variable>
+	<variable name="widgetinfolabel-4560">
+		<value condition="String.Contains(Container(4560).ListItem.Property(DBTYPE), systeminfo)">$INFO[Container(4560).ListItem.label] $INFO[Container(4560).ListItem.label2]</value>
+		<value condition="!String.IsEmpty(Container(4560).ListItem.Title) + String.Contains(Container(4560).ListItem.FolderPath, pvr://)">$INFO[Container(4560).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4560).ListItem.Season) + !String.IsEmpty(Container(4560).ListItem.Episode) + !String.Contains(Container(4560).ListItem.TvShowTitle,Container(4560).ListItem.Title)">[UPPERCASE]S$INFO[Container(4560).ListItem.Season]E$INFO[Container(4560).ListItem.Episode]:[/UPPERCASE] $INFO[Container(4560).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4560).ListItem.Title)">$INFO[Container(4560).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4560).ListItem.Label)">$INFO[Container(4560).ListItem.Label]</value>
+	</variable>
+	<variable name="widgetsubtitle-4560">
+		<value condition="!String.IsEmpty(Container(4560).ListItem.TvShowTitle) + !String.IsEmpty(Container(4560).ListItem.Genre)">$INFO[Container(4560).ListItem.TvShowTitle,, • ]$INFO[Container(4560).ListItem.Year,, • ]$INFO[Container(4560).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4560).ListItem.TvShowTitle)">$INFO[Container(4560).ListItem.TvShowTitle,, • ]$INFO[Container(4560).ListItem.Premiered,, • ]$INFO[Container(4560).ListItem.Duration,,min.]</value>
+		<value condition="!String.IsEmpty(Container(4560).ListItem.Year)">$INFO[Container(4560).ListItem.Year,, • ]$INFO[Container(4560).ListItem.Duration,,min. • ]$INFO[Container(4560).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4560).ListItem.Artist) + !String.IsEmpty(Container(4560).ListItem.Album)">$INFO[Container(4560).ListItem.Artist,, • ]$INFO[Container(4560).ListItem.Album,, • ]$INFO[Container(4560).ListItem.Duration]</value>
+		<value condition="!String.IsEmpty(Container(4560).ListItem.Property(StartTime))">$INFO[Container(4560).ListItem.Property(ChannelName),, • ]$INFO[Container(4560).ListItem.Property(StartTime),, - ]$INFO[Container(4560).ListItem.Property(EndTime),, • ]$INFO[Container(4560).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4560).ListItem.StartTime)">$INFO[Container(4560).ListItem.ChannelName,, • ]$INFO[Container(4560).ListItem.StartTime,, - ]$INFO[Container(4560).ListItem.EndTime,, • ]$INFO[Container(4560).ListItem.Genre]</value>
+	</variable>
+	<variable name="4570-refresh">
+		<value condition="!String.IsEmpty(Window(Home).property(skinhelper-refreshvideowidgetsbusy))">special://skin/extras/emptywidget.xsp</value>
+		<value condition="!String.IsEmpty(Window(Home).property(favwidgetrefresh))">special://skin/extras/emptywidget.xsp</value>
+		<value condition="Window.IsActive(fullscreenvideo)">special://skin/extras/emptywidget.xsp</value>
+		<value />
+	</variable>
+	<variable name="widgetinfolabel-4570">
+		<value condition="String.Contains(Container(4570).ListItem.Property(DBTYPE), systeminfo)">$INFO[Container(4570).ListItem.label] $INFO[Container(4570).ListItem.label2]</value>
+		<value condition="!String.IsEmpty(Container(4570).ListItem.Title) + String.Contains(Container(4570).ListItem.FolderPath, pvr://)">$INFO[Container(4570).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4570).ListItem.Season) + !String.IsEmpty(Container(4570).ListItem.Episode) + !String.Contains(Container(4570).ListItem.TvShowTitle,Container(4570).ListItem.Title)">[UPPERCASE]S$INFO[Container(4570).ListItem.Season]E$INFO[Container(4570).ListItem.Episode]:[/UPPERCASE] $INFO[Container(4570).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4570).ListItem.Title)">$INFO[Container(4570).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4570).ListItem.Label)">$INFO[Container(4570).ListItem.Label]</value>
+	</variable>
+	<variable name="widgetsubtitle-4570">
+		<value condition="!String.IsEmpty(Container(4570).ListItem.TvShowTitle) + !String.IsEmpty(Container(4570).ListItem.Genre)">$INFO[Container(4570).ListItem.TvShowTitle,, • ]$INFO[Container(4570).ListItem.Year,, • ]$INFO[Container(4570).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4570).ListItem.TvShowTitle)">$INFO[Container(4570).ListItem.TvShowTitle,, • ]$INFO[Container(4570).ListItem.Premiered,, • ]$INFO[Container(4570).ListItem.Duration,,min.]</value>
+		<value condition="!String.IsEmpty(Container(4570).ListItem.Year)">$INFO[Container(4570).ListItem.Year,, • ]$INFO[Container(4570).ListItem.Duration,,min. • ]$INFO[Container(4570).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4570).ListItem.Artist) + !String.IsEmpty(Container(4570).ListItem.Album)">$INFO[Container(4570).ListItem.Artist,, • ]$INFO[Container(4570).ListItem.Album,, • ]$INFO[Container(4570).ListItem.Duration]</value>
+		<value condition="!String.IsEmpty(Container(4570).ListItem.Property(StartTime))">$INFO[Container(4570).ListItem.Property(ChannelName),, • ]$INFO[Container(4570).ListItem.Property(StartTime),, - ]$INFO[Container(4570).ListItem.Property(EndTime),, • ]$INFO[Container(4570).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4570).ListItem.StartTime)">$INFO[Container(4570).ListItem.ChannelName,, • ]$INFO[Container(4570).ListItem.StartTime,, - ]$INFO[Container(4570).ListItem.EndTime,, • ]$INFO[Container(4570).ListItem.Genre]</value>
+	</variable>
+	<variable name="4580-refresh">
+		<value condition="!String.IsEmpty(Window(Home).property(skinhelper-refreshvideowidgetsbusy))">special://skin/extras/emptywidget.xsp</value>
+		<value condition="!String.IsEmpty(Window(Home).property(favwidgetrefresh))">special://skin/extras/emptywidget.xsp</value>
+		<value condition="Window.IsActive(fullscreenvideo)">special://skin/extras/emptywidget.xsp</value>
+		<value />
+	</variable>
+	<variable name="widgetinfolabel-4580">
+		<value condition="String.Contains(Container(4580).ListItem.Property(DBTYPE), systeminfo)">$INFO[Container(4580).ListItem.label] $INFO[Container(4580).ListItem.label2]</value>
+		<value condition="!String.IsEmpty(Container(4580).ListItem.Title) + String.Contains(Container(4580).ListItem.FolderPath, pvr://)">$INFO[Container(4580).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4580).ListItem.Season) + !String.IsEmpty(Container(4580).ListItem.Episode) + !String.Contains(Container(4580).ListItem.TvShowTitle,Container(4580).ListItem.Title)">[UPPERCASE]S$INFO[Container(4580).ListItem.Season]E$INFO[Container(4580).ListItem.Episode]:[/UPPERCASE] $INFO[Container(4580).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4580).ListItem.Title)">$INFO[Container(4580).ListItem.Title]</value>
+		<value condition="!String.IsEmpty(Container(4580).ListItem.Label)">$INFO[Container(4580).ListItem.Label]</value>
+	</variable>
+	<variable name="widgetsubtitle-4580">
+		<value condition="!String.IsEmpty(Container(4580).ListItem.TvShowTitle) + !String.IsEmpty(Container(4580).ListItem.Genre)">$INFO[Container(4580).ListItem.TvShowTitle,, • ]$INFO[Container(4580).ListItem.Year,, • ]$INFO[Container(4580).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4580).ListItem.TvShowTitle)">$INFO[Container(4580).ListItem.TvShowTitle,, • ]$INFO[Container(4580).ListItem.Premiered,, • ]$INFO[Container(4580).ListItem.Duration,,min.]</value>
+		<value condition="!String.IsEmpty(Container(4580).ListItem.Year)">$INFO[Container(4580).ListItem.Year,, • ]$INFO[Container(4580).ListItem.Duration,,min. • ]$INFO[Container(4580).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4580).ListItem.Artist) + !String.IsEmpty(Container(4580).ListItem.Album)">$INFO[Container(4580).ListItem.Artist,, • ]$INFO[Container(4580).ListItem.Album,, • ]$INFO[Container(4580).ListItem.Duration]</value>
+		<value condition="!String.IsEmpty(Container(4580).ListItem.Property(StartTime))">$INFO[Container(4580).ListItem.Property(ChannelName),, • ]$INFO[Container(4580).ListItem.Property(StartTime),, - ]$INFO[Container(4580).ListItem.Property(EndTime),, • ]$INFO[Container(4580).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(4580).ListItem.StartTime)">$INFO[Container(4580).ListItem.ChannelName,, • ]$INFO[Container(4580).ListItem.StartTime,, - ]$INFO[Container(4580).ListItem.EndTime,, • ]$INFO[Container(4580).ListItem.Genre]</value>
+	</variable>
+	<variable name="widgetlabel-4">
+		<value condition="String.IsEqual(Skin.String(widgetvalue-tvshows),7)" />
+		<value condition="String.IsEqual(Skin.String(widgetvalue-tvshows),6)" />
+		<value condition="String.IsEqual(Skin.String(widgetvalue-tvshows),5)" />
+		<value condition="String.IsEqual(Skin.String(widgetvalue-tvshows),4)" />
+		<value condition="String.IsEqual(Skin.String(widgetvalue-tvshows),3)" />
+		<value condition="String.IsEqual(Skin.String(widgetvalue-tvshows),2)" />
+		<value condition="String.IsEqual(Skin.String(widgetvalue-tvshows),1)">Netflix Original Series</value>
+		<value>SyFy TV Shows</value>
+	</variable>
 	<variable name="5510-refresh">
 		<value condition="!String.IsEmpty(Window(Home).property(skinhelper-refreshvideowidgetsbusy))">special://skin/extras/emptywidget.xsp</value>
 		<value condition="!String.IsEmpty(Window(Home).property(favwidgetrefresh))">special://skin/extras/emptywidget.xsp</value>
 		<value condition="Window.isactive(fullscreenvideo)">special://skin/extras/emptywidget.xsp</value>
-		<value />
+		<value>special://skin/playlists/horrormovies.xsp</value>
 	</variable>
 	<variable name="widgetinfolabel-5510">
 		<value condition="String.Contains(Container(5510).ListItem.Property(DBTYPE), systeminfo)">$INFO[Container(5510).ListItem.label] $INFO[Container(5510).ListItem.label2]</value>
@@ -2175,8 +2575,8 @@
 		<value condition="String.IsEqual(Skin.String(widgetvalue-movies),5)" />
 		<value condition="String.IsEqual(Skin.String(widgetvalue-movies),4)" />
 		<value condition="String.IsEqual(Skin.String(widgetvalue-movies),3)" />
-		<value condition="String.IsEqual(Skin.String(widgetvalue-movies),2)" />
-		<value condition="String.IsEqual(Skin.String(widgetvalue-movies),1)" />
-		<value>Categories</value>
+		<value condition="String.IsEqual(Skin.String(widgetvalue-movies),2)">Categories</value>
+		<value condition="String.IsEqual(Skin.String(widgetvalue-movies),1)">My List</value>
+		<value>Horror Movies</value>
 	</variable>
 </includes>
