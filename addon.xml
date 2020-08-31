@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- BINGIE -->
-<addon id="skin.titan.bingie" version="1.0.3.mod" name="Titan BINGIE MOD" provider-name="cartman.dos, AchillesPunks ">
+<addon id="skin.titan.bingie" version="1.0.4.mod" name="Titan BINGIE MOD" provider-name="AchillesPunks, HugoL">
 	<requires>
 		<import version="5.14.0" addon="xbmc.gui"/>
 		<import addon="script.bingie.helper" version="1.0.0"/>
@@ -17,8 +17,8 @@
 		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">BINGIE... The new Titan skin for Kodi Leia.</summary>
-		<description>Titan is back for Kodi Leia with the new BINGIE layout!</description>
+		<summary lang="en_GB">BINGIE... The new Titan Bingie Mod Skin for Kodi Leia.</summary>
+		<description>Titan is back for Kodi Leia with the new BINGIE MOD layout!</description>
 		<platform>all</platform>
 		<license>GPL v2.0</license>
 		<forum>https://forum.kodi.tv/showthread.php?tid=334820</forum>
