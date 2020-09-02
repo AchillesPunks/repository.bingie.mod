@@ -91,7 +91,7 @@
 <!--SPOTLIGHT CLEARLOGO/TEXT/BUTTONS-->
                     <height>2000</height>
                     <include>BingieLeftDefs</include>
-                    <top>240</top>  <!--spotlight content improvements--> 
+                    <top>255</top>  <!--spotlight content improvements--> 
                     <orientation>vertical</orientation>
                     <usecontrolcoords>true</usecontrolcoords>
                     <itemgap>-40</itemgap> <!--spotlight content improvements-->
@@ -117,37 +117,37 @@
                         <label>[B]$VAR[BingieSpotlightTitle][/B]</label>
                     </control>
 					
-					<!-- Watch Now --> <!--spotlight content improvements-->
+	<!-- Watch Now --> <!--Spotlight Content-->
                     <control type="label">
                         <top>0</top>
-                        <height>100</height>
+                        <height>140</height>
                         <width max="800">auto</width>
                         <align>left</align>
                         <aligny>center</aligny>
-                        <font>Bold34</font>
+                        <font>Bold36</font>
 						<textcolor>white</textcolor>
                         <!-- <textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor> -->
-                        <label></label>
+                        <label>$VAR[BingieSpotlightSublabel]</label>
                     </control>
 					
-<!-- HOME SPOTLIGHT PLOT INFO -->
+	<!-- SPOTLIGHT Content Widget - PLOT -->
                     <control type="textbox">
                         <visible>Skin.HasSetting(ShowPlotInBingieSpotlight) | !$EXP[IsPlayingUnrecognizedContent]</visible>
                         <animation effect="fade" time="500">VisibleChange</animation>
                         <include>Default_Visible_Fade</include>
-						<top>10</top>
+						<top>0</top>
 						<height min="50" max="115">auto</height> <!--spotlight content improvements-->
                         <width max="720">auto</width>
                         <align>left</align>
                         <font>Reg28</font>
-                        <textcolor>white</textcolor>
-                        <shadowcolor>0</shadowcolor>
+                        <textcolor>white</textcolor> <!--spotlight content improvements-->
+                        <shadowcolor>FF000000</shadowcolor>
                         <label>$VAR[BingieSpotlightPlot]</label>
 					</control>
 					
                     <!-- Buttons -->
                     <include content="Spotlight_Buttons">
-                        <param name="top" value="70"/>  <!--spotlight content improvements-->
+                        <param name="top" value="60"/>  <!--spotlight content improvements-->
                     </include>
 				</control>
 
@@ -183,17 +183,17 @@
                         <include>SpotlightRowDetails</include>
                     </control>
 
-                    <!-- Sub-label -->
+                    <!-- Sublabel -->
                     <control type="label" id="90008">
                         <visible>!String.IsEmpty(Control.GetLabel(90008))</visible>
                         <visible>!$EXP[IsEpisodeDBType]</visible>
                         <include>Default_Visible_Fade</include>
                         <top>40</top>
 						<height>-5</height>
-                        <width max="835">auto</width>
+                        <width max="850">auto</width>
                         <align>left</align>
                         <aligny>center</aligny>
-                        <font>bold30</font>
+                        <font>bold29</font>
                         <textcolor>white</textcolor>
                         <label>$VAR[BingieSublabel]</label>
                     </control>
@@ -223,7 +223,7 @@
                             <align>left</align>
                             <aligny>center</aligny>
                             <font>Reg27</font>  <!-- font was too small-->
-                            <textcolor>$INFO[Skin.String(BingieSecondaryTextColor)]</textcolor>
+                            <textcolor>silver</textcolor>
                             <label>$VAR[BingieEpisodeInfoSubLabel]</label>
                         </control>
                         <!-- progress bar & remaining label -->
@@ -246,11 +246,11 @@
                                 <left>200</left>
                                 <height>25</height>
                                 <width>450</width>
-                                <font>Reg22</font>
-                                <textcolor>$INFO[Skin.String(BingieSecondaryTextColor)]</textcolor>
+                                <font>Reg26</font>
+                                <textcolor>ff8d8d8d</textcolor>
                                 <label>$VAR[PercentRemained,,% $LOCALIZE[31059]]</label>
                             </control>
-                         </control>
+                        </control>
                     </control>
 
                     <!-- Plot -->
@@ -260,10 +260,10 @@
                         <include condition="Skin.HasSetting(DisableBingieMoreDetails)">Alt_Bingie_Plot_Height</include>
 						<top>20</top>
 						<height min="50" max="74">auto</height>   <!--fix 3rd line of plot text slightly visible-->
-                        <width max="835">auto</width>                   <!-- default - 620 - -->
+                        <width max="850">auto</width>                   <!-- default - 620 - -->
                         <align>left</align>                            <!-- default - justify - -->
                         <font>Reg28</font>
-						<textcolor>$VAR[BingiePlotTextColor]</textcolor>
+						<textcolor>silver</textcolor>
                         <label>$VAR[BingiePlot]</label>
                     </control>
 
@@ -288,7 +288,7 @@
                 <include condition="$EXP[IsBingieListsActive]" content="top">
                     <param name="top" value="650" />
                 </include>
-                <top>605</top>
+                <top>605</top> <!--home widget height, affects spotlight widget in includesbingie-->
                 <include condition="Skin.HasSetting(EnableFixedFocusWidgets) + [Window.IsActive(Home) | [$EXP[IsBingieHubsActive] + Skin.HasSetting(LockHubWidgets)]]">Fixed_Focus_Bottom</include>
                 <bottom>0</bottom>
                 <include condition="Skin.HasSetting(EnableFixedFocusWidgets) + [Window.IsActive(Home) | [$EXP[IsBingieHubsActive] + Skin.HasSetting(LockHubWidgets)]]">Fixed_Focus_Itemgap</include>
@@ -328,7 +328,31 @@
                 <include condition="Skin.HasSetting(EnhancedHome_Circular)">Bingie_Right_Gradient</include>
                 <include condition="!Skin.HasSetting(EnhancedHome_Circular)">Bingie_Left_Gradient</include>
             </control>
-
+			
+			<control type="image">
+				<description>diffuse behind Netflix logo</description>
+				<left>1300</left>
+				<top>700</top>
+				<width>0</width>
+				<height>400</height>
+				<visible></visible>
+				<aspectratio align="left">keep</aspectratio>
+				<colordiffuse>d9000000</colordiffuse> <!--$VAR[BingiePanelColor]-->
+                <texture background="true">special://skin/extras/flat2.png</texture>
+				</control>
+				
+				<control type="image">
+				<description>Netflix logo</description>
+				<left>1600</left>
+				<top>895</top>
+				<width>0</width>
+				<height>165</height>
+				<visible></visible>
+				<aspectratio align="left">keep</aspectratio>
+				<texture>special://skin/extras/bingie_logo.png</texture>
+				<colordiffuse></colordiffuse>
+				</control>
+				
             <control type="scrollbar" id="317">
                 <visible>!Skin.HasSetting(EnableFixedFocusWidgets) + [Skin.HasSetting(EnableTouchSupport) | Skin.HasSetting(alwaysShowScrollbars)]</visible>
                 <width>15</width>

@@ -44,13 +44,14 @@
         </control>
     </include>
 
+<!-- Background Panel Color -->
     <include name="Dim_Overlay">
         <control type="group">
             <control type="image">
                 <include>FullscreenDimensions</include>
                 <visible>$PARAM[visibility]</visible>
-                <texture>diffuse/background.png</texture>
-                <colordiffuse>73000000</colordiffuse>
+                <texture>special://skin/extras/background.png</texture>
+                <colordiffuse>ff000000</colordiffuse>
                 <animation time="300" effect="fade" start="0" end="100" reversible="true" easing="inout">Visible</animation>
             </control>
         </control>

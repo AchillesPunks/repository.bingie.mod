@@ -31,13 +31,13 @@
             <control type="grouplist">
                 <width>1500</width>
                 <include>BingieLeftDefs</include>
-                <top>22</top>
+                <top>10</top>
                 <orientation>vertical</orientation>
                 <usecontrolcoords>true</usecontrolcoords>
                 <itemgap>10</itemgap>
                 <!-- Header -->
                 <include content="Bingie_Headline_Item">
-                    <param name="id" value="1170" />
+                    <param name="id" value="$PARAM[id]0" />
                     <param name="image" value="$VAR[BingieInfoClearlogo]" />
                     <param name="text" value="$VAR[BingieMainFallbackTitle]" />
                 </include>
@@ -45,30 +45,36 @@
                 <control type="group">
                     <width>1000</width>
                     <height>40</height>
+					<top>-8</top>
                     <include>Default_Visible_Fade</include>
                     <include>SpotlightRowDetails</include>
                 </control>
                 <!-- Sublabel -->
                 <control type="label" id="823">
+                    <visible>!Container.Content(episodes)</visible>
                     <visible>!String.IsEmpty(Control.GetLabel(823))</visible>
-                    <height>30</height>
-                    <width>800</width>
-                    <font>Reg28</font>
+                    <top>40</top>
+					<height>0</height>
+                    <width>820</width>
+                    <font>bold29</font> <!--to match netflix-->
                     <align>left</align>
-                    <aligny>center</aligny>
-                    <textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor>
+                    <aligny>center</aligny> 
+                    <textcolor>white</textcolor> <!--to match netflix-->
                     <label>$VAR[BingieSublabel]</label>
                     <include>Default_Visible_Fade</include>
                 </control>
                 <!-- Plot -->
                 <control type="textbox">
-                    <height min="50" max="138">auto</height>
-                    <width>650</width>
+                    <visible>!Container.Content(seasons)</visible>
+					<height min="50" max="74">auto</height>	<!--3 lines visible here-->										  
+                    <top>25</top>
+					<width>850</width>                               <!-- default - 650 -->
                     <textcolor>$VAR[BingiePlotTextColor]</textcolor>
-                    <align>justify</align>
-                    <font>Reg28</font>
-                    <label>$VAR[BingiePlot]</label>
+                    <align>left</align>                              <!-- justify -->
+                    <font>Reg28</font>					
+                    <label>$VAR[ViewsPlotWithOutline]</label>
                     <include>Default_Visible_Fade</include>
+					<scroll>false</scroll>
                 </control>
                 <!-- Additional Info -->
                 <include condition="!Skin.HasSetting(DisableBingieMoreDetails)" content="Bingie_Additional_Info">
@@ -236,8 +242,17 @@
                 <label>$LOCALIZE[31064]</label>
                 <visible>!Container(117).IsUpdating + !Integer.IsGreater(Container(117).NumItems,0)</visible>
             </control>
-                       
-<!-- Fixed Frame -->
+            <!-- Back Arrow -->
+            <control type="image">
+                <left>-60</left>
+                <top>95</top>
+                <width>60</width>
+                <height>85</height>
+                <texture background="true">bingie/back_arrow.png</texture>
+                <colordiffuse>$INFO[Skin.String(BingiePrimaryTextColor)]</colordiffuse>
+                <visible>Integer.IsGreater(Container(117).NumItems,0) | !Container(117).IsUpdating</visible>
+            </control>
+            <!-- Fixed Frame -->
             <include content="Bingie_Main_View_Fixed_Frame" condition="Skin.HasSetting(EnableFixedFrameWidgets)">
                 <param name="containerid" value="117" />
                 <param name="top" value="40" />

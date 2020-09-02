@@ -152,313 +152,313 @@
     <!-- ============= -->
         <font>
             <name>Light1</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 
 			<style>lighten</style>
             <size>1</size>
         </font>
 		<font>
             <name>Light10</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>10</size>
         </font>
         <font>
             <name>Light12</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>12</size>
         </font>
         <font>
             <name>Light13</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>13</size>
         </font>
         <font>
             <name>Light14</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 		<style>lighten</style>
             <size>14</size>
         </font>
         <font>
             <name>Light16</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>16</size>
         </font>
 		<font>
             <name>Light18</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>18</size>
         </font>
         <font>
             <name>Light20</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>20</size>
         </font>
 		<font>
             <name>Light22</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>22</size>
         </font>
 		<font>
             <name>Light24</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>24</size>
 		</font>
         <font>
             <name>Light25</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>25</size>
         </font>
         <font>
             <name>Light26</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>26</size>
         </font>
         <font>
             <name>Light27</name>
-            <filename>Netflix-sans-medium.ttf</filename>
-			<style>lighten</style>
+            <filename>Netflix-sans-light.ttf</filename>
+			
             <size>27</size>
         </font>
         <font>
             <name>Light28</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>28</size>
         </font>
         <font>
             <name>Light29</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>29</size>
         </font>
         <font>
             <name>Light30</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>30</size>
         </font>
         <font>
             <name>Light31</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>31</size>
         </font>
 	<!--Small-->
         <font>
             <name>Light32</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>32</size>
         </font>
         <font>
             <name>Light33</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>33</size>
         </font>
         <font>
             <name>Light34</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>34</size>
         </font>
         <font>
             <name>Light35</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>35</size>
         </font>
         <font>
             <name>Light36</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>36</size>
         </font>
         <font>
             <name>Light37</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>37</size>
         </font>
     <!--Medium-->
         <font>
             <name>Light38</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>38</size>
         </font>
         <font>
             <name>Light40</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>40</size>
         </font>
         <font>
             <name>Light41</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>41</size>
         </font>
         <font>
             <name>Light42</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>42</size>
         </font>
         <font>
             <name>Light44</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>44</size>
         </font>
     <!--Large-->
         <font>
             <name>Light45</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>45</size>
         </font>
         <font>
             <name>Light46</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>46</size>
         </font>
         <font>
             <name>Light48</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>48</size>
         </font>
         <font>
             <name>Light49</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>49</size>
         </font>
         <font>
             <name>Light50</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>50</size>
         </font>
         <font>
             <name>Light51</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>51</size>
         </font>
         <font>
             <name>Light52</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>52</size>
         </font>
         <font>
             <name>Light54</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>54</size>
         </font>
         <font>
             <name>Light56</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>56</size>
         </font>
         <font>
             <name>Light58</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>58</size>
         </font>
         <font>
             <name>Light60</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>60</size>
         </font>
         <font>
             <name>Light62</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>62</size>
         </font>
         <font>
             <name>Light64</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>64</size>
         </font>
         <font>
             <name>Light66</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>66</size>
         </font>
         <font>
             <name>Light68</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>68</size>
         </font>
         <font>
             <name>Light70</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>70</size>
         </font>
         <font>
             <name>Light72</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>72</size>
         </font>
         <font>
             <name>Light74</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>74</size>
         </font>
         <font>
             <name>Light75</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>75</size>
         </font>
         <font>
             <name>Light100</name>
             <!--Home-->
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>100</size>
         </font>
         <font>
             <name>Light150</name>
             <!--Home-->
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>150</size>
         </font>
         <font>
             <name>Light200</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>200</size>
         </font>
         <font>
             <name>Light270</name>
-            <filename>Netflix-sans-medium.ttf</filename>
+            <filename>Netflix-sans-light.ttf</filename>
 			<style>lighten</style>
             <size>270</size>
         </font>
@@ -551,9 +551,9 @@
         </font>
         <font>
             <name>Reg29</name>
-            <filename>Netflix-sans-bold.ttf</filename> <!--bold widget header-->
-			<style></style>
-            <size>30</size> <!--makes widget header font bigger w/o affecting other fonts--->
+            <filename>Netflix-sans-medium.ttf</filename> 
+			<style>lighten</style>
+            <size>30</size> 
         </font>
 		<font>
             <name>Reg30</name>
@@ -593,7 +593,7 @@
             <size>35</size>
         </font>
         <font>
-            <name>Reg36</name>
+            <name>Reg36</name>  <!--menu font-->
             <filename>Netflix-sans-medium.ttf</filename>
 			<style>lighten</style>
             <size>36</size>
@@ -824,8 +824,15 @@
             <size>22</size>
         </font>
 		<font>
-            <name>Bold24</name>
+            <name>Bold23</name> <!--powermenu focus font-->
             <filename>Netflix-sans-Bold.ttf</filename>
+			<style>bold lighten</style>
+            <size>22</size>
+        </font>
+		<font>
+            <name>Bold24</name> 
+            <filename>Netflix-sans-Bold.ttf</filename>
+			<style>bold lighten</style>
             <size>24</size>
 		</font>
         <font>
@@ -849,18 +856,21 @@
             <size>28</size>
         </font>
         <font>
-            <name>Bold29</name>
-            <filename>Netflix-sans-Bold.ttf</filename>
-			<size>29</size>
+            <name>Bold29</name> <!--sublabel plot-->
+            <filename>Netflix-sans-Medium.ttf</filename>
+			<style>bold</style>
+			<size>28</size>
         </font>
         <font>
-            <name>Bold30</name>
+            <name>Bold30</name>  
             <filename>Netflix-sans-Bold.ttf</filename>
+			<style>bold lighten</style>
             <size>30</size>
         </font>
         <font>
-            <name>Bold31</name>
+            <name>Bold31</name>  <!--widget header-->
             <filename>Netflix-sans-Bold.ttf</filename>
+			<style>lighten</style>
             <size>31</size>
         </font>
 	<!--Small-->
@@ -870,18 +880,21 @@
             <size>32</size>
         </font>
         <font>
-            <name>Bold33</name>
-            <filename>Netflix-sans-Bold.ttf</filename>
+            <name>Bold33</name> <!--Watch season xx home spotlight content widget-->
+            <filename>Netflix-sans-medium.ttf</filename>
+			<style>bold</style>
             <size>33</size>
         </font>
         <font>
-            <name>Bold34</name>
+            <name>Bold34</name> <!--Sideblade Menu focus font-->
             <filename>Netflix-sans-Bold.ttf</filename>
+			<style>bold lighten</style>
             <size>34</size>
         </font>
         <font>
-            <name>Bold35</name>
+            <name>Bold35</name> 
             <filename>Netflix-sans-Bold.ttf</filename>
+			<style>bold lighten</style>
             <size>35</size>
         </font>
         <font>
@@ -2073,6 +2086,12 @@
 		<font>
             <name>Bold22</name>
             <filename>Bold-new.ttf</filename>
+            <size>22</size>
+        </font>
+		<font>
+            <name>Bold23</name> <!--powermenu focus font-->
+            <filename>Bold-new.ttf</filename>
+			
             <size>22</size>
         </font>
 		<font>

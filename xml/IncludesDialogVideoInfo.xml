@@ -595,7 +595,7 @@
 								<width>1150</width>
 								<height>278</height>
 								<label>$VAR[Plots]</label>
-								<textcolor>$VAR[BingiePlotTextColor]</textcolor>
+								<textcolor>silver</textcolor>
 								<shadowcolor></shadowcolor>
 								<align>left</align>
 								<font>Reg28</font>
@@ -1553,7 +1553,7 @@
 				<control type="grouplist">
 					<visible>!Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 					<include>BingieLeftDefs</include>
-					<top>22</top>
+					<top>10</top>
 					<width>1200</width>
 					<usecontrolcoords>true</usecontrolcoords>
 					<orientation>vertical</orientation>
@@ -1593,7 +1593,7 @@
 						<width>850</width>
 						<top>25</top>
 						<height min="80" max="80">auto</height>
-						<textcolor>$VAR[BingiePlotTextColor]</textcolor>
+						<textcolor>silver</textcolor>
 						<shadowcolor></shadowcolor>
 						<align>left</align>
 						<font>Reg28</font>
@@ -2175,7 +2175,7 @@
 						<width>100%</width>
 						<height min="170" max="357">auto</height>
 						<label>$INFO[ListItem.Plot]</label>
-						<textcolor>$VAR[BingiePlotTextColor]</textcolor>
+						<textcolor>silver</textcolor>
 						
 						<align>left</align>
 						<font>Reg28</font>
@@ -2578,7 +2578,7 @@
             <font>Reg26</font>
             <align>left</align>
             <label>$PARAM[label]</label>
-            <textcolor>darkgray</textcolor>
+            <textcolor>ff8d8d8d</textcolor>
             <scroll>false</scroll>
         </control>
     </include>
@@ -2598,7 +2598,7 @@
         <height>65</height>
         <aligny>center</aligny>
         <align>left</align>
-        <font>Reg31</font>  <!--better size for these buttons-->
+        <font>Reg32</font>  <!--better size for these buttons-->
         <textoffsetx>55</textoffsetx>
         <textoffsety>8</textoffsety>
 		<textcolor>silver</textcolor>
@@ -2615,10 +2615,10 @@
 	</include>
 
     <include name="Bingie_InfoDialog_Button_Texture">
-        <textureradioonfocus colordiffuse="$INFO[Skin.String(ViewDetailsTextColor)]">$PARAM[radiotexture]</textureradioonfocus>
-        <textureradioofffocus colordiffuse="$INFO[Skin.String(ViewDetailsTextColor)]">$PARAM[radiotexture]</textureradioofffocus>
-        <textureradioonnofocus colordiffuse="$VAR[BingieInfoDialogButtonsTextColor]">$PARAM[radiotexture]</textureradioonnofocus>
-        <textureradiooffnofocus colordiffuse="$VAR[BingieInfoDialogButtonsTextColor]">$PARAM[radiotexture]</textureradiooffnofocus>
+        <textureradioonfocus colordiffuse="white">$PARAM[radiotexture]</textureradioonfocus>
+        <textureradioofffocus colordiffuse="white">$PARAM[radiotexture]</textureradioofffocus>
+        <textureradioonnofocus colordiffuse="silver">$PARAM[radiotexture]</textureradioonnofocus>
+        <textureradiooffnofocus colordiffuse="silver">$PARAM[radiotexture]</textureradiooffnofocus>
     </include>
 
     <include name="Fade_Rate_Button">

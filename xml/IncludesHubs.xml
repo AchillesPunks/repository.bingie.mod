@@ -28,12 +28,12 @@
             <include content="Hub_Widget_Label">
                 <param name="widgetid" value="$PARAM[widgetid]" />
                 <param name="visibility" value="String.IsEmpty(Container($PARAM[widgetid]).ListItem.Property(similartitle)) + String.IsEmpty(Container($PARAM[widgetid]).ListItem.Property(genretitle))" />
-                <param name="label" value="[B]$INFO[Skin.String($PARAM[skinsetting].label)][/B]" />
+                <param name="label" value="$INFO[Skin.String($PARAM[skinsetting].label)]" />
             </include>
             <include content="Hub_Widget_Label">
                 <param name="widgetid" value="$PARAM[widgetid]" />
                 <param name="visibility" value="!String.IsEmpty(Container($PARAM[widgetid]).ListItem.Property(similartitle)) | !String.IsEmpty(Container($PARAM[widgetid]).ListItem.Property(genretitle))" />
-                <param name="label" value="[B]$INFO[Container($PARAM[widgetid]).ListItem.Property(similartitle),$LOCALIZE[31543] ,]$INFO[Container($PARAM[widgetid]).ListItem.Property(genretitle)][/B]" />
+                <param name="label" value="$INFO[Container($PARAM[widgetid]).ListItem.Property(similartitle),$LOCALIZE[31543] ,]$INFO[Container($PARAM[widgetid]).ListItem.Property(genretitle)]" />
             </include>
             <!-- spinner -->
             <control type="multiimage">
@@ -353,7 +353,7 @@
             <visible>$PARAM[visibility]</visible>
             <height>96%</height>
             <width>99%</width>
-            <font>Reg29</font>
+            <font>Bold31</font>
             <include condition="Skin.HasSetting(WidgetAlignRight)">widget_header_rightalign</include>
             <include condition="!Skin.HasSetting(WidgetAlignRight)">widget_header_leftalign</include>
             <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -435,12 +435,12 @@
                 <visible>Integer.IsGreater(Container(1510).NumItems,0)</visible>
                 <height>40</height>
                 <width>96%</width>
-                <font>Reg29</font>
+                <font>Bold31</font>
                 <aligny>center</aligny>
                 <align>left</align>
                 <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                 <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
-                <label>[B]$PARAM[label][/B]</label>
+                <label>$PARAM[label]</label>
             </control>
         </definition>
     </include>
@@ -460,7 +460,7 @@
                 <texturefocus/>
                 <height>80</height>
                 <width>99%</width>
-                <font>Reg29</font>
+                <font>Bold31</font>
                 <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                 <focusedcolor>$INFO[Skin.String(ViewDetailsTextColor)]</focusedcolor>
                 <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
@@ -593,7 +593,7 @@
             <include condition="!Skin.HasSetting(EnhancedHome_Circular)">No_Circular_Slide_Animation</include>
             <height>45</height>
             <width>99%</width>
-            <font>Reg29</font>
+            <font>Bold31</font>
             <include condition="Skin.HasSetting(WidgetAlignRight)">widget_header_rightalign</include>
             <include condition="!Skin.HasSetting(WidgetAlignRight)">widget_header_leftalign</include>
             <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>

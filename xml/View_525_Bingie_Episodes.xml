@@ -215,7 +215,7 @@
             <aligny>center</aligny>
             <align>left</align>
             <font>Reg32</font>
-            <textcolor>$INFO[Skin.String(BingiePrimaryTextColor)]</textcolor>
+            <textcolor>silver</textcolor>
             <label>$INFO[ListItem.Label]</label>
         </control>
         <!-- x Episodes label -->
@@ -227,7 +227,7 @@
             <aligny>center</aligny>
             <align>right</align>
             <font>Reg28</font>
-            <textcolor>$INFO[Skin.String(BingieSecondaryTextColor)]</textcolor>
+            <textcolor>ff8d8d8d</textcolor>
             <label>[LOWERCASE]$VAR[View525TotalEpisodes][/LOWERCASE]</label>
         </control>
     </include>
@@ -248,8 +248,8 @@
                 <height>35</height>
                 <align>left</align>
                 <font>Reg30</font>
-                <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
-                <selectedcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</selectedcolor>
+                <textcolor>white</textcolor>
+                <selectedcolor>white</selectedcolor>
                 <label>[B]$VAR[View525MainLabel][/B]</label>
                 <scroll>false</scroll>
             </control>
@@ -261,8 +261,8 @@
                 <height>30</height>
                 <align>left</align>
                 <font>Reg20</font>
-                <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
-                <selectedcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</selectedcolor>
+                <textcolor>white</textcolor>
+                <selectedcolor>white</selectedcolor>
                 <label>$VAR[View525SubLabel]</label>
             </control>
             <!-- plot -->
@@ -270,11 +270,11 @@
                 <visible>Container(525).Content(episodes)</visible>
                 <width>565</width>
                 <top>80</top>
-                <height max="128">auto</height>
+                <height max="132">auto</height>
                 <align>left</align>
                 <font>Reg26</font>
-                <textcolor>$INFO[Skin.String(BingiePrimaryTextColor)]</textcolor>
-                <selectedcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</selectedcolor>
+                <textcolor>silver</textcolor>
+                <selectedcolor>white</selectedcolor>
                 <label>$VAR[ViewsPlotWithOutline]</label>
                 <autoscroll delay="8000" time="6000" repeat="2000">!Skin.HasSetting(DisablePlotAutoScroll) + Control.HasFocus(525)</autoscroll>
             </control>
@@ -286,8 +286,8 @@
                 <height>35</height>
                 <align>left</align>
                 <font>Reg26</font>
-                <textcolor>$INFO[Skin.String(BingieSecondaryTextColor)]</textcolor>
-                <selectedcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</selectedcolor>
+                <textcolor>ff8d8d8d</textcolor>
+                <selectedcolor>white</selectedcolor>
                 <label>$INFO[ListItem.Duration(mins),(,m)]</label>
             </control>
         </control>
@@ -313,8 +313,8 @@
                 <height>35</height>
                 <width>auto</width>
                 <aligny>center</aligny>
-                <font>Reg22</font>
-                <textcolor>$INFO[Skin.String(BingiePrimaryTextColor)]</textcolor>
+                <font>Reg26</font>
+                <textcolor>ff8d8d8d</textcolor>
                 <label>$VAR[GetYear]</label>
                 <include>Default_Visible_Fade</include>
             </control>
@@ -329,8 +329,8 @@
                 <label>$VAR[View525TotalSeasons]</label>
                 <height>35</height>
                 <aligny>center</aligny>
-                <textcolor>$INFO[Skin.String(BingiePrimaryTextColor)]</textcolor>
-                <font>Reg22</font>
+                <textcolor>ff8d8d8d</textcolor>
+                <font>Reg26</font>
                 <include>Default_Visible_Fade</include>
             </control>
 
@@ -350,8 +350,8 @@
                     <height>100%</height>
                     <aligny>center</aligny>
                     <align>center</align>
-                    <textcolor>$INFO[Skin.String(BingiePrimaryTextColor)]</textcolor>
-                    <font>Reg22</font>
+                    <textcolor>ff8d8d8d</textcolor>
+                    <font>Reg26</font>
                     <scroll>false</scroll>
                     <label>$INFO[Window(Home).Property(SkinHelper.ListItem.Status)]</label>
                 </control>
@@ -455,9 +455,9 @@
                     <font>Reg48</font>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+                    <textcolor>white</textcolor>
                     <label>[B]$VAR[TVShowTitle][/B]</label>
-                    <shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+                    <shadowcolor></shadowcolor>
                 </control>
 
                 <!-- row details -->
@@ -518,7 +518,7 @@
                             <aligny>center</aligny>
                             <align>left</align>
                             <font>Reg32</font>
-                            <textcolor>$INFO[Skin.String(BingiePrimaryTextColor)]</textcolor>
+                            <textcolor>silver</textcolor>
                             <label>$VAR[View525CurrentSeason]</label>
                         </control>
                         <!-- Episode x label -->
@@ -530,7 +530,7 @@
                             <aligny>center</aligny>
                             <align>right</align>
                             <font>Reg28</font>
-                            <textcolor>$INFO[Skin.String(BingieSecondaryTextColor)]</textcolor>
+                            <textcolor>ff8d8d8d</textcolor>
                             <label>$VAR[View525TotalEpisodes,[LOWERCASE],[/LOWERCASE]]</label>
                         </control>
                     </control>
@@ -569,7 +569,7 @@
                                 <aligny>center</aligny>
                                 <align>left</align>
                                 <font>Reg32</font>
-                                <textcolor>$INFO[Skin.String(BingiePrimaryTextColor)]</textcolor>
+                                <textcolor>silver</textcolor>
                                 <label>$INFO[ListItem.Label]</label>
                             </control>
                         </itemlayout>
@@ -595,7 +595,7 @@
                                 <aligny>center</aligny>
                                 <align>left</align>
                                 <font>Reg32</font>
-                                <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                                <textcolor>white</textcolor>
                                 <label>$INFO[ListItem.Label]</label>
                             </control>
                             <!-- x Episodes label -->
@@ -607,7 +607,7 @@
                                 <aligny>center</aligny>
                                 <align>right</align>
                                 <font>Reg28</font>
-                                <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                                <textcolor>white</textcolor>
                                 <label>[LOWERCASE]$VAR[View525TotalEpisodes][/LOWERCASE]</label>
                             </control>
                             <!-- bingie button border -->
@@ -629,7 +629,7 @@
                                 <aligny>center</aligny>
                                 <align>left</align>
                                 <font>Reg32</font>
-                                <textcolor>$INFO[Skin.String(BingiePrimaryTextColor)]</textcolor>
+                                <textcolor>silver</textcolor>
                                 <label>$INFO[ListItem.Label]</label>
                             </control>
                             <!-- x Episodes label -->
@@ -641,7 +641,7 @@
                                 <aligny>center</aligny>
                                 <align>right</align>
                                 <font>Reg28</font>
-                                <textcolor>$INFO[Skin.String(BingieSecondaryTextColor)]</textcolor>
+                                <textcolor>ff8d8d8d</textcolor>
                                 <label>[LOWERCASE]$VAR[View525TotalEpisodes][/LOWERCASE]</label>
                             </control>
                         </focusedlayout>

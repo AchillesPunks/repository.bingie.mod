@@ -1713,7 +1713,7 @@
                 <align>left</align>
                 <aligny>top</aligny>
                 <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
-                <label>[B]$INFO[Container($PARAM[widgetid]).ListItem.Property(similartitle),$LOCALIZE[31543] ,]$INFO[Container($PARAM[widgetid]).ListItem.Property(genretitle)][/B]</label>
+                <label>$INFO[Container($PARAM[widgetid]).ListItem.Property(similartitle),$LOCALIZE[31543] ,]$INFO[Container($PARAM[widgetid]).ListItem.Property(genretitle)]</label>
                 <visible>!String.IsEmpty(Container($PARAM[widgetid]).ListItem.Property(similartitle)) | !String.IsEmpty(Container($PARAM[widgetid]).ListItem.Property(genretitle))</visible>
             </control>
             <control type="multiimage" id="$PARAM[widgetid]7">
@@ -2696,7 +2696,7 @@
 				<textcolor>white</textcolor>
                 <!-- <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor> -->
                 <!-- <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor> -->
-                <label>[B]$LOCALIZE[31185][/B]</label>
+                <label>$LOCALIZE[31185]</label>
             </control>
             <control type="image">
                 <left>2</left>
