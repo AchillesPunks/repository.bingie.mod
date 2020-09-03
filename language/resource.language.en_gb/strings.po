@@ -1,5 +1,5 @@
 # Kodi Media Center language file
-# Addon Name: Titan Bingie
+# Addon Name: Titan Bingie mod
 # Addon id: skin.titan.bingie
 # Addon Provider: cartmandos, marcelveldt
 msgid ""
@@ -16,7 +16,7 @@ msgstr ""
 "Language: en_GB\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-# BINGIE Strings
+# BINGIE MOD Strings
 
 msgctxt "#31001"
 msgid "Other settings"
@@ -39,7 +39,7 @@ msgid "General skin settings"
 msgstr ""
 
 msgctxt "#31006"
-msgid "Disable Media/Codec Info in Bingie Views"
+msgid "Disable Media/Codec Info in Bingie mod Views"
 msgstr ""
 
 msgctxt "#31007"
@@ -47,7 +47,7 @@ msgid "NEW EPISODES"
 msgstr ""
 
 msgctxt "#31008"
-msgid "Bingie New Episodes Tag Panel Color"
+msgid "Bingie mod New Episodes Tag Panel Color"
 msgstr ""
 
 msgctxt "#31009"
@@ -83,11 +83,11 @@ msgid "--- Use own image for tile"
 msgstr ""
 
 msgctxt "#31017"
-msgid "Enable Bingie Video OSD Layout"
+msgid "Enable Bingie mod Video OSD Layout"
 msgstr ""
 
 msgctxt "#31018"
-msgid "Bingie Main Landscape"
+msgid "Bingie mod Main Landscape"
 msgstr ""
 
 msgctxt "#31019"
@@ -115,7 +115,7 @@ msgid "Force Stop Playback when not in Fullscreen Mode (exc. Live TV)"
 msgstr ""
 
 msgctxt "#31025"
-msgid "Categories"
+msgid "[COLOR red]N[/COLOR] Categories"
 msgstr ""
 
 msgctxt "#31026"
@@ -123,7 +123,7 @@ msgid "Search for Addons"
 msgstr ""
 
 msgctxt "#31027"
-msgid "Bingie Main Poster"
+msgid "Bingie mod Main Poster"
 msgstr ""
 
 msgctxt "#31028"
@@ -155,11 +155,11 @@ msgid "items total"
 msgstr ""
 
 msgctxt "#31035"
-msgid "Movies in progress"
+msgid "[COLOR red]N[/COLOR]  Movies in progress"
 msgstr ""
 
 msgctxt "#31036"
-msgid "Random TV Shows"
+msgid "[COLOR red]N[/COLOR]  Random TV Shows"
 msgstr ""
 
 msgctxt "#31037"
@@ -199,19 +199,19 @@ msgid "Use Alternative Splash Image"
 msgstr ""
 
 msgctxt "#31046"
-msgid "Anime"
+msgid "[COLOR red]N[/COLOR] Anime"
 msgstr ""
 
 msgctxt "#31047"
-msgid "Romantic Movies"
+msgid "[COLOR red]N[/COLOR]  Romantic Movies"
 msgstr ""
 
 msgctxt "#31048"
-msgid "Horror Movies"
+msgid "[COLOR red]N[/COLOR]  Horror Movies"
 msgstr ""
 
 msgctxt "#31049"
-msgid "Music & Musicals"
+msgid "[COLOR red]N[/COLOR]  Music & Musicals"
 msgstr ""
 
 msgctxt "#31050"
@@ -223,7 +223,7 @@ msgid "All TV Shows"
 msgstr ""
 
 msgctxt "#31052"
-msgid "Bingie Slim-Menu Panel Color"
+msgid "Bingie mod Slim-Menu Panel Color"
 msgstr ""
 
 msgctxt "#31053"
@@ -319,7 +319,7 @@ msgid "Enable Splash Animation in 4k"
 msgstr ""
 
 msgctxt "#31076"
-msgid "British Series"
+msgid "[COLOR red]N[/COLOR]  British Series"
 msgstr ""
 
 msgctxt "#31077"
@@ -327,15 +327,15 @@ msgid "DOWN"
 msgstr ""
 
 msgctxt "#31078"
-msgid "Blockbuster Movies"
+msgid "[COLOR red]N[/COLOR]  Blockbuster Movies"
 msgstr ""
 
 msgctxt "#31079"
-msgid "Binge-worthy TV Shows"
+msgid "[COLOR red]N[/COLOR]  Worthy TV Shows"
 msgstr ""
 
 msgctxt "#31080"
-msgid "New Releases in Movies"
+msgid "[COLOR red]N[/COLOR]  New Releases in Movies"
 msgstr ""
 
 msgctxt "#31081"
@@ -383,7 +383,7 @@ msgid "Mediabrowser"
 msgstr ""
 
 msgctxt "#31092"
-msgid "Unwatched Episodes"
+msgid "[COLOR red]N[/COLOR] Unwatched Episodes"
 msgstr ""
 
 msgctxt "#31093"
@@ -407,7 +407,7 @@ msgid "Extended"
 msgstr ""
 
 msgctxt "#31098"
-msgid "Critically-acclaimed TV Shows"
+msgid "[COLOR red]N[/COLOR]  Critically-acclaimed TV Shows"
 msgstr ""
 
 msgctxt "#31099"
@@ -415,47 +415,47 @@ msgid "Enable Automatic Download of Artwork During Library Scan"
 msgstr ""
 
 msgctxt "#31100"
-msgid "Bingie"
+msgid "Bingie mod"
 msgstr ""
 
 msgctxt "#31101"
-msgid "Recently Added Series"
+msgid "[COLOR red]N[/COLOR]  Recently Added Series"
 msgstr ""
 
 msgctxt "#31102"
-msgid "Random Movies"
+msgid "[COLOR red]N[/COLOR]  Random Movies"
 msgstr ""
 
 msgctxt "#31103"
-msgid "Random episodes"
+msgid "[COLOR red]N[/COLOR]  Random episodes"
 msgstr ""
 
 msgctxt "#31104"
-msgid "In progress episodes"
+msgid "[COLOR red]N[/COLOR]  In progress episodes"
 msgstr ""
 
 msgctxt "#31105"
-msgid "Recently added episodes"
+msgid "[COLOR red]N[/COLOR]  Recently added episodes"
 msgstr ""
 
 msgctxt "#31106"
-msgid "Recently added songs"
+msgid "[COLOR red]N[/COLOR]  Recently added songs"
 msgstr ""
 
 msgctxt "#31107"
-msgid "Recently added albums"
+msgid "[COLOR red]N[/COLOR]  Recently added albums"
 msgstr ""
 
 msgctxt "#31108"
-msgid "Random albums"
+msgid "[COLOR red]N[/COLOR]  Random albums"
 msgstr ""
 
 msgctxt "#31109"
-msgid "Random artists"
+msgid "[COLOR red]N[/COLOR]  Random artists"
 msgstr ""
 
 msgctxt "#31110"
-msgid "Recently played music"
+msgid "[COLOR red]N[/COLOR]  Recently played music"
 msgstr ""
 
 msgctxt "#31111"
@@ -523,23 +523,23 @@ msgid "Use vertical submenu layout (instead of default horizontal)"
 msgstr ""
 
 msgctxt "#31127"
-msgid "Recently added"
+msgid "[COLOR red]N[/COLOR]  Recently added"
 msgstr ""
 
 msgctxt "#31128"
-msgid "Recently played"
+msgid "[COLOR red]N[/COLOR]  Recently played"
 msgstr ""
 
 msgctxt "#31129"
-msgid "My TV Shows"
+msgid "[COLOR red]N[/COLOR]  My TV Shows"
 msgstr ""
 
 msgctxt "#31130"
-msgid "My movies"
+msgid "[COLOR red]N[/COLOR]  My movies"
 msgstr ""
 
 msgctxt "#31131"
-msgid "Suggestions"
+msgid "[COLOR red]N[/COLOR]  Suggestions"
 msgstr ""
 
 msgctxt "#31132"
@@ -643,7 +643,7 @@ msgid "Amazon Original Series"
 msgstr ""
 
 msgctxt "#31157"
-msgid "Comedy Movies"
+msgid "[COLOR red]N[/COLOR]  Comedy Movies"
 msgstr ""
 
 msgctxt "#31158"
@@ -651,27 +651,27 @@ msgid "Disney & Pixar Films"
 msgstr ""
 
 msgctxt "#31159"
-msgid "Documentaries"
+msgid "[COLOR red]N[/COLOR]  Documentaries"
 msgstr ""
 
 msgctxt "#31160"
-msgid "Docuseries"
+msgid "[COLOR red]N[/COLOR]  Docuseries"
 msgstr ""
 
 msgctxt "#31161"
-msgid "European Movies"
+msgid "[COLOR red]N[/COLOR]  European Movies"
 msgstr ""
 
 msgctxt "#31162"
-msgid "Adventure & Fantasy Movies"
+msgid "[COLOR red]N[/COLOR]  Adventure & Fantasy Movies"
 msgstr ""
 
 msgctxt "#31163"
-msgid "Adventure & Fantasy Series"
+msgid "[COLOR red]N[/COLOR]  Adventure & Fantasy Series"
 msgstr ""
 
 msgctxt "#31164"
-msgid "Action & Crime Series"
+msgid "[COLOR red]N[/COLOR]  Action & Crime Series"
 msgstr ""
 
 msgctxt "#31165"
@@ -739,11 +739,11 @@ msgid "Focus color"
 msgstr ""
 
 msgctxt "#31181"
-msgid "Netflix Original Series"
+msgid "[COLOR red]N[/COLOR]  Original Series"
 msgstr ""
 
 msgctxt "#31182"
-msgid "Netflix Original Movies"
+msgid "[COLOR red]N[/COLOR]  Original Movies"
 msgstr ""
 
 msgctxt "#31183"
@@ -763,7 +763,7 @@ msgid "Do not show OSD on playback start"
 msgstr ""
 
 msgctxt "#31187"
-msgid "Food & Travel"
+msgid "[COLOR red]N[/COLOR]  Food & Travel"
 msgstr ""
 
 msgctxt "#31188"
@@ -771,7 +771,7 @@ msgid "HBO Shows"
 msgstr ""
 
 msgctxt "#31189"
-msgid "History & War Movies"
+msgid "[COLOR red]N[/COLOR]  History & War Movies"
 msgstr ""
 
 msgctxt "#31190"
@@ -783,15 +783,15 @@ msgid "Marvel TV Shows"
 msgstr ""
 
 msgctxt "#31192"
-msgid "Reality TV"
+msgid "[COLOR red]N[/COLOR]  Reality TV"
 msgstr ""
 
 msgctxt "#31193"
-msgid "Stand-Up Comedy"
+msgid "[COLOR red]N[/COLOR]  Stand-Up Comedy"
 msgstr ""
 
 msgctxt "#31194"
-msgid "Science Fiction Movies"
+msgid "[COLOR red]N[/COLOR]  Science Fiction Movies"
 msgstr ""
 
 msgctxt "#31195"
@@ -799,11 +799,11 @@ msgid "SyFy Series"
 msgstr ""
 
 msgctxt "#31196"
-msgid "Thriller & Suspense Movies"
+msgid "[COLOR red]N[/COLOR]  Thriller & Suspense Movies"
 msgstr ""
 
 msgctxt "#31197"
-msgid "Thriller & Suspense Series"
+msgid "[COLOR red]N[/COLOR]  Thriller & Suspense Series"
 msgstr ""
 
 msgctxt "#31198"
@@ -1203,7 +1203,7 @@ msgid "Time to show each fanart image (in seconds)"
 msgstr ""
 
 msgctxt "#31297"
-msgid "Unwatched movies"
+msgid "[COLOR red]N[/COLOR] Unwatched movies"
 msgstr ""
 
 msgctxt "#31298"
@@ -1527,7 +1527,7 @@ msgid "This setting is experimental.[CR]Note that when enabled all widgets will 
 msgstr ""
 
 msgctxt "#31378"
-msgid "Use Bingie Video Info Dialog"
+msgid "Use Bingie mod Video Info Dialog"
 msgstr ""
 
 msgctxt "#31379"
@@ -1555,7 +1555,7 @@ msgid "Set Content"
 msgstr ""
 
 msgctxt "#31385"
-msgid "Recommended TV Shows"
+msgid "[COLOR red]N[/COLOR]  Recommended TV Shows"
 msgstr ""
 
 msgctxt "#31386"
@@ -1563,14 +1563,14 @@ msgid "Use 'Options' text instead of arrow indicator"
 msgstr ""
 
 msgctxt "#31387"
-msgid "Welcome to BINGIE !"
+msgid "Welcome to BINGIE MOD !"
 msgstr ""
 
 msgctxt "#31388"
 msgid ""
 "The new Titan skin for Kodi Leia."
 "[CR]This skin has many different layouts to choose from, let us start with the "
-"BINGIE main layout. This layout is designed to simulate Netflix user experience "
+"BINGIE MOD main layout. This layout is designed to simulate Netflix user experience "
 "for TV.[CR]In "
 "order to get everything running as it should, it's recommended to set the "
 "following Kodi options:[CR][CR][COLOR e656da62]    - Disable mouse[CR]    - Hide "
@@ -1605,7 +1605,7 @@ msgid "Unlock Hubs now"
 msgstr ""
 
 msgctxt "#31395"
-msgid "With Bingie you can have all of your Kodi and library content in one place, through the use of widgets.[CR][CR]"
+msgid "With Bingie mod you can have all of your Kodi and library content in one place, through the use of widgets.[CR][CR]"
 "Home widgets can be configured from:[CR]"
 "[COLOR gray]    - Skin Settings -> Configure Shortcuts tab -> Edit Menu Shortcuts[/COLOR][CR][CR]"
 "There are also Hubs for Movies, TV Shows, New and you can add your own.[CR]"
@@ -1678,11 +1678,11 @@ msgid "[B]Live-TV[/B][CR][CR]Configure PVR settings"
 msgstr ""
 
 msgctxt "#31411"
-msgid "Bingie Info Dialog Icon Color"
+msgid "Bingie mod Info Dialog Icon Color"
 msgstr ""
 
 msgctxt "#31412"
-msgid "Bingie Sublabel Text Color"
+msgid "Bingie mod Sublabel Text Color"
 msgstr ""
 
 msgctxt "#31413"
@@ -1694,7 +1694,7 @@ msgid "Disable Moving Frame for Buttons"
 msgstr ""
 
 msgctxt "#31415"
-msgid "Bingie Search Settings"
+msgid "Bingie mod Search Settings"
 msgstr ""
 
 msgctxt "#31416"
@@ -2162,7 +2162,7 @@ msgid "Smart shortcuts"
 msgstr ""
 
 msgctxt "#31532"
-msgid "Critically-acclaimed Movies"
+msgid "[COLOR red]N[/COLOR]  Critically-acclaimed Movies"
 msgstr ""
 
 msgctxt "#31533"
@@ -2170,19 +2170,19 @@ msgid "Marvel Movies"
 msgstr ""
 
 msgctxt "#31534"
-msgid "My List"
+msgid "My  List"
 msgstr ""
 
 msgctxt "#31535"
-msgid "Continue watching"
+msgid "[COLOR red]N[/COLOR]  Continue watching"
 msgstr ""
 
 msgctxt "#31536"
-msgid "Action & Crime Movies"
+msgid "[COLOR red]N[/COLOR]  Action & Crime Movies"
 msgstr ""
 
 msgctxt "#31537"
-msgid "Kids & Family Movies"
+msgid "[COLOR red]N[/COLOR]  Kids & Family Movies"
 msgstr ""
 
 msgctxt "#31538"
@@ -2206,15 +2206,15 @@ msgid "Export this theme to file"
 msgstr ""
 
 msgctxt "#31543"
-msgid "Because you watched"
+msgid "[COLOR res]N[/COLOR] Because you watched"
 msgstr ""
 
 msgctxt "#31544"
-msgid "BINGIE - Netflix Style Layout"
+msgid "BINGIE MOD - Netflix Style Layout"
 msgstr ""
 
 msgctxt "#31545"
-msgid "Because you watched"
+msgid "[COLOR res]N[/COLOR] Because you watched"
 msgstr ""
 
 msgctxt "#31546"
@@ -2282,11 +2282,11 @@ msgid "Open/Focus submenu at click on mainmenu item"
 msgstr ""
 
 msgctxt "#31562"
-msgid "Recommended Movies"
+msgid "[COLOR red]N[/COLOR]  Recommended Movies"
 msgstr ""
 
 msgctxt "#31563"
-msgid "Popular"
+msgid "[COLOR red]N[/COLOR]  Popular"
 msgstr ""
 
 msgctxt "#31564"
@@ -2334,15 +2334,15 @@ msgid "Background color diffuse"
 msgstr ""
 
 msgctxt "#31575"
-msgid "Similar Movies"
+msgid "[COLOR red]N[/COLOR]  Similar Movies"
 msgstr ""
 
 msgctxt "#31576"
-msgid "Similar TV Shows"
+msgid "[COLOR red]N[/COLOR]  similar TV Shows"
 msgstr ""
 
 msgctxt "#31577"
-msgid "New Releases"
+msgid "[COLOR red]N[/COLOR]  New Releases"
 msgstr ""
 
 msgctxt "#31578"
@@ -2898,7 +2898,7 @@ msgid "Disable Kodi screensaver on fullscreen music playback"
 msgstr ""
 
 msgctxt "#31716"
-msgid "Recently Added Movies"
+msgid "[COLOR red]N[/COLOR]  Recently Added Movies"
 msgstr ""
 
 msgctxt "#31717"
@@ -3306,7 +3306,7 @@ msgid "Shadowcolor for focused lyrics text"
 msgstr ""
 
 msgctxt "#31818"
-msgid "Disable Clearlogo in Bingie Views (Text title instead)"
+msgid "Disable Clearlogo in Bingie mod Views (Text title instead)"
 msgstr ""
 
 msgctxt "#31819"
@@ -3342,7 +3342,7 @@ msgid "Select country flags / icons"
 msgstr ""
 
 msgctxt "#31827"
-msgid "Bingie Episodes"
+msgid "Bingie mod Episodes"
 msgstr ""
 
 msgctxt "#31828"
@@ -3354,15 +3354,15 @@ msgid "Home border focus color"
 msgstr ""
 
 msgctxt "#31830"
-msgid "Bingie primary text color"
+msgid "Bingie mod primary text color"
 msgstr ""
 
 msgctxt "#31831"
-msgid "Bingie secondary text color"
+msgid "Bingie mod secondary text color"
 msgstr ""
 
 msgctxt "#31832"
-msgid "Bingie flags color"
+msgid "Bingie mod flags color"
 msgstr ""
 
 msgctxt "#31833"
@@ -3378,7 +3378,7 @@ msgid "Mainmenu Secondary Focus Button Color"
 msgstr ""
 
 msgctxt "#31836"
-msgid "Bingie Ratings in Details Row Color"
+msgid "Bingie mod Ratings in Details Row Color"
 msgstr ""
 
 msgctxt "#31837"
@@ -3470,7 +3470,7 @@ msgid "Welcome Back"
 msgstr ""
 
 msgctxt "#31859"
-msgid "in IMDB Top 250"
+msgid "[COLOR red]N[/COLOR]  in IMDB Top 250"
 msgstr ""
 
 msgctxt "#31860"
@@ -3478,7 +3478,7 @@ msgid "Top Picks"
 msgstr ""
 
 msgctxt "#31861"
-msgid "Continue Watching"
+msgid "[COLOR red]N[/COLOR]  Continue Watching"
 msgstr ""
 
 msgctxt "#31862"
@@ -3621,7 +3621,7 @@ msgid "Media flags, ratings and studio logo must be first enabled under 'Media L
 msgstr ""
 
 msgctxt "#31896"
-msgid "Enable Monochrome Rating Flags in Bingie Views"
+msgid "Enable Monochrome Rating Flags in Bingie mod Views"
 msgstr ""
 
 msgctxt "#31897"
@@ -3629,11 +3629,11 @@ msgid "Hide Ratings, Studio Logo & Media Flags While Trailer is Playing"
 msgstr ""
 
 msgctxt "#31898"
-msgid "Disable Studio Logo in Bingie Views"
+msgid "Disable Studio Logo in Bingie mod Views"
 msgstr ""
 
 msgctxt "#31899"
-msgid "Disable Ratings Flags in Bingie Views"
+msgid "Disable Ratings Flags in Bingie mod Views"
 msgstr ""
 
 msgctxt "#31900"
@@ -3685,7 +3685,7 @@ msgid "Prioritize Regional Trailers (Will look for trailers in interface set lan
 msgstr ""
 
 msgctxt "#31912"
-msgid "Auto-Hide Bingie Info Dialog While Trailer Is Playing and System is Idle"
+msgid "Auto-Hide Bingie mod Info Dialog While Trailer Is Playing and System is Idle"
 msgstr ""
 
 msgctxt "#31913"
@@ -3693,7 +3693,7 @@ msgid "Show First Unwatched/Currently Watching Episode Info in TV Show's Info (R
 msgstr ""
 
 msgctxt "#31914"
-msgid "Bingie Views"
+msgid "Bingie mod Views"
 msgstr ""
 
 msgctxt "#31915"
@@ -3705,7 +3705,7 @@ msgid "Footer Colors"
 msgstr ""
 
 msgctxt "#31917"
-msgid "Use Bingie OSD Panel"
+msgid "Use Bingie mod OSD Panel"
 msgstr ""
 
 msgctxt "#31918"
@@ -3713,7 +3713,7 @@ msgid "OSD Info Panel"
 msgstr ""
 
 msgctxt "#31919"
-msgid "Use Bingie Info Panel OSD"
+msgid "Use Bingie mod Info Panel OSD"
 msgstr ""
 
 msgctxt "#31920"

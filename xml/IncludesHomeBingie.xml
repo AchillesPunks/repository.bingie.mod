@@ -91,7 +91,7 @@
 <!--SPOTLIGHT CLEARLOGO/TEXT/BUTTONS-->
                     <height>2000</height>
                     <include>BingieLeftDefs</include>
-                    <top>255</top>  <!--spotlight content improvements--> 
+                    <top>260</top>  <!-- 255 - spotlight content improvements--> 
                     <orientation>vertical</orientation>
                     <usecontrolcoords>true</usecontrolcoords>
                     <itemgap>-40</itemgap> <!--spotlight content improvements-->
@@ -117,7 +117,7 @@
                         <label>[B]$VAR[BingieSpotlightTitle][/B]</label>
                     </control>
 					
-	<!-- Watch Now --> <!--Spotlight Content-->
+	<!-- Watch Now --> <!--Spotlight Content
                     <control type="label">
                         <top>0</top>
                         <height>140</height>
@@ -126,16 +126,16 @@
                         <aligny>center</aligny>
                         <font>Bold36</font>
 						<textcolor>white</textcolor>
-                        <!-- <textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor> -->
+                        <textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor>
                         <label>$VAR[BingieSpotlightSublabel]</label>
-                    </control>
+                    </control> -->
 					
 	<!-- SPOTLIGHT Content Widget - PLOT -->
                     <control type="textbox">
                         <visible>Skin.HasSetting(ShowPlotInBingieSpotlight) | !$EXP[IsPlayingUnrecognizedContent]</visible>
                         <animation effect="fade" time="500">VisibleChange</animation>
                         <include>Default_Visible_Fade</include>
-						<top>0</top>
+						<top>50</top>
 						<height min="50" max="115">auto</height> <!--spotlight content improvements-->
                         <width max="720">auto</width>
                         <align>left</align>
