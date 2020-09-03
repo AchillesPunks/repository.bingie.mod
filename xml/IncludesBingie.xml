@@ -1450,7 +1450,8 @@
             <ondown>510</ondown>
         </control>
     </include>
-<!--menu items on focus-->
+
+<!--Side Menu Icon Names on Focus-->
  <include name="Bingie_Menu_LabelFOCUS">
         <control type="label">
         <width>205</width>
@@ -1553,7 +1554,7 @@
         <control type="image">
             <nested />
             <visible>$PARAM[visibility]</visible>
-            <top>635</top>                                           <!-- default 645 -->
+            <top>605</top>                                           <!-- default 645 -->
             <include condition="!Skin.HasSetting(EnhancedHome_Circular)">No_Circular_Left</include>
             <left>0</left>
             <width>$PARAM[width]</width>
