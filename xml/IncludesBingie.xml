@@ -1004,57 +1004,61 @@
             <posy>0</posy>
             <include condition="Skin.HasSetting(EnhancedHome_Circular)">Circular_Menu_Animations</include>
             <include condition="!Skin.HasSetting(EnhancedHome_Circular)">No_Circular_Menu_Animations</include>
-<!-- Panel Left on Click Group-->
-            <!-- <control type="group"> -->
-                <!-- <top>0</top> -->
-                <!-- <left>0</left> -->
-                <!-- <width>bingie_menu_width</width> -->
-                <!-- <height>100%</height> -->
-                <!-- <control type="image"> -->
-                    <!-- <left>0</left> -->
-                    <!-- <width>358</width> -->
-                    <!-- <height>100%</height> -->
-                    <!-- <colordiffuse>$VAR[BingieMenuPanelColor]</colordiffuse> -->
-                    <!-- <aspectratio>stretch</aspectratio> -->
-                    <!-- <texture background="true">colors/color_white.png</texture> -->
-                <!-- </control> -->
-                <!-- <control type="image"> -->
-                    <!-- <left>318</left> -->
-                    <!-- <height>100%</height> -->
-                    <!-- <width>0.6</width> -->
-                    <!-- <colordiffuse>red</colordiffuse> -->
-                    <!-- <aspectratio>stretch</aspectratio> -->
-                    <!-- <texture>diffuse/gradient_seperator.png</texture> -->
-                <!-- </control> -->
-            <!-- </control> -->
 
-            <!-- Logo / User Profile Button -->
+
+	<!-- Logo / User Profile Button -->
             <control type="group">
                 <visible>$EXP[IsMainMenuOpened]</visible>
                 <top>30</top>
                 <width>bingie_menu_width</width>
                 <height>80</height>
                 <include>animation_fade_visible_hidden</include>
-<!-- Logo Home/Show if Side Panel Open -->
+	<!-- Logo Home/Show if Side Panel Open -->
                 <control type="group">
                   <visible>!System.HasLoginScreen + !Skin.HasSetting(DisableLogoMainMenu)</visible>   <!-- <visible>!System.HasLoginScreen</visible> -->
                     <width>272</width>
                     <height>153</height>
-					<left>50</left>  <!-- <left>1650</left> -->
-					<!-- <bottom>-980</bottom> -->
-                    <control type="image">
-                        <height>100%</height>
-                        <width>100%</width>
-                        <aspectratio align="left">keep</aspectratio>
-                        <texture background="true">$VAR[Bingie_Logo]</texture>
+					<left>50</left>
+	<!--Profile Picture-->
+					<control type="image">  
+                        <left>10</left>
+                        <top>10</top>
+                        <width>60</width>
+                        <height>60</height>
+                        <texture background="true">$INFO[System.ProfileThumb]</texture>
                     </control>
-                </control>
-                <!-- profile and switch button -->
+	<!-- Profile Name -->
+				<control type="button" id="40000">
+                        <label>$INFO[System.ProfileName][CR][COLOR ff8d8d8d]$LOCALIZE[31839][/COLOR]</label>
+                        <left>-30</left>
+						<textoffsetx>130</textoffsetx>
+                        <align>left</align>
+                        <width>359</width>
+                        <textwidth>215</textwidth>
+                        <height>80</height>
+                        <font>Reg25</font>
+                        <textcolor>$INFO[Skin.String(MainMenuTextColor)]</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus colordiffuse="00181818">colors/color_white.png</texturefocus> <!--workaround to hide this focus-->
+                        <texturenofocus/>
+                        <onup>noop</onup>
+                        <ondown>900</ondown>
+                        <onback>ClearProperty(ShowViewSubMenu,Home)</onback>
+                        <onback>77777</onback>
+                        <onright>ClearProperty(ShowViewSubMenu,Home)</onright>
+                        <onright>77777</onright>
+                        <onclick>ClearProperty(ShowViewSubMenu,Home)</onclick>
+                        <onclick>Dialog.Close(all,true)</onclick>
+                        <onclick>System.LogOff</onclick>
+                    </control>
+				</control>
+	<!-- Profile and Switch Button -->
                 <control type="group">
                     <top>10</top>
                     <visible>System.HasLoginScreen | Skin.HasSetting(DisableLogoMainMenu)</visible>
                     <height>60</height>
-                    <control type="button" id="40000">
+	<!-- Profile Name -->                    
+					<control type="button" id="40000">
                         <label>$INFO[System.ProfileName][CR][COLOR ff8d8d8d]$LOCALIZE[31839][/COLOR]</label>
                         <textoffsetx>130</textoffsetx>
                         <align>left</align>
@@ -1076,7 +1080,8 @@
                         <onclick>Dialog.Close(all,true)</onclick>
                         <onclick>System.LogOff</onclick>
                     </control>
-                    <control type="image">  <!--profile picture-->
+	<!--Profile Picture-->
+					<control type="image">  
                         <left>50</left>
                         <top>10</top>
                         <width>60</width>

@@ -426,52 +426,63 @@
 				<scrolltime>0</scrolltime>
                 <pagecontrol>270</pagecontrol>
                 <visible>String.IsEmpty(Window.Property(widgetcontrols))</visible>
-				<control type="button" id="301"> <!--new shortcut-->
+				<!--new shortcut-->
+				<control type="button" id="301"> 
 					<width>500</width>
 					<align>center</align>
 					<label>$ADDON[script.skinshortcuts 32000]</label>
 					<visible>false</visible>
 				</control>
-				
-				<control type="button" id="1301"> <!--new shortcut workaround-->
+	
+	<!--ADD-->
+				<control type="button" id="1301"> 
 					<width>500</width>
 					<align>center</align>
 					<label>$ADDON[script.skinshortcuts 32000]</label>
 					<visible>!Integer.IsGreater(Container(200).NumItems,34)</visible>
 				</control>
 				
-				<control type="button" id="401"> <!--change shortcut-->
+	<!--Widgets-->
+                <control type="button" id="1312"> 
 					<width>500</width>
 					<align>center</align>
-					<visible>true</visible>
-					<label>31175</label>
+                    <onclick>SetProperty(widgetcontrols,1)</onclick>
+                    <onclick>SetFocus(9000,1)</onclick>
+					<label>31564</label>
+                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <visible>!Skin.HasSetting(DisableAllWidgets) + !String.IsEqual(Skin.String(HomeLayout),3)</visible>
+				</control>
+     				<!--background-->
+					<control type="button" id="4310"> 
+					<width>500</width>
+					<align>center</align>
+					<label>$ADDON[script.skinshortcuts 32045]</label>
+					<onclick>RunScript(script.skin.helper.service,action=selectimage,skinshortcutsproperty=background,header=$ADDON[script.skinshortcuts 32045],allowmulti=true,resourceaddon=resource.images.skinbackgrounds,skinhelperbackgrounds=true,skinstring=CustomBackgroundSetting,currentvalue=$INFO[Container(211).ListItem.Property(BackgroundName)])</onclick>
+					<visible>Skin.HasSetting(UseSectionBackground) + !String.IsEqual(Window.Property(groupname),powermenu)</visible>
 				</control>
 				
-				<control type="label" id="101"><!--shortcut type label-->
-					<width>500</width>
-					<align>center</align>
-					<visible>false</visible>
-				</control>				
-				
-				<control type="button" id="302"> <!--delete shortcut-->
-					<width>500</width>
-					<align>center</align>
-					<label>$ADDON[script.skinshortcuts 32001]</label>
-				</control>
-
-				<control type="button" id="303"> <!--move up-->
+	<!--Move Up-->
+				<control type="button" id="303"> 
 					<width>500</width>
 					<align>center</align>
 					<label>$ADDON[script.skinshortcuts 32002]</label>
 				</control>
 				
-				<control type="button" id="304"> <!--move down-->
+	<!--Move Down-->
+				<control type="button" id="304"> 
 					<width>500</width>
 					<align>center</align>
 					<label>$ADDON[script.skinshortcuts 32003]</label>
 				</control>
 
-				<!--edit label-->
+	<!--Delete-->				
+				<control type="button" id="302"> 
+					<width>500</width>
+					<align>center</align>
+					<label>$ADDON[script.skinshortcuts 32001]</label>
+				</control>
+				
+	<!--Set Label-->
 				<control type="button" id="305">
 					<width>500</width>
 					<align>center</align>
@@ -488,33 +499,22 @@
                     <onclick>RunScript(script.skin.helper.service,action=selectimage,skinshortcutsproperty=thumb,header=$ADDON[script.skinshortcuts 32026],allowmulti=true,resourceaddon=resource.images.skinicons,skinhelperbackgrounds=true,skinstring=CustomBackgroundSetting,currentvalue=$INFO[Container(211).ListItem.Property(ThumbName)])</onclick>
 				</control>
 
-				<!--edit icon -->
+	<!--Set Icon-->
 				<control type="button" id="4312">
 					<visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
 					<width>500</width>
 					<align>center</align>
                     <label>31369</label>
                     <onclick>RunScript(script.skin.helper.service,action=selectimage,skinshortcutsproperty=icon,header=Set Icon,allowmulti=true,resourceaddon=resource.images.skinicons,skinhelperbackgrounds=true,skinstring=CustomBackgroundSetting,currentvalue=$INFO[Container(211).ListItem.Property(IconName)])</onclick>
-				</control>
-
-                <!--set widget advanced-->
-                <control type="button" id="1312"> 
+				</control>				
+				
+				<control type="button" id="401"> <!--change shortcut-->
 					<width>500</width>
 					<align>center</align>
-                    <onclick>SetProperty(widgetcontrols,1)</onclick>
-                    <onclick>SetFocus(9000,1)</onclick>
-					<label>31564</label>
-                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                    <visible>!Skin.HasSetting(DisableAllWidgets) + !String.IsEqual(Skin.String(HomeLayout),3)</visible>
+					<visible>true</visible>
+					<label>31175</label>
 				</control>
-     				<control type="button" id="4310"> <!--background-->
-					<width>500</width>
-					<align>center</align>
-					<label>$ADDON[script.skinshortcuts 32045]</label>
-					<onclick>RunScript(script.skin.helper.service,action=selectimage,skinshortcutsproperty=background,header=$ADDON[script.skinshortcuts 32045],allowmulti=true,resourceaddon=resource.images.skinbackgrounds,skinhelperbackgrounds=true,skinstring=CustomBackgroundSetting,currentvalue=$INFO[Container(211).ListItem.Property(BackgroundName)])</onclick>
-					<visible>Skin.HasSetting(UseSectionBackground) + !String.IsEqual(Window.Property(groupname),powermenu)</visible>
-				</control>
-
+				
 				<control type="button" id="405"> <!--sub menu-->
 					<width>500</width>
 					<align>center</align>
@@ -522,8 +522,14 @@
 					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 					<visible>!Skin.HasSetting(DisableAllSubmenus)</visible>
 				</control>
-                
-                <!-- disable label -->
+				
+				<control type="label" id="101"><!--shortcut type label-->
+					<width>500</width>
+					<align>center</align>
+					<visible>false</visible>
+				</control>				
+				
+	           <!-- disable label -->
 				<control type="radiobutton" id="1404"> 
 					<width>500</width>
 					<label>31202</label>

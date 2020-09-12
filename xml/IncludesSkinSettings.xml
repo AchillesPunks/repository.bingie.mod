@@ -610,13 +610,15 @@
             <selected>Skin.HasSetting(EnableFixedFrameWidgets)</selected>
             <visible>!Skin.HasSetting(WidgetsZoomFocus) + !Skin.HasSetting(BingieHomeDisableFirstRow) + Skin.HasSetting(EnableFixedFocusWidgets) + $EXP[IsSupportedFixedFrameLayout] + String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
-<!-- Enable Highlight 3rd Widget -->
-        <!-- <control type="radiobutton" id="28640">
+
+
+<!-- Enable Netflix Logo on Home -->
+   <!-- <control type="radiobutton" id="28640">
             <include>SkinSettings_Button</include>
-            <label>Set 3rd Widget to use Highlight Layout (Only applies if Configure Shortcuts 3rd Widget Set)</label>
-            <onclick>Skin.ToggleSetting(EnableHighlightWidget)</onclick>
-            <selected>Skin.HasSetting(EnableHighlightWidget)</selected>
-            <visible>Skin.HasSetting(EnableFixedFocusWidgets) + String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
+            <label>Enable Netflix Logo on Home</label>
+            <onclick>Skin.ToggleSetting(EnableNetflixLogo)</onclick>
+            <selected>Skin.HasSetting(EnableNetflixLogo)</selected>
+            <visible>System.HasLoginScreen | Skin.HasSetting(DisableLogoMainMenu)</visible>
         </control> -->
 		
         
@@ -678,7 +680,15 @@
             <visible>!Skin.HasSetting(DisableAllWidgets)</visible>
             <visible>[String.IsEqual(Skin.String(HomeLayout),1) | String.IsEqual(Skin.String(HomeLayout),1small)] + Skin.HasSetting(AutoShowWidgets)</visible>
         </control>
-        <!--enable circular navigation-->
+<!--BINGIE HOME Enable Widgets Zoom Effect-->
+        <control type="radiobutton" id="31763">
+            <include>SkinSettings_Button</include>
+            <label>Enable Zoom Effect on Selected Widget</label>
+            <onclick>Skin.ToggleSetting(WidgetsZoomFocus)</onclick>
+            <selected>Skin.HasSetting(WidgetsZoomFocus)</selected>
+            <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
+        </control>
+		<!--enable circular navigation-->
         <control type="radiobutton" id="31619">
             <include>SkinSettings_Button</include>
             <label>31619</label>
@@ -736,15 +746,7 @@
             <selected>Skin.HasSetting(PreferTvShowThumbWidget)</selected>
             <visible>!Skin.HasSetting(DisableAllWidgets) + !String.IsEqual(Skin.String(HomeLayout),3) + !String.IsEqual(Skin.String(HomeLayout),3small)</visible>
         </control>
-        <!--enable widgets zoom effect-->
-        <control type="radiobutton" id="31763">
-            <include>SkinSettings_Button</include>
-            <label>31763</label>
-            <onclick>Skin.ToggleSetting(WidgetsZoomFocus)</onclick>
-            <selected>Skin.HasSetting(WidgetsZoomFocus)</selected>
-            <visible>!Skin.HasSetting(EnableFixedFrameWidgets) + !String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(DisableAllWidgets) + !String.IsEqual(Skin.String(HomeLayout),3) + !String.IsEqual(Skin.String(HomeLayout),enhanced) + !String.IsEqual(Skin.String(HomeLayout),win10)</visible>
-        </control>
-        <!--hide widget panel-->
+       <!--hide widget panel-->
         <control type="radiobutton" id="13004">
             <include>SkinSettings_Button</include>
             <label>31206</label>
@@ -922,7 +924,7 @@
         </control>
     </include>
 
-    <!-- Home Menu Settings -->
+    <!-- Home Menu Options -->
     <include name="Home_Menu_Settings">
         <control type="label" id="23006">
             <include>SkinSettings_Header</include>
@@ -986,14 +988,7 @@
             <selected>Skin.HasSetting(DisableAllSubmenus)</selected>
             <visible>!String.IsEqual(Skin.String(HomeLayout),enhanced) + !String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
-        <!--Disable Logo on Bingie MainMenu-->
-        <control type="radiobutton" id="31749">
-            <include>SkinSettings_Button</include>
-            <label>31900</label>
-            <onclick>Skin.ToggleSetting(DisableLogoMainMenu)</onclick>
-            <selected>Skin.HasSetting(DisableLogoMainMenu)</selected>
-            <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
-        </control>
+        
         <!--Disable Icons in Bingie Main Menu Items-->
         <control type="radiobutton" id="31750">
             <include>SkinSettings_Button</include>
@@ -1050,8 +1045,16 @@
             <selected>system.getbool(lookandfeel.enablerssfeeds)</selected>
             <visible>!String.IsEqual(Skin.String(HomeLayout),win10) + !String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
-        <control type="radiobutton" id="8026">
-            <!-- disable welcome message -->
+	<!--Disable Netflix Logo on Bingie Home-->
+        <control type="radiobutton" id="31749">
+            <include>SkinSettings_Button</include>
+            <label>Enable Netflix Logo on Home</label>
+            <onclick>Skin.ToggleSetting(DisableLogoMainMenu)</onclick>
+            <selected>Skin.HasSetting(DisableLogoMainMenu)</selected>
+            <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
+        </control>	
+	<!-- Disable Welcome Pop-Up Message Notification -->        
+		<control type="radiobutton" id="8026">
             <description/>
             <include>SkinSettings_Button</include>
             <label>31902</label>
@@ -1059,7 +1062,7 @@
             <selected>Skin.HasSetting(DisableWelcomeMsg)</selected>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
-    </include>
+	</include>
 
 
     <!-- Smart Shortcuts Settings -->

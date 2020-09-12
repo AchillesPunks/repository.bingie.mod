@@ -329,6 +329,7 @@
                 <include condition="!Skin.HasSetting(EnhancedHome_Circular)">Bingie_Left_Gradient</include>
             </control>
 			
+	<!--Netflix Logo Diffuse on Home-->
 			<control type="image">
 				<description>diffuse behind Netflix logo</description>
 				<left>1300</left>
@@ -339,9 +340,11 @@
 				<aspectratio align="left">keep</aspectratio>
 				<colordiffuse>d9000000</colordiffuse> <!--$VAR[BingiePanelColor]-->
                 <texture background="true">special://skin/extras/flat2.png</texture>
-				</control>
-				
+			</control>
+	<!--Netflix Logo Diffuse on Home-->				
 				<control type="image">
+				<!-- Added to Remove Logo on Home if Profile Picture is Turned Off -->
+				<visible>System.HasLoginScreen | Skin.HasSetting(DisableLogoMainMenu)</visible> 
 				<description>Netflix logo</description>
 				<left>1600</left>
 				<top>895</top>
@@ -349,7 +352,7 @@
 				<height>165</height>
 				<visible></visible>
 				<aspectratio align="left">keep</aspectratio>
-				<texture>special://skin/extras/bingie_logo.png</texture>
+				<texture>special://skin/extras/netflix_logo.png</texture>
 				<colordiffuse></colordiffuse>
 				</control>
 				
