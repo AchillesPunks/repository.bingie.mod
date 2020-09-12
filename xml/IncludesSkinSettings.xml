@@ -602,14 +602,15 @@
             <selected>Skin.HasSetting(EnableFixedFocusWidgets)</selected>
             <visible>!Skin.HasSetting(LowPerformanceMode) + !Skin.HasSetting(BingieHomeDisableFirstRow) + String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
-        <!-- Enable fixed focus frame -->
-        <control type="radiobutton" id="28639">
+        
+		<!-- Enable fixed focus frame -->
+        <!--<control type="radiobutton" id="28639">
             <include>SkinSettings_Button</include>
             <label>31123</label>
             <onclick>Skin.ToggleSetting(EnableFixedFrameWidgets)</onclick>
             <selected>Skin.HasSetting(EnableFixedFrameWidgets)</selected>
             <visible>!Skin.HasSetting(WidgetsZoomFocus) + !Skin.HasSetting(BingieHomeDisableFirstRow) + Skin.HasSetting(EnableFixedFocusWidgets) + $EXP[IsSupportedFixedFrameLayout] + String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
-        </control>
+        </control>-->
 
 
 <!-- Enable Netflix Logo on Home -->
