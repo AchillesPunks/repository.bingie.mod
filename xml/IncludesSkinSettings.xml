@@ -603,7 +603,7 @@
             <visible>!Skin.HasSetting(LowPerformanceMode) + !Skin.HasSetting(BingieHomeDisableFirstRow) + String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
         
-		<!-- Enable fixed focus frame -->
+<!-- Enable fixed focus frame -->
         <!--<control type="radiobutton" id="28639">
             <include>SkinSettings_Button</include>
             <label>31123</label>
