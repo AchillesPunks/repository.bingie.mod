@@ -613,6 +613,7 @@
         </control>-->
 
 
+<!-- Test Button -->
 <!-- Enable Netflix Logo on Home -->
    <!-- <control type="radiobutton" id="28640">
             <include>SkinSettings_Button</include>
