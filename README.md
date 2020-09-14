@@ -4,7 +4,7 @@ The BINGIE MOD for Kodi Leia...
 
 #IMPORTANT NOTE FOR USERS# 
 
-Install the official bingie repository for updates and the supported addons required!
+Install the official bingie repository for supported addons required!
 The content here is for developing purposes!
 https://github.com/cartmandos/repository.bingie
 
