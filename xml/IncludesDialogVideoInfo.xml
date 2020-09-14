@@ -598,7 +598,7 @@
 								<textcolor>silver</textcolor>
 								<shadowcolor></shadowcolor>
 								<align>left</align>
-								<font>Reg28</font>
+								<font>Bold24</font>
 							</control>
 
 							<control type="group">
@@ -1592,7 +1592,7 @@
 						<animation effect="fade" start="100" end="0" time="200" condition="!String.IsEmpty(Window.Property(AdditionalInfo))">Conditional</animation>
 						<width>850</width>
 						<top>25</top>
-						<height min="80" max="80">auto</height>
+						<height min="110" max="160">auto</height>
 						<textcolor>silver</textcolor>
 						<shadowcolor></shadowcolor>
 						<align>left</align>
@@ -2153,10 +2153,10 @@
 					</control>
 				</control>
 
-				<!-- plots & critics additional info -->
+				<!-- plot & critics additional info -->
 				<control type="grouplist">
 					<include>BingieLeftDefs</include>
-					<posy>400</posy>  <!--lower the plot as it was too close to TV show sublabel-->
+					<posy>285</posy>  <!--lower the plot/critics as it was too close to TV show sublabel-->
 					<width>1660</width>
 					<height>60%</height>
 					<orientation>vertical</orientation>
@@ -2173,12 +2173,11 @@
 					<!--large plot -->
 					<control type="textbox">
 						<width>100%</width>
-						<height min="170" max="357">auto</height>
+						<height min="300" max="600">auto</height>
 						<label>$INFO[ListItem.Plot]</label>
 						<textcolor>silver</textcolor>
-						
 						<align>left</align>
-						<font>Reg28</font>
+						<font>Reg32</font>
 					</control>
 
 					<!-- ratings -->
@@ -2598,7 +2597,7 @@
         <height>65</height>
         <aligny>center</aligny>
         <align>left</align>
-        <font>Reg32</font>  <!--better size for these buttons-->
+        <font>Reg30</font>  <!--better size for these buttons-->
         <textoffsetx>55</textoffsetx>
         <textoffsety>8</textoffsety>
 		<textcolor>silver</textcolor>

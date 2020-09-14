@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- BINGIE -->
-<addon id="skin.titan.bingie.mod" version="1.0.5-mod" name="Titan BINGIE MOD" provider-name="AchillesPunks ">
+<addon id="skin.titan.bingie.mod" version="1.0.6-mod" name="Titan BINGIE MOD" provider-name="AchillesPunks ">
 	<requires>
 		<import version="5.14.0" addon="xbmc.gui"/>
 		<import addon="script.bingie.helper" version="1.0.0"/>

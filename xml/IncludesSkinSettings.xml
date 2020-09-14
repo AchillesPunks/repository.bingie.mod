@@ -603,8 +603,8 @@
             <visible>!Skin.HasSetting(LowPerformanceMode) + !Skin.HasSetting(BingieHomeDisableFirstRow) + String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
         
-		<!-- Enable fixed focus frame -->
-       <!--<control type="radiobutton" id="28639">
+<!-- Enable fixed focus frame -->
+        <!--<control type="radiobutton" id="28639">
             <include>SkinSettings_Button</include>
             <label>31123</label>
             <onclick>Skin.ToggleSetting(EnableFixedFrameWidgets)</onclick>
@@ -613,6 +613,7 @@
         </control>-->
 
 
+<!-- Test Button -->
 <!-- Enable Netflix Logo on Home -->
    <!-- <control type="radiobutton" id="28640">
             <include>SkinSettings_Button</include>
@@ -780,14 +781,32 @@
             <selected>Skin.HasSetting(NoClearLogoBingie)</selected>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
-        <!-- Prefer stars ratings in bingie views -->
+        <!-- Prefer stars ratings in bingie views (temp changed to RT/IMDB ratings -->
         <control type="radiobutton" id="131787">
             <include>SkinSettings_Button</include>
-            <label>31887</label>
+            <label>Prefer IMDB/RT rating over percentage on details row</label>
             <onclick>Skin.ToggleSetting(PreferStarsRatingBingie)</onclick>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
             <selected>Skin.HasSetting(PreferStarsRatingBingie)</selected>
         </control>
+		<!--enable UK Icons-->
+        <control type="radiobutton" id="191919">
+            <include>SkinSettings_Button</include>
+            <label>Enable UK Icons on Details Row</label>
+            <onclick>Skin.ToggleSetting(DisableUKIcons)</onclick>
+            <selected>Skin.HasSetting(DisableUKIcons)</selected>
+            <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
+        </control>	
+		
+		<!--enable Audio Icons-->
+        <control type="radiobutton" id="191918">
+            <include>SkinSettings_Button</include>
+            <label>Disable Audio Codec on Details Row</label>
+            <onclick>Skin.ToggleSetting(DisableAudioCodec)</onclick>
+            <selected>Skin.HasSetting(DisableAudioCodec)</selected>
+            <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
+        </control>	
+		
         <!-- prefer plot outline -->
         <control type="radiobutton" id="31794">
             <include>SkinSettings_Button</include>
@@ -1063,6 +1082,7 @@
             <selected>Skin.HasSetting(DisableWelcomeMsg)</selected>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
+	
 	</include>
 
 

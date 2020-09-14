@@ -150,7 +150,73 @@
     </include>
 
     <!-- DETAILS ROW INCLUDES -->
-    <!-- New Tag -->
+    
+<!--IMDB Details Row-->
+	<include name="IMDB_Hor1">
+        <control type="group">
+			<posy>4</posy>
+			<visible>!String.IsEmpty(Control.GetLabel(699702))</visible>
+			<width>120</width>
+			<height>40</height>
+			<include>Default_Visible_Fade</include>
+			<control type="image">
+			<left>-20</left>
+			<height>100%</height>
+                <width>100%</width>
+                <aspectratio>keep</aspectratio>
+                <colordiffuse>silver</colordiffuse>
+                <texture background="true">special://skin/extras/imdb_logo.png</texture>
+            </control>
+            <control type="label" id="699702">
+                <top>-1</top>
+				<width>100%</width>
+                <height>100%</height>
+                <!-- <aligny>center</aligny> -->
+                <!-- <align>center</align> -->
+				<left>84</left>
+                <textcolor>silver</textcolor>
+                <font>Reg26</font>
+                <scroll>false</scroll>
+                <label>$VAR[IMDBRatingValue]</label>
+            </control>
+        </control>
+    </include>
+<!--Rotten Tomatoes Details Row-->
+	 <include name="TomatoMeter_Hor1">
+        <control type="group">
+		<posy>4</posy>
+		<left>-7</left>
+            <visible>!String.IsEmpty(Control.GetLabel(699706))</visible>
+            <width>100</width>
+            <height>70</height>
+            <top>-8</top>
+			<left>0</left>
+            <include>Default_Visible_Fade</include>
+            <control type="image">
+                <aspectratio>keep</aspectratio>
+                <top>16</top>
+				<width>45%</width>
+                <height>45%</height>
+                <colordiffuse>silver</colordiffuse>
+                <texture background="true">special://skin/extras/fresh.png</texture>
+                <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter))</visible>
+            </control>
+            <control type="label" id="699706">
+                <top>-3</top>
+				<width>100%</width>
+                <height>100%</height>
+                <aligny>center</aligny>
+                <align>center</align>
+				<left>22</left>
+                <textcolor>silver</textcolor>
+                <font>Reg26</font>
+                <scroll>silver</scroll>
+                <label>$VAR[RottenTomatoesRatingValue]</label>
+            </control>
+        </control>
+    </include>
+	
+	<!-- New Tag -->
     <include name="New_Tag_Details_Row">
         <control type="label" id="6110">
             <visible>!String.IsEmpty(Control.GetLabel(6110))</visible>
@@ -159,7 +225,7 @@
             <width>auto</width>
             <aligny>center</aligny>
             <font>Bold26</font>                                                  <!-- Reg22 -->
-            <textcolor>springgreen</textcolor>
+            <textcolor>ff00e676</textcolor>
             <label>$VAR[NewItem]</label>
             <include>Default_Visible_Fade</include>
         </control>
@@ -218,7 +284,7 @@
             <width>auto</width>
             <aligny>center</aligny>
             <font>bold26</font>
-            <textcolor>springgreen</textcolor>
+            <textcolor>ff00e676</textcolor>
             <label>$VAR[RatingDecimalToPercentage,,% $LOCALIZE[31857]]</label>
             <include>Default_Visible_Fade</include>
         </control>
@@ -239,45 +305,76 @@
         </control>
     </include>
 
-<!-- MPAA New method for displaying Icons, re-added the OG text version incase anyone needs to switch back to OG-->
-    <include name="MPAA_Details_Row">
-		<control type="image">
+<!-- MPAA UK icons -->
+    <include name="MPAA_Details_RowNew">
+	<!--Icon display-->
+		<control type="image" id="12345">
+			<visible>!String.IsEmpty(ListItem.MPAA)</visible>
 			<top>1</top>
 			<width>55</width>
 			<height>47</height>
             <aspectratio>keep</aspectratio>
-			<include>mediaflags_large_layout</include>
-            <texture>$VAR[mediaflags_large_rating]</texture>
-            <visible>!String.IsEmpty(ListItem.MPAA)</visible>
+			
+            <texture background="true" fallback="colors/color_transparent.png">$VAR[mediaflags_large_rating_UK_icons]</texture>
+         	<!-- <include>Default_Visible_Fade</include> -->
 		</control>
-    </include>
-		<!-- <include name="MPAA_Details_Row"> -->
-        <!-- <control type="group"> -->
-            <!-- <visible>!String.IsEmpty(Control.GetLabel(6115))</visible> -->
-            <!-- <top>5</top> -->
-			<!-- <width>95</width> -->
-            <!-- <height>36</height> -->
-															  
+		<!--Fallback MPAA text and flag-->
+		<control type="group">
+			<visible>!String.IsEmpty(Control.GetLabel(6115)) + String.EndsWith(Control.GetLabel(12345),color_transparent.png)</visible>
+            <top>4</top>
+			<left>-65</left>
+			<width>100</width>
+            <height>40</height>
             <!-- <include>Default_Visible_Fade</include> -->
-            <!-- <control type="image"> -->
-                <!-- <height>100%</height> -->
-                <!-- <width>100%</width> -->
-                <!-- <texture colordiffuse="$INFO[Skin.String(BingieDetailsFlagColor)]">bingie/flags/square-rounded.png</texture> -->
-            <!-- </control> -->
-<!-- MPAA Text Rated Color-->
-			<!-- <control type="label" id="6115"> -->
-                <!-- <top>-1</top> -->
-				<!-- <height>100%</height> -->
-                <!-- <width>100%</width> -->
-                <!-- <font>Bold24</font> -->
-                <!-- <textcolor>$INFO[Skin.String(BingiePrimaryTextColor)]</textcolor> -->
-                <!-- <align>center</align> -->
-                <!-- <aligny>center</aligny> -->
-                <!-- <scroll>true</scroll> -->
-                <!-- <label>$VAR[GetMPAA]</label> -->
-            <!-- </control> -->
-        <!-- </control> -->
-    <!-- </include>	-->																									 -->
+            <control type="image">
+			<top>2</top>
+                <height>90%</height>
+                <width>100%</width>
+                <texture colordiffuse="ff424242">special://skin/extras/square-rounded.png</texture>
+            </control>
+            <control type="label" id="6115">
+                <height>100%</height>
+                <width>100%</width>
+                <font>Reg26</font>
+                <textcolor>silver</textcolor>
+                <align>center</align>
+                <aligny>center</aligny>
+                <scroll>true</scroll>
+                <label>$VAR[GetMPAA]</label>
+            </control>
+        </control>
+    </include>				
+			
+<!--Original MPAA details row-->
+	<include name="MPAA_Details_Row">
+		<control type="group">
+			<visible>!String.IsEmpty(Control.GetLabel(6115))</visible>
+            <top>4</top>
+			<left>0</left>
+			<width>100</width>
+            <height>40</height>
+			<include>Default_Visible_Fade</include>
+            <control type="image">
+			<top>2</top>
+                <height>90%</height>
+                <width>100%</width>
+                <texture colordiffuse="ff424242">special://skin/extras/square-rounded.png</texture>
+            </control>
+							 
+            <control type="label" id="6115">
+									  
+                <height>100%</height>
+                <width>100%</width>
+                <font>Reg26</font>
+                <textcolor>silver</textcolor>
+                <align>center</align>
+                <aligny>center</aligny>
+                <scroll>true</scroll>
+                <label>$VAR[GetMPAA]</label>
+            </control>
+        </control>
+    </include>				
+
 <!-- Home Seasons Top Screen / Total Seasons/Episodes  -->
     <include name="Duration_TotalSeasonsEpisodes_Details_Row">
         <control type="label" id="6116">
@@ -304,7 +401,7 @@
             <control type="image">
                 <height>100%</height>
                 <width>100%</width>
-                <texture colordiffuse="$INFO[Skin.String(BingieDetailsFlagColor)]">bingie/flags/frame.png</texture>
+                <texture background="true" colordiffuse="ff424242">bingie/flags/frame.png</texture>  <!--original value=$INFO[Skin.String(BingieDetailsFlagColor)]-->
             </control>
             <control type="label" id="6117">
                 <width>100%</width>
@@ -330,7 +427,7 @@
             <control type="image">
                 <height>100%</height>
                 <width>100%</width>
-                <texture colordiffuse="$INFO[Skin.String(BingieDetailsFlagColor)]">bingie/flags/frame.png</texture>
+                <texture background="true" colordiffuse="ff424242">bingie/flags/frame.png</texture>
             </control>
             <control type="label" id="6118">
                 <width>100%</width>
@@ -338,12 +435,55 @@
                 <aligny>center</aligny>
                 <align>center</align>
                 <textcolor>silver</textcolor>
-                <font>Bold22</font>
+                <font>Reg22</font>
                 <scroll>false</scroll>
-                <label>$VAR[GetAudioChannels]</label>
+                <label>$VAR[GetAudioChannels,[B],[/B]]</label>
             </control>
         </control>
-    </include>
+	</include>
+
+ <!--Audio Codec-->
+	<include name="Audiocodec1">
+	 <control type="group">
+		<align>right</align>
+		<posy>4</posy>
+		<height>40</height>
+		<width>159</width>
+		<control type="image" id="54321">
+			<visible>!String.IsEmpty(ListItem.AudioCodec)</visible>
+			<aspectratio>keep</aspectratio>
+			<!-- <colordiffuse>$VAR[mediaFlagsFontColor]</colordiffuse> -->
+			<texture fallback="colors/color_transparent.png" colordiffuse="silver">$VAR[AudioCodecVar,special://skin/extras/audiocodec/,.png]</texture>
+			<include>Default_Visible_Fade</include>
+		</control>
+		<!--Fallback Audio Codec flag/text-->
+		<control type="group">
+				<visible>!String.IsEmpty(Control.GetLabel(54227)) + String.EndsWith(Control.GetLabel(54321),color_transparent.png)</visible>
+				<posy></posy>
+				<left>-11</left>
+				<width>135</width>
+                <height>40</height>
+			<control type="image">
+                <aspectratio>keep</aspectratio>
+				<height>100%</height>
+                <width>100%</width>
+                <texture colordiffuse="ff424242">special://skin/extras/framelong.png</texture>
+			</control>
+			<control type="label" id="54227">
+				<width>100%</width>
+                <height>100%</height>
+				<left>-2</left>
+                <aligny>center</aligny>
+                <align>center</align>
+                <textcolor>silver</textcolor>
+                <font>Reg22</font>
+                <scroll>false</scroll>
+                <label>$VAR[AudioCodecVar,[B],[/B]]</label>
+			</control>
+		</control>
+	</control>
+	</include>
+	
     <!-- END OF DETAILS ROW INCLUDES-->
 
 	<!-- Spotlight Row Details Gap-->
@@ -354,15 +494,21 @@
 			<top>10</top>
 			<height>50</height>
 			<itemgap>15</itemgap>
-            <include>New_Tag_Details_Row</include>
+            <include condition="!Skin.HasSetting(PreferStarsRatingBingie">New_Tag_Details_Row</include>
             <include condition="!Skin.HasSetting(DisableThumbsUpDown)">Thumbs_Up_Down_Details_Row</include>
-            <include condition="Skin.HasSetting(PreferStarsRatingBingie)">Stars_Rating_Details_Row</include>
+            <!-- <include condition="Skin.HasSetting(PreferStarsRatingBingie)">Stars_Rating_Details_Row</include> -->
             <include condition="!Skin.HasSetting(PreferStarsRatingBingie)">Percentage_Rating_Details_Row</include>
-            <include>Year_Premiered_PVRTime_Details_Row</include>
-            <include>MPAA_Details_Row</include>
+            <include condition="Skin.HasSetting(PreferStarsRatingBingie)">IMDB_Hor1</include>
+			<include condition="Skin.HasSetting(PreferStarsRatingBingie)">TomatoMeter_Hor1</include>
+			<include>Year_Premiered_PVRTime_Details_Row</include>
+            <include condition="Skin.HasSetting(DisableUKIcons)">MPAA_Details_RowNew</include>
+			<include condition="!Skin.HasSetting(DisableUKIcons)">MPAA_Details_Row</include>
             <include>Duration_TotalSeasonsEpisodes_Details_Row</include>
             <include>Resolution_Details_Row</include>
             <include>Audio_Channels_Details_Row</include>
+			<include condition="!Skin.HasSetting(DisableAudioCodec)">Audiocodec1</include>
+			
+			
 		</control>
 	</include>
 
@@ -589,18 +735,19 @@
         <value condition="String.Contains(ListItem.mpaa,US:R) | String.Contains(ListItem.mpaa,USA:R) | String.Contains(ListItem.mpaa,Rated R) | String.IsEqual(ListItem.mpaa,R)">R</value>
         <value condition="String.Contains(ListItem.mpaa,US:NC-17)| String.Contains(ListItem.mpaa,USA:NC-17)| String.Contains(ListItem.mpaa,Rated NC-17)">NC-17</value>
         <!-- UK -->
-        <value condition="String.Contains(ListItem.mpaa,UK:U)">UK-ALL</value>
-        <value condition="String.Contains(ListItem.mpaa,UK:PG)">UK-PG</value>
-        <value condition="String.Contains(ListItem.mpaa,UK:12A)">UK-12A</value>
-        <value condition="String.Contains(ListItem.mpaa,UK:12)">UK-12</value>
-        <value condition="String.Contains(ListItem.mpaa,UK:15)">UK-15</value>
-        <value condition="String.Contains(ListItem.mpaa,UK:18)">UK-18</value>
+        <value condition="String.Contains(ListItem.mpaa,UK:U)">ALL</value>
+        <value condition="String.Contains(ListItem.mpaa,UK:PG)">PG</value>
+        <value condition="String.Contains(ListItem.mpaa,UK:12A)">12A</value>
+        <value condition="String.Contains(ListItem.mpaa,UK:12)">12</value>
+        <value condition="String.Contains(ListItem.mpaa,UK:15)">15</value>
+        <value condition="String.Contains(ListItem.mpaa,UK:18)">18</value>
+		<value condition="String.Contains(ListItem.mpaa,guidance)">PG</value>
         <!-- DE -->
-        <value condition="String.Contains(ListItem.mpaa,Germany:16) | String.Contains(ListItem.mpaa,ab 16) | String.Contains(ListItem.mpaa,FSK 16)">FSK-16</value>
-        <value condition="String.Contains(ListItem.mpaa,Germany:6)| String.Contains(ListItem.mpaa,ab 6) | String.Contains(ListItem.mpaa,FSK 6)">FSK-6</value>
-        <value condition="String.Contains(ListItem.mpaa,Germany:12) | String.Contains(ListItem.mpaa,ab 12) | String.Contains(ListItem.mpaa,FSK 12)">FSK-12</value>
-        <value condition="String.Contains(ListItem.mpaa,Germany:18) | String.Contains(ListItem.mpaa,ab 18) | String.Contains(ListItem.mpaa,FSK 18)">FSK-18</value>
-        <value condition="String.Contains(ListItem.mpaa,Germany)|String.Contains(ListItem.mpaa,FSK)| String.Contains(ListItem.mpaa,o.A) | String.Contains(ListItem.mpaa,FSK 0)">FSK-0</value>
+        <value condition="String.Contains(ListItem.mpaa,Germany:16) | String.Contains(ListItem.mpaa,ab 16) | String.Contains(ListItem.mpaa,FSK 16)">FSK16</value>
+        <value condition="String.Contains(ListItem.mpaa,Germany:6)| String.Contains(ListItem.mpaa,ab 6) | String.Contains(ListItem.mpaa,FSK 6)">FSK6</value>
+        <value condition="String.Contains(ListItem.mpaa,Germany:12) | String.Contains(ListItem.mpaa,ab 12) | String.Contains(ListItem.mpaa,FSK 12)">FSK12</value>
+        <value condition="String.Contains(ListItem.mpaa,Germany:18) | String.Contains(ListItem.mpaa,ab 18) | String.Contains(ListItem.mpaa,FSK 18)">FSK18</value>
+        <value condition="String.Contains(ListItem.mpaa,Germany)|String.Contains(ListItem.mpaa,FSK)| String.Contains(ListItem.mpaa,o.A) | String.Contains(ListItem.mpaa,FSK 0)">FSK0</value>
         <value condition="String.Contains(ListItem.mpaa,besorolás alatt)">BA</value>
         <!-- HU -->
         <value condition="String.Contains(ListItem.mpaa,korhatárra való tekintett nélkül megtekintetheto)">KN</value>
@@ -608,11 +755,11 @@
         <value condition="String.Contains(ListItem.mpaa,16 éven aluliak számára nem ajánlott)">16</value>
         <value condition="String.Contains(ListItem.mpaa,18 éven aluliak számára nem ajánlott)">18</value>
         <!-- FR -->
-        <value condition="String.Contains(ListItem.mpaa,France:U) | String.Contains(ListItem.mpaa,partir de 3 ans) | String.Contains(ListItem.mpaa,partir de 6 ans)">CSA-U</value>
+        <value condition="String.Contains(ListItem.mpaa,France:U) | String.Contains(ListItem.mpaa,partir de 3 ans) | String.Contains(ListItem.mpaa,partir de 6 ans)">CSAU</value>
         <value condition="String.Contains(ListItem.mpaa,France:-10) | String.Contains(ListItem.mpaa,Interdit aux moins de 10 ans) | String.Contains(ListItem.mpaa,des propos ou des images peuvent heurter)">CSA-10</value>
-        <value condition="String.Contains(ListItem.mpaa,France:-12) | String.Contains(ListItem.mpaa,Interdit aux moins de 12 ans)">CSA-12</value>
-        <value condition="String.Contains(ListItem.mpaa,France:-16) | String.Contains(ListItem.mpaa,Interdit aux moins de 16 ans)">CSA-16</value>
-        <value condition="String.Contains(ListItem.mpaa,France:-18) | String.Contains(ListItem.mpaa,Interdit aux moins de 18 ans)">CSA-18</value>
+        <value condition="String.Contains(ListItem.mpaa,France:-12) | String.Contains(ListItem.mpaa,Interdit aux moins de 12 ans)">CSA12</value>
+        <value condition="String.Contains(ListItem.mpaa,France:-16) | String.Contains(ListItem.mpaa,Interdit aux moins de 16 ans)">CSA16</value>
+        <value condition="String.Contains(ListItem.mpaa,France:-18) | String.Contains(ListItem.mpaa,Interdit aux moins de 18 ans)">CSA18</value>
         <!-- BR -->
         <value condition="String.Contains(ListItem.mpaa,Brazil:Livre) | String.Contains(ListItem.mpaa,Livre)">L</value>
         <value condition="String.Contains(ListItem.mpaa,Brazil:10) | String.Contains(ListItem.mpaa,10 anos)">10</value>
@@ -622,39 +769,39 @@
         <value condition="String.Contains(ListItem.mpaa,Brazil:18) | String.Contains(ListItem.mpaa,18 anos)">18</value>
         <value condition="!String.IsEmpty(ListItem.mpaa) + !String.Contains(ListItem.mpaa,not rated) + !String.Contains(ListItem.mpaa,n/a)">$INFO[ListItem.MPAA]</value>
 <!-- home widgets -->
-        <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),US:G) | String.Contains(Window(Home).Property(ListItem.mpaa),USA:G) | String.Contains(Window(Home).Property(ListItem.mpaa),Rated G)]">G</value>
-        <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),PG-13)">PG-13</value>
-        <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Rated PG) | String.IsEqual(Window(Home).Property(ListItem.Mpaa),PG)]">PG</value>
-        <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),US:R) | String.Contains(Window(Home).Property(ListItem.mpaa),USA:R) | String.Contains(Window(Home).Property(ListItem.mpaa),Rated R) | String.IsEqual(Window(Home).Property(ListItem.mpaa),R)]">R</value>
-        <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),US:NC-17)| String.Contains(Window(Home).Property(ListItem.mpaa),USA:NC-17)| String.Contains(Window(Home).Property(ListItem.mpaa),Rated NC-17)]">NC-17</value>
-        <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),UK:U)">UK-ALL</value>
-        <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),UK:PG)">UK-PG</value>
-        <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),UK:12A)">UK-12A</value>
-        <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),UK:12)">UK-12</value>
-        <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),UK:15)">UK-15</value>
-        <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),UK:18)">UK-18</value>
-        <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Germany:16) | String.Contains(Window(Home).Property(ListItem.mpaa),ab 16) | String.Contains(Window(Home).Property(ListItem.mpaa),FSK 16)]">FSK-16</value>
-        <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Germany:6)| String.Contains(Window(Home).Property(ListItem.mpaa),ab 6) | String.Contains(Window(Home).Property(ListItem.mpaa),FSK 6)]">FSK-6</value>
-        <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Germany:12) | String.Contains(Window(Home).Property(ListItem.mpaa),ab 12) | String.Contains(Window(Home).Property(ListItem.mpaa),FSK 12)]">FSK-12</value>
-        <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Germany:18) | String.Contains(Window(Home).Property(ListItem.mpaa),ab 18) | String.Contains(Window(Home).Property(ListItem.mpaa),FSK 18)]">FSK-18</value>
-        <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Germany)|String.Contains(Window(Home).Property(ListItem.mpaa),FSK)| String.Contains(Window(Home).Property(ListItem.mpaa),o.A) | String.Contains(Window(Home).Property(ListItem.mpaa),FSK 0)]">FSK-0</value>
-        <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),besorolás alatt)">BA</value>
-        <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),korhatárra való tekintett nélkül megtekintetheto)">KN</value>
-        <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),12 éven aluliak számára a megtekintése nagykorú felügyelete mellett ajánlott)">12</value>
-        <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),16 éven aluliak számára nem ajánlott)">16</value>
-        <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),18 éven aluliak számára nem ajánlott)">18</value>
-        <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),France:U) | String.Contains(Window(Home).Property(ListItem.mpaa),partir de 3 ans) | String.Contains(Window(Home).Property(ListItem.mpaa),partir de 6 ans)]">CSA-U</value>
-        <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),France:-10) | String.Contains(Window(Home).Property(ListItem.mpaa),Interdit aux moins de 10 ans) | String.Contains(Window(Home).Property(ListItem.mpaa),des propos ou des images peuvent heurter)]">CSA-10</value>
-        <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),France:-12) | String.Contains(Window(Home).Property(ListItem.mpaa),Interdit aux moins de 12 ans)]">CSA-12</value>
-        <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),France:-16) | String.Contains(Window(Home).Property(ListItem.mpaa),Interdit aux moins de 16 ans)]">CSA-16</value>
-        <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),France:-18) | String.Contains(Window(Home).Property(ListItem.mpaa),Interdit aux moins de 18 ans)]">CSA-18</value>
-        <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Brazil:Livre) | String.Contains(Window(Home).Property(ListItem.mpaa),Livre)]">L</value>
-        <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Brazil:10) | String.Contains(Window(Home).Property(ListItem.mpaa),10 anos)]">10</value>
-        <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Brazil:12) | String.Contains(Window(Home).Property(ListItem.mpaa),12 anos)]">12</value>
-        <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Brazil:14) | String.Contains(Window(Home).Property(ListItem.mpaa),14 anos)]">14</value>
-        <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Brazil:16) | String.Contains(Window(Home).Property(ListItem.mpaa),16 anos)]">16</value>
-        <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Brazil:18) | String.Contains(Window(Home).Property(ListItem.mpaa),18 anos)]">18</value>
-        <value condition="$EXP[IsMainMenuOpened] + !String.IsEmpty(Window(Home).Property(ListItem.mpaa)) + !String.Contains(Window(Home).Property(ListItem.mpaa),not rated)">$INFO[Window(Home).Property(ListItem.MPAA)]</value>
+        <!-- <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),US:G) | String.Contains(Window(Home).Property(ListItem.mpaa),USA:G) | String.Contains(Window(Home).Property(ListItem.mpaa),Rated G)]">G</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),PG-13)">PG-13</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Rated PG) | String.IsEqual(Window(Home).Property(ListItem.Mpaa),PG)]">PG</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),US:R) | String.Contains(Window(Home).Property(ListItem.mpaa),USA:R) | String.Contains(Window(Home).Property(ListItem.mpaa),Rated R) | String.IsEqual(Window(Home).Property(ListItem.mpaa),R)]">R</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),US:NC-17)| String.Contains(Window(Home).Property(ListItem.mpaa),USA:NC-17)| String.Contains(Window(Home).Property(ListItem.mpaa),Rated NC-17)]">NC-17</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),UK:U)">ALL</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),UK:PG)">PG</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),UK:12A)">12A</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),UK:12)">12</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),UK:15)">15</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),UK:18)">18</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Germany:16) | String.Contains(Window(Home).Property(ListItem.mpaa),ab 16) | String.Contains(Window(Home).Property(ListItem.mpaa),FSK 16)]">FSK16</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Germany:6)| String.Contains(Window(Home).Property(ListItem.mpaa),ab 6) | String.Contains(Window(Home).Property(ListItem.mpaa),FSK 6)]">FSK6</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Germany:12) | String.Contains(Window(Home).Property(ListItem.mpaa),ab 12) | String.Contains(Window(Home).Property(ListItem.mpaa),FSK 12)]">FSK12</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Germany:18) | String.Contains(Window(Home).Property(ListItem.mpaa),ab 18) | String.Contains(Window(Home).Property(ListItem.mpaa),FSK 18)]">FSK18</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Germany)|String.Contains(Window(Home).Property(ListItem.mpaa),FSK)| String.Contains(Window(Home).Property(ListItem.mpaa),o.A) | String.Contains(Window(Home).Property(ListItem.mpaa),FSK 0)]">FSK-0</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),besorolás alatt)">BA</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),korhatárra való tekintett nélkül megtekintetheto)">KN</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),12 éven aluliak számára a megtekintése nagykorú felügyelete mellett ajánlott)">12</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),16 éven aluliak számára nem ajánlott)">16</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + String.Contains(Window(Home).Property(ListItem.mpaa),18 éven aluliak számára nem ajánlott)">18</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),France:U) | String.Contains(Window(Home).Property(ListItem.mpaa),partir de 3 ans) | String.Contains(Window(Home).Property(ListItem.mpaa),partir de 6 ans)]">CSA-U</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),France:-10) | String.Contains(Window(Home).Property(ListItem.mpaa),Interdit aux moins de 10 ans) | String.Contains(Window(Home).Property(ListItem.mpaa),des propos ou des images peuvent heurter)]">CSA-10</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),France:-12) | String.Contains(Window(Home).Property(ListItem.mpaa),Interdit aux moins de 12 ans)]">CSA12</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),France:-16) | String.Contains(Window(Home).Property(ListItem.mpaa),Interdit aux moins de 16 ans)]">CSA16</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),France:-18) | String.Contains(Window(Home).Property(ListItem.mpaa),Interdit aux moins de 18 ans)]">CSA18</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Brazil:Livre) | String.Contains(Window(Home).Property(ListItem.mpaa),Livre)]">L</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Brazil:10) | String.Contains(Window(Home).Property(ListItem.mpaa),10 anos)]">10</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Brazil:12) | String.Contains(Window(Home).Property(ListItem.mpaa),12 anos)]">12</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Brazil:14) | String.Contains(Window(Home).Property(ListItem.mpaa),14 anos)]">14</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Brazil:16) | String.Contains(Window(Home).Property(ListItem.mpaa),16 anos)]">16</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),Brazil:18) | String.Contains(Window(Home).Property(ListItem.mpaa),18 anos)]">18</value> -->
+        <!-- <value condition="$EXP[IsMainMenuOpened] + !String.IsEmpty(Window(Home).Property(ListItem.mpaa)) + !String.Contains(Window(Home).Property(ListItem.mpaa),not rated)">$INFO[Window(Home).Property(ListItem.MPAA)]</value> -->
     </variable>
 
 <!-- Resolution Info -->
@@ -1004,9 +1151,30 @@
             <posy>0</posy>
             <include condition="Skin.HasSetting(EnhancedHome_Circular)">Circular_Menu_Animations</include>
             <include condition="!Skin.HasSetting(EnhancedHome_Circular)">No_Circular_Menu_Animations</include>
-
-
-<!-- Logo / User Profile Button -->
+<!-- Panel Left on Click Group-->
+            <!-- <control type="group"> -->
+                <!-- <top>0</top> -->
+                <!-- <left>0</left> -->
+                <!-- <width>bingie_menu_width</width> -->
+                <!-- <height>100%</height> -->
+                <!-- <control type="image"> -->
+                    <!-- <left>0</left> -->
+                    <!-- <width>358</width> -->
+                    <!-- <height>100%</height> -->
+                    <!-- <colordiffuse>$VAR[BingieMenuPanelColor]</colordiffuse> -->
+                    <!-- <aspectratio>stretch</aspectratio> -->
+                    <!-- <texture background="true">colors/color_white.png</texture> -->
+                <!-- </control> -->
+                <!-- <control type="image"> -->
+                    <!-- <left>318</left> -->
+                    <!-- <height>100%</height> -->
+                    <!-- <width>0.6</width> -->
+                    <!-- <colordiffuse>red</colordiffuse> -->
+                    <!-- <aspectratio>stretch</aspectratio> -->
+                    <!-- <texture>diffuse/gradient_seperator.png</texture> -->
+                <!-- </control> -->
+            <!-- </control> -->
+ 	<!-- Logo / User Profile Button -->
             <control type="group">
                 <visible>$EXP[IsMainMenuOpened]</visible>
                 <top>30</top>
@@ -1014,7 +1182,7 @@
                 <height>80</height>
                 <include>animation_fade_visible_hidden</include>
 	<!-- Logo Home/Show if Side Panel Open -->
-                <control type="group">
+			<control type="group">
                   <visible>!System.HasLoginScreen + !Skin.HasSetting(DisableLogoMainMenu)</visible>   <!-- <visible>!System.HasLoginScreen</visible> -->
                     <width>272</width>
                     <height>153</height>
@@ -1036,9 +1204,9 @@
                         <width>359</width>
                         <textwidth>215</textwidth>
                         <height>80</height>
-                        <font>Reg25</font>
+                        <font>Bold25</font>
                         <textcolor>$INFO[Skin.String(MainMenuTextColor)]</textcolor>
-                        <focusedcolor>white</focusedcolor>
+                        <focusedcolor>fffafafa</focusedcolor>
                         <texturefocus colordiffuse="00181818">colors/color_white.png</texturefocus> <!--workaround to hide this focus-->
                         <texturenofocus/>
                         <onup>noop</onup>
@@ -1050,8 +1218,8 @@
                         <onclick>ClearProperty(ShowViewSubMenu,Home)</onclick>
                         <onclick>Dialog.Close(all,true)</onclick>
                         <onclick>System.LogOff</onclick>
-                    </control>
-				</control>
+                </control>
+			</control>
 	<!-- Profile and Switch Button -->
                 <control type="group">
                     <top>10</top>
@@ -1065,7 +1233,7 @@
                         <width>359</width>
                         <textwidth>215</textwidth>
                         <height>80</height>
-                        <font>Reg25</font>
+                        <font>Bold25</font>
                         <textcolor>$INFO[Skin.String(MainMenuTextColor)]</textcolor>
                         <focusedcolor>white</focusedcolor>
                         <texturefocus colordiffuse="00181818">colors/color_white.png</texturefocus> <!--workaround to hide this focus-->
@@ -1091,7 +1259,7 @@
                 </control>
             </control>
 
-	<!--Main Menu Items 900-->
+<!--Main Menu Items 900-->
             <control type="list" id="900">
                 <top>300</top>
                 <width>bingie_menu_width</width>
@@ -1108,13 +1276,13 @@
                 <onup condition="Control.IsVisible(40000)">40000</onup>
                 <ondown>40003</ondown>
                 <itemlayout height="85" width="bingie_menu_width">
-	<!--Red line for Slim Menu-->
+                    <!--this red line just for slim menu-->
                     <include content="Bingie_Menu_Current_Indicator" condition="!Skin.HasSetting(EnhancedHome_Circular)"> 
                          <param name="keepvisible" value="true" />
                          <param name="visibility" value="$EXP[IsMenuEntryActive] + !$EXP[IsMainMenuOpened]" />
                          <param name="left" value="302" /> 
                      </include> 
-	<!--Red line Stationary on Sideblade Menu-->
+					 <!--added to keep the red line stationary on sideblade menu instead of moving with focus-->
 						<include content="Bingie_Menu_Current_Indicator"> 
                         <param name="visibility" value="$EXP[IsMainMenuOpened] + $EXP[IsMenuEntryActive]" />
 						<param name="left" value="58" />
@@ -1341,7 +1509,6 @@
             <!-- <colordiffuse>$PARAM[colordiffuse]</colordiffuse> -->
         <!-- </control> -->
     <!-- </include> -->
-
 <!-- Bingie Menu Icons -->
     <include name="Bingie_Menu_Icon">
         <control type="group">
@@ -1367,7 +1534,6 @@
             </control>
         </control>
     </include>
-
     <include name="Bingie_Menu_Icon_Anim">
         <animation effect="slide" start="0" end="245" time="0" condition="!$EXP[IsMainMenuOpened]">Conditional</animation>
     </include>
@@ -1456,7 +1622,6 @@
             <ondown>510</ondown>
         </control>
     </include>
-
 <!--Side Menu Icon Names on Focus-->
  <include name="Bingie_Menu_LabelFOCUS">
         <control type="label">
@@ -1474,7 +1639,7 @@
         <animation effect="fade" start="100" end="0" time="300" condition="!$EXP[IsMainMenuOpened]">Conditional</animation>
 		</control>
     </include>
-	
+			
 	<include name="Bingie_Submenu_LabelFOCUS">
         <control type="label">
             <posx>15</posx>
@@ -1502,6 +1667,7 @@
     </include>
 
 
+
 <!-- Bingie Elements / Footer on Home Transparent-->
     <include name="Bingie_Footer">
         <control type="group">
@@ -1519,6 +1685,7 @@
             </control>
 <!-- Ratings & Studio Home-->
             <control type="group">
+			<visible>!Skin.HasSetting(PreferStarsRatingBingie)</visible>
                 <include content="right" condition="$EXP[IsBingieCategoriesActive]">
                     <param name="right" value="130" />
                 </include>
@@ -1526,6 +1693,17 @@
                 <height>50</height>
                 <width>1000</width>
                 <include>Bingie_RatingsAndStudio_Hor</include>
+            </control>
+<!-- Hugo Ratings & Studio Home-->
+			<control type="group">
+				<visible>Skin.HasSetting(PreferStarsRatingBingie)</visible>
+                <include content="right" condition="$EXP[IsBingieCategoriesActive]">
+                    <param name="right" value="130" />
+                </include>
+                <right>30</right>
+                <height>50</height>
+                <width>1000</width>
+                <include>Bingie_RatingsAndStudio_HorHugo</include>
             </control>
         </control>
     </include>
@@ -1741,12 +1919,12 @@
 
 <!-- Play Button Spotlight Color -->
     <variable name="SpotlightPlayButtonColor">
-        <value condition="!String.IsEmpty(Window(Home).Property(spotlightinfo))">$INFO[Skin.String(BingieDetailsFlagColor)]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(spotlightinfo))">ff424242</value>
         <value>ffffffff</value>
     </variable>
     <variable name="SpotlightInfoButtonColor">
         <value condition="!String.IsEmpty(Window(Home).Property(spotlightinfo))">ffffffff</value>
-        <value>$INFO[Skin.String(BingieDetailsFlagColor)]</value>
+        <value>9e424242</value>
     </variable>
 
     <variable name="SpotlightPlayTextButtonColor">
@@ -1794,10 +1972,10 @@
         <value condition="[!Integer.IsGreater(Window(Home).Property(Random),20) | !Library.HasContent(movies)] + Library.HasContent(tvshows)">special://skin/extras/widgetplaylists/recommendedtvshows.xsp</value>
     </variable>
 
-<!-- Spotlight Image Main Home-->
-     <include name="BingieSpotlightCornerImage">
+<!-- Spotlight Image Main Home--> <!--the whole fanart image now fits the spotlight like Netflix. A good scrape and forget option, every image works well here-->
+    <include name="BingieSpotlightCornerImage">
         <param name="top" default="0"/>
-        <param name="right" default="-100"/>
+        <param name="right" default="0"/>
         <param name="width" default="1240"/>
         <param name="height" default="700"/>
         <definition>
@@ -1806,10 +1984,10 @@
                 <visible>$PARAM[visibility]</visible>
                 <top>$PARAM[top]</top>
                 <right>$PARAM[right]</right>
-                <width>1920</width>
-				<height>800</height>
-                <texture background="true" diffuse="bingie/bingie_default_spotlight_diffuse.png">$PARAM[image]</texture>
-				<fadetime>100</fadetime>
+                <width>$PARAM[width]</width>
+                <height>$PARAM[height]</height>
+                <texture background="true" diffuse="special://skin/extras/bingie_default_spotlight_diffuse.png">$PARAM[image]</texture> <!--NEEDS MY DIFFUSE IN THE EXTRA's FOLDER. Created a new diffuse so it no longer obscures the fanart, only obscures the edges-->
+				<fadetime>550</fadetime>
                 <aspectratio scalediffuse="true" aligny="top" align="right">keep</aspectratio>
                 <animation effect="fade" end="0" time="500">Hidden</animation>
                 <animation effect="fade" start="0" end="100" time="1200">Visible</animation>
@@ -1819,7 +1997,7 @@
 
 <!-- CLEARLOGO - Home Screen Widgets - Info/Text/Clearlogo -->
     <include name="Bingie_Headline_Item">
-        <param name="genre_adjust" default="true" />
+        <param name="genre_adjust" default="false" />
         <definition>
             <control type="image" id="$PARAM[id]5">
                 <height>190</height>                                      <!-- default - 186 -->
@@ -1832,10 +2010,10 @@
 <!-- Movie Title with no Clearlogo -->
 			<control type="textbox" id="$PARAM[id]6">
                 <visible>String.EndsWith(Control.GetLabel($PARAM[id]5),color_transparent.png)</visible>
-                <top>-143</top>
-                <height max="175">auto</height>
-                <width max="815">auto</width>
-                <font>Reg50</font> <!--reg70 causing issues with long titles carrying over to a second line now displaying properly-->
+                <top>-175</top>
+                <height max="215">auto</height>
+                <width max="760">auto</width>
+                <font>Title</font> 
                 <align>left</align>
                 <aligny>center</aligny>
                 <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
@@ -1872,7 +2050,7 @@
                     <texture background="true" colordiffuse="$VAR[BingiePanelColor]" border="20">overlays/bingie_corner.png</texture>
                 </control>
             </control>
-                        <control type="image">
+            <control type="image">
                 <visible>Control.IsVisible($PARAM[id])</visible>
                 <top>$PARAM[top]</top>
                 <right>$PARAM[right]</right>
@@ -1886,14 +2064,14 @@
             </control>
         </definition>
     </include>
-<!-- MPAA Flag on Spotlight Rightside of Window -->
+    <!-- MPAA Flag on Spotlight Rightside of Window -->
     <include name="Spotlight_MPAA_Flag_Object">
-        <param name="right" default="-160" />
+	    <param name="right" default="-160" />
         <param name="top" default="690" />                           <!-- Default --675-- -->
         <param name="visibility" default="true" />
         <definition>
             <control type="group">
-                <visible>!String.IsEmpty(Control.GetLabel($PARAM[id]))</visible>
+                <visible>!Skin.HasSetting(DisableUKIcons) + !String.IsEmpty(Control.GetLabel($PARAM[id]))</visible>
                 <visible>$PARAM[visibility]</visible>
                 <right>$PARAM[right]</right>
                 <top>$PARAM[top]</top>
@@ -1930,6 +2108,45 @@
                     <label>$VAR[GetMPAA]</label>
                 </control>
             </control>
+        </definition>
+    </include>
+
+<!-- UK icon to replace MPAA flag on Spotlight-->
+    <include name="Spotlight_MPAA_Flag_Object1">
+        <param name="right" default="-160" />
+        <!-- <!-- <param name="top" default="690" />                            -->
+        <param name="visibility" default="true" />
+        <definition>
+            <control type="group">
+                 <visible>Skin.HasSetting(DisableUKIcons) + !String.IsEmpty(Control.GetLabel($PARAM[id]))</visible>
+                <visible>$PARAM[visibility]</visible>
+                <right>$PARAM[right]</right>
+                <top>$PARAM[top]</top>
+                <height>55</height>
+                <width>160</width>
+                <animation type="VisibleChange">
+                    <effect type="slide" start="0" end="-160" delay="2000" time="400"/>
+                    <effect type="fade" start="0" end="100" delay="2000" time="400"/>
+                </animation>
+            
+				<control type="label" id="$PARAM[id]">
+                    <left>30</left>
+                    <height>55</height>
+                    <width>130</width>
+                    <align>left</align>
+                    <font>Reg28</font>
+                    <textcolor>none</textcolor> 
+                    <label>$VAR[GetMPAA]</label>
+                </control>
+				
+				<control type="image">
+				<width>0</width>
+				<height>70</height>
+                <aspectratio align="center">keep</aspectratio>
+				<top>650</top>
+				<texture>$VAR[mediaflags_large_rating_UK_icons]</texture>
+				</control>
+			</control>	
         </definition>
     </include>
 
@@ -2013,7 +2230,7 @@
                     <param name="text" value="$VAR[BingieMainFallbackTitle]" />
                 </include>
 
-                <!-- Spotlight Row Details -->
+                <!-- spotlight row details -->
                 <control type="group">
                     <width>1000</width>
                     <height>40</height>
@@ -2021,17 +2238,17 @@
                     <include>SpotlightRowDetails</include>
                 </control>
 
-                <!-- Bingie Sublabel (Tagline/Watch library view) -->
+                <!-- bingie sublabel (tagline/Watch library view) -->
                 <control type="label" id="823">
                     <visible>!Container.Content(episodes)</visible>
                     <visible>!String.IsEmpty(Control.GetLabel(823))</visible>
                     <top>40</top>
 					<height>0</height>
                     <width>820</width>
-                    <font>bold29</font> <!--to match netflix-->
+                    <font>bold29</font> 
                     <align>left</align>
                     <aligny>center</aligny> 
-                    <textcolor>white</textcolor> <!--to match netflix-->
+                    <textcolor>fffafafa</textcolor> 
                     <label>$VAR[BingieSublabel]</label>
                     <include>Default_Visible_Fade</include>
                 </control>
@@ -2086,7 +2303,7 @@
                 <!-- plot    (library bingie) -->
                 <control type="textbox">
                     <visible>!Container.Content(seasons)</visible>
-					<height min="50" max="74">auto</height>	<!--3 lines visible here-->										  
+					<height min="50" max="115">auto</height>	<!--3 lines visible here-->										  
                     <top>25</top>
 					<width>850</width>                               <!-- default - 650 -->
                     <textcolor>$VAR[BingiePlotTextColor]</textcolor>

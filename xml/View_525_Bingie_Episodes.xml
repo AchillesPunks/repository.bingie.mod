@@ -303,8 +303,10 @@
 
             <include>New_Tag_Details_Row</include>
             <include condition="!Skin.HasSetting(DisableThumbsUpDown)">Thumbs_Up_Down_Details_Row</include>
-            <include condition="Skin.HasSetting(PreferStarsRatingBingie)">Stars_Rating_Details_Row</include>
+            <!-- <include condition="Skin.HasSetting(PreferStarsRatingBingie)">Stars_Rating_Details_Row</include> -->
             <include condition="!Skin.HasSetting(PreferStarsRatingBingie)">Percentage_Rating_Details_Row</include>
+			<include condition="Skin.HasSetting(PreferStarsRatingBingie)">IMDB_Hor1</include>
+			<include condition="Skin.HasSetting(PreferStarsRatingBingie)">TomatoMeter_Hor1</include>
 
             <!-- Year -->
             <control type="label" id="611111">

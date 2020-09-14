@@ -541,13 +541,13 @@
             <name>Reg27</name>
             <filename>Netflix-sans-medium.ttf</filename>
 			<style>lighten</style>
-            <size>27</size>
+            <size>29</size>
         </font>
 		<font>
             <name>Reg28</name>
             <filename>Netflix-sans-medium.ttf</filename>
 			<style>lighten</style>
-            <size>29</size> <!--mismatch in name/size to make plot font bigger w/o affecting other fonts--->
+            <size>30</size> <!--mismatch in name/size to make plot font bigger w/o affecting other fonts--->
         </font>
         <font>
             <name>Reg29</name>
@@ -593,7 +593,7 @@
             <size>35</size>
         </font>
         <font>
-            <name>Reg36</name>  <!--menu font-->
+            <name>Reg36</name>  <!--sideblademenu font-->
             <filename>Netflix-sans-medium.ttf</filename>
 			<style>lighten</style>
             <size>36</size>
@@ -821,6 +821,7 @@
 		<font>
             <name>Bold22</name>
             <filename>Netflix-sans-Bold.ttf</filename>
+			<style>lighten</style>
             <size>22</size>
         </font>
 		<font>
@@ -832,7 +833,7 @@
 		<font>
             <name>Bold24</name> 
             <filename>Netflix-sans-Bold.ttf</filename>
-			<style>bold lighten</style>
+			<style>bold</style>
             <size>24</size>
 		</font>
         <font>
@@ -857,9 +858,9 @@
         </font>
         <font>
             <name>Bold29</name> <!--sublabel plot-->
-            <filename>Netflix-sans-Medium.ttf</filename>
-			<style>bold</style>
-			<size>28</size>
+            <filename>Netflix-sans-bold.ttf</filename>
+			<style>bold lighten</style>
+			<size>29</size>
         </font>
         <font>
             <name>Bold30</name>  
@@ -881,14 +882,14 @@
         </font>
         <font>
             <name>Bold33</name> <!--Watch season xx home spotlight content widget-->
-            <filename>Netflix-sans-medium.ttf</filename>
-			<style>bold</style>
+            <filename>Netflix-sans-Bold.ttf</filename>
+			<style>bold lighten</style>
             <size>33</size>
         </font>
         <font>
             <name>Bold34</name> <!--Sideblade Menu focus font-->
             <filename>Netflix-sans-Bold.ttf</filename>
-			<style>bold lighten</style>
+			<style></style>
             <size>34</size>
         </font>
         <font>
@@ -1005,9 +1006,18 @@
             <size>64</size>
         </font>
         <font>
-            <name>Bold66</name>
-            <filename>Netflix-sans-Bold.ttf</filename>
-            <size>66</size>
+            <name>Title</name> <!--Clearlogo fallback-->
+            <filename>Netflix-sans-bold.ttf</filename>
+			<style>lighten</style>
+			<linespacing>0.8</linespacing>
+            <size>65</size>
+        </font>
+		<font>
+            <name>Title2</name> <!--Clearlogo Spotlight content fallback-->
+            <filename>Netflix-sans-bold.ttf</filename>
+			<style>lighten</style>
+			<linespacing>0.8</linespacing>
+            <size>85</size>
         </font>
         <font>
             <name>Bold68</name>
