@@ -584,24 +584,6 @@
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">8</property>
-			<label>$ADDON[script.skinshortcuts 32046]</label>
-			<label2 />
-			<icon>common/update-video.png</icon>
-			<thumb />
-			<property name="labelID">32046</property>
-			<property name="defaultID">32046</property>
-			<property name="translatedPath">UpdateLibrary(video)</property>
-			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
-			<onclick>UpdateLibrary(video)</onclick>
-			<property name="path">UpdateLibrary(video)</property>
-			<property name="list">UpdateLibrary(video)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(900).ListItem.Property(submenuVisibility),powermenu)</visible>
-			<property name="group">powermenu</property>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
-			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[20126]</label>
 			<label2>Kodi Command</label2>
 			<icon>common/lock.png</icon>
@@ -1268,24 +1250,6 @@
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
 			<property name="mainmenuid">8</property>
-			<label>$ADDON[script.skinshortcuts 32046]</label>
-			<label2 />
-			<icon>common/update-video.png</icon>
-			<thumb />
-			<property name="labelID">32046</property>
-			<property name="defaultID">32046</property>
-			<property name="translatedPath">UpdateLibrary(video)</property>
-			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
-			<onclick>UpdateLibrary(video)</onclick>
-			<property name="path">UpdateLibrary(video)</property>
-			<property name="list">UpdateLibrary(video)</property>
-			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="group">powermenu</property>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
-			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[20126]</label>
 			<label2>Kodi Command</label2>
 			<icon>common/lock.png</icon>
@@ -1391,24 +1355,6 @@
 		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
-			<property name="mainmenuid">8</property>
-			<label>$ADDON[script.skinshortcuts 32046]</label>
-			<label2 />
-			<icon>common/update-video.png</icon>
-			<thumb />
-			<property name="labelID">32046</property>
-			<property name="defaultID">32046</property>
-			<property name="translatedPath">UpdateLibrary(video)</property>
-			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
-			<onclick>UpdateLibrary(video)</onclick>
-			<property name="path">UpdateLibrary(video)</property>
-			<property name="list">UpdateLibrary(video)</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),powermenu)</visible>
-			<property name="group">powermenu</property>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">8</property>
 			<label>$LOCALIZE[20126]</label>
 			<label2>Kodi Command</label2>

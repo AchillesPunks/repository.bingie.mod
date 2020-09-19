@@ -474,7 +474,6 @@
 			<!-- Season Landscape -->
 			<control type="image">
 				<visible>String.Contains(Control.GetLabel(12345),landscape)</visible>
-				<visible>yes</visible>
 				<top>20</top>
 				<left>15</left>
 				<width>570</width>

@@ -151,9 +151,9 @@
             <include>Home_Spotlight_Settings</include>
 			<include>Home_Widgets_Settings</include>
             <include>Home_Details_Settings</include>
-            <include>Home_Footer_Media_Flags_Ratings</include>
             <include>Thumbs_Up_Down_Settings</include>
-			<include>Home_Menu_Settings</include>
+            <include>Home_Footer_Media_Flags_Ratings</include>
+            <include>Home_Menu_Settings</include>
             <include>Home_General_Settings</include>
         </include>
     </include>
@@ -817,6 +817,55 @@
         </control>
     </include>
 
+    <!-- Thumbs UP/DOWN Settings -->
+    <include name="Thumbs_Up_Down_Settings">
+        <control type="label" id="23010">
+            <include>SkinSettings_Header</include>
+            <label>31844</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+            <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
+        </control>
+        <control type="radiobutton" id="172000">
+            <include>SkinSettings_Button</include>
+            <label>31890</label>
+            <onclick>Skin.ToggleSetting(DisableThumbsUpDown)</onclick>
+            <selected>Skin.HasSetting(DisableThumbsUpDown)</selected>
+            <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
+        </control>
+        <!--Thumbs up rate value-->
+        <control type="button" id="172001">
+            <include>SkinSettings_Button</include>
+            <label>31891</label>
+            <label2>$INFO[Skin.String(ThumbsUpRateValue.label)]</label2>
+            <visible>String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(DisableThumbsUpDown)</visible>
+            <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=ThumbsUpRateValue,header=$LOCALIZE[31891])</onclick>
+        </control>
+        <!--Thumbs down rate value-->
+        <control type="button" id="172002">
+            <include>SkinSettings_Button</include>
+            <label>31892</label>
+            <label2>$INFO[Skin.String(ThumbsDownRateValue.label)]</label2>
+            <visible>String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(DisableThumbsUpDown)</visible>
+            <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=ThumbsDownRateValue,header=$LOCALIZE[31892])</onclick>
+        </control>
+        <!--Thumbs up min. value-->
+        <control type="button" id="17200">
+            <include>SkinSettings_Button</include>
+            <label>31893</label>
+            <label2>$INFO[Skin.String(ThumbsUpMin.label)]</label2>
+            <visible>String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(DisableThumbsUpDown)</visible>
+            <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=ThumbsUpMin,header=$LOCALIZE[31893])</onclick>
+        </control>
+        <!--Thumbs down max. value-->
+        <control type="button" id="17201">
+            <include>SkinSettings_Button</include>
+            <label>31894</label>
+            <label2>$INFO[Skin.String(ThumbsDownMax.label)]</label2>
+            <visible>String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(DisableThumbsUpDown)</visible>
+            <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=ThumbsDownMax,header=$LOCALIZE[31894])</onclick>
+        </control>
+    </include>
+
     <!-- Footer in Home - Media Flags & Ratings & Studio Logo Settings -->
     <include name="Home_Footer_Media_Flags_Ratings">
         <control type="label" id="23007">
@@ -892,55 +941,6 @@
             <onclick>Skin.ToggleSetting(DisableMediaCodecInfoInHome)</onclick>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(NoFooterBarOnHome) + !Skin.HasSetting(BingieHomeDisableFirstRow)</visible>
             <selected>Skin.HasSetting(DisableMediaCodecInfoInHome)</selected>
-        </control>
-    </include>
-
-    <!-- Thumbs UP/DOWN Settings -->
-    <include name="Thumbs_Up_Down_Settings">
-        <control type="label" id="23010">
-            <include>SkinSettings_Header</include>
-            <label>31844</label>
-            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-            <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
-        </control>
-        <control type="radiobutton" id="172000">
-            <include>SkinSettings_Button</include>
-            <label>31890</label>
-            <onclick>Skin.ToggleSetting(DisableThumbsUpDown)</onclick>
-            <selected>Skin.HasSetting(DisableThumbsUpDown)</selected>
-            <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
-        </control>
-        <!--Thumbs up rate value-->
-        <control type="button" id="172001">
-            <include>SkinSettings_Button</include>
-            <label>31891</label>
-            <label2>$INFO[Skin.String(ThumbsUpRateValue.label)]</label2>
-            <visible>String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(DisableThumbsUpDown)</visible>
-            <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=ThumbsUpRateValue,header=$LOCALIZE[31891])</onclick>
-        </control>
-        <!--Thumbs down rate value-->
-        <control type="button" id="172002">
-            <include>SkinSettings_Button</include>
-            <label>31892</label>
-            <label2>$INFO[Skin.String(ThumbsDownRateValue.label)]</label2>
-            <visible>String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(DisableThumbsUpDown)</visible>
-            <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=ThumbsDownRateValue,header=$LOCALIZE[31892])</onclick>
-        </control>
-        <!--Thumbs up min. value-->
-        <control type="button" id="17200">
-            <include>SkinSettings_Button</include>
-            <label>31893</label>
-            <label2>$INFO[Skin.String(ThumbsUpMin.label)]</label2>
-            <visible>String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(DisableThumbsUpDown)</visible>
-            <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=ThumbsUpMin,header=$LOCALIZE[31893])</onclick>
-        </control>
-        <!--Thumbs down max. value-->
-        <control type="button" id="17201">
-            <include>SkinSettings_Button</include>
-            <label>31894</label>
-            <label2>$INFO[Skin.String(ThumbsDownMax.label)]</label2>
-            <visible>String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(DisableThumbsUpDown)</visible>
-            <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=ThumbsDownMax,header=$LOCALIZE[31894])</onclick>
         </control>
     </include>
 
@@ -1065,12 +1065,12 @@
             <selected>system.getbool(lookandfeel.enablerssfeeds)</selected>
             <visible>!String.IsEqual(Skin.String(HomeLayout),win10) + !String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
-	<!--Enab Netflix Logo on Bingie Home-->
+	<!--Disable Netflix Logo on Bingie Home-->
         <control type="radiobutton" id="31749">
             <include>SkinSettings_Button</include>
             <label>Enable Netflix Logo on Home</label>
-            <onclick>Skin.ToggleSetting(EnableNetflixLogoonHome)</onclick>
-            <selected>Skin.HasSetting(EnableNetflixLogoonHome)</selected>
+            <onclick>Skin.ToggleSetting(DisableLogoMainMenu)</onclick>
+            <selected>Skin.HasSetting(DisableLogoMainMenu)</selected>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>	
 	<!-- Disable Welcome Pop-Up Message Notification -->        

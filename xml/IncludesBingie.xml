@@ -521,7 +521,7 @@
                   <nested/>
                   <visible>$PARAM[visibility]</visible>
                   <top>$PARAM[top]</top>
-                  <height>73</height> <!--gets a 3 line textbox for the Cast info to display-->
+                  <height>100</height> <!--gets a 3 line textbox for the Cast info to display-->
                   <width>800</width>
                   <itemgap>25</itemgap>
                   <orientation>horizontal</orientation>
@@ -1174,42 +1174,69 @@
                     <!-- <texture>diffuse/gradient_seperator.png</texture> -->
                 <!-- </control> -->
             <!-- </control> -->
- 	<!-- logo / user profile button -->
+ 	<!-- Logo / User Profile Button -->
             <control type="group">
                 <visible>$EXP[IsMainMenuOpened]</visible>
                 <top>30</top>
                 <width>bingie_menu_width</width>
                 <height>80</height>
                 <include>animation_fade_visible_hidden</include>
-                <!-- logo -->
-                <control type="group">
-                    <visible>!System.HasLoginScreen + !Skin.HasSetting(DisableLogoMainMenu)</visible>
+	<!-- Logo Home/Show if Side Panel Open -->
+			<control type="group">
+                  <visible>!System.HasLoginScreen + !Skin.HasSetting(DisableLogoMainMenu)</visible>   <!-- <visible>!System.HasLoginScreen</visible> -->
                     <width>272</width>
                     <height>153</height>
-                    <left>50</left>
-                    <control type="image">
-                        <height>100%</height>
-                        <width>100%</width>
-                        <aspectratio align="left">keep</aspectratio>
-                        <texture background="true">$VAR[netflix_Logo]</texture>
+					<left>50</left>
+	<!--Profile Picture-->
+					<control type="image">  
+                        <left>10</left>
+                        <top>10</top>
+                        <width>60</width>
+                        <height>60</height>
+                        <texture background="true">$INFO[System.ProfileThumb]</texture>
                     </control>
+	<!-- Profile Name -->
+				<control type="button" id="40000">
+                        <label>$INFO[System.ProfileName][CR][COLOR ff8d8d8d]$LOCALIZE[31839][/COLOR]</label>
+                        <left>-30</left>
+						<textoffsetx>130</textoffsetx>
+                        <align>left</align>
+                        <width>359</width>
+                        <textwidth>215</textwidth>
+                        <height>80</height>
+                        <font>Bold25</font>
+                        <textcolor>$INFO[Skin.String(MainMenuTextColor)]</textcolor>
+                        <focusedcolor>fffafafa</focusedcolor>
+                        <texturefocus colordiffuse="00181818">colors/color_white.png</texturefocus> <!--workaround to hide this focus-->
+                        <texturenofocus/>
+                        <onup>noop</onup>
+                        <ondown>900</ondown>
+                        <onback>ClearProperty(ShowViewSubMenu,Home)</onback>
+                        <onback>77777</onback>
+                        <onright>ClearProperty(ShowViewSubMenu,Home)</onright>
+                        <onright>77777</onright>
+                        <onclick>ClearProperty(ShowViewSubMenu,Home)</onclick>
+                        <onclick>Dialog.Close(all,true)</onclick>
+                        <onclick>System.LogOff</onclick>
                 </control>
-                <!-- profile and switch button -->
+			</control>
+	<!-- Profile and Switch Button -->
                 <control type="group">
                     <top>10</top>
                     <visible>System.HasLoginScreen | Skin.HasSetting(DisableLogoMainMenu)</visible>
                     <height>60</height>
-                    <control type="button" id="40000">
-                        <label>[B]$INFO[System.ProfileName][/B][CR][COLOR ffc0c0c0]$LOCALIZE[31839][/COLOR]</label>
-                        <textoffsetx>115</textoffsetx>
+	<!-- Profile Name -->                    
+					<control type="button" id="40000">
+                        <label>$INFO[System.ProfileName][CR][COLOR ff8d8d8d]$LOCALIZE[31839][/COLOR]</label>
+                        <textoffsetx>130</textoffsetx>
                         <align>left</align>
                         <width>359</width>
                         <textwidth>215</textwidth>
-                        <height>60</height>
-                        <font>Reg18</font>
+                        <height>80</height>
+                        <font>Bold25</font>
                         <textcolor>$INFO[Skin.String(MainMenuTextColor)]</textcolor>
-                        <focusedcolor>$INFO[Skin.String(MainMenuFocusTextColor)]</focusedcolor>
-                        <texturefocus colordiffuse="$INFO[Skin.String(MainMenuSecondaryFocusButtonColor)]">colors/color_white.png</texturefocus>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus colordiffuse="00181818">colors/color_white.png</texturefocus> <!--workaround to hide this focus-->
                         <texturenofocus/>
                         <onup>noop</onup>
                         <ondown>900</ondown>
@@ -1221,11 +1248,12 @@
                         <onclick>Dialog.Close(all,true)</onclick>
                         <onclick>System.LogOff</onclick>
                     </control>
-                    <control type="image">
+	<!--Profile Picture-->
+					<control type="image">  
                         <left>50</left>
                         <top>10</top>
-                        <width>40</width>
-                        <height>40</height>
+                        <width>60</width>
+                        <height>60</height>
                         <texture background="true">$INFO[System.ProfileThumb]</texture>
                     </control>
                 </control>
@@ -1287,9 +1315,9 @@
                 <focusedlayout height="85" width="bingie_menu_width" condition="![Control.HasFocus(900) | Control.HasFocus(4444)]">
                     <!--Don't know what this is supposed to do!-->
 					<include content="Bingie_Menu_Current_Indicator" condition="!Skin.HasSetting(EnhancedHome_Circular)">
-                        <param name="keepvisible" value="false" />
+                        <param name="keepvisible" value="true" />
                         <param name="visibility" value="$EXP[IsMenuEntryActive] + !$EXP[IsMainMenuOpened]" />
-                        <param name="left" value="302" />  
+                        <param name="left" value="100" />  
                     </include>
                     <include content="Bingie_Menu_Icon" condition="!Skin.HasSetting(DisableIconsMainMenu)">
                         <param name="includeAnimCond" value="true" />
@@ -1304,7 +1332,7 @@
                 <include condition="$EXP[IsBingieViewsActive]">MainMenuContent</include>
             </control>
 
-            <!-- PowerMenu Buttons -->
+            <!-- powermenu buttons -->
             <control type="list" id="40003">
                 <visible>$EXP[IsMainMenuOpened] + !Skin.HasSetting(DisablePowerMenu)</visible>
                 <orientation>vertical</orientation>
@@ -1373,15 +1401,15 @@
             </animation>
 
             <!--Panel on Home (submenu Panel) -->
-            <!-- <control type="image">
-                <posx>-20</posx>
-                <width>360</width>
-                <height>250</height>
-                <texture background="true" border="5">diffuse/panel.png</texture>
-                <colordiffuse>$INFO[Skin.String(MainMenuPanelColor)]</colordiffuse>
-                <visible>Skin.String(MainMenuPanelColor) + !String.IsEqual(Skin.String(MainMenuPanelColor),None)</visible>
-               <aspectratio>stretch</aspectratio>
-           </control> -->
+            <!-- <control type="image"> -->
+                <!-- <posx>-20</posx> -->
+                <!-- <width>360</width> -->
+                <!-- <height>250</height> -->
+                <!-- <texture background="true" border="5">diffuse/panel.png</texture> -->
+                <!-- <colordiffuse>$INFO[Skin.String(MainMenuPanelColor)]</colordiffuse> -->
+                <!-- <visible>Skin.String(MainMenuPanelColor) + !String.IsEqual(Skin.String(MainMenuPanelColor),None)</visible> -->
+                <!-- <aspectratio>stretch</aspectratio> -->
+            <!-- </control> -->
             <control type="list" id="4444">
                 <posx>-20</posx>
                 <visible allowhiddenfocus="true">[String.IsEqual(Window(Home).Property(submenu),show) | Control.HasFocus(4444)] + Integer.IsGreater(Container(4445).NumItems,0)</visible>
@@ -1407,10 +1435,10 @@
                 </itemlayout>
                 <focusedlayout width="360" height="50">
 				<!--Submenu highlight - removed it, dont need it-->
-                    <!-- <control type="image">
-                        <texture>colors/color_white.png</texture>
-                       <colordiffuse>$INFO[Skin.String(MainMenuSecondaryFocusButtonColor)]</colordiffuse>
-                    </control> -->
+                    <!-- <control type="image"> -->
+                        <!-- <texture>colors/color_white.png</texture> -->
+                        <!-- <colordiffuse>$INFO[Skin.String(MainMenuSecondaryFocusButtonColor)]</colordiffuse> -->
+                    <!-- </control> -->
                     <include content="Bingie_Submenu_LabelFOCUS">
                         <param name="textcolor" value="white" />
 					</include>
@@ -1474,16 +1502,14 @@
     </include>
 
     <!-- <include name="Bingie_Menu_Focus_Img"> -->
-        <!-- <control type="image">
-            <visible>$PARAM[visibility]</visible>
-            <width>358</width>
-            <texture>colors/color_white.png</texture>
-            <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
-        </control>
-    </include>
-
-
-Bingie Menu Icons -->
+        <!-- <control type="image"> -->
+            <!-- <visible>$PARAM[visibility]</visible> -->
+            <!-- <width>358</width> -->
+            <!-- <texture>colors/color_white.png</texture> -->
+            <!-- <colordiffuse>$PARAM[colordiffuse]</colordiffuse> -->
+        <!-- </control> -->
+    <!-- </include> -->
+<!-- Bingie Menu Icons -->
     <include name="Bingie_Menu_Icon">
         <control type="group">
             <include condition="$PARAM[includeAnimCond] + !Skin.HasSetting(EnhancedHome_Circular)">Bingie_Menu_Icon_Anim</include>
@@ -1668,7 +1694,7 @@ Bingie Menu Icons -->
                 <width>1000</width>
                 <include>Bingie_RatingsAndStudio_Hor</include>
             </control>
-<!-- Hugo Ratings & Studio Home--> <!-- Very Nice -->
+<!-- Hugo Ratings & Studio Home-->
 			<control type="group">
 				<visible>Skin.HasSetting(PreferStarsRatingBingie)</visible>
                 <include content="right" condition="$EXP[IsBingieCategoriesActive]">
@@ -1702,9 +1728,7 @@ Bingie Menu Icons -->
             <width>130</width>
             <aspectratio scalediffuse="true">scale</aspectratio>
             <texture border="2" background="true">diffuse/gradient_side.png</texture>
-            <colordiffuse>ff000000</colordiffuse> <!-- Added to Give Panel Color -->     
-			<!-- Never Change or Remove / It will give everything a Grey Effect on Screen. It's very Hard to see on Smaller TV but Very Noticable on a Larger One -->
-			 
+            <colordiffuse>ff000000</colordiffuse>      <!-- Added to Give Panel Color -->
 		</control>
     </include>
 
@@ -1948,26 +1972,21 @@ Bingie Menu Icons -->
         <value condition="[!Integer.IsGreater(Window(Home).Property(Random),20) | !Library.HasContent(movies)] + Library.HasContent(tvshows)">special://skin/extras/widgetplaylists/recommendedtvshows.xsp</value>
     </variable>
 
-<!-- SPOTLIGHT IMAGE MAIN HOME--> 
-<!--the whole fanart image now fits the spotlight like Netflix -->
+<!-- Spotlight Image Main Home--> <!--the whole fanart image now fits the spotlight like Netflix. A good scrape and forget option, every image works well here-->
     <include name="BingieSpotlightCornerImage">
         <param name="top" default="0"/>
         <param name="right" default="0"/>
         <param name="width" default="1240"/>
         <param name="height" default="700"/>
         <definition>
-<!-- Spotlight DIffuse -->  
-			<control type="image">
+            <control type="image">
                 <nested />
                 <visible>$PARAM[visibility]</visible>
                 <top>$PARAM[top]</top>
                 <right>$PARAM[right]</right>
                 <width>$PARAM[width]</width>
                 <height>$PARAM[height]</height>
-                <texture background="true" diffuse="bingie/bingie_default_spotlight_diffuse.png">$PARAM[image]</texture>
-<!-- Just Comment Above & Un-Comment Below For Adjusting -->	
-
-			<!--<texture background="true" diffuse="special://skin/extras/bingie_default_spotlight_diffuse.png">$PARAM[image]</texture> -->
+                <texture background="true" diffuse="special://skin/extras/bingie_default_spotlight_diffuse.png">$PARAM[image]</texture> <!--NEEDS MY DIFFUSE IN THE EXTRA's FOLDER. Created a new diffuse so it no longer obscures the fanart, only obscures the edges-->
 				<fadetime>550</fadetime>
                 <aspectratio scalediffuse="true" aligny="top" align="right">keep</aspectratio>
                 <animation effect="fade" end="0" time="500">Hidden</animation>
@@ -2045,8 +2064,7 @@ Bingie Menu Icons -->
             </control>
         </definition>
     </include>
-    <!-- MPAA Flag on Spotlight Rightside of Window --> 
-	<!-- I like US look / I Will Look into Maybe a Button to have Colored MPAA as Option -->
+    <!-- MPAA Flag on Spotlight Rightside of Window -->
     <include name="Spotlight_MPAA_Flag_Object">
 	    <param name="right" default="-160" />
         <param name="top" default="690" />                           <!-- Default --675-- -->
@@ -2145,8 +2163,7 @@ Bingie Menu Icons -->
     <variable name="BingiePanelColor">
         <value condition="!String.IsEmpty(Skin.String(ViewDetailsPanelColor.base))">$INFO[Skin.String(ViewDetailsPanelColor.base)]</value>
         <value>ff000000</value>                           <!-- Default Value ff0a0a0a -->
-    <!-- This Above Should Never Be Changed -->
-	</variable>
+    </variable>
 
     <!-- Bingie Plot Textcolor -->
     <variable name="BingiePlotTextColor">
@@ -2221,7 +2238,7 @@ Bingie Menu Icons -->
                     <include>SpotlightRowDetails</include>
                 </control>
 
-		<!-- Bingie  Sublabel (Tagline/Watch library view) -->
+                <!-- bingie sublabel (tagline/Watch library view) -->
                 <control type="label" id="823">
                     <visible>!Container.Content(episodes)</visible>
                     <visible>!String.IsEmpty(Control.GetLabel(823))</visible>
@@ -2286,8 +2303,8 @@ Bingie Menu Icons -->
                 <!-- plot    (library bingie) -->
                 <control type="textbox">
                     <visible>!Container.Content(seasons)</visible>
-					<height min="50" max="115">auto</height>	<!--3 lines visible here-->
-					<top>25</top>
+					<height min="50" max="115">auto</height>	<!--3 lines visible here-->										  
+                    <top>25</top>
 					<width>850</width>                               <!-- default - 650 -->
                     <textcolor>$VAR[BingiePlotTextColor]</textcolor>
                     <align>left</align>                              <!-- justify -->
