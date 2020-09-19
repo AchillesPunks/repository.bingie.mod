@@ -24,7 +24,7 @@
 		<forum>https://forum.kodi.tv/showthread.php?tid=355993</forum>
 		<website>https://forum.kodi.tv/showthread.php?tid=355993</website>
 		<email></email>
-		<source>https://github.com/AchillesPunks/repository.bingie.mod/</source>
+		<source>https://github.com/AchillesPunks/repository.bingie.mod.git/</source>
 		<assets>
 			<icon>resources/icon.png</icon>
 			<fanart>resources/fanart.jpg</fanart>
