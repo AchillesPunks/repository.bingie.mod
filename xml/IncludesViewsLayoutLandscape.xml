@@ -206,15 +206,15 @@
             <bordersize>8</bordersize>
             <texture diffuse="home/home_matte2.png">diffuse/home_overlay.png</texture>
             <include condition="!Window.IsActive(Home)">LandscapeTagOverlayVisibility</include>
-            <colordiffuse>$INFO[Skin.String(TagOverlaysPanelColor)]</colordiffuse>
+            <colordiffuse>bf000000</colordiffuse>
         </control>
         <control type="textbox">
             <!--Label-->
             <visible>![$EXP[IsTvShowDBType] + $EXP[IsTVShowInLastEpisodes]]</visible>
             <left>16</left>
             <right>16</right>
-            <bottom>10</bottom>
-            <height>50</height>
+            <bottom>15</bottom>
+            <height>60</height>
             <include condition="Skin.HasSetting(ThumbsLabelAlignmentCenter)">align_center</include>
             <align>left</align>
             <aligny>center</aligny>
@@ -278,23 +278,24 @@
             <visible>$EXP[IsTvShowDBType] + $EXP[IsTVShowInLastEpisodes]</visible>
             <width>100%</width>
             <height>25</height>
-            <left>100</left>
-            <bottom>13</bottom>
+            <left>9</left>
+            <bottom>17</bottom>
             <animation effect="slide" end="1,4" time="0" condition="!Skin.HasTheme(skindefault)">Conditional</animation>
             <control type="button">
                 <width min="150" max="351">auto</width>
-                <height>100%</height>
+                <bottom>1</bottom>
+				<height>120%</height>
                 <onclick>noop</onclick>
                 <align>center</align>
-                <aligny>top</aligny>
-                <font>Bold18</font>
+                <aligny>center</aligny>
+                <font>Reg16</font>
                 <textoffsety>0</textoffsety>
                 <label>[B]$LOCALIZE[31007][/B]</label>
-                <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-                <focusedcolor>$INFO[Skin.String(ViewDetailsTextColor)]</focusedcolor>
+                <textcolor>white</textcolor>
+                <focusedcolor>white</focusedcolor>
                 <textoffsetx>5</textoffsetx>
-                <texturefocus colordiffuse="$INFO[Skin.String(BingieNewEpisodesTagColor)]">colors/color_white.png</texturefocus>
-                <texturenofocus colordiffuse="$INFO[Skin.String(BingieNewEpisodesTagColor)]">colors/color_white.png</texturenofocus>
+                <texturefocus colordiffuse="f2d50000">colors/color_white.png</texturefocus>
+                <texturenofocus colordiffuse="f2d50000">colors/color_white.png</texturenofocus>
             </control>
         </control>
     </include>

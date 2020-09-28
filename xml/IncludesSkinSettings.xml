@@ -789,15 +789,25 @@
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
             <selected>Skin.HasSetting(PreferStarsRatingBingie)</selected>
         </control>
-		<!--enable UK Icons-->
+		<!--enable UK & US Icons-->
         <control type="radiobutton" id="191919">
             <include>SkinSettings_Button</include>
-            <label>Enable UK Icons on Details Row</label>
-            <onclick>Skin.ToggleSetting(DisableUKIcons)</onclick>
-            <selected>Skin.HasSetting(DisableUKIcons)</selected>
+            <label>Enable UK Icons (or UK style US icons) on Details Row</label>
+            <onclick>Skin.ToggleSetting(EnableUKIcons)</onclick>
+            <onclick>Skin.reset(EnableUSIcons)</onclick>
+			<selected>Skin.HasSetting(EnableUKIcons)</selected>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>	
-		
+		<!--enable US Icons-->
+        <control type="radiobutton" id="191920">
+            <include>SkinSettings_Button</include>
+            <label>Enable Alternative US Icons on Details Row</label>
+            <onclick>Skin.reset(EnableUKIcons)</onclick>
+			<onclick>Skin.ToggleSetting(EnableUSIcons)</onclick>
+            <selected>Skin.HasSetting(EnableUSIcons)</selected>
+            <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
+        </control>			
+	
 		<!--enable Audio Icons-->
         <control type="radiobutton" id="191918">
             <include>SkinSettings_Button</include>
@@ -1048,6 +1058,23 @@
             <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
             <visible>Skin.HasSetting(DisablePowerMenu)</visible>
         </control>
+		<!-- Disable profile on menu -->    
+		<control type="radiobutton" id="9101">
+            <include>SkinSettings_Button</include>
+            <label>Disable profile on sideblade menu</label>
+            <onclick>Skin.ToggleSetting(Disableprofile)</onclick>
+            <selected>Skin.HasSetting(Disableprofile)</selected>
+            <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
+        </control>
+		<!-- Disable static slim menu -->    
+		<control type="radiobutton" id="9102">
+            <include>SkinSettings_Button</include>
+            <label>Disable static slim menu</label>
+            <onclick>Skin.ToggleSetting(DisableStaticSlimMenu)</onclick>
+            <selected>Skin.HasSetting(DisableStaticSlimMenu)</selected>
+            <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
+        </control>
+		
     </include>
 
     <!-- Home General Settings -->

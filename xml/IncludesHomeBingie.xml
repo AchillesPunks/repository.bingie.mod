@@ -118,7 +118,7 @@
                         <align>left</align>
                         <!-- <aligny>center</aligny> -->
                         <font>Title2</font>
-                        <textcolor>fffafafa</textcolor>
+                        <textcolor>f2e0e0e0</textcolor>
                         <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                         <label>[B]$VAR[BingieSpotlightTitle][/B]</label>
                     </control>
@@ -132,8 +132,8 @@
                         <width max="800">auto</width>
                         <align>left</align>
                         <aligny>center</aligny>
-                        <font>Bold33</font>
-						<textcolor>fffafafa</textcolor>
+                        <font>Bold32</font>
+						<textcolor>f2e0e0e0</textcolor>
                         <label>$VAR[BingieSpotlightSublabel]</label>
                     </control>-->
 					
@@ -149,7 +149,7 @@
                         <width max="720">auto</width>
                         <align>left</align>
                         <font>Reg27</font>
-                        <textcolor>fffafafa</textcolor> <!--spotlight content improvements-->
+                        <textcolor>f2e0e0e0</textcolor> <!--spotlight content improvements-->
                         <!-- <shadowcolor>FF000000</shadowcolor> -->
                         <label>$VAR[BingieSpotlightPlot]</label>
 					</control>
@@ -199,11 +199,11 @@
                         <include>Default_Visible_Fade</include>
                         <top>40</top>
 						<height>-5</height>
-                        <width max="850">auto</width>
+                        <width max="820">auto</width>
                         <align>left</align>
                         <aligny>center</aligny>
                         <font>bold29</font>
-                        <textcolor>fffafafa</textcolor>
+                        <textcolor>f2e0e0e0</textcolor>
                         <label>$VAR[BingieSublabel]</label>
                     </control>
 
@@ -222,7 +222,7 @@
                             <aligny>center</aligny>
                             <font>Reg36</font>
                          <!-- <textcolor>$INFO[Skin.String(BingiePrimaryTextColor)]</textcolor> -->
-							<textcolor>fffafafa</textcolor>
+							<textcolor>f2e0e0e0</textcolor>
                             <label>$VAR[BingieEpisodeInfoHeader]</label>
                         </control>
    
@@ -270,11 +270,11 @@
                         <include>Default_Visible_Fade</include>
                         <include condition="Skin.HasSetting(DisableBingieMoreDetails)">Alt_Bingie_Plot_Height</include>
 						<top>20</top>
-						<height min="50" max="75">auto</height>   <!--75 for 2 lines. 115 for 3 lines of plot-->
-                        <width max="850">auto</width>                   <!-- default - 620 - -->
+						<height min="50" max="80">auto</height>   <!--80 for 2 lines with the larger font-->
+                        <width max="820">auto</width>                   <!-- default - 620 - -->
                         <align>left</align>                            <!-- default - justify - -->
-                        <font>Reg28</font>
-						<textcolor>silver</textcolor>
+                        <font>Plots</font>
+						<textcolor>darkgray</textcolor>
                         <label>$VAR[BingiePlot]</label>
                     </control>
 

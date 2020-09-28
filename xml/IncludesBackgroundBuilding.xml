@@ -50,7 +50,9 @@
             <control type="image">
                 <include>FullscreenDimensions</include>
                 <visible>$PARAM[visibility]</visible>
-                <texture>overlays/background.png</texture>
+                <!--added my diffuse to .xbt too as background.png. Yours is background1.png-->
+				<texture>overlays/background.png</texture>
+				<!-- <texture>overlays/background1.png</texture> -->
                 <colordiffuse>black</colordiffuse>
                 <animation time="300" effect="fade" start="0" end="100" reversible="true" easing="inout">Visible</animation>
             </control>

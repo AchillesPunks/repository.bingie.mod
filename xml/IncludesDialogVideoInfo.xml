@@ -595,7 +595,7 @@
 								<width>1150</width>
 								<height>278</height>
 								<label>$VAR[Plots]</label>
-								<textcolor>silver</textcolor>
+								<textcolor>darkgray</textcolor>
 								<shadowcolor></shadowcolor>
 								<align>left</align>
 								<font>Bold24</font>
@@ -1580,7 +1580,7 @@
 						<top>40</top>
 						<height>0</height>
 						<width>100%</width>
-						<font>Reg28</font>
+						<font>Plots</font>
 						<align>left</align>
 						<aligny>center</aligny>
 						<textcolor>white</textcolor>
@@ -1590,13 +1590,13 @@
 					<!-- plot -->
 					<control type="textbox">
 						<animation effect="fade" start="100" end="0" time="200" condition="!String.IsEmpty(Window.Property(AdditionalInfo))">Conditional</animation>
-						<width>850</width>
+						<width>820</width>
 						<top>25</top>
 						<height min="110" max="160">auto</height>
-						<textcolor>silver</textcolor>
+						<textcolor>darkgray</textcolor>
 						<shadowcolor></shadowcolor>
 						<align>left</align>
-						<font>Reg28</font>
+						<font>Plots</font>
 						<label>$VAR[BingieInfoDialogPlot]</label>
 					</control>
 
@@ -1725,7 +1725,7 @@
 								<left>30</left>
 								<width>270</width>
 								<height>60</height>
-								<font>Reg28</font>
+								<font>Plots</font>
 								<textcolor>$VAR[BingieInfoDialogButtonsTextColor]</textcolor>
 								<focusedcolor>$INFO[Skin.String(ViewDetailsTextColor)]</focusedcolor>
 								<texturefocus colordiffuse="$INFO[Skin.String(ViewDetailsTextColor)]">bingie/border/slimframefo.png</texturefocus>
@@ -2175,7 +2175,7 @@
 						<width>100%</width>
 						<height min="300" max="600">auto</height>
 						<label>$INFO[ListItem.Plot]</label>
-						<textcolor>silver</textcolor>
+						<textcolor>darkgray</textcolor>
 						<align>left</align>
 						<font>Reg32</font>
 					</control>
@@ -2597,10 +2597,10 @@
         <height>65</height>
         <aligny>center</aligny>
         <align>left</align>
-        <font>Reg30</font>  <!--better size for these buttons-->
+        <font>Plots</font>  <!--better size for these buttons-->
         <textoffsetx>55</textoffsetx>
         <textoffsety>8</textoffsety>
-		<textcolor>silver</textcolor>
+		<textcolor>darkgray</textcolor>
         <!-- <textcolor>$VAR[BingieInfoDialogButtonsTextColor]</textcolor> -->
         <!--default <focusedcolor>$INFO[Skin.String(ViewDetailsTextColor)]</focusedcolor> -->
 		<focusedcolor>white</focusedcolor>
@@ -2616,8 +2616,8 @@
     <include name="Bingie_InfoDialog_Button_Texture">
         <textureradioonfocus colordiffuse="white">$PARAM[radiotexture]</textureradioonfocus>
         <textureradioofffocus colordiffuse="white">$PARAM[radiotexture]</textureradioofffocus>
-        <textureradioonnofocus colordiffuse="silver">$PARAM[radiotexture]</textureradioonnofocus>
-        <textureradiooffnofocus colordiffuse="silver">$PARAM[radiotexture]</textureradiooffnofocus>
+        <textureradioonnofocus colordiffuse="darkgray">$PARAM[radiotexture]</textureradioonnofocus>
+        <textureradiooffnofocus colordiffuse="darkgray">$PARAM[radiotexture]</textureradiooffnofocus>
     </include>
 
     <include name="Fade_Rate_Button">

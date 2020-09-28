@@ -1157,7 +1157,7 @@
             </control>
             <control type="label" id="699706">
                 <left>44</left>
-                <width>50</width>
+                <width>auto</width>
                 <height>85</height>
                 <align>left</align>
                 <aligny>center</aligny>
@@ -1455,8 +1455,8 @@
             <height>90</height>
             <itemgap>15</itemgap>
             <align>right</align>
-            
-            <include>Rating_Monochrome_Hor1</include>
+            <include condition="Skin.HasSetting(EnableMonochromeRatingInBingieViews)">Rating_Monochrome_Hor1</include>
+			<include condition="!Skin.HasSetting(EnableMonochromeRatingInBingieViews)">Rating_Color_Hor1</include>
             <include condition="!Skin.HasSetting(BingieViewsDisableStudio) + Skin.HasSetting(EnableStudioLogo)">StudioLogo</include>
         </control>
     </include>
@@ -1508,15 +1508,22 @@
         <include condition="Skin.HasSetting(EnableRTAndMetaCriticRating)">TomatoMeter_Monochrome_Hor</include>
         <include condition="Skin.HasSetting(EnableRTAndMetaCriticRating)">MetaCritic_Monochrome_Hor</include>
     </include>
-	 <!--accompanies RT/IMDB details row setting-->
+<!--accompanies RT/IMDB details row setting + monochrome setting-->
 	 <include name="Rating_Monochrome_Hor1">
         <include condition="Skin.HasSetting(EnableIMDBRating)">IMDB_Top250_Monochrome_Hor</include>
-        <!-- <include condition="Skin.HasSetting(EnableIMDBRating)">IMDB_Monochrome_Hor</include> -->
         <include condition="Skin.HasSetting(EnableTVdbAndTMdbRating)">TVDB_Monochrome_Hor</include>
         <include condition="Skin.HasSetting(EnableTVdbAndTMdbRating)">TMDB_Monochrome_Hor</include>
-        <include>TomatoAudienceHugo</include> <!--revisit to fix this-->
+        <include>TomatoAudienceHugo</include> <!--can't get audience to work. revisit to fix this-->
         <include>MetaCritic_Monochrome_Hor</include>
     </include>
+<!--accompanies RT/IMDB details row setting + monochrome setting-->
+<include name="Rating_Color_Hor1">
+        <include condition="Skin.HasSetting(EnableIMDBRating)">IMDB_Top250_Color_Hor</include>
+        <include condition="Skin.HasSetting(EnableTVdbAndTMdbRating)">TVDB_Color_Hor</include>
+        <include condition="Skin.HasSetting(EnableTVdbAndTMdbRating)">TMDB_Color_Hor</include>
+        <include condition="Skin.HasSetting(EnableRTAndMetaCriticRating)">MetaCritic_Color_Hor</include>
+		<include>TomatoAudienceHugo</include> <!--can't get audience to work. revisit to fix this-->
+</include>
 
     <variable name="WhiteRatingColorDiffuseTextColor">
         <value condition="!Skin.String(RatingsLogoColor,none)">$INFO[Skin.String(RatingsLogoColor)]</value>
