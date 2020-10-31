@@ -14,7 +14,7 @@
             <!-- View 523 -->
             <control type="group">
                 <include>BingieLeftDefs</include>
-                <top>650</top>
+                <top>600</top>
                 <width>1660</width>
                 <!-- Content Header -->
                 <control type="textbox">
@@ -23,8 +23,19 @@
                     <font>Bold31</font>
                     <align>left</align>
                     <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-                    <label>$VAR[BingieMainContentHeader]</label>
+                    <label>$VAR[BingieMainContentHeader] $INFO[Window(Home).Property(TVshows.Count),(,)]</label>
                     <visible>Integer.IsGreater(Container(523).NumItems,0)</visible>
+					<visible>String.IsEqual(Container.FolderPath, videodb://tvshows/titles/)</visible>
+                </control>
+				<control type="textbox">
+                    <width>100%</width>
+                    <height>40</height>
+                    <font>Bold31</font>
+                    <align>left</align>
+                    <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                    <label>$VAR[BingieMainContentHeader] $INFO[Window(Home).Property(Movies.Count),(,)]</label>
+                    <visible>Integer.IsGreater(Container(523).NumItems,0)</visible>
+					<visible>String.IsEqual(Container.FolderPath, videodb://movies/titles/)</visible>
                 </control>
 
                 <include condition="!Skin.HasSetting(View523_UseFixedLayout) | !Skin.HasSetting(View_523_HorizontalNavigation)" content="Bingie_Main_Landscape_View">

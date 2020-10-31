@@ -1577,6 +1577,7 @@
 					<!-- Sublabel -->
 					<control type="label" id="823">
 						<visible>!String.IsEmpty(Control.GetLabel(823))</visible>
+						<animation effect="fade" start="100" end="0" time="200" condition="!String.IsEmpty(Window.Property(AdditionalInfo))">Conditional</animation>
 						<top>40</top>
 						<height>0</height>
 						<width>100%</width>
@@ -2156,9 +2157,9 @@
 				<!-- plot & critics additional info -->
 				<control type="grouplist">
 					<include>BingieLeftDefs</include>
-					<posy>285</posy>  <!--lower the plot/critics as it was too close to TV show sublabel-->
+					<top>320</top>
 					<width>1660</width>
-					<height>60%</height>
+					<height>100%</height>
 					<orientation>vertical</orientation>
 					<visible>String.IsEqual(Window.Property(AdditionalInfo),plot)</visible>
 
@@ -2173,7 +2174,7 @@
 					<!--large plot -->
 					<control type="textbox">
 						<width>100%</width>
-						<height min="300" max="600">auto</height>
+						<height min="0" max="500">auto</height>
 						<label>$INFO[ListItem.Plot]</label>
 						<textcolor>darkgray</textcolor>
 						<align>left</align>
@@ -2202,7 +2203,7 @@
 				<!-- extendedinfo cast list -->
 				<control type="panel" id="351">
 					<posx>600</posx>
-					<posy>250</posy>
+					<posy>335</posy>
 					<width>800</width>
 					<height>714</height>
 					<onleft>ClearProperty(AdditionalInfo)</onleft>
@@ -2273,10 +2274,10 @@
 						<visible>Control.IsVisible(351) + Container(351).IsUpdating</visible>
 					</control>
 					<control type="group">
-						<right>50</right>
-						<posy>250</posy>
+						<right>35</right>
+						<posy>335</posy>
 						<width>530</width>
-						<height>67%</height>
+						<height>65%</height>
 						<!--Actor Image-->
 						<control type="image">
 							<description>Actor image</description>
@@ -2290,7 +2291,7 @@
 							<height>120</height>
 							<bordersize>0</bordersize>
 							<texture background="true" diffuse="diffuse/poster.png">colors/color_white.png</texture>
-							<colordiffuse>$INFO[Skin.String(TagOverlaysPanelColor)]</colordiffuse>
+							<colordiffuse>4d000000</colordiffuse>
 						</control>
 						<control type="label">
 							<left>10</left>

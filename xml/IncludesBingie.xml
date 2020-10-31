@@ -156,11 +156,11 @@
         <control type="group">
 			<posy>6.5</posy>
 			<visible>!String.IsEmpty(Control.GetLabel(699702))</visible>
-			<width>120</width>
+			<width>110</width>
 			<height>35</height>
 			<include>Default_Visible_Fade</include>
 			<control type="image">
-				<left>-20</left>
+				<left>-21</left>
 				<height>100%</height>
                 <width>100%</width>
                 <aspectratio>keep</aspectratio>
@@ -168,7 +168,7 @@
 				<visible>Skin.HasSetting(EnableMonochromeRatingInBingieViews)</visible>
             </control>
 			<control type="image">
-				<left>-20</left>
+				<left>-21</left>
 				<height>100%</height>
                 <width>100%</width>
                 <aspectratio>keep</aspectratio>
@@ -181,7 +181,7 @@
                 <height>100%</height>
                 <!-- <aligny>center</aligny> -->
                 <!-- <align>center</align> -->
-				<left>84</left>
+				<left>71</left>
                 <textcolor>darkgray</textcolor>
                 <font>Reg26</font>
                 <scroll>false</scroll>
@@ -189,6 +189,47 @@
             </control>
         </control>
     </include>
+	<!--tvdb-->
+	<include name="tvdb">
+        <control type="group">
+			<left>-4</left>
+			<posy>6.5</posy>
+			<visible>!String.IsEmpty(Control.GetLabel(878787))</visible>
+			<width>100</width>
+			<height>35</height>
+			<include>Default_Visible_Fade</include>
+			
+			<control type="image">
+				<left>-20</left>
+				<height>100%</height>
+                <width>100%</width>
+                <aspectratio>keep</aspectratio>
+                <texture>flags/flags_color/addratings/tvdbtrans.png</texture>
+				<visible>!Skin.HasSetting(EnableMonochromeRatingInBingieViews)</visible>
+            </control>
+			<control type="image">
+				<left>-20</left>
+				<height>100%</height>
+                <width>100%</width>
+                <aspectratio>keep</aspectratio>
+                <texture background="true" colordiffuse="darkgray">flags/white/tvdbtrans.png</texture>
+				<visible>Skin.HasSetting(EnableMonochromeRatingInBingieViews)</visible>
+            </control>
+            <control type="label" id="878787">
+                <top>-1</top>
+				<width>100%</width>
+                <height>100%</height>
+                <!-- <aligny>center</aligny> -->
+                <!-- <align>center</align> -->
+				<left>68</left>
+                <textcolor>darkgray</textcolor>
+                <font>Reg26</font>
+                <scroll>false</scroll>
+                 <label>$INFO[Window(Home).Property(SkinHelper.ListItem.Rating.TVDB)]</label>
+            </control>
+        </control>
+    </include>
+	
 <!--Rotten Tomatoes Details Row-->
 	 <include name="TomatoMeter_Hor1">
         <control type="group">
@@ -336,18 +377,18 @@
 		          
             <control type="button" id="765">
 				<visible>!String.IsEmpty(ListItem.Mpaa) + String.EndsWith(Control.GetLabel(123458),color_transparent.png)</visible>
-				<posy>5</posy>
+				<posy>2</posy>
                 <left>-65</left>
-				<height>38</height>
-                <width>auto</width>
+				<height>44</height>
+                <width min="60">auto</width>
 				<align>center</align>
 				<aligny>top</aligny>
 				<textwidth>140</textwidth> 
 				<textcolor>darkgray</textcolor>
-				<texturenofocus colordiffuse="ff424242">bingie/square-rounded.png</texturenofocus>
-				<texturefocus colordiffuse="ff424242">bingie/square-rounded.png</texturefocus>
-				<textoffsetx>15</textoffsetx>
-				<textoffsety>1</textoffsety>
+				<texturenofocus colordiffuse="$INFO[Skin.String(BingieDetailsFlagColor)]">bingie/square-rounded.png</texturenofocus>
+				<texturefocus colordiffuse="$INFO[Skin.String(BingieDetailsFlagColor)]">bingie/square-rounded.png</texturefocus>
+				<textoffsetx>10</textoffsetx>
+				<textoffsety>4</textoffsety>
 				<font>Reg26</font>
 				<label>$VAR[GetMPAA]</label>
 				<enable>false</enable>
@@ -369,18 +410,18 @@
 		<!-- Fallback MPAA text and flag -->
 		<control type="button" id="765">
 				<visible>!String.IsEmpty(ListItem.Mpaa) + String.EndsWith(Control.GetLabel(123456),color_transparent.png)</visible>
-				<posy>5</posy>
+				<posy>2</posy>
                 <left>-95</left>
-				<height>38</height>
-                <width>auto</width>
+				<height>44</height>
+                <width min="60">auto</width>
 				<align>center</align>
 				<aligny>top</aligny>
 				<textwidth>140</textwidth> 
 				<textcolor>darkgray</textcolor>
-				<texturenofocus colordiffuse="ff424242">bingie/square-rounded.png</texturenofocus>
-				<texturefocus colordiffuse="ff424242">bingie/square-rounded.png</texturefocus>
-				<textoffsetx>15</textoffsetx>
-				<textoffsety>1</textoffsety>
+				<texturenofocus colordiffuse="$INFO[Skin.String(BingieDetailsFlagColor)]">bingie/square-rounded.png</texturenofocus>
+				<texturefocus colordiffuse="$INFO[Skin.String(BingieDetailsFlagColor)]">bingie/square-rounded.png</texturefocus>
+				<textoffsetx>10</textoffsetx>
+				<textoffsety>4</textoffsety>
 				<font>Reg26</font>
 				<label>$VAR[GetMPAA]</label>
 				<enable>false</enable>
@@ -393,17 +434,17 @@
             <include>Default_Visible_Fade</include>
             <control type="button" id="765">
 				<visible>!String.IsEmpty(ListItem.Mpaa)</visible>
-				<posy>5</posy>
-                <height>38</height>
-                <width>auto</width>
+				<posy>2</posy>
+                <height>44</height>
+                <width min="60">auto</width>
 				<align>center</align>
 				<aligny>top</aligny>
 				<textwidth>140</textwidth> 
 				<textcolor>darkgray</textcolor>
-				<texturenofocus colordiffuse="ff424242">bingie/square-rounded.png</texturenofocus>
-				<texturefocus colordiffuse="ff424242">bingie/square-rounded.png</texturefocus>
-				<textoffsetx>15</textoffsetx>
-				<textoffsety>1</textoffsety>
+				<texturenofocus colordiffuse="$INFO[Skin.String(BingieDetailsFlagColor)]">bingie/square-rounded.png</texturenofocus>
+				<texturefocus colordiffuse="$INFO[Skin.String(BingieDetailsFlagColor)]">bingie/square-rounded.png</texturefocus>
+				<textoffsetx>10</textoffsetx>
+				<textoffsety>4</textoffsety>
 				<font>Reg26</font>
 				<label>$VAR[GetMPAA]</label>
 				<enable>false</enable>
@@ -428,54 +469,75 @@
 
 <!-- Resolution Top Box-->
     <include name="Resolution_Details_Row">
-        <control type="group">
-            <posy>6.5</posy>
-			<visible>!String.IsEmpty(Control.GetLabel(6117))</visible>
-            <width>65</width>
-            <height>35</height>
-            <include>Default_Visible_Fade</include>
-            <control type="image">
-                <height>100%</height>
-                <width>100%</width>
-                <texture background="true" colordiffuse="ff424242">bingie/flags/frame.png</texture>  <!--original value=$INFO[Skin.String(BingieDetailsFlagColor)]-->
+				<include>Default_Visible_Fade</include>
+			<control type="button" id="6117">
+				<visible>!String.IsEmpty(Control.GetLabel(6117))</visible>
+				<posy>8</posy>
+                <height>34</height>
+                <width>auto</width>
+				<align>center</align>
+				<aligny>top</aligny>
+				<textwidth>140</textwidth> 
+				<textcolor>darkgray</textcolor>
+				<texturenofocus colordiffuse="ff424242">bingie/flags/frame.png</texturenofocus>
+				<texturefocus colordiffuse="ff424242">bingie/flags/frame.png</texturefocus>
+				<textoffsetx>8</textoffsetx>
+				<textoffsety>2</textoffsety>
+				<font>Reg22</font>
+				<label>$VAR[GetResolution,[B],[/B]]</label>
+				<enable>false</enable>
             </control>
-            <control type="label" id="6117">
+	</include>	
+		<!-- Fake Resolution-->
+    <include name="Resolution_Details_Row_fake">
+		<control type="group">
+				<left>5</left>
+				<include>Default_Visible_Fade</include>
+				<visible>String.IsEmpty(Control.GetLabel(6111161)) + String.IsEmpty(Control.GetLabel(6117)) + String.IsEmpty(Control.GetLabel(6118)) + String.IsEmpty(ListItem.AudioCodec)</visible>
+				<visible>!$EXP[IsCategoryDBType]</visible>
+				<posy>8</posy>
+				<width>135</width>
+                <height>35</height>
+			<control type="image">
+                <aspectratio>keep</aspectratio>
+				<height>100%</height>
                 <width>100%</width>
+                <texture colordiffuse="ff424242">bingie/framelong1.png</texture>
+			</control>
+			<control type="label">
+				<width>100%</width>
                 <height>100%</height>
+				<left></left>
                 <aligny>center</aligny>
                 <align>center</align>
                 <textcolor>darkgray</textcolor>
                 <font>Reg22</font>
                 <scroll>false</scroll>
-                <label>$VAR[GetResolution,[B],[/B]]</label>
-            </control>
-        </control>
-    </include>
+                <label>[B]Ultra HD 4K[/B]</label>
+			</control>
+		</control>
+	</include>
 
 <!-- Audio Channels Top Box-->
     <include name="Audio_Channels_Details_Row">
-        <control type="group">
-            <posy>6.5</posy>
-			<visible>!String.IsEmpty(Control.GetLabel(6118))</visible>
-            <width>55</width>
-            <height>35</height>
-            <include>Default_Visible_Fade</include>
-            <control type="image">
-                <height>100%</height>
-                <width>100%</width>
-                <texture background="true" colordiffuse="ff424242">bingie/flags/frame.png</texture>
+				<include>Default_Visible_Fade</include>
+			<control type="button" id="6118">
+				<visible>!String.IsEmpty(Control.GetLabel(6118))</visible>
+				<posy>8</posy>
+                <height>34</height>
+                <width>auto</width>
+				<align>center</align>
+				<aligny>top</aligny>
+				<textwidth>140</textwidth> 
+				<textcolor>darkgray</textcolor>
+				<texturenofocus colordiffuse="ff424242">bingie/flags/frame.png</texturenofocus>
+				<texturefocus colordiffuse="ff424242">bingie/flags/frame.png</texturefocus>
+				<textoffsetx>8</textoffsetx>
+				<textoffsety>2</textoffsety>
+				<font>Reg22</font>
+				<label>$VAR[GetAudioChannels,[B],[/B]]</label>
+				<enable>false</enable>
             </control>
-            <control type="label" id="6118">
-                <width>100%</width>
-                <height>100%</height>
-                <aligny>center</aligny>
-                <align>center</align>
-                <textcolor>darkgray</textcolor>
-                <font>Reg22</font>
-                <scroll>false</scroll>
-                <label>$VAR[GetAudioChannels,[B],[/B]]</label>
-            </control>
-        </control>
 	</include>
 
  <!--Audio Codec-->
@@ -489,11 +551,11 @@
 			<left>10</left>
 			<visible>!String.IsEmpty(ListItem.AudioCodec)</visible>
 			<aspectratio>keep</aspectratio>
-			<texture fallback="colors/color_transparent.png" colordiffuse="darkgray">$VAR[AudioCodecVar,bingie/audiocodec/,.png]</texture>
-			</control>
+			<texture fallback="colors/color_transparent.png" colordiffuse="darkgray">$VAR[AudioCodecVar,special://skin/extras/audiocodec/,.png]</texture>
+		</control>
 		<!--Fallback Audio Codec flag/text-->
 		<control type="group">
-				<visible>!String.IsEmpty(Control.GetLabel(54227)) + String.EndsWith(Control.GetLabel(54321),color_transparent.png)</visible>
+				<visible>!Skin.HasSetting(enableAtmosOnly) + !String.IsEmpty(Control.GetLabel(54227)) + String.EndsWith(Control.GetLabel(54321),color_transparent.png)</visible>
 				<posy></posy>
 				<left>-11</left>
 				<width>135</width>
@@ -502,22 +564,46 @@
                 <aspectratio>keep</aspectratio>
 				<height>100%</height>
                 <width>100%</width>
-                <texture colordiffuse="ff424242">bingie/framelong.png</texture>
+                <texture colordiffuse="ff424242">bingie/framelong2.png</texture>
 			</control>
 			<control type="label" id="54227">
 				<width>100%</width>
                 <height>100%</height>
-				<left>-2</left>
+				<left>0</left>
                 <aligny>center</aligny>
                 <align>center</align>
                 <textcolor>darkgray</textcolor>
                 <font>Reg22</font>
                 <scroll>false</scroll>
-                <label>$VAR[AudioCodecVar,[B],[/B]]</label>
+                <label>$VAR[AudioCodecVar]</label>
 			</control>
 		</control>
 	</control>
 </include>
+
+<!-- TV Show Status -->
+		<include name="ShowStatus">
+				<include>Default_Visible_Fade</include>
+			<control type="button" id="6111161">
+				<visible>!String.IsEmpty(Control.GetLabel(6111161))</visible>
+				<visible>String.IsEmpty(ListItem.AudioCodec)</visible>
+				<posy>8</posy>
+                <height>34</height>
+                <width>auto</width>
+				<align>center</align>
+				<aligny>top</aligny>
+				<textwidth>140</textwidth> 
+				<textcolor>darkgray</textcolor>
+				<texturenofocus colordiffuse="ff424242">bingie/framelong.png</texturenofocus>
+				<texturefocus colordiffuse="ff424242">bingie/framelong.png</texturefocus>
+				<textoffsetx>8</textoffsetx>
+				<textoffsety>2</textoffsety>
+				<font>Reg22</font>
+				<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Status)]</label>
+				<enable>false</enable>
+            </control>
+			
+		</include>			
 	
     <!-- END OF DETAILS ROW INCLUDES-->
 
@@ -529,20 +615,24 @@
 			<top>10</top>
 			<height>50</height>
 			<itemgap>15</itemgap>
-            <include condition="!Skin.HasSetting(PreferStarsRatingBingie">New_Tag_Details_Row</include>
+            <include condition="!Skin.HasSetting(PreferStarsRatingBingie)">New_Tag_Details_Row</include>
             <include condition="!Skin.HasSetting(DisableThumbsUpDown)">Thumbs_Up_Down_Details_Row</include>
             <!-- <include condition="Skin.HasSetting(PreferStarsRatingBingie)">Stars_Rating_Details_Row</include> -->
             <include condition="!Skin.HasSetting(PreferStarsRatingBingie)">Percentage_Rating_Details_Row</include>
             <include condition="Skin.HasSetting(PreferStarsRatingBingie)">IMDB_Hor1</include>
+			<include condition="Skin.HasSetting(PreferStarsRatingBingie)">tvdb</include>
 			<include condition="Skin.HasSetting(PreferStarsRatingBingie)">TomatoMeter_Hor1</include>
 			<include>Year_Premiered_PVRTime_Details_Row</include>
             <include condition="Skin.HasSetting(enableUKIcons)">MPAA_Details_RowNew</include>
 			<include condition="!Skin.HasSetting(enableUKIcons) + !Skin.HasSetting(enableUSIcons)">MPAA_Details_Row</include>
 			<include condition="Skin.HasSetting(enableUSIcons)">MPAA_Details_RowUS</include>
 		    <include>Duration_TotalSeasonsEpisodes_Details_Row</include>
-            <include>Resolution_Details_Row</include>
+			<include>Resolution_Details_Row</include>
+			<include condition="Skin.HasSetting(EnableFakeResolution)">Resolution_Details_Row_fake</include>
             <include>Audio_Channels_Details_Row</include>
-			<include condition="!Skin.HasSetting(DisableAudioCodec)">Audiocodec1</include>
+			<include condition="Skin.HasSetting(EnableTVShowStatus)">ShowStatus</include>
+			<include condition="Skin.HasSetting(EnableAudioCodec)">Audiocodec1</include>
+			
 			
 			
 		</control>
@@ -996,7 +1086,7 @@
     <variable name="BingieMoreDetails">
         <value condition="Integer.IsLessOrEqual(System.Time(ss),15) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Awards))">$INFO[Window(Home).Property(SkinHelper.ListItem.Awards)]</value>
         <value condition="Integer.IsLessOrEqual(System.Time(ss),30) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.CastListing))">$INFO[Window(Home).Property(SkinHelper.ListItem.CastListing)]</value>
-        <value condition="Integer.IsGreater(System.Time(ss),15) + Integer.IsLessOrEqual(System.Time(ss),30) + Integer.IsGreater(ListItem.Top250,0)">$INFO[ListItem.Top250,#, $LOCALIZE[31859]]</value>
+        <!-- <value condition="Integer.IsGreater(System.Time(ss),15) + Integer.IsLessOrEqual(System.Time(ss),30) + Integer.IsGreater(ListItem.Top250,0)">$INFO[ListItem.Top250,#, $LOCALIZE[31859]]</value> -->
         <value condition="Integer.IsGreater(System.Time(ss),15) + Integer.IsLessOrEqual(System.Time(ss),30) + !String.IsEmpty(ListItem.Director)">$INFO[ListItem.Director]</value>
         <value condition="!String.IsEmpty(ListItem.Genre) + !String.Contains(ListItem.Genre,unknown)">$INFO[ListItem.Genre]</value>
     </variable>
@@ -1228,7 +1318,7 @@
                         <width>359</width>
                         <textwidth>215</textwidth>
                         <height>80</height>
-                        <font>Reg26</font>
+                        <font>Reg25</font>
                         <textcolor>ffe0e0e0</textcolor>
                         <focusedcolor>white</focusedcolor>
                         <texturefocus colordiffuse="00181818">colors/color_white.png</texturefocus> <!--workaround to hide this focus-->
@@ -1286,9 +1376,9 @@
 
 <!--Main Menu Items 900-->
             <control type="list" id="900">
-                <top>300</top>
-                <width>bingie_menu_width</width>
-                <height>680</height>
+                <top>295</top>
+				<width>bingie_menu_width</width>
+                <height>520</height> <!--default = 680-->
                 <orientation>vertical</orientation>
                 <itemgap>0</itemgap>
                 <onfocus condition="System.HasAlarm(focus_delay)">CancelAlarm(focus_delay,true)</onfocus>
@@ -1298,19 +1388,19 @@
                 <onright condition="Integer.IsEqual(Container(4445).NumItems,0) + Window.IsActive(1109)">9000</onright>
                 <onback>ClearProperty(ShowViewSubMenu,Home)</onback>
                 <onback>77777</onback>
-                <onup condition="Control.IsVisible(40000)">40000</onup>
+				<onup condition="Control.IsVisible(40000)">40000</onup>
                 <ondown>40003</ondown>
                 <itemlayout height="85" width="bingie_menu_width">
                     <!--this red line just for slim menu-->
                     <include content="Bingie_Menu_Current_Indicator" condition="!Skin.HasSetting(EnhancedHome_Circular)"> 
                          <param name="keepvisible" value="true" />
                          <param name="visibility" value="$EXP[IsMenuEntryActive] + !$EXP[IsMainMenuOpened]" />
-                         <param name="left" value="302" /> 
+                         <param name="left" value="305" /> 
                      </include> 
 					 <!--added to keep the red line stationary on sideblade menu instead of moving with focus-->
 						<include content="Bingie_Menu_Current_Indicator"> 
                         <param name="visibility" value="$EXP[IsMainMenuOpened] + $EXP[IsMenuEntryActive]" />
-						<param name="left" value="58" />
+						<param name="left" value="60" />
 						</include>
                     <include content="Bingie_Menu_Icon" condition="!Skin.HasSetting(DisableIconsMainMenu)">
                         <param name="includeAnimCond" value="true" />
@@ -1332,7 +1422,7 @@
                      <!--Red line under sideblade icons and slim menu-->
                     <include content="Bingie_Menu_Current_Indicator">
                         <param name="visibility" value="$EXP[IsMainMenuOpened] + $EXP[IsMenuEntryActive]" />
-						<param name="left" value="58" /> 
+						<param name="left" value="60" /> 
                     </include>
                     <!-- home behavior onfocus -->
                     <include>HiddenHomeMenuButton</include>
@@ -1342,7 +1432,7 @@
 					<include content="Bingie_Menu_Current_Indicator" condition="!Skin.HasSetting(EnhancedHome_Circular)">
                         <param name="keepvisible" value="false" />
                         <param name="visibility" value="$EXP[IsMenuEntryActive] + !$EXP[IsMainMenuOpened]" />
-                        <param name="left" value="302" />  
+                        <param name="left" value="305" />  
                     </include>
                     <include content="Bingie_Menu_Icon" condition="!Skin.HasSetting(DisableIconsMainMenu)">
                         <param name="includeAnimCond" value="true" />
@@ -1426,17 +1516,10 @@
             </animation>
 
             <!--Panel on Home (submenu Panel) -->
-            <!-- <control type="image">
-                <posx>-20</posx>
-                <width>360</width>
-                <height>250</height>
-                <texture background="true" border="5">diffuse/panel.png</texture>
-                <colordiffuse>$INFO[Skin.String(MainMenuPanelColor)]</colordiffuse>
-                <visible>Skin.String(MainMenuPanelColor) + !String.IsEqual(Skin.String(MainMenuPanelColor),None)</visible>
-               <aspectratio>stretch</aspectratio>
-           </control> -->
+           
             <control type="list" id="4444">
-                <posx>-20</posx>
+                <posx>110</posx>
+				<posy>72</posy>
                 <visible allowhiddenfocus="true">[String.IsEqual(Window(Home).Property(submenu),show) | Control.HasFocus(4444)] + Integer.IsGreater(Container(4445).NumItems,0)</visible>
                 <width>450</width>
                 <height>250</height>
@@ -1486,9 +1569,8 @@
             <control type="image">
                 <visible>$PARAM[visibility]</visible>
                 <left>$PARAM[left]</left>
-                <left>58</left>
-                <width>34</width>
-                <bottom>14</bottom>
+                <width>25</width>
+                <bottom>16</bottom>
 				<height>-7</height>
                 <texture>colors/color_white.png</texture>
                 <colordiffuse>red</colordiffuse>
@@ -1542,7 +1624,7 @@ Bingie Menu Icons -->
             <include condition="$PARAM[includeAnimCond] + !Skin.HasSetting(EnhancedHome_Circular)">Bingie_Menu_Icon_Anim</include>
             <left>60</left>
             <height>100%</height>
-            <top>30</top>
+            <top>36</top>
             <control type="image">
                 <include>Bingie_Menu_Icon_Defs</include>
                 <colordiffuse>darkgray</colordiffuse>
@@ -1554,7 +1636,7 @@ Bingie Menu Icons -->
             <include condition="$PARAM[includeAnimCond] + !Skin.HasSetting(EnhancedHome_Circular)">Bingie_Menu_Icon_Anim</include>
             <left>60</left>
             <height>100%</height>
-            <top>30</top>
+            <top>36</top>
             <control type="image">
                 <include>Bingie_Menu_Icon_Defs</include>
                 <colordiffuse>white</colordiffuse>
@@ -1566,14 +1648,14 @@ Bingie Menu Icons -->
     </include>
 
     <include name="Bingie_Menu_Icon_Defs">
-        <width>30</width>
-        <height>30</height>
+        <width>25</width>
+        <height>25</height>
         <texture background="true">$VAR[ActualIcon]</texture>
         <animation end="70" effect="fade" time="0" delay="0" condition="true">Conditional</animation>
     </include>
 
     <include name="Bingie_Menu_Label_Defs">
-        <width>205</width>
+        <width>340</width>
         <height>108%</height>
         <align>left</align>
         <include content="left" condition="Skin.HasSetting(DisableIconsMainMenu)">
@@ -1581,7 +1663,7 @@ Bingie Menu Icons -->
         </include>
         <left>150</left>
         <aligny>center</aligny>
-        <font>Reg36</font>
+        <font>Reg35</font>
 		<textcolor>darkgray</textcolor>
         <label>$INFO[ListItem.Label]</label>
         <animation effect="fade" start="100" end="0" time="300" condition="!$EXP[IsMainMenuOpened]">Conditional</animation>
@@ -1652,7 +1734,7 @@ Bingie Menu Icons -->
 <!--Side Menu Icon Names on Focus-->
  <include name="Bingie_Menu_LabelFOCUS">
         <control type="label">
-        <width>205</width>
+        <width>360</width>
         <height>108%</height>
         <align>left</align>
         <include content="left" condition="Skin.HasSetting(DisableIconsMainMenu)">
@@ -1660,9 +1742,9 @@ Bingie Menu Icons -->
         </include>
         <left>155</left>
 		<aligny>center</aligny>
-        <font>Bold34</font>
+        <font>Bold33</font>
 		<textcolor>white</textcolor>
-        <label>[B]$INFO[ListItem.Label][/B]</label>
+        <label>$INFO[ListItem.Label]</label>
         <animation effect="fade" start="100" end="0" time="300" condition="!$EXP[IsMainMenuOpened]">Conditional</animation>
 		</control>
     </include>
@@ -1684,11 +1766,11 @@ Bingie Menu Icons -->
         <control type="label">
             <width>384</width>
             <height>55</height>
-            <textoffsetx>54</textoffsetx>
+            <textoffsetx>52</textoffsetx>
             <align>left</align>
             <aligny>center</aligny>
             <font>Bold23</font>
-            <label>[B]$INFO[ListItem.Label][/B]</label>
+            <label>$INFO[ListItem.Label]</label>
             <textcolor>white</textcolor>
         </control>
     </include>
@@ -1754,7 +1836,7 @@ Bingie Menu Icons -->
             <height>100%</height>
             <width>130</width>
             <aspectratio scalediffuse="true">scale</aspectratio>
-            <texture border="2" background="true">diffuse/gradient_side.png</texture>
+            <texture border="2" background="true">bingie/sidediffuse.png</texture>
             <colordiffuse>ff000000</colordiffuse> <!-- Added to Give Panel Color -->     
 			<!-- Never Change or Remove / It will give everything a Grey Effect on Screen. It's very Hard to see on Smaller TV but Very Noticable on a Larger One -->
 			 
@@ -2253,7 +2335,7 @@ Bingie Menu Icons -->
             <control type="grouplist">
                 <width>1500</width>
                 <include>BingieLeftDefs</include>
-                <top>10</top>
+                <top>0</top>
                 <orientation>vertical</orientation>
                 <usecontrolcoords>true</usecontrolcoords>
                 <itemgap>10</itemgap>
@@ -2268,26 +2350,56 @@ Bingie Menu Icons -->
 
                 <!-- spotlight row details -->
                 <control type="group">
-                    <width>1000</width>
-                    <height>40</height>
+                    <top>0</top>
+					<width>1000</width>
+                    <height>60</height>
                     <include>Default_Visible_Fade</include>
                     <include>SpotlightRowDetails</include>
                 </control>
 
-		<!-- Bingie  Sublabel (Tagline/Watch library view) -->
-                <control type="label" id="823">
-                    <visible>!Container.Content(episodes)</visible>
-                    <visible>!String.IsEmpty(Control.GetLabel(823))</visible>
-                    <top>40</top>
-					<height>0</height>
-                    <width>820</width>
-                    <font>bold29</font> 
-                    <align>left</align>
-                    <aligny>center</aligny> 
-                    <textcolor>fffafafa</textcolor> 
-                    <label>$VAR[BingieSublabel]</label>
-                    <include>Default_Visible_Fade</include>
-                </control>
+		<!-- Bingie library views Sublabel grouplist (top250 + watch xx now -->
+    <control type="grouplist">
+			<orientation>horizontal</orientation>
+			<visible>!Container.Content(episodes)</visible>
+			<visible>!Skin.HasSetting(DisableTop250) + !String.IsEmpty(Control.GetLabel(8231)) | !String.IsEmpty(Control.GetLabel(823)) </visible>
+			<height>55</height>
+			<width>800</width>
+			<top>-10</top>
+			<aligny>center</aligny> 
+			<usecontrolcoords>true</usecontrolcoords>
+			<itemgap>15</itemgap>
+		<control type="image">
+				<visible>Control.IsVisible(8231)</visible>
+				<posy>5</posy>
+				<left>0</left>
+                <height>50</height>
+                <width>50</width>
+				<aspectratio>keep</aspectratio>
+                <texture background="true" colordiffuse="fffafafa">bingie/top250.png</texture>
+		</control>
+			
+		<control type="label" id="8231">
+            <visible>!Container.Content(episodes)</visible>
+            <visible>!String.IsEmpty(Control.GetLabel(8231))</visible>
+			<visible>!Skin.HasSetting(DisableTop250)</visible>
+			<font>bold29</font> 
+            <textcolor>fffafafa</textcolor> 
+            <label>$VAR[IMDBTop250RatingValue,No., on IMDB Today]</label>
+            <include>Default_Visible_Fade</include>
+        </control>
+				
+			<!-- Bingie  Sublabel (Tagline/Watch library view) -->
+		<control type="label" id="823">
+                <visible>!Container.Content(episodes)</visible>
+                <visible>!String.IsEmpty(Control.GetLabel(823))</visible>
+				<visible>!Control.IsVisible(8231)</visible>
+                <width>820</width>
+                <font>bold29</font> 
+                <textcolor>fffafafa</textcolor> 
+                <label>$VAR[BingieSublabel]</label>
+                <include>Default_Visible_Fade</include>
+        </control>
+	</control>
 
                 <!-- episode info -->
                 <control type="grouplist">
@@ -2340,7 +2452,7 @@ Bingie Menu Icons -->
                 <control type="textbox">
                     <visible>!Container.Content(seasons)</visible>
 					<height min="50" max="120">auto</height>	<!--3 lines visible here-->
-					<top>25</top>
+					<top>0</top>
 					<width>820</width>                               <!-- default - 650 -->
                     <textcolor>$VAR[BingiePlotTextColor]</textcolor>
                     <align>left</align>                              <!-- justify -->
@@ -2383,7 +2495,7 @@ Bingie Menu Icons -->
                 </control>
             </control>
         </control>
-    </include>
+	</include>
 
     <include name="Bingie_Main_View_Fixed_Frame">
         <param name="visibility" default="true" />

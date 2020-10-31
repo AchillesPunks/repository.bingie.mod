@@ -321,8 +321,9 @@
                 <include>Default_Visible_Fade</include>
             </control>
 
-            <include>MPAA_Details_Row</include>
-
+            <include condition="Skin.HasSetting(enableUKIcons)">MPAA_Details_RowNew</include>
+			<include condition="!Skin.HasSetting(enableUKIcons) + !Skin.HasSetting(enableUSIcons)">MPAA_Details_Row</include>
+			<include condition="Skin.HasSetting(enableUSIcons)">MPAA_Details_RowUS</include>
             <!-- Total Seasons -->
             <control type="label" id="611117">
                 <posy>5</posy>
@@ -336,28 +337,6 @@
                 <include>Default_Visible_Fade</include>
             </control>
 
-            <!-- TV Show Status -->
-            <control type="group" id="611116">
-                <visible>!String.IsEmpty(Control.GetLabel(6111161))</visible>
-                <width>160</width>
-                <height>45</height>
-                <include>Default_Visible_Fade</include>
-                <control type="image">
-                    <height>100%</height>
-                    <width>100%</width>
-                    <texture background="true" colordiffuse="$INFO[Skin.String(BingieDetailsFlagColor)]">bingie/flags/frame_long.png</texture>
-                </control>
-                <control type="label" id="6111161">
-                    <width>100%</width>
-                    <height>100%</height>
-                    <aligny>center</aligny>
-                    <align>center</align>
-                    <textcolor>ff8d8d8d</textcolor>
-                    <font>Reg26</font>
-                    <scroll>false</scroll>
-                    <label>$INFO[Window(Home).Property(SkinHelper.ListItem.Status)]</label>
-                </control>
-            </control>
         </control>
     </include>
 

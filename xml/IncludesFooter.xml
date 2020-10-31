@@ -344,49 +344,6 @@
         </control>
     </include>
 	
-	 <!-- Audience Rotten Tomatoes Meter footer home attempt-->
-	<!-- <include name="TomatoAudienceHugo"> -->
-      <!-- <control type="group"> -->
-            <!-- <height>70</height> -->
-            <!-- <width>85</width> -->
-            <!-- <control type="image"> -->
-                <!-- <height>70</height> -->
-                <!-- <width>84</width> -->
-                <!-- <texture border="5">diffuse/panel.png</texture> -->
-                <!-- <colordiffuse>$VAR[AdvancedRatings_PanelColor]</colordiffuse> -->
-                <!-- <aspectratio>stretch</aspectratio> -->
-            <!-- </control> -->
-            <!-- <control type="image"> -->
-                <!-- <top>0</top> -->
-                <!-- <width>84</width> -->
-                <!-- <height>37</height> -->
-                <!-- <bordersize>2</bordersize> -->
-                <!-- <aspectratio>keep</aspectratio> -->
-                <!-- <texture>special://skin/extras/RTFresh.png</texture> -->
-                <!-- <visible>Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.UserMeter),59)</visible> -->
-            <!-- </control> -->
-            <!-- <control type="image"> -->
-                <!-- <top>0</top> -->
-                <!-- <width>84</width> -->
-                <!-- <height>37</height> -->
-                <!-- <bordersize>2</bordersize> -->
-                <!-- <aspectratio>keep</aspectratio> -->
-                <!-- <texture>special://skin/extras/RTrotten.png</texture> -->
-                <!-- <visible>!Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.UserMeter),59)</visible> -->
-            <!-- </control> -->
-            <!-- <control type="label"> -->
-                <!-- <top>38</top> -->
-                <!-- <width>84</width> -->
-                <!-- <height>30</height> -->
-                <!-- <align>center</align> -->
-                <!-- <aligny>center</aligny> -->
-                <!-- <font>flags</font> -->
-                <!-- <textcolor>$VAR[AdvancedRatings_TextColor]</textcolor> -->
-                <!-- <label>$INFO[Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.UserMeter),,%]</label> -->
-            <!-- </control> -->
-        <!-- </control> -->
-    <!-- </include> -->
-		
     <include name="MetaCriticRating">
         <!-- MetaCritic Rating -->
         <control type="group">
@@ -1167,6 +1124,46 @@
             </control>
         </control>
     </include>
+	<!--RT audience on footer attempt 2-->
+	<!-- <include name="TomatoAudienceHugo"> -->
+        <!-- <control type="group"> -->
+			<!-- <visible>!String.IsEmpty(Control.GetLabel(622222))</visible> -->
+            <!-- <height>85</height> -->
+            <!-- <width>100</width> -->
+			<!-- <right>0</right> -->
+            <!-- <bottom>0</bottom> -->
+			<!-- <include>Default_Visible_Fade</include> -->
+             <!-- <control type="image"> -->
+                <!-- <top>20</top> -->
+                <!-- <width>40</width> -->
+                <!-- <height>40</height> -->
+                <!-- <bordersize>2</bordersize> -->
+                <!-- <aspectratio>keep</aspectratio> -->
+                <!-- <texture>flags/popcorn.png</texture> -->
+                <!-- <visible>Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.UserMeter),59)</visible> -->
+            <!-- </control> -->
+            <!-- <control type="image"> -->
+               <!-- <top>20</top> -->
+                <!-- <width>40</width> -->
+                <!-- <height>40</height> -->
+                <!-- <bordersize>2</bordersize> -->
+                <!-- <aspectratio>keep</aspectratio> -->
+                <!-- <texture>flags/popcorn2.png</texture> -->
+                <!-- <visible>!Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.UserMeter),59)</visible> -->
+            <!-- </control> -->
+            <!-- <control type="label" id="622222"> -->
+                <!-- <left>44</left> -->
+                <!-- <width>auto</width> -->
+                <!-- <height>85</height> -->
+                <!-- <align>left</align> -->
+                <!-- <aligny>center</aligny> -->
+                <!-- <font>flags</font> -->
+                <!-- <textcolor>white</textcolor> -->
+               <!-- <label>xxxxxxx</label> -->
+			   
+            <!-- </control> -->
+        <!-- </control> -->
+    <!-- </include> -->
 
     <!-- MetaCritic Flag Horizontal -->
     <include name="MetaCritic_Hor">
@@ -1443,6 +1440,7 @@
             <height>90</height>
             <itemgap>15</itemgap>
             <align>right</align>
+			
             <include condition="!Skin.HasSetting(BingieViewsDisableRating) + Skin.HasSetting(EnableMonochromeRatingInBingieViews)">Rating_Monochrome_Hor</include>
             <include condition="!Skin.HasSetting(BingieViewsDisableRating) + !Skin.HasSetting(EnableMonochromeRatingInBingieViews)">Rating_Color_Hor</include>
             <include condition="!Skin.HasSetting(BingieViewsDisableStudio) + Skin.HasSetting(EnableStudioLogo)">StudioLogo</include>
@@ -1455,8 +1453,8 @@
             <height>90</height>
             <itemgap>15</itemgap>
             <align>right</align>
-            <include condition="Skin.HasSetting(EnableMonochromeRatingInBingieViews)">Rating_Monochrome_Hor1</include>
-			<include condition="!Skin.HasSetting(EnableMonochromeRatingInBingieViews)">Rating_Color_Hor1</include>
+            <include condition="!Skin.HasSetting(BingieViewsDisableRating) + Skin.HasSetting(EnableMonochromeRatingInBingieViews)">Rating_Monochrome_Hor1</include>
+            <include condition="!Skin.HasSetting(BingieViewsDisableRating) + !Skin.HasSetting(EnableMonochromeRatingInBingieViews)">Rating_Color_Hor1</include>
             <include condition="!Skin.HasSetting(BingieViewsDisableStudio) + Skin.HasSetting(EnableStudioLogo)">StudioLogo</include>
         </control>
     </include>
@@ -1511,18 +1509,18 @@
 <!--accompanies RT/IMDB details row setting + monochrome setting-->
 	 <include name="Rating_Monochrome_Hor1">
         <include condition="Skin.HasSetting(EnableIMDBRating)">IMDB_Top250_Monochrome_Hor</include>
-        <include condition="Skin.HasSetting(EnableTVdbAndTMdbRating)">TVDB_Monochrome_Hor</include>
+        <!-- <include condition="Skin.HasSetting(EnableTVdbAndTMdbRating)">TVDB_Monochrome_Hor</include> -->
         <include condition="Skin.HasSetting(EnableTVdbAndTMdbRating)">TMDB_Monochrome_Hor</include>
-        <include>TomatoAudienceHugo</include> <!--can't get audience to work. revisit to fix this-->
+        
         <include>MetaCritic_Monochrome_Hor</include>
     </include>
-<!--accompanies RT/IMDB details row setting + monochrome setting-->
+<!--accompanies RT/IMDB details row setting + colour setting-->
 <include name="Rating_Color_Hor1">
         <include condition="Skin.HasSetting(EnableIMDBRating)">IMDB_Top250_Color_Hor</include>
-        <include condition="Skin.HasSetting(EnableTVdbAndTMdbRating)">TVDB_Color_Hor</include>
+        <!-- <include condition="Skin.HasSetting(EnableTVdbAndTMdbRating)">TVDB_Color_Hor</include> -->
         <include condition="Skin.HasSetting(EnableTVdbAndTMdbRating)">TMDB_Color_Hor</include>
         <include condition="Skin.HasSetting(EnableRTAndMetaCriticRating)">MetaCritic_Color_Hor</include>
-		<include>TomatoAudienceHugo</include> <!--can't get audience to work. revisit to fix this-->
+		
 </include>
 
     <variable name="WhiteRatingColorDiffuseTextColor">

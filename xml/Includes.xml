@@ -85,7 +85,7 @@
     <constant name="search_widget_thumb_width">396</constant>
     <constant name="search_key_size">80</constant>
     <constant name="search_radiokey_width">220</constant>
-    <constant name="bingie_menu_width">360</constant>
+    <constant name="bingie_menu_width">500</constant>
     <constant name="episodes_thumb_height">266</constant>
     <constant name="episodes_thumb_width">456</constant>
 
