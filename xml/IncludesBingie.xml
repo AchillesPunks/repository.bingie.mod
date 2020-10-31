@@ -1904,7 +1904,7 @@ Bingie Menu Icons -->
 
     <!-- fixed focus bottom override value -->
     <include name="Fixed_Focus_Bottom">
-        <bottom>-10000</bottom>
+        <bottom>-100000</bottom>
     </include>
 
     <!-- fixed focus gap override value -->
