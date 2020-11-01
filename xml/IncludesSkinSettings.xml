@@ -584,6 +584,24 @@
             <visible>!Skin.HasSetting(BingieHomeDisableFirstRow) +  String.IsEqual(Skin.String(HomeLayout),bingie) + Skin.HasSetting(BingieAutoTrailer)</visible>
             <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=main_auto_trailer_interval,header=$LOCALIZE[31885])</onclick>
         </control>
+	    <!-- Enable MPAA Label -->
+		<control type="radiobutton" id="2011">
+            <include>SkinSettings_Button</include>
+            <label>Enable MPAA Spotlight Label</label>
+            <onclick>Skin.reset(EnableColoredMPAAIcons)</onclick>
+			<onclick>Skin.ToggleSetting(EnableMPAALabel)</onclick>
+            <selected>Skin.HasSetting(EnableMPAALabel)</selected>
+            <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
+        </control>
+		<!-- Enable MPAA Colored  Icons -->
+        <control type="radiobutton" id="2012">
+            <include>SkinSettings_Button</include>
+            <label>Enable MPAA Spotlight Colred Icons</label>
+            <onclick>Skin.reset(EnableMPAALabel)</onclick>
+			<onclick>Skin.ToggleSetting(EnableColoredMPAAIcons)</onclick>
+            <selected>Skin.HasSetting(EnableColoredMPAAIcons)</selected>
+            <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
+        </control>
 	</include>
 
     <!-- Home Widgets Settings -->
@@ -1143,7 +1161,7 @@
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
 		<!-- Disable Static Slim Menu -->    
-		<control type="radiobutton" id="2012">
+		<control type="radiobutton" id="2013">
             <include>SkinSettings_Button</include>
             <label>Disable static slim menu</label>
             <onclick>Skin.ToggleSetting(DisableStaticSlimMenu)</onclick>
@@ -1176,7 +1194,7 @@
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
 	   <!-- Season Greetings  -->
-		<control type="label" id="2013">
+		<control type="label" id="2034">
             <include>SkinSettings_Header</include>
 			<label>Season Greetings</label>
 			<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>

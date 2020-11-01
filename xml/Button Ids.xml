@@ -1,9 +1,14 @@
 <!-- Enable Snow -->
 		<control type="radiobutton" id="2010">
 
+<!-- Enable MPAA Label -->
+		<control type="radiobutton" id="2011">
 		
+<!-- Enable MPAA Colored  Icons -->
+        <control type="radiobutton" id="2012">
+
 <!-- Disable Static Slim Menu -->    
-		<control type="radiobutton" id="2012">		
+		<control type="radiobutton" id="2013">		
 
 <!-- Season Greetings  -->    <!-- This is a Label not a Button -->
 		<control type="textbox" id="2013">
@@ -65,6 +70,12 @@
             
 <!--TV Show Status on Details Row Home & Bingie Views-->
 		<control type="radiobutton" id="2032">
+		
+<!--Enable Audio Codecs ATMOS only-->
+		<control type="radiobutton" id="2033">
+
+<!-- Season Greetings  -->    <!-- This is a Label not a Button -->
+		<control type="textbox" id="2034">		
 		
 
 		
