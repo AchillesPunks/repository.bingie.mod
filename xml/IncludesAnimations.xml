@@ -226,7 +226,7 @@
     </include>
 
     <include name="Frame_Scrolling_Fade">
-        <animation effect="fade" start="0" end="0" time="200" condition="Container.Scrolling | Container.OnScrollNext | Container.OnScrollPrevious">Conditional</animation>
+        <animation effect="fade" start="100" end="80" time="200" condition="Container.Scrolling | Container.OnScrollNext | Container.OnScrollPrevious">Conditional</animation>
     </include>
 
     <!-- default fade animation -->

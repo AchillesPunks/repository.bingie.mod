@@ -351,7 +351,7 @@
     <include name="Hub_Widget_Label">
         <control type="textbox">
             <visible>$PARAM[visibility]</visible>
-            <height>96%</height>
+            <height>100%</height>
             <width>99%</width>
             <font>Bold31</font>
             <include condition="Skin.HasSetting(WidgetAlignRight)">widget_header_rightalign</include>
@@ -409,7 +409,7 @@
 
     <include name="Set_Custom_Container_Content">
         <control type="button" id="1500">
-            <width>96%</width>
+            <width>100%</width>
             <height>57</height>
             <align>left</align>
             <aligny>center</aligny>
@@ -434,7 +434,7 @@
             <control type="textbox">
                 <visible>Integer.IsGreater(Container(1510).NumItems,0)</visible>
                 <height>40</height>
-                <width>96%</width>
+                <width>100%</width>
                 <font>Bold31</font>
                 <aligny>center</aligny>
                 <align>left</align>
