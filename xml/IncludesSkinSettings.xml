@@ -543,15 +543,7 @@
             <selected>Skin.HasSetting(ShowPlotInBingieSpotlight)</selected>
             <visible>!Skin.HasSetting(DisableSpotlightContent) + !Skin.HasSetting(BingieHomeDisableFirstRow) + String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
-		<!-- Disable Sub Label on Home Spotlight -->
-		<control type="radiobutton" id="2030">
-            <include>SkinSettings_Button</include>
-            <label>Disable Sub Label on Home Spotlight</label>
-            <onclick>Skin.ToggleSetting(DisableSpotlightLabel)</onclick>
-            <selected>Skin.HasSetting(DisableSpotlightLabel)</selected>
-            <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
-        </control>	
-        <!-- Auto Play Trailer for Spotlight Content -->
+		<!-- Auto Play Trailer for Spotlight Content -->
         <control type="radiobutton" id="31798">
             <include>SkinSettings_Button</include>
             <label>31798</label>
@@ -585,21 +577,29 @@
             <onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=main_auto_trailer_interval,header=$LOCALIZE[31885])</onclick>
         </control>
 	    <!-- Enable MPAA Label -->
-		<control type="radiobutton" id="2011">
-            <include>SkinSettings_Button</include>
-            <label>Enable MPAA Spotlight Label</label>
-            <onclick>Skin.reset(EnableColoredMPAAIcons)</onclick>
-			<onclick>Skin.ToggleSetting(EnableMPAALabel)</onclick>
-            <selected>Skin.HasSetting(EnableMPAALabel)</selected>
-            <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
-        </control>
+		<!-- <control type="radiobutton" id="2011"> -->
+            <!-- <include>SkinSettings_Button</include> -->
+            <!-- <label>Enable MPAA Spotlight Label</label> -->
+            <!-- <onclick>Skin.reset(EnableColoredMPAAIcons)</onclick> -->
+			<!-- <onclick>Skin.ToggleSetting(EnableMPAALabel)</onclick> -->
+            <!-- <selected>Skin.HasSetting(EnableMPAALabel)</selected> -->
+            <!-- <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible> -->
+        <!-- </control> -->
 		<!-- Enable MPAA Colored  Icons -->
-        <control type="radiobutton" id="2012">
+        <!-- <control type="radiobutton" id="2012"> -->
+            <!-- <include>SkinSettings_Button</include> -->
+            <!-- <label>Enable MPAA Spotlight Colred Icons</label> -->
+            <!-- <onclick>Skin.reset(EnableMPAALabel)</onclick> -->
+			<!-- <onclick>Skin.ToggleSetting(EnableColoredMPAAIcons)</onclick> -->
+            <!-- <selected>Skin.HasSetting(EnableColoredMPAAIcons)</selected> -->
+            <!-- <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible> -->
+        <!-- </control> -->
+	    <!-- Disable Sub Label on Home Spotlight -->
+		<control type="radiobutton" id="2030">
             <include>SkinSettings_Button</include>
-            <label>Enable MPAA Spotlight Colred Icons</label>
-            <onclick>Skin.reset(EnableMPAALabel)</onclick>
-			<onclick>Skin.ToggleSetting(EnableColoredMPAAIcons)</onclick>
-            <selected>Skin.HasSetting(EnableColoredMPAAIcons)</selected>
+            <label>Disable Sub Label on Home Spotlight</label>
+            <onclick>Skin.ToggleSetting(DisableSpotlightLabel)</onclick>
+            <selected>Skin.HasSetting(DisableSpotlightLabel)</selected>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
 	</include>
@@ -822,7 +822,6 @@
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
             <selected>Skin.HasSetting(PreferStarsRatingBingie)</selected>
         </control>
-		
 		<!-- Test Button -->
        <!-- Enable Colored MPAA on Home -->
         <!-- <control type="radiobutton" id="191921"> -->
@@ -832,7 +831,6 @@
             <!-- <selected>Skin.HasSetting(DisableMPAAUKIcons)</selected> -->
             <!-- <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible> -->
         <!-- </control> -->
-		
 		<!--Enable UK Icons (or UK style US icons) on Details Row-->
         <control type="radiobutton" id="2020">
             <include>SkinSettings_Button</include>
@@ -842,7 +840,6 @@
 			<selected>Skin.HasSetting(EnableUKIcons)</selected>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>	
-		
 		<!--Enable Alternate US Icons-->
         <control type="radiobutton" id="2019">
             <include>SkinSettings_Button</include>
@@ -851,36 +848,6 @@
 			<onclick>Skin.ToggleSetting(EnableUSIcons)</onclick>
             <selected>Skin.HasSetting(EnableUSIcons)</selected>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
-        </control>
-		
-		<!--Enable US Icons-->
-        <!-- <control type="radiobutton" id="2019"> -->
-            <!-- <include>SkinSettings_Button</include> -->
-            <!-- <label>Enable US Icons on Details Row</label> -->
-            <!-- <onclick>Skin.ToggleSetting(EnableUSIcons)</onclick> -->
-            <!-- <onclick>Skin.ToggleSetting(EnableUKIcons)</onclick> -->
-			<!-- <onclick>Skin.reset(EnableUKIcons)</onclick> -->
-			<!-- <selected>Skin.HasSetting(EnableUSIcons)</selected> -->
-            <!-- <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible> -->
-        <!-- </control> -->
-		<!--Enable UK Icons-->
-        <!-- <control type="radiobutton" id="2020"> -->
-            <!-- <visible>false</visible> -->
-			<!-- <include>SkinSettings_Button</include> -->
-            <!-- <label>Enable UK Icons (or UK style US icons) on Details Row</label> -->
-            <!-- <onclick>Skin.ToggleSetting(EnableUKIcons)</onclick> -->
-            <!-- <onclick>Skin.reset(EnableUSIcons)</onclick> -->
-			<!-- <selected>Skin.HasSetting(EnableUKIcons)</selected> -->
-            <!-- <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible> -->
-        <!-- </control>	 -->
-<!--Enable Audio Codecs-->
-        <control type="radiobutton" id="2018">
-            <include>SkinSettings_Button</include>
-            <label>Enable Audio Codec on Details Row</label>
-            <onclick>Skin.ToggleSetting(EnableAudioCodec)</onclick>
-            <selected>Skin.HasSetting(EnableAudioCodec)</selected>
-			<!-- <selected>Skin.reset(enableAtmosOnly)</selected> -->
-			<visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
 <!--Enable Audio Codecs ATMOS only-->
 		<control type="radiobutton" id="2033">
@@ -891,8 +858,6 @@
 			<visible>Skin.HasSetting(EnableAudioCodec)</visible>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
-		
-		
 <!--Fake Codec info on Details Row (if no codec info is present)-->
 		<control type="radiobutton" id="2031">
             <include>SkinSettings_Button</include>
@@ -909,15 +874,6 @@
             <selected>Skin.HasSetting(EnableTVShowStatus)</selected>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>	
-		
-		<!-- Prefer Short Plot Outline in Widget Details -->
-        <control type="radiobutton" id="31794">
-            <include>SkinSettings_Button</include>
-            <label>31794</label>
-            <onclick>Skin.ToggleSetting(WidgetsPreferPlotOutline)</onclick>
-            <selected>Skin.HasSetting(WidgetsPreferPlotOutline)</selected>
-            <visible>!Skin.HasSetting(DisableAllWidgets)</visible>
-        </control>
 		<!-- Disable Top250 Sublabel on home and bingie views -->
 		<control type="radiobutton" id="2028">
             <include>SkinSettings_Button</include>
@@ -926,7 +882,24 @@
             <selected>Skin.HasSetting(DisableTop250)</selected>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>	
-    </include>
+        <!--Enable Audio Codecs-->
+        <control type="radiobutton" id="2018">
+            <include>SkinSettings_Button</include>
+            <label>Enable Audio Codec on Details Row</label>
+            <onclick>Skin.ToggleSetting(EnableAudioCodec)</onclick>
+            <selected>Skin.HasSetting(EnableAudioCodec)</selected>
+			<!-- <selected>Skin.reset(enableAtmosOnly)</selected> -->
+			<visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
+        </control>
+		<!-- Prefer Short Plot Outline in Widget Details -->
+        <control type="radiobutton" id="31794">
+            <include>SkinSettings_Button</include>
+            <label>31794</label>
+            <onclick>Skin.ToggleSetting(WidgetsPreferPlotOutline)</onclick>
+            <selected>Skin.HasSetting(WidgetsPreferPlotOutline)</selected>
+            <visible>!Skin.HasSetting(DisableAllWidgets)</visible>
+        </control>
+	</include>
 
     <!-- Footer in Home - Media Flags & Ratings & Studio Logo Settings -->
     <include name="Home_Footer_Media_Flags_Ratings">
