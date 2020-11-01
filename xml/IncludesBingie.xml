@@ -2181,8 +2181,7 @@ Bingie Menu Icons -->
         </definition>
     </include>
     <!-- MPAA Flag on Spotlight Rightside of Window --> 
-	
-	<!-- US MPAA Label -->
+	<!-- I like US look / I Will Look into Maybe a Button to have Colored MPAA as Option -->
     <include name="Spotlight_MPAA_Flag_Object">
 	    <param name="right" default="-160" />
         <param name="top" default="690" />                           <!-- Default --675-- -->
