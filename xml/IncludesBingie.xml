@@ -551,7 +551,7 @@
 			<left>10</left>
 			<visible>!String.IsEmpty(ListItem.AudioCodec)</visible>
 			<aspectratio>keep</aspectratio>
-			<texture fallback="colors/color_transparent.png" colordiffuse="darkgray">$VAR[AudioCodecVar,special://skin/extras/audiocodec/,.png]</texture>
+			<texture fallback="colors/color_transparent.png" colordiffuse="darkgray">$VAR[AudioCodecVar,bingie/audiocodec/,.png]</texture>
 		</control>
 		<!--Fallback Audio Codec flag/text-->
 		<control type="group">
@@ -1902,7 +1902,7 @@ Bingie Menu Icons -->
 
     <!-- fixed focus bottom override value -->
     <include name="Fixed_Focus_Bottom">
-        <bottom>-100000</bottom>
+        <bottom>-10000</bottom>
     </include>
 
     <!-- fixed focus gap override value -->
