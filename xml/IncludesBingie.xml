@@ -258,7 +258,7 @@
 				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter) + !Skin.HasSetting(EnableMonochromeRatingInBingieViews)</visible>
             </control>
             <control type="label" id="699706">
-                <top>-3</top>
+                <top>-4</top>
 				<width>100%</width>
                 <height>100%</height>
                 <aligny>center</aligny>
