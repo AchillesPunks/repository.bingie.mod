@@ -551,16 +551,7 @@
             <selected>Skin.HasSetting(SpotLightTrailers)</selected>
             <visible>!Skin.HasSetting(DisableSpotlightContent) + !Skin.HasSetting(BingieHomeDisableFirstRow) + [String.IsEqual(Skin.String(HomeLayout),enhanced) | String.IsEqual(Skin.String(HomeLayout),bingie)]</visible>
         </control>
-        <!-- Hide Ratings, Studio Logo & Media Flags While Trailer is Playing -->
-        <control type="radiobutton" id="131786">
-            <include>SkinSettings_Button</include>
-            <label>31897</label>
-            <onclick>Skin.ToggleSetting(HideMediaFlagsTrailer)</onclick>
-            <visible>!Skin.HasSetting(BingieHomeDisableFirstRow) + String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(NoFooterBarOnHome) + [Skin.HasSetting(SpotLightTrailers) | Skin.HasSetting(BingieAutoTrailer)]</visible>
-            <selected>Skin.HasSetting(HideMediaFlagsTrailer)</selected>
-            <visible>no</visible>
-		</control>
-		<!-- Auto Play Trailers in Home & Hubs -->
+       	<!-- Auto Play Trailers in Home & Hubs -->
         <control type="radiobutton" id="28637">
             <include>SkinSettings_Button</include>
             <label>31883</label>
@@ -856,10 +847,19 @@
             <selected>Skin.HasSetting(EnableUSIcons)</selected>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
+ <!--Enable Audio Codecs (not sure why you moved this but it has to stay above the ATMOS only option since enabling this opens up the ATMOS only option)-->
+        <control type="radiobutton" id="2018">
+            <include>SkinSettings_Button</include>
+            <label>Enable Audio Codec on Details Row</label>
+            <onclick>Skin.ToggleSetting(EnableAudioCodec)</onclick>
+            <selected>Skin.HasSetting(EnableAudioCodec)</selected>
+			<!-- <selected>Skin.reset(enableAtmosOnly)</selected> -->
+			<visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
+        </control>
 <!--Enable Audio Codecs ATMOS only-->
 		<control type="radiobutton" id="2033">
             <include>SkinSettings_Button</include>
-            <label>Only Show Atmos Audio Codec on Details Row</label>
+            <label>         Only Show Atmos Audio Codec on Details Row</label>
             <onclick>Skin.ToggleSetting(enableAtmosOnly)</onclick>
             <selected>Skin.HasSetting(enableAtmosOnly)</selected>
 			<visible>Skin.HasSetting(EnableAudioCodec)</visible>
@@ -889,15 +889,7 @@
             <selected>Skin.HasSetting(DisableTop250)</selected>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>	
-        <!--Enable Audio Codecs-->
-        <control type="radiobutton" id="2018">
-            <include>SkinSettings_Button</include>
-            <label>Enable Audio Codec on Details Row</label>
-            <onclick>Skin.ToggleSetting(EnableAudioCodec)</onclick>
-            <selected>Skin.HasSetting(EnableAudioCodec)</selected>
-			<!-- <selected>Skin.reset(enableAtmosOnly)</selected> -->
-			<visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
-        </control>
+        
 		<!-- Prefer Short Plot Outline in Widget Details -->
         <control type="radiobutton" id="31794">
             <include>SkinSettings_Button</include>
@@ -943,8 +935,18 @@
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(BingieHomeDisableFirstRow) + !Skin.HasSetting(NoFooterBarOnHome)</visible>
             <selected>Skin.HasSetting(EnableMonochromeRatingInBingieViews)</selected>
         </control>
-        
-        <!--disable studio logo on bingie home-->
+		<!-- Hide Ratings, Studio Logo & Media Flags While Trailer is Playing (fixed this button because you stopped footer from showing up in Spotlight widget. Also moved it back with the rest of the footer settings) -->
+		
+        <control type="radiobutton" id="131786">
+            <include>SkinSettings_Button</include>
+            <label>Hide ratings & studio footer for trailers and for Spotlight widget</label>
+            <onclick>Skin.ToggleSetting(HideMediaFlagsTrailer)</onclick>
+            <!-- <visible>!Skin.HasSetting(BingieHomeDisableFirstRow) + String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(NoFooterBarOnHome) + [Skin.HasSetting(SpotLightTrailers) | Skin.HasSetting(BingieAutoTrailer)]</visible> -->
+            <visible>!Skin.HasSetting(NoFooterBarOnHome)</visible>
+			<selected>Skin.HasSetting(HideMediaFlagsTrailer)</selected>
+        </control>
+												   
+    <!--disable studio logo on bingie home-->
         <control type="radiobutton" id="131767">
             <include>SkinSettings_Button</include>
             <label>31898</label>
