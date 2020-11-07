@@ -399,7 +399,7 @@
                 <include condition="Window.IsActive(1115)">bingie_items_mycustom</include>
             </control>
        <!-- Change to landscape to remove spotlight landscape image when at categories -->
-            <include condition="Skin.HasSetting(EnableFixedFocusWidgets) + String.IsEqual(Skin.String(widgetstyle),poster)">SpotlightDummyWidget</include>
+            <include condition="Skin.HasSetting(EnableFixedFocusWidgets) + String.IsEqual(Skin.String(widgetstyle),)">SpotlightDummyWidget</include>
 
             <!-- Fixed Frame -->
             <include condition="Skin.HasSetting(EnableFixedFrameWidgets) + Skin.HasSetting(EnableFixedFocusWidgets) + $EXP[IsSupportedFixedFrameLayout] + [Window.IsActive(Home) | [$EXP[IsBingieHubsActive] + Skin.HasSetting(LockHubWidgets)]]">Bingie_Screens_Fixed_Focus_Frame</include>
