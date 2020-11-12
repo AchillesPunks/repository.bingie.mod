@@ -52,7 +52,6 @@
 <!-- Show Clearart instead of ClearLogo on Infopane -->
 		<control type="radiobutton" id="2026">
             
-
 <!-- Enable Seek/Jump Indicator -->
 		<control type="radiobutton" id="2027">	
 
@@ -75,7 +74,13 @@
 		<control type="radiobutton" id="2033">
 
 <!-- Season Greetings  -->    <!-- This is a Label not a Button -->
-		<control type="textbox" id="2034">		
+		<control type="textbox" id="2034">
+
+<!-- Disable Spotlight Slide Animation-->	
+		<control type="radiobutton" id="2035">
+
+<!-- Prefer stars ratings in bingie views (temp changed to RT/IMDB ratings -->
+        <control type="radiobutton" id="2036">		
 		
 
 		

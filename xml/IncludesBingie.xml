@@ -159,6 +159,7 @@
 			<width>110</width>
 			<height>35</height>
 			<include>Default_Visible_Fade</include>
+			<!-- IMDB White -->
 			<control type="image">
 				<left>-21</left>
 				<height>100%</height>
@@ -167,21 +168,23 @@
                 <texture background="true" colordiffuse="darkgray">bingie/imdb_logo.png</texture>
 				<visible>Skin.HasSetting(EnableMonochromeRatingInBingieViews)</visible>
             </control>
+			<!-- IMDB Colored -->
 			<control type="image">
-				<left>-21</left>
+				<left>-20</left>
 				<height>100%</height>
                 <width>100%</width>
                 <aspectratio>keep</aspectratio>
                 <texture background="true">bingie/imdb_logo1.png</texture>
 				<visible>!Skin.HasSetting(EnableMonochromeRatingInBingieViews)</visible>
             </control>
-            <control type="label" id="699702">
+            <!-- IMDB Text Label -->
+			<control type="label" id="699702">
                 <top>-1</top>
 				<width>100%</width>
                 <height>100%</height>
                 <!-- <aligny>center</aligny> -->
                 <!-- <align>center</align> -->
-				<left>71</left>
+				<left>80</left>
                 <textcolor>darkgray</textcolor>
                 <font>Reg26</font>
                 <scroll>false</scroll>
@@ -192,13 +195,13 @@
 	<!-- TVDB -->
 	<include name="tvdb">
         <control type="group">
-			<left>-4</left>
+			<left>5</left>
 			<posy>6.5</posy>
 			<visible>!String.IsEmpty(Control.GetLabel(878787))</visible>
 			<width>100</width>
 			<height>35</height>
 			<include>Default_Visible_Fade</include>
-			
+			<!-- TVDB Colored -->
 			<control type="image">
 				<left>-20</left>
 				<height>100%</height>
@@ -207,6 +210,7 @@
                 <texture>flags/flags_color/addratings/tvdbtrans.png</texture>
 				<visible>!Skin.HasSetting(EnableMonochromeRatingInBingieViews)</visible>
             </control>
+			<!-- TVDB White -->
 			<control type="image">
 				<left>-20</left>
 				<height>100%</height>
@@ -215,7 +219,8 @@
                 <texture background="true" colordiffuse="darkgray">flags/white/tvdbtrans.png</texture>
 				<visible>Skin.HasSetting(EnableMonochromeRatingInBingieViews)</visible>
             </control>
-            <control type="label" id="878787">
+            <!-- TVDB Text Label -->
+			<control type="label" id="878787">
                 <top>-1</top>
 				<width>100%</width>
                 <height>100%</height>
@@ -234,7 +239,7 @@
 	 <include name="TomatoMeter_Hor1">
         <control type="group">
 		<posy>2</posy>
-		<left>-7</left>
+		<left>-5</left>
             <visible>!String.IsEmpty(Control.GetLabel(699706))</visible>
             <width>100</width>
             <height>70</height>
@@ -249,11 +254,12 @@
                 <texture background="true" colordiffuse="darkgray">bingie/fresh.png</texture>
 			    <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter)) + Skin.HasSetting(EnableMonochromeRatingInBingieViews)</visible>
             </control>
+			<!-- Rotten Tomatoes Colored -->
 			<control type="image">
                 <aspectratio>keep</aspectratio>
-                <top>16</top>
-				<width>45%</width>
-                <height>45%</height>
+                <top>13</top>
+				<width>50%</width>
+                <height>50%</height>
                 <texture background="true">bingie/fresh1.png</texture>
 				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter) + !Skin.HasSetting(EnableMonochromeRatingInBingieViews)</visible>
             </control>
@@ -263,7 +269,7 @@
                 <height>100%</height>
                 <aligny>center</aligny>
                 <align>center</align>
-				<left>22</left>
+				<left>28</left>
                 <textcolor>darkgray</textcolor>
                 <font>Reg26</font>
                 <scroll>darkgray</scroll>

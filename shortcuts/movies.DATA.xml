@@ -45,6 +45,7 @@
 		<thumb />
 		<action>ActivateWindow(Videos,videodb://movies/genres/,return)</action>
 	</shortcut>
+	<!-- Movie Sets -->
 	<shortcut>
 		<label>20434</label>
 		<label2>Movies</label2>

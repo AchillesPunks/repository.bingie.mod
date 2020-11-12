@@ -31,8 +31,8 @@
 
 	<!-- Latest/New Hub -->
 	<shortcut>
-		<label>Latest</label>                           <!-- Default <label>31837</label> -->
-		<label2>Latest</label2>                         <!-- Default <label2>31837</label2> -->
+		<label>New &amp; Popular</label>                           <!-- Default <label>31837</label> -->
+		<label2>New &amp; Popular</label2>                         <!-- Default <label2>31837</label2> -->
 		<icon>shortcuts/new.png</icon>
 		<thumb />
 		<action>ActivateWindow(1112,return)</action>
@@ -57,7 +57,7 @@
 		<action>ActivateWindow(1111,return)</action>
 	</shortcut>
 
-	<!-- music -->
+	<!-- Music -->
 	<shortcut>
 		<label>2</label>
 		<label2>2</label2>

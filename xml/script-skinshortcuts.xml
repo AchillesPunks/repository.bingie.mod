@@ -507,23 +507,23 @@
                     <label>31369</label>
                     <onclick>RunScript(script.skin.helper.service,action=selectimage,skinshortcutsproperty=icon,header=Set Icon,allowmulti=true,resourceaddon=resource.images.skinicons,skinhelperbackgrounds=true,skinstring=CustomBackgroundSetting,currentvalue=$INFO[Container(211).ListItem.Property(IconName)])</onclick>
 				</control>				
-				
-				<control type="button" id="401"> <!--change shortcut-->
+				<!--change shortcut-->
+				<control type="button" id="401"> 
 					<width>500</width>
 					<align>center</align>
 					<visible>true</visible>
 					<label>31175</label>
 				</control>
-				
-				<control type="button" id="405"> <!--sub menu-->
+				<!--sub menu-->
+				<control type="button" id="405"> 
 					<width>500</width>
 					<align>center</align>
 					<label>$ADDON[script.skinshortcuts 32072]</label>
 					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 					<visible>!Skin.HasSetting(DisableAllSubmenus)</visible>
 				</control>
-				
-				<control type="label" id="101"><!--shortcut type label-->
+				<!--shortcut type label-->
+				<control type="label" id="101">
 					<width>500</width>
 					<align>center</align>
 					<visible>false</visible>
@@ -542,8 +542,8 @@
 					<selected>String.IsEqual(Container(211).ListItem.Property(disableLabel), disable)</selected>
 					<visible>!String.IsEqual(Window.Property(groupname),powermenu) + ![String.IsEqual(Skin.String(HomeLayout),simplever) | String.IsEqual(Skin.String(HomeLayout),verticalbig) | String.IsEqual(Skin.String(HomeLayout),simplehor)]</visible>
                 </control>
-				
-				<control type="button" id="307"> <!--change action-->
+				<!--change action-->
+				<control type="button" id="307"> 
 					<width>500</width>
 					<align>center</align>
 					<label>$ADDON[script.skinshortcuts 32027]</label>

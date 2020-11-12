@@ -813,15 +813,14 @@
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
         <!-- Prefer stars ratings in bingie views (temp changed to RT/IMDB ratings -->
-        <control type="radiobutton" id="131787">
+        <control type="radiobutton" id="2036">
             <include>SkinSettings_Button</include>
-            <label>Prefer IMDB/RT rating over percentage on details row</label>
+            <label>Prefer IMDB/RT Ratings over Percentage on Details Row</label>
             <onclick>Skin.ToggleSetting(PreferStarsRatingBingie)</onclick>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
             <selected>Skin.HasSetting(PreferStarsRatingBingie)</selected>
         </control>
-		<!-- Test Button -->
-       <!-- Enable Colored MPAA on Home -->
+		<!-- Enable Colored MPAA on Home -->
         <!-- <control type="radiobutton" id="191921"> -->
             <!-- <include>SkinSettings_Button</include> -->
             <!-- <label>Enable Colored MPAA on Home</label> -->
@@ -876,7 +875,7 @@
 <!--TV Show Status on Details Row Home & Bingie Views-->
 		<control type="radiobutton" id="2032">
             <include>SkinSettings_Button</include>
-            <label>TV Show Status on Details Row Home & Bingie Views</label>
+            <label>Show TV Show Status on Details Row Home & Bingie Views</label>
             <onclick>Skin.ToggleSetting(EnableTVShowStatus)</onclick>
             <selected>Skin.HasSetting(EnableTVShowStatus)</selected>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>

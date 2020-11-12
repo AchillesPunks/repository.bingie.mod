@@ -110,12 +110,12 @@
             <effect type="zoom" end="150" time="0"/>
         </animation>
     </include>
-
+    <!-- Spotlight Transition on Down -->
     <include name="WidgetsDisplaySpotlightTransition">
         <animation effect="slide" start="0,250" end="0,0" time="300" reversible="false" condition="Control.IsVisible(1508) + String.IsEqual(Window(Home).Property(PrevWidgetPos),1) + String.IsEqual(Window(Home).Property(CurrentWidgetPos),2)">Conditional</animation>
         <animation effect="slide" start="0,-250" end="0,0" time="300" reversible="false" condition="Control.IsVisible(1508) + String.IsEqual(Window(Home).Property(PrevWidgetPos),1) + String.IsEqual(Window(Home).Property(CurrentWidgetPos),Container(77777).NumItems)">Conditional</animation>
     </include>
-
+    <!-- Spotlight Transition on Up -->
     <include name="SpotlightDisplayWidgetsTransition">
         <animation effect="slide" end="0,-250" time="300" condition="String.IsEqual(Container(77777).CurrentItem,2)">Conditional</animation>
         <animation effect="slide" end="0,250" time="300" condition="Integer.IsGreater(Container(77777).NumItems,1) + String.IsEqual(Container(77777).CurrentItem,Container(77777).NumItems)">Conditional</animation>
