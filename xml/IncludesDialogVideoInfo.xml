@@ -1510,10 +1510,17 @@
 				<!-- fanart background image -->
 				<include content="BingieSpotlightCornerImage">
 					<animation effect="fade" start="100" end="80" time="150" condition="true">Conditional</animation>
-					<param name="visibility" value="!String.IsEqual(Window(Home).Property(TrailerPlaying), windowed) + !$EXP[IsPlayingRecognizedContent]" />
+					<param name="visibility" value="!String.IsEqual(Window(Home).Property(TrailerPlaying), windowed) + !$EXP[IsPlayingRecognizedContent] + !Skin.HasSetting(NewSpotlight)" />
 					<param name="image" value="$VAR[fanartBackground]" />
 				</include>
-
+				
+				<!-- Achilles Spotlight corner image -->
+				<include content="AchillesBingieSpotlightCornerImage">
+					<animation effect="fade" start="100" end="80" time="150" condition="true">Conditional</animation>
+					<param name="visibility" value="!String.IsEqual(Window(Home).Property(TrailerPlaying), windowed) + !$EXP[IsPlayingRecognizedContent] + Skin.HasSetting(NewSpotlight)" />
+					<param name="image" value="$VAR[fanartBackground]" />
+				</include>
+							
 				<!-- additional info overlay -->
 				<control type="image">
 					<visible>!String.IsEmpty(Window.Property(AdditionalInfo))</visible>
@@ -1526,9 +1533,9 @@
 				<control type="image" id="6990">
 					<visible>!String.IsEmpty(Control.GetLabel(6990)) + !Skin.HasSetting(DisableStudioLogoInfoDialog)</visible>
 					<right>40</right>
-					<width>450</width>
-					<height>160</height>
-					<bottom>20</bottom>
+					<width></width>
+					<height>100</height>
+					<bottom>0</bottom>
 					<aspectratio aligny="top" align="right">keep</aspectratio>
 					<include condition="!String.Contains(Skin.String(SkinHelper.StudioLogos.Path),colo)">videoInfoColorDiffuse</include>
 					<texture background="true">$VAR[StudioLogoImg]</texture>
@@ -2176,13 +2183,17 @@
 						<width>100%</width>
 						<height min="0" max="500">auto</height>
 						<label>$INFO[ListItem.Plot]</label>
-						<textcolor>darkgray</textcolor>
-						<align>left</align>
-						<font>Reg32</font>
+						<textcolor>gray</textcolor>
+						<align>justify</align>
+						<font>Reg30</font>
 					</control>
 
 					<!-- ratings -->
-					<include>Bingie_InfoDialog_Ratings_Hor</include>
+					<include condition="!skin.HasSetting(enableNewFooter)">Bingie_InfoDialog_Ratings_Hor</include>
+				
+					<!--New Ratings Footer-->
+					<include condition="skin.HasSetting(enableNewFooter)">new_footer_VD</include>
+				
 				</control>
 
 				<!--Cast List-->

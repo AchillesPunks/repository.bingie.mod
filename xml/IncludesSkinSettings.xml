@@ -593,7 +593,15 @@
             <selected>Skin.HasSetting(DisableSpotlightLabel)</selected>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
-		<!-- Disable Spotlight Slide Animation-->	
+		<!-- Prefer Colored Sub Label on Home Spotlight -->	
+		<control type="radiobutton" id="2037">
+            <include>SkinSettings_Button</include>
+            <label>      Prefer Color Icon on Spotlight Sublabel</label>
+            <onclick>Skin.ToggleSetting(EnableSpotlightColoredLabel)</onclick>
+            <selected>Skin.HasSetting(EnableSpotlightColoredLabel)</selected>
+            <visible>!skin.HasSetting(DisableSpotlightLabel)</visible>
+        </control>
+		<!-- Disable Spotlight Slide Animation -->	
 		<control type="radiobutton" id="2035">
             <include>SkinSettings_Button</include>
             <label>Disable Plot Slide animation on Spotlight</label>
@@ -601,6 +609,16 @@
             <selected>Skin.HasSetting(DisablePlotSlide)</selected>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
+		
+		<!-- Enable New Corner Spotlight  -->	
+		<control type="radiobutton" id="20351">
+            <include>SkinSettings_Button</include>
+            <label>Enable New Corner Spotlight (larger fanart image)</label>
+            <onclick>Skin.ToggleSetting(NewSpotlight)</onclick>
+            <selected>Skin.HasSetting(NewSpotlight)</selected>
+            <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
+        </control>
+	    
 	</include>
 
     <!-- Home Widgets Settings -->
@@ -637,13 +655,13 @@
             <visible>!Skin.HasSetting(LowPerformanceMode) + !Skin.HasSetting(BingieHomeDisableFirstRow) + String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
         <!-- Enable Fixed Frame in Home & Hubs (Moving Frame) -->
-        <!-- <control type="radiobutton" id="2017"> -->
-            <!-- <include>SkinSettings_Button</include> -->
-            <!-- <label>31123</label> -->
-            <!-- <onclick>Skin.ToggleSetting(EnableFixedFrameWidgets)</onclick> -->
-            <!-- <selected>Skin.HasSetting(EnableFixedFrameWidgets)</selected> -->
-            <!-- <visible>!Skin.HasSetting(WidgetsZoomFocus) + !Skin.HasSetting(BingieHomeDisableFirstRow) + Skin.HasSetting(EnableFixedFocusWidgets) + $EXP[IsSupportedFixedFrameLayout] + String.IsEqual(Skin.String(HomeLayout),bingie)</visible> -->
-        <!-- </control> -->
+        <control type="radiobutton" id="2017">
+            <include>SkinSettings_Button</include>
+            <label>31123</label>
+            <onclick>Skin.ToggleSetting(EnableFixedFrameWidgets)</onclick>
+            <selected>Skin.HasSetting(EnableFixedFrameWidgets)</selected>
+            <visible>!Skin.HasSetting(WidgetsZoomFocus) + !Skin.HasSetting(BingieHomeDisableFirstRow) + Skin.HasSetting(EnableFixedFocusWidgets) + $EXP[IsSupportedFixedFrameLayout] + String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
+        </control>
         <!-- display tags on widgets -->
         <control type="button" id="31675">
             <include>SkinSettings_Button</include>
@@ -721,24 +739,22 @@
             <!-- <visible>String.IsEqual(Skin.String(HomeLayout),enhanced) | String.IsEqual(Skin.String(HomeLayout),bingie) | String.IsEqual(Skin.String(HomeLayout),win10) | String.IsEqual(Skin.String(HomeLayout),simplehor) | String.Contains(Skin.String(HomeLayout), lowhorizontal)</visible> -->
         <!-- </control> -->
 		
-		<!--enable New circular navigation-->
+		<!-- Enable New Circular Navigation -->
         <control type="radiobutton" id="2029">
             <include>SkinSettings_Button</include>
             <label>Enable New Circular Navigation</label>
             <onclick>Skin.ToggleSetting(New_Circular)</onclick>
             <selected>Skin.HasSetting(New_Circular)</selected>
             <onclick>Skin.Reset(EnhancedHome_Circular)</onclick>
-            
-																																																																							  
         </control>
-        <!--show all widgets at once-->
-        <control type="radiobutton" id="31820">
-            <include>SkinSettings_Button</include>
-            <label>31820</label>
-            <onclick>Skin.ToggleSetting(ShowAllWidgets)</onclick>
-            <visible>$EXP[IsVerticalLayout] | String.IsEqual(Skin.String(HomeLayout),bingie) | String.Contains(Skin.String(HomeLayout), win10)</visible>
-            <selected>Skin.HasSetting(ShowAllWidgets)</selected>
-        </control>
+        <!-- Show all widgets at once -->
+        <!-- <control type="radiobutton" id="31820"> -->
+            <!-- <include>SkinSettings_Button</include> -->
+            <!-- <label>31820</label> -->
+            <!-- <onclick>Skin.ToggleSetting(ShowAllWidgets)</onclick> -->
+            <!-- <visible>$EXP[IsVerticalLayout] | String.IsEqual(Skin.String(HomeLayout),bingie) | String.Contains(Skin.String(HomeLayout), win10)</visible> -->
+            <!-- <selected>Skin.HasSetting(ShowAllWidgets)</selected> -->
+        <!-- </control> -->
         <!--large widget details-->
         <control type="radiobutton" id="31741">
             <include>SkinSettings_Button</include>
@@ -780,13 +796,13 @@
             <visible>!Skin.HasSetting(DisableAllWidgets) + !String.IsEqual(Skin.String(HomeLayout),3) + !String.IsEqual(Skin.String(HomeLayout),3small)</visible>
         </control>
        <!--hide widget panel-->
-        <control type="radiobutton" id="13004">
-            <include>SkinSettings_Button</include>
-            <label>31206</label>
-            <onclick>Skin.ToggleSetting(HideWidgetPanelBackground)</onclick>
-            <selected>Skin.HasSetting(HideWidgetPanelBackground)</selected>
-            <visible>!Skin.HasSetting(DisableAllWidgets) + !String.IsEqual(Skin.String(HomeLayout),3) + !String.IsEqual(Skin.String(HomeLayout),2small) + !String.IsEqual(Skin.String(HomeLayout),win10)</visible>
-        </control>
+        <!-- <control type="radiobutton" id="13004"> -->
+            <!-- <include>SkinSettings_Button</include> -->
+            <!-- <label>31206</label> -->
+            <!-- <onclick>Skin.ToggleSetting(HideWidgetPanelBackground)</onclick> -->
+            <!-- <selected>Skin.HasSetting(HideWidgetPanelBackground)</selected> -->
+            <!-- <visible>!Skin.HasSetting(DisableAllWidgets) + !String.IsEqual(Skin.String(HomeLayout),3) + !String.IsEqual(Skin.String(HomeLayout),2small) + !String.IsEqual(Skin.String(HomeLayout),win10)</visible> -->
+        <!-- </control> -->
         <!-- auto right align widgets ***temporary not fully supported in bingie layout*** -->
         <control type="radiobutton" id="31712">
             <include>SkinSettings_Button</include>
@@ -804,7 +820,8 @@
             <label>31843</label>
             <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
         </control>
-        <!-- Disable Clearlogo in Bingie Home -->
+        
+		<!-- Disable Clearlogo in Bingie Home -->
         <control type="radiobutton" id="31818">
             <include>SkinSettings_Button</include>
             <label>31818</label>
@@ -812,14 +829,23 @@
             <selected>Skin.HasSetting(NoClearLogoBingie)</selected>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
-        <!-- Prefer stars ratings in bingie views (temp changed to RT/IMDB ratings -->
+        <!-- RT/IMDB/TVDB ratings on details row -->
         <control type="radiobutton" id="2036">
             <include>SkinSettings_Button</include>
-            <label>Prefer IMDB/RT Ratings over Percentage on Details Row</label>
-            <onclick>Skin.ToggleSetting(PreferStarsRatingBingie)</onclick>
+            <label>Prefer IMDB/RT/TVDB Ratings over Percentage on Details Row</label>
+            <onclick>Skin.ToggleSetting(PreferIMDBDetailsRow)</onclick>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
-            <selected>Skin.HasSetting(PreferStarsRatingBingie)</selected>
+            <selected>Skin.HasSetting(PreferIMDBDetailsRow)</selected>
         </control>
+		<!-- White RT/IMDB/TVDB ratings on details row -->
+        <control type="radiobutton" id="2042">
+            <include>SkinSettings_Button</include>
+            <label>      Prefer white logos on Details Row</label>
+            <onclick>Skin.ToggleSetting(whiteIMDBDetailsRow)</onclick>
+            <selected>Skin.HasSetting(whiteIMDBDetailsRow)</selected>
+			<visible>Skin.HasSetting(PreferIMDBDetailsRow)</visible>
+        </control>
+		
 		<!-- Enable Colored MPAA on Home -->
         <!-- <control type="radiobutton" id="191921"> -->
             <!-- <include>SkinSettings_Button</include> -->
@@ -846,13 +872,12 @@
             <selected>Skin.HasSetting(EnableUSIcons)</selected>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
- <!--Enable Audio Codecs (not sure why you moved this but it has to stay above the ATMOS only option since enabling this opens up the ATMOS only option)-->
+ <!--Enable Audio Codecs-->
         <control type="radiobutton" id="2018">
             <include>SkinSettings_Button</include>
             <label>Enable Audio Codec on Details Row</label>
             <onclick>Skin.ToggleSetting(EnableAudioCodec)</onclick>
             <selected>Skin.HasSetting(EnableAudioCodec)</selected>
-			<!-- <selected>Skin.reset(enableAtmosOnly)</selected> -->
 			<visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>
 <!--Enable Audio Codecs ATMOS only-->
@@ -888,7 +913,14 @@
             <selected>Skin.HasSetting(DisableTop250)</selected>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
         </control>	
-        
+        <!-- Prefer Colored Top250 Sublabel on Spotlight Details Row -->	
+		<control type="radiobutton" id="2038">
+            <include>SkinSettings_Button</include>
+            <label>      Prefer Color Icon on Top250 Sublabel</label>
+            <onclick>Skin.ToggleSetting(EnableTop250ColoredLabel)</onclick>
+            <selected>Skin.HasSetting(EnableTop250ColoredLabel)</selected>
+            <visible>!Skin.HasSetting(DisableTop250)</visible>
+        </control>
 		<!-- Prefer Short Plot Outline in Widget Details -->
         <control type="radiobutton" id="31794">
             <include>SkinSettings_Button</include>
@@ -926,16 +958,58 @@
             <onclick>Skin.ToggleSetting(NoFooterBarOnHome)</onclick>
             <selected>Skin.HasSetting(NoFooterBarOnHome)</selected>
         </control>
+		
+		<!--Enable New footer -->
+			<control type="radiobutton" id="2039">
+            <include>SkinSettings_Button</include>
+            <label>Enable New Footer</label>
+            <onclick>Skin.ToggleSetting(EnableNewFooter)</onclick>
+			<selected>Skin.HasSetting(EnableNewFooter)</selected>
+            <visible>String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(BingieHomeDisableFirstRow) + !Skin.HasSetting(NoFooterBarOnHome)</visible>
+            </control>
+			
+			<!--Prefer white footer -->
+			<control type="radiobutton" id="2040">
+            <include>SkinSettings_Button</include>
+            <label>     Prefer White instead of color logos</label>
+            <onclick>Skin.ToggleSetting(PreferWhiteFooter)</onclick>
+			<onclick>Skin.Reset(EnableTextFooter)</onclick>
+			<selected>Skin.HasSetting(PreferWhiteFooter)</selected>
+            <visible>Skin.HasSetting(EnableNewFooter) + String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(BingieHomeDisableFirstRow) + !Skin.HasSetting(NoFooterBarOnHome)</visible>
+            </control>
+			
+			<!--Enable New Text footer -->
+			<control type="radiobutton" id="2041">
+            <include>SkinSettings_Button</include>
+            <label>     Prefer Text Footer</label>
+            <onclick>Skin.ToggleSetting(EnableTextFooter)</onclick>
+			<onclick>Skin.Reset(PreferWhiteFooter)</onclick>
+			<selected>Skin.hasSetting(EnableTextFooter)</selected>
+            <visible>String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(BingieHomeDisableFirstRow) + !Skin.HasSetting(NoFooterBarOnHome)</visible>
+            <visible>Skin.HasSetting(EnableNewFooter)</visible>
+			</control>
+			
+			
+			<!--Enable RT Audience (if default) -->
+			<control type="radiobutton" id="2043">
+            <include>SkinSettings_Button</include>
+            <label>     Enable RT Audience. Only select this if Rotten Tomatoes Audience is your default movie database rating!</label>
+            <onclick>Skin.ToggleSetting(enableRTAudience)</onclick>
+			<selected>Skin.HasSetting(enableRTAudience)</selected>
+            <visible>Skin.HasSetting(EnableNewFooter) + String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(BingieHomeDisableFirstRow) + !Skin.HasSetting(NoFooterBarOnHome)</visible>
+            </control>
+						
         <!--Enable Monochrome Rating Flags in Bingie Views -->
         <control type="radiobutton" id="399766">
             <include>SkinSettings_Button</include>
             <label>31896</label>
             <onclick>Skin.ToggleSetting(EnableMonochromeRatingInBingieViews)</onclick>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(BingieHomeDisableFirstRow) + !Skin.HasSetting(NoFooterBarOnHome)</visible>
-            <selected>Skin.HasSetting(EnableMonochromeRatingInBingieViews)</selected>
+            <visible>!Skin.HasSetting(EnableNewFooter)</visible>
+			<selected>Skin.HasSetting(EnableMonochromeRatingInBingieViews)</selected>
         </control>
-		<!-- Hide Ratings, Studio Logo & Media Flags While Trailer is Playing (fixed this button because you stopped footer from showing up in Spotlight widget. Also moved it back with the rest of the footer settings) -->
-		<!--disable studio logo on bingie home-->
+		
+		<!-- disable Studio logos in Bingie home & library -->
         <control type="radiobutton" id="131767">
             <include>SkinSettings_Button</include>
             <label>31898</label>
@@ -943,23 +1017,27 @@
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(NoFooterBarOnHome) + !Skin.HasSetting(BingieHomeDisableFirstRow)</visible>
             <selected>Skin.HasSetting(BingieViewsDisableStudio)</selected>
         </control>
-        <!--disable ratings on bingie home-->
+        
+		<!--disable ratings on bingie home-->
         <control type="radiobutton" id="131766">
             <include>SkinSettings_Button</include>
             <label>31899</label>
             <onclick>Skin.ToggleSetting(BingieViewsDisableRating)</onclick>
             <visible>String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(NoFooterBarOnHome) + !Skin.HasSetting(BingieHomeDisableFirstRow)</visible>
-            <selected>Skin.HasSetting(BingieViewsDisableRating)</selected>
+            <visible>!Skin.HasSetting(EnableNewFooter)</visible>
+			<selected>Skin.HasSetting(BingieViewsDisableRating)</selected>
         </control>
-        <!-- Disable bingie more details info -->
-        <control type="radiobutton" id="131788">
-            <include>SkinSettings_Button</include>
-            <label>31888</label>
-            <onclick>Skin.ToggleSetting(DisableBingieMoreDetails)</onclick>
-            <visible>!Skin.HasSetting(BingieHomeDisableFirstRow) + String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
-            <selected>Skin.HasSetting(DisableBingieMoreDetails)</selected>
-        </control>
-        <!-- Hide Ratings & Studio Logo in Footer for Trailers & Spotlight Widget -->
+        
+		<!-- Disable bingie more details info  DONT NEED THIS ONE ANYMORE-->
+        <!-- <control type="radiobutton" id="131788"> -->
+            <!-- <include>SkinSettings_Button</include> -->
+            <!-- <label>31888</label> -->
+            <!-- <onclick>Skin.ToggleSetting(DisableBingieMoreDetails)</onclick> -->
+            <!-- <visible>!Skin.HasSetting(BingieHomeDisableFirstRow) + String.IsEqual(Skin.String(HomeLayout),bingie)</visible> -->
+            <!-- <selected>Skin.HasSetting(DisableBingieMoreDetails)</selected> -->
+        <!-- </control> -->
+       
+	   <!-- Hide Ratings & Studio Logo in Footer for Trailers & Spotlight Widget -->
         <control type="radiobutton" id="131786">
             <include>SkinSettings_Button</include>
             <label>Hide Ratings & Studio Logo in Footer for Trailers & Spotlight Widgets</label>

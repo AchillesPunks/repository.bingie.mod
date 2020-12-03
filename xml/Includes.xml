@@ -247,8 +247,8 @@
     </include>
 
     <include name="BingieLeftDefs">
-        <include condition="!Skin.HasSetting(EnhancedHome_Circular)">No_Circular_Left</include>
-        <left>65</left>
+        <!-- <include condition="!Skin.HasSetting(EnhancedHome_Circular)">No_Circular_Left</include> -->
+        <left>135</left>  <!--removed the include condition and changed this to hide accomodate the fixed frame hiding the left side diffuse mask on home--> 
     </include>
 
     <!-- bounce up animation -->

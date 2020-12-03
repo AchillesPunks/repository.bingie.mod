@@ -148,7 +148,7 @@
 
           <!-- Snow Effect -->
         <control type="group">
-            <include condition="Skin.HasSetting(enablesnow) + [Window.IsActive(Home) | Skin.HasSetting(expandsnow)]">snow</include>
+            <include condition="Skin.HasSetting(enablesnow)">snow</include>
         </control>
 		
         <!-- touchscreen workaround for windows tablets -->

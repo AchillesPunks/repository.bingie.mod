@@ -80,7 +80,30 @@
 		<control type="radiobutton" id="2035">
 
 <!-- Prefer stars ratings in bingie views (temp changed to RT/IMDB ratings -->
-        <control type="radiobutton" id="2036">		
+        <control type="radiobutton" id="2036">
+
+<!-- Prefer Colored Sub Label on Home Spotlight -->	
+		<control type="radiobutton" id="2037">
+
+<!-- Prefer Colored Top250 Sublabel on Spotlight Details Row -->	
+		<control type="radiobutton" id="2038">
+            
+<!--Enable New footer -->
+        <control type="radiobutton" id="2039">
+
+<!--Prefer white footer -->
+			<control type="radiobutton" id="2040">
+		
+				
+<!-- Enable New Corner Spotlight  -->	
+		<control type="radiobutton" id="2041">
+		
+<!-- White RT/IMDB/TVDB ratings on details row -->
+        <control type="radiobutton" id="2042">
+		
+<!--Enable RT Audience (if default) -->
+			<control type="radiobutton" id="2043">
+		
 		
 
 		

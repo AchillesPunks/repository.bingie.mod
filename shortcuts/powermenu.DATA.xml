@@ -10,7 +10,7 @@
 	</shortcut>
 	<shortcut>
 		<defaultID>31714</defaultID>
-		<label>Reload Netflix</label>
+		<label>Reload</label>
 		<label2>Kodi Command</label2>
 		<icon>common/reload-skin.png</icon>
 		<thumb />
@@ -26,7 +26,7 @@
 	</shortcut>
 	<shortcut>
 		<defaultID>13013</defaultID>
-		<label>Reboot Netflix</label>
+		<label>Reboot</label>
 		<label2>Kodi Command</label2>
 		<icon>common/reboot1.png</icon>
 		<thumb />
