@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
+<smartplaylist type="movies">
+    <name>DC Comics</name>
+    <match>all</match>
+    <rule field="studio" operator="contains">
+        <value>dc comics</value>
+        <value>dc entertainment</value>
+    </rule>
+    <order direction="ascending">sorttitle</order>
+    <limit>200</limit>
+</smartplaylist>
