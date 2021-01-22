@@ -117,7 +117,7 @@
                 <aligny>center</aligny>
                 <font>flags</font>
                 <textcolor>$VAR[AdvancedRatings_TextColor]</textcolor>
-                <label>$INFO[Window(Home).Property(SkinHelper.ListItem.IMDB.Top250)]</label>		<!-- $INFO[Window(Home).Property(SkinHelper.ListItem.IMDB.Top250)] -->
+                <label>$INFO[Window(Home).Property(SkinHelper.ListItem.IMDB.Top250)]</label>		              <!-- $INFO[Window(Home).Property(SkinHelper.ListItem.IMDB.Top250)] -->
             </control>
         </control>
     </include>
@@ -239,8 +239,6 @@
 	<include name="TomatoMeterVD">
         <!-- Rotten Tomatoes Meter -->
         <control type="group">
-           
-            
             <control type="image">
                 <description>Rotten tomatoes image</description>
                 <top>-5</top>
@@ -1553,7 +1551,7 @@
                 <visible>!String.IsEmpty(Control.GetLabel(2777121)) + Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),74)</visible>
                 <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
 				<width>95</width>
-                <height>44</height>
+                <height>52</height>
 				<bottom>22</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
@@ -1577,7 +1575,7 @@
                 <visible>String.Contains(Window(Home).Property(SkinHelper.ListItem.Awards),Oscar) + String.Contains(Window(Home).Property(SkinHelper.ListItem.Awards),Won)</visible>
                 <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
 				<width>25</width>
-                <height>40</height>
+                <height>48</height>
 				<bottom>25</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
@@ -1589,7 +1587,6 @@
 				<control type="image">
                 <visible>String.Contains(Window(Home).Property(SkinHelper.ListItem.Awards),Oscar) + String.Contains(Window(Home).Property(SkinHelper.ListItem.Awards),Won)</visible>
                 <visible>Skin.HasSetting(PreferWhiteFooter)</visible>
-				
 				<width>14</width>
                 <height>35</height>
 				<bottom>28</bottom>
@@ -1616,9 +1613,9 @@
 				<control type="image">
                 <visible>!String.IsEmpty(Control.GetLabel(2777119))</visible>
 				<visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
-				<width>64</width>
-                <height>30</height>
-				<bottom>25</bottom>
+				<width>84</width>
+                <height>50</height>
+				<bottom>20</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
                 <texture background="true">bingie/250color.png</texture>
@@ -1652,9 +1649,9 @@
                 <visible>!String.IsEmpty(Control.GetLabel(2777120))</visible>
                 <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
 				<visible>!Skin.HasSetting(PreferIMDBDetailsRow)</visible>
-				<width>54</width>
-                <height>30</height>
-				<bottom>25</bottom>
+				<width>84</width>
+                <height>50</height>
+				<bottom>20</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
                 <texture background="true">bingie/imdb2.png</texture>
@@ -1690,9 +1687,9 @@
                 <visible>!String.IsEmpty(Control.GetLabel(2777121)) + Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),59)</visible>
                 <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
 				<visible>!Skin.HasSetting(PreferIMDBDetailsRow)</visible>
-				<width>30</width>
-                <height>30</height>
-				<bottom>25</bottom>
+				<width>46</width>
+                <height>70</height>
+				<bottom>11</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
                 <texture background="true">bingie/fresh1.png</texture>
@@ -1703,8 +1700,8 @@
                 <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
 				<visible>!String.IsEmpty(Control.GetLabel(2777121)) + !Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.RottenTomatoes.Meter),59)</visible>
                 <visible>!Skin.HasSetting(PreferIMDBDetailsRow)</visible>
-				<width>31</width>
-                <height>30</height>
+				<width>41</width>
+                <height>40</height>
 				<bottom>25</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
@@ -1731,7 +1728,7 @@
 				<visible>!Skin.HasSetting(PreferIMDBDetailsRow)</visible>
 				<width>25</width>
                 <height>25</height>
-				<bottom>27</bottom>
+				<bottom>22</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
                 <texture background="true">bingie/whiteRTcriticsRotten.png</texture>
@@ -1759,9 +1756,9 @@
 				<visible>!String.IsEmpty(Control.GetLabel(3777122)) + Integer.IsGreater(ListItem.Rating,5.9)</visible>
                 <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
 				<visible>Skin.HasSetting(enableRTAudience)</visible>
-				<width>22</width>
-                <height>30</height>
-				<bottom>25</bottom>
+				<width>36</width>
+                <height>55</height>
+				<bottom>17</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
                 <texture background="true">bingie/audiencefresh.png</texture>
@@ -1774,9 +1771,9 @@
                 <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
 				<visible>Skin.HasSetting(enableRTAudience)</visible>
 				<visible>!String.IsEmpty(ListItem.DateAdded)</visible>  <!--Stops default rating showing up in addon widgets since their default rating is never RT audience-->
-				<width>39</width>
-                <height>30</height>
-				<bottom>25</bottom>
+				<width>50</width>
+                <height>65</height>
+				<bottom>10</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
                 <texture background="true">bingie/audiencerotten.png</texture>
@@ -1835,9 +1832,9 @@
                 <visible>!String.IsEmpty(Control.GetLabel(2777122))</visible>
                 <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
 				<visible>!Skin.HasSetting(PreferIMDBDetailsRow)</visible>
-				<width>53</width>
-                <height>30</height>
-				<bottom>25</bottom>
+				<width>64</width>
+                <height>50</height>
+				<bottom>22</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
                 <texture background="true">bingie/tvdb2.png</texture>
@@ -1874,9 +1871,9 @@
 				<control type="image">
                 <visible>!String.IsEmpty(Control.GetLabel(2777123))</visible>
                 <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
-				<bottom>25</bottom>
-                <width>30</width>
-                <height>30</height>
+				<bottom>19</bottom>
+                <width>50</width>
+                <height>46</height>
 				<aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
                 <texture background="true">bingie/tmdb3.png</texture>
@@ -1910,9 +1907,9 @@
 				<control type="image">
                 <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
 				<visible>!String.IsEmpty(Control.GetLabel(2777124))</visible>
-                <width>30</width>
-                <height>30</height>
-				<bottom>25</bottom>
+                <width>42</width>
+                <height>42</height>
+				<bottom>22</bottom>
                 <aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
                 <texture background="true">bingie/metacritic2.png</texture>
@@ -1946,10 +1943,10 @@
 				<visible>!String.IsEmpty(Control.GetLabel(6661234))</visible>
 				<visible>Control.IsVisible(77777)</visible>
 				<visible>!Skin.HasSetting(BingieViewsDisableStudio)</visible>
-				<top>53</top>
+				<top>45</top>
 				<left></left>
                 <width>100</width>
-                <height>60</height>
+                <height>65</height>
 				<aspectratio>keep</aspectratio>
                 <fadetime>300</fadetime>
 				<texture background="true">$VAR[StudioLogoImg]</texture>
