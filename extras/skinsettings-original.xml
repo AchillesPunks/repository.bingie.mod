@@ -493,23 +493,13 @@
     <setting id="pvrgenretype" value="genretype" label="$LOCALIZE[31973]" condition="" icon="" description="$LOCALIZE[31350]" default="true"/>
 
     <!-- widget rotate delay -->
-    <setting id="widgets_rotate_delay" value="1" label="1 $LOCALIZE[31231]" condition="" icon="" description=""/>
     <setting id="widgets_rotate_delay" value="2" label="2 $LOCALIZE[31231]" condition="" icon="" description=""/>
-    <setting id="widgets_rotate_delay" value="3" label="3 $LOCALIZE[31231]" condition="" icon="" description=""/>
-    <setting id="widgets_rotate_delay" value="4" label="4 $LOCALIZE[31231]" condition="" icon="" description=""/>
-    <setting id="widgets_rotate_delay" value="5" label="5 $LOCALIZE[31231]" condition="" icon="" description="" default="true"/>
+    <setting id="widgets_rotate_delay" value="5" label="5 $LOCALIZE[31231]" condition="" icon="" description=""/>
     <setting id="widgets_rotate_delay" value="10" label="10 $LOCALIZE[31231]" condition="" icon="" description=""/>
     <setting id="widgets_rotate_delay" value="15" label="15 $LOCALIZE[31231]" condition="" icon="" description=""/>
-    <setting id="widgets_rotate_delay" value="20" label="20 $LOCALIZE[31231]" condition="" icon="" description=""/>
-    <setting id="widgets_rotate_delay" value="25" label="25 $LOCALIZE[31231]" condition="" icon="" description=""/>
+    <setting id="widgets_rotate_delay" value="20" label="20 $LOCALIZE[31231]" condition="" icon="" description="" default="true"/>
     <setting id="widgets_rotate_delay" value="30" label="30 $LOCALIZE[31231]" condition="" icon="" description=""/>
-    <setting id="widgets_rotate_delay" value="35" label="35 $LOCALIZE[31231]" condition="" icon="" description=""/>
-    <setting id="widgets_rotate_delay" value="40" label="40 $LOCALIZE[31231]" condition="" icon="" description=""/>
-    <setting id="widgets_rotate_delay" value="45" label="45 $LOCALIZE[31231]" condition="" icon="" description=""/>
-    <setting id="widgets_rotate_delay" value="50" label="50 $LOCALIZE[31231]" condition="" icon="" description=""/>
-    <setting id="widgets_rotate_delay" value="55" label="55 $LOCALIZE[31231]" condition="" icon="" description=""/>
     <setting id="widgets_rotate_delay" value="60" label="60 $LOCALIZE[31231]" condition="" icon="" description=""/>
-    <setting id="widgets_rotate_delay" value="65" label="65 $LOCALIZE[31231]" condition="" icon="" description=""/>
     <setting id="widgets_rotate_delay" value="120" label="2 $LOCALIZE[12391]" condition="" icon="" description=""/>
     <setting id="widgets_rotate_delay" value="180" label="3 $LOCALIZE[12391]" condition="" icon="" description=""/>
     <setting id="widgets_rotate_delay" value="240" label="4 $LOCALIZE[12391]" condition="" icon="" description=""/>
