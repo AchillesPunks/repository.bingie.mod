@@ -42,7 +42,7 @@
 			</control>
 			<control type="grouplist">
 				<left>-800</left>
-				<top>7</top>
+				<top>-34</top>
 				<width>800</width>
 				<height>120</height>
 				<align>right</align>
@@ -62,7 +62,7 @@
 			<control type="label" id="31">
 				<description>Title label</description>
 				<left>-750</left>
-				<top>33</top>
+				<top>-8</top>
 				<width>750</width>
 				<height>120</height>
 				<font>font12</font>
