@@ -1,15 +1,26 @@
-# Skin Titan BINGIE
+# Skin Titan BINGIE MOD
 
-The new Titan for Kodi Leia...
+The BINGIE MOD for Kodi Leia...
 
 #IMPORTANT NOTE FOR USERS# 
-Install the skin through the official bingie repository for updates and the supported addons required!
+
+Install the official bingie repository for supported addons required!
 The content here is for developing purposes!
 https://github.com/cartmandos/repository.bingie
 
-Join the official thread for updates: https://forum.kodi.tv/showthread.php?tid=334820
+Join the official of Titan BINGIE MOD thread for updates: https://forum.kodi.tv/showthread.php?tid=355993
 
-Special Thanks to @marcelveldt for all of his work on the original code for Titan skin & addons.
-Thanks to @marduklev for helping out all along the way and a lot of great ideas!
-Thanks to @sualfred and @jurialmunkey for setting the example of how to be awsome in coding practices!
+To get the zip file only via github: https://github.com/AchillesPunks/repository.bingie.mod/archive/master.zip
+
+Special Thanks to @marcelveldt and @cartman.dos for all of his work on the original code for Titan skin & addons.
 and everyone else who have helped or contributed in any way!
+
+#WHAT HAS OF NEW BINGIE MOD#
+
+#1.0.3_mod (yyyy/mm/dd)
+
+_New: .................
+
+#1.0.4_mod (yyyy/mm/dd)
+
+_New: ..................
