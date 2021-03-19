@@ -834,20 +834,18 @@
 				<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
 				<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 				<label>$VAR[OSDLabel3]</label>
-				
 			</control>
-
-		</control>
+        </control>
     </include>
 
+<!-- Bingie Title Info on Idle -->
 	<include name="OSDPanelBingie">
-<!-- Title Info on Idle -->
-		<control type="group">
+     	<control type="group">
 			<top>0</top>
 			<left>0</left>
 			<height>100%</height>
 			<width>100%</width>
-<!-- CLEAR LOGO on PAUSE -->
+<!-- CLEAR LOGO or Clearart on PAUSE -->
 			<visible>Player.Paused + System.IdleTime(1)</visible>
 			<visible>![Control.IsVisible(552233) | Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(OSDSubtitleSettings) | Window.IsActive(subtitlesearch) | Window.IsActive(sliderdialog)]</visible>
 			<animation delay="1000" time="300" effect="fade">Visible</animation>
@@ -861,19 +859,31 @@
 			</control>
 			<control type="grouplist">
 				<top>350</top>
-				<left>65</left>
+				<left>130</left>
 				<height>500</height>
 				<width>70%</width>
 				<orientation>vertical</orientation>
-				<itemgap>2</itemgap>
+				<itemgap>10</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
-				<!--clearlogo-->
+				<!-- ClearLogo on Pause -->
 				<control type="image" id="1">
-					<width>800</width>
-					<height>310</height>
+					<visible>!Skin.HasSetting(EnableClearArtPause)</visible>
+					<top>100</top>
+					<width></width>
+					<height>190</height>
 					<fadetime>200</fadetime>
-					<align>left</align>
 					<texture background="true">$VAR[VideoPlayerClearLogo]</texture>
+					<aspectratio align="left" aligny="center">keep</aspectratio>
+					<visible>!String.IsEmpty(Control.GetLabel(1))</visible>
+				</control>
+				<!-- ClearArt on Pause -->
+				<control type="image" id="1">
+					<visible>Skin.HasSetting(EnableClearArtPause)</visible>
+					<top></top>
+					<width></width>
+					<height>300</height>
+					<fadetime>200</fadetime>
+					<texture background="true">$VAR[VideoPlayerClearArt]</texture>
 					<aspectratio align="left" aligny="center">keep</aspectratio>
 					<visible>!String.IsEmpty(Control.GetLabel(1))</visible>
 				</control>
@@ -893,12 +903,22 @@
 				<!-- Sublabel -->
 				<control type="label">
 					<width>auto</width>
-					<aligny>top</aligny>
-					<align>left</align>
 					<font>Reg32</font>
 					<textcolor>white</textcolor>
 					<label>$VAR[OSDLabel5]</label>
 					<scroll>false</scroll>
+				</control>
+			    <!-- plot -->
+				<control type="textbox">
+					<height min="0" max="115">auto</height>  
+                    <width max="680">auto</width>
+					<label>$INFO[VideoPlayer.Plot]</label>
+					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
+					<shadowcolor>dimgray</shadowcolor>
+					<align>justify</align>
+					<font>Reg28</font>
+					<visible>!String.IsEmpty(VideoPlayer.Plot)</visible>
+				    <visible>Skin.HasSetting(EnablePlotOnPause)</visible>
 				</control>
 			</control>
 		</control>
@@ -1006,7 +1026,7 @@
 
 <!--Player Seek Time Pop Up/Action Label-->
 				<control type="label" id="79591">
-					<visible>false</visible>     <!-- Added to Remove JumpIndicator -->
+					<visible>Skin.HasSetting(DisableJumpIndicator)</visible>     <!-- Added to Remove Jump Indicator -->
 					<posy>100</posy>
 					<width>1920</width>
 					<align>center</align>
@@ -2905,13 +2925,14 @@
 			<control type="image">
 				<width>100%</width>
 				<height>100%</height>
-				<texture background="true" border="15">special://home/addons/resource.images.backgroundoverlays.basic/resources/vignette.png</texture>
-				<colordiffuse>$INFO[Skin.String(OSDPanelColor)]</colordiffuse>
+				<texture background="true" border="15">bingie/sidediffuse.png</texture>
+				<colordiffuse>ff000000</colordiffuse>
 			</control>
 			
 <!-- Finish Time OSD Info -->
 				<control type="label">
 					<description>Finish Time</description>
+					<visible>Skin.HasSetting(EnableTimeInfo)</visible>
 					<animation end="-45,0" time="0" effect="slide" condition="[Player.Seeking + [!String.IsEqual(Player.SeekTime(hh),00) | [VideoPlayer.HasEpg + !String.IsEqual(PVR.EpgEventSeekTime(hh),00)]]] | [VideoPlayer.HasEPG + !String.IsEqual(PVR.EpgEventElapsedTime(hh),00)] | !String.IsEqual(Player.Time(hh),00)">Conditional</animation>
 					<include content="posx" condition="VideoPlayer.HasEpg">
 						<param name="posx" value="406" />
@@ -2930,6 +2951,7 @@
 <!-- Current Time OSD Info-->
 				<control type="label">
 					<description>Current Time</description>
+					<visible>Skin.HasSetting(EnableTimeInfo)</visible>
 					<bottom>30</bottom>
 					<posy>0</posy>
 					<width>1920</width>
@@ -2943,6 +2965,7 @@
 <!-- Total Duration OSD Info -->
 				<control type="label">
 					<description>Total Duration</description>
+					<visible>Skin.HasSetting(EnableTimeInfo)</visible>
 					<animation end="-45,0" time="0" effect="slide" condition="[!String.IsEqual(Player.Duration(hh),00) + Player.Seeking + [String.IsEqual(Player.TimeRemaining(hh),00) | [VideoPlayer.HasEpg + String.IsEqual(PVR.EpgEventSeekTime(hh),00)]]] | [VideoPlayer.HasEPG + String.IsEqual(PVR.EpgEventElapsedTime(hh),00)] | !String.IsEqual(Player.Duration(hh),00) + String.IsEqual(Player.TimeRemaining(hh),00)">Conditional</animation>
 					<include content="posx" condition="VideoPlayer.HasEpg">
 						<param name="posx" value="406" />
@@ -2958,7 +2981,8 @@
 				</control>
 <!-- Discart OSD Info-->
                 <control type="image">
-                    <visible>true</visible>              <!-- True = On / False = Off -->
+                    <visible>Skin.HasSetting(HideOSDDisc)</visible>
+					<visible>true</visible>
 					<posx>265</posx>
                     <posy>230</posy>
                     <width>300</width>
@@ -2976,7 +3000,7 @@
                </control>
 <!-- Clearart Top Right Corner -->
 			   <control type="image">
-                     <visible>false</visible>             <!-- True = On / False = Off -->
+                     <visible>false</visible>
 					 <posx>1500</posx>
                      <posy>20</posy>
                      <width>356</width>
@@ -3043,7 +3067,7 @@
 
 <!-- Clear Logo Title - Your Watching -->				
 				<control type="image">
-					<visible>false</visible>              <!-- True = On / False = Off -->
+					<visible>!Skin.HasSetting(EnableClearArtInfo)</visible>
 					<width>400</width>
 					<height>150</height>
 					<align>left</align>
@@ -3052,7 +3076,7 @@
 				</control>
 <!-- Clearart Title - Your Watching -->
 				<control type="image">
-					<visible>true</visible>              <!-- True = On / False = Off -->
+					<visible>Skin.HasSetting(EnableClearArtInfo)</visible>
 					<width>400</width>
 					<height>250</height>
 					<align>left</align>
@@ -3096,8 +3120,8 @@
 				</control>
 				<!-- plot -->
 				<control type="textbox">
-					<width>1130</width>
-					<height>560</height>
+					<height min="0" max="115">auto</height>  
+                    <width max="680">auto</width>
 					<label>$INFO[VideoPlayer.Plot]</label>
 					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
 					<shadowcolor>dimgray</shadowcolor>

@@ -1,0 +1,117 @@
+<!-- Enable Snow -->
+		<control type="radiobutton" id="2010">
+
+<!-- Enable MPAA Label -->
+		<control type="radiobutton" id="2011">
+		
+<!-- Enable MPAA Colored  Icons -->
+        <control type="radiobutton" id="2012">
+
+<!-- Disable Static Slim Menu -->    
+		<control type="radiobutton" id="2013">		
+
+<!-- Season Greetings  -->    <!-- This is a Label not a Button -->
+		<control type="textbox" id="2013">
+		
+<!-- Enable Netflix Logo on Bingie Home -->
+        <control type="radiobutton" id="2014">
+
+<!-- Disable profile on menu -->    
+		<control type="radiobutton" id="2015">
+
+<!-- Enable Fixed Focus Widgets in Vertical Scrolling -->
+        <control type="radiobutton" id="2016">
+
+<!-- Enable Fixed Frame in Home & Hubs (Moving Frame) -->
+        <control type="radiobutton" id="2017">
+
+<!--Enable Audio Icons-->
+        <control type="radiobutton" id="2018">
+		
+<!--Enable US Icons-->
+        <control type="radiobutton" id="2019">		
+
+<!--Enable UK Icons-->
+        <control type="radiobutton" id="2020">
+
+<!--Bingie Home Enable Widgets Zoom Effect-->
+        <control type="radiobutton" id="2021">
+
+<!-- Disable SideBlade/Options Menu Indicator -->
+		<control type="radiobutton" id="2022">
+		
+<!-- Enable Animated Discart on Supported OSD -->
+        <control type="radiobutton" id="2023">
+
+<!-- Enable Finish Time, Current Time, & Total Duration for OSD Playback -->
+        <control type="radiobutton" id="2024">
+
+<!-- Show ClearArt instead of Clearlogo on Pause  -->
+		<control type="radiobutton" id="2025">
+            
+<!-- Show Clearart instead of ClearLogo on Infopane -->
+		<control type="radiobutton" id="2026">
+            
+<!-- Enable Seek/Jump Indicator -->
+		<control type="radiobutton" id="2027">	
+
+<!-- Disable Top250 Sublabel on home and bingie views -->
+		<control type="radiobutton" id="2028">
+		
+<!--Enable New circular navigation-->
+        <control type="radiobutton" id="2029">
+
+<!-- Disable Sub Label on Home Spotlight -->
+		<control type="radiobutton" id="2030">
+
+<!--Fake Codec info on Details Row (if no codec info is present)-->
+		<control type="radiobutton" id="2031">
+            
+<!--TV Show Status on Details Row Home & Bingie Views-->
+		<control type="radiobutton" id="2032">
+		
+<!--Enable Audio Codecs ATMOS only-->
+		<control type="radiobutton" id="2033">
+
+<!-- Season Greetings  -->    <!-- This is a Label not a Button -->
+		<control type="textbox" id="2034">
+
+<!-- Disable Spotlight Slide Animation-->	
+		<control type="radiobutton" id="2035">
+
+<!-- Prefer stars ratings in bingie views (temp changed to RT/IMDB ratings -->
+        <control type="radiobutton" id="2036">
+
+<!-- Prefer Colored Sub Label on Home Spotlight -->	
+		<control type="radiobutton" id="2037">
+
+<!-- Prefer Colored Top250 Sublabel on Spotlight Details Row -->	
+		<control type="radiobutton" id="2038">
+            
+<!--Enable New footer -->
+        <control type="radiobutton" id="2039">
+
+<!--Prefer white footer -->
+		<control type="radiobutton" id="2040">
+		
+<!-- Enable New Corner Spotlight  -->	
+		<control type="radiobutton" id="2041">
+		
+<!-- White RT/IMDB/TVDB ratings on details row -->
+        <control type="radiobutton" id="2042">
+		
+<!--Enable RT Audience (if default) -->
+		<control type="radiobutton" id="2043">
+		
+<!-- Disable Total Media Count In Bingie Library Views  -->	
+		<control type="radiobutton" id="2044">
+
+<!-- Disable Continue Watching Movie Percentage -->
+        <control type="radiobutton" id="2045">
+
+<!-- Enable Plot on Pause -->
+        <control type="radiobutton" id="2046">		
+		
+		
+
+		

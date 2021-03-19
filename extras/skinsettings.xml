@@ -493,12 +493,23 @@
     <setting id="pvrgenretype" value="genretype" label="$LOCALIZE[31973]" condition="" icon="" description="$LOCALIZE[31350]" default="true"/>
 
     <!-- widget rotate delay -->
-    <setting id="widgets_rotate_delay" value="5" label="5 $LOCALIZE[31231]" condition="" icon="" description=""/>
+    <setting id="widgets_rotate_delay" value="1" label="1 $LOCALIZE[31231]" condition="" icon="" description=""/>
+    <setting id="widgets_rotate_delay" value="2" label="2 $LOCALIZE[31231]" condition="" icon="" description=""/>
+    <setting id="widgets_rotate_delay" value="3" label="3 $LOCALIZE[31231]" condition="" icon="" description=""/>
+    <setting id="widgets_rotate_delay" value="4" label="4 $LOCALIZE[31231]" condition="" icon="" description=""/>
+    <setting id="widgets_rotate_delay" value="5" label="5 $LOCALIZE[31231]" condition="" icon="" description="" default="true"/>
     <setting id="widgets_rotate_delay" value="10" label="10 $LOCALIZE[31231]" condition="" icon="" description=""/>
     <setting id="widgets_rotate_delay" value="15" label="15 $LOCALIZE[31231]" condition="" icon="" description=""/>
-    <setting id="widgets_rotate_delay" value="20" label="20 $LOCALIZE[31231]" condition="" icon="" description="" default="true"/>
+    <setting id="widgets_rotate_delay" value="20" label="20 $LOCALIZE[31231]" condition="" icon="" description=""/>
+    <setting id="widgets_rotate_delay" value="25" label="25 $LOCALIZE[31231]" condition="" icon="" description=""/>
     <setting id="widgets_rotate_delay" value="30" label="30 $LOCALIZE[31231]" condition="" icon="" description=""/>
+    <setting id="widgets_rotate_delay" value="35" label="35 $LOCALIZE[31231]" condition="" icon="" description=""/>
+    <setting id="widgets_rotate_delay" value="40" label="40 $LOCALIZE[31231]" condition="" icon="" description=""/>
+    <setting id="widgets_rotate_delay" value="45" label="45 $LOCALIZE[31231]" condition="" icon="" description=""/>
+    <setting id="widgets_rotate_delay" value="50" label="50 $LOCALIZE[31231]" condition="" icon="" description=""/>
+    <setting id="widgets_rotate_delay" value="55" label="55 $LOCALIZE[31231]" condition="" icon="" description=""/>
     <setting id="widgets_rotate_delay" value="60" label="60 $LOCALIZE[31231]" condition="" icon="" description=""/>
+    <setting id="widgets_rotate_delay" value="65" label="65 $LOCALIZE[31231]" condition="" icon="" description=""/>
     <setting id="widgets_rotate_delay" value="120" label="2 $LOCALIZE[12391]" condition="" icon="" description=""/>
     <setting id="widgets_rotate_delay" value="180" label="3 $LOCALIZE[12391]" condition="" icon="" description=""/>
     <setting id="widgets_rotate_delay" value="240" label="4 $LOCALIZE[12391]" condition="" icon="" description=""/>
@@ -561,12 +572,12 @@
         <option id="videoinfo_details_awards" label="$LOCALIZE[31976]" condition="" default="true"/>
     </setting>
 
-    <!-- options to show in bingie video osd - multiselect -->
+    <!-- Show/Hide OSD Buttons -->
     <setting id="bingie_videoosd_buttons" value="||MULTISELECT||" label="" condition="" icon="" description="">
         <option id="bingie_videoosd_buttons_info" label="$LOCALIZE[19033]" condition="" default="true"/>
-        <option id="bingie_videoosd_buttons_bookmarks" label="$LOCALIZE[298]" condition="" default="true"/>
-        <option id="bingie_videoosd_buttons_pvrguide" label="$LOCALIZE[10702]" condition="" default="true"/>
-        <option id="bingie_videoosd_buttons_discmenu" label="$LOCALIZE[427]" condition="" default="true"/>
+        <option id="bingie_videoosd_buttons_bookmarks" label="$LOCALIZE[298]" condition=""/>
+        <option id="bingie_videoosd_buttons_pvrguide" label="$LOCALIZE[10702]" condition=""/>
+        <option id="bingie_videoosd_buttons_discmenu" label="$LOCALIZE[427]" condition=""/>
         <option id="bingie_videoosd_buttons_video" label="$LOCALIZE[13395]" condition="" default="true"/>
         <option id="bingie_videoosd_buttons_audio" label="$LOCALIZE[13396]" condition="" default="true"/>
         <option id="bingie_videoosd_buttons_subtitles" label="$LOCALIZE[287]" condition="" default="true"/>

@@ -19,7 +19,7 @@
 		<action>ActivateWindow(1109,return)</action>
 	</shortcut>
 
-	<!-- home -->
+	<!-- Home -->
 	<shortcut>
 		<label>10000</label>
 		<label2>10000</label2>
@@ -29,7 +29,17 @@
 		<visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
 	</shortcut>
 
-	<!-- series hub -->
+	<!-- Latest/New Hub -->
+	<shortcut>
+		<label>New &amp; Popular</label>                           <!-- Default <label>31837</label> -->
+		<label2>New &amp; Popular</label2>                         <!-- Default <label2>31837</label2> -->
+		<icon>shortcuts/new.png</icon>
+		<thumb />
+		<action>ActivateWindow(1112,return)</action>
+        <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
+	</shortcut>
+	
+	<!-- TV hub -->
 	<shortcut>
 		<label>20343</label>
 		<label2>20343</label2>
@@ -38,7 +48,7 @@
 		<action>ActivateWindow(1110,return)</action>
 	</shortcut>
 
-	<!-- movies hub -->
+	<!-- Movies hub -->
 	<shortcut>
 		<label>342</label>
 		<label2>342</label2>
@@ -47,7 +57,7 @@
 		<action>ActivateWindow(1111,return)</action>
 	</shortcut>
 
-	<!-- music -->
+	<!-- Music -->
 	<shortcut>
 		<label>2</label>
 		<label2>2</label2>
@@ -66,16 +76,6 @@
         <action>ActivateWindow(1114,return)</action>
         <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
     </shortcut>
-
-	<!-- new hub -->
-	<shortcut>
-		<label>31837</label>
-		<label2>31837</label2>
-		<icon>shortcuts/new.png</icon>
-		<thumb />
-		<action>ActivateWindow(1112,return)</action>
-        <visible>String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
-	</shortcut>
 
 	<!-- settings -->
 	<shortcut>

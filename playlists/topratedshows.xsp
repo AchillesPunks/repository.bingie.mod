@@ -7,8 +7,8 @@
         <value>6.9</value>
     </rule>
     <rule field="userrating" operator="greaterthan">
-        <value>7</value>
+        <value>6</value>
     </rule>
-    <order direction="ascending">random</order>
+    <order direction="descending">dateadded</order>
     <limit>200</limit>
 </smartplaylist>

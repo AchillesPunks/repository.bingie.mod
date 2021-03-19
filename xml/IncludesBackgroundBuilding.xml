@@ -44,13 +44,16 @@
         </control>
     </include>
 
+<!-- Side Menu Background Panel Color -->
     <include name="Dim_Overlay">
         <control type="group">
             <control type="image">
                 <include>FullscreenDimensions</include>
                 <visible>$PARAM[visibility]</visible>
-                <texture>diffuse/background.png</texture>
-                <colordiffuse>73000000</colordiffuse>
+                <!--added my diffuse to .xbt too as background.png. Yours is background1.png-->
+				<texture>overlays/background.png</texture>
+				<!-- <texture>overlays/background1.png</texture> -->
+                <colordiffuse>black</colordiffuse>
                 <animation time="300" effect="fade" start="0" end="100" reversible="true" easing="inout">Visible</animation>
             </control>
         </control>
@@ -143,11 +146,11 @@
 
         <include>DialogOverlay</include>
 
-        <!-- Snow Effect -->
+          <!-- Snow Effect -->
         <control type="group">
-            <include condition="Skin.HasSetting(enablesnow) + [Window.IsActive(Home) | Skin.HasSetting(expandsnow)]">snow</include>
+            <include condition="Skin.HasSetting(enablesnow)">snow</include>
         </control>
-
+		
         <!-- touchscreen workaround for windows tablets -->
         <include condition="Skin.HasSetting(EnableTouchSupport)">TouchScreenWorkaround</include>
 

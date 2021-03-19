@@ -85,7 +85,7 @@
     <constant name="search_widget_thumb_width">396</constant>
     <constant name="search_key_size">80</constant>
     <constant name="search_radiokey_width">220</constant>
-    <constant name="bingie_menu_width">360</constant>
+    <constant name="bingie_menu_width">500</constant>
     <constant name="episodes_thumb_height">266</constant>
     <constant name="episodes_thumb_width">456</constant>
 
@@ -147,7 +147,8 @@
     <expression name="IsCurrentWidgetSpotlight">Control.HasFocus(1508) | [Skin.HasSetting(EnableFixedFocusWidgets) + Control.IsVisible(1508) + Container(77777).Position(0)] | [!Skin.HasSetting(EnableFixedFocusWidgets) + Control.IsVisible(1508) + String.IsEqual(Container(77777).CurrentItem,1)]</expression>
 
     <!--Common-->
-    <!--BINGIE Version-->
+	
+	<!--NETFLIX ICON - SETTINGS Bottom Right-->
     <include name="BingieVersion">
         <control type="group">
             <bottom>30</bottom>
@@ -246,8 +247,8 @@
     </include>
 
     <include name="BingieLeftDefs">
-        <include condition="!Skin.HasSetting(EnhancedHome_Circular)">No_Circular_Left</include>
-        <left>65</left>
+        <!-- <include condition="!Skin.HasSetting(EnhancedHome_Circular)">No_Circular_Left</include> -->
+        <left>135</left>  <!--removed the include condition and changed this to hide accomodate the fixed frame hiding the left side diffuse mask on home--> 
     </include>
 
     <!-- bounce up animation -->

@@ -76,7 +76,7 @@
         </include>
     </include>
 
-<!-- widget poster layout changed to 325 x 240. Looks like Netflix aspect ratio/size to my eyes -->
+    <!-- Poster Layout -->
     <include name="widget_layout_poster">
         <include condition="$PARAM[multiRows]">widget_layout_poster_multi</include>
         <height>325</height>
@@ -1395,7 +1395,7 @@
                 <visible>!Skin.HasSetting(HideWidgetPanelBackground) + String.IsEqual(Skin.String(HomeLayout),bingie)</visible>
             </control>
             <control type="textbox">
-                <height>96%</height>
+                <height>100%</height>
                 <width>99%</width>
                 <font>Bold31</font>
                 <include condition="Skin.HasSetting(WidgetAlignRight)">widget_header_rightalign</include>
@@ -1409,7 +1409,7 @@
                 <visible>String.IsEmpty(Container($PARAM[widgetid]).ListItem.Property(similartitle)) + String.IsEmpty(Container($PARAM[widgetid]).ListItem.Property(genretitle))</visible>
             </control>
             <control type="textbox">
-                <height>96%</height>
+                <height>100%</height>
                 <width>99%</width>
                 <font>Bold31</font>
                 <include condition="Skin.HasSetting(WidgetAlignRight)">widget_header_rightalign</include>
@@ -1604,9 +1604,9 @@
             <param name="visibility" value="$PARAM[visibility]" />
             <param name="multiRows" value="$PARAM[multiRows]" />
         </include>
-        <!-- bingie + not circular + not fixed -->
-        <include content="widget_base_normal" condition="String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(EnhancedHome_Circular) + !Skin.HasSetting(EnableFixedFocusWidgets)">
-            <param name="containerType" value="fixedlist" />
+        <!-- Bingie  + Not Circular + Fixed -->
+        <include content="widget_base_normal" condition="String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(New_Circular) + Skin.HasSetting(EnableFixedFocusWidgets)">
+            <param name="containerType" value="fixedlist" />  <!-- Change to wraplist to make continuous scrolling -->
             <param name="contentStyle" value="$PARAM[contentStyle]" />
             <param name="widgetid" value="$PARAM[widgetid]" />
             <param name="submenuid" value="$PARAM[submenuid]" />
@@ -1620,9 +1620,41 @@
             <param name="visibility" value="$PARAM[visibility]" />
             <param name="multiRows" value="$PARAM[multiRows]" />
         </include>
-        <!-- bingie + not circular + fixed -->
-        <include content="widget_base_normal" condition="String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(EnhancedHome_Circular) + Skin.HasSetting(EnableFixedFocusWidgets)">
-            <param name="containerType" value="fixedlist" />
+		 <!-- Bingie  + New Circular + Fixed -->
+        <include content="widget_base_normal" condition="String.IsEqual(Skin.String(HomeLayout),bingie) + Skin.HasSetting(New_Circular) + Skin.HasSetting(EnableFixedFocusWidgets)">
+            <param name="containerType" value="wraplist" />
+            <param name="contentStyle" value="$PARAM[contentStyle]" />
+            <param name="widgetid" value="$PARAM[widgetid]" />
+            <param name="submenuid" value="$PARAM[submenuid]" />
+            <param name="widgetTags" value="$PARAM[widgetTags]" />
+            <param name="widgetTarget" value="$PARAM[widgetTarget]" />
+            <param name="widgetPath" value="$PARAM[widgetPath]" />
+            <param name="widgetSortBy" value="$PARAM[widgetSortBy]" />
+            <param name="widgetSortOrder" value="$PARAM[widgetSortOrder]" />
+            <param name="widgetLimit" value="$PARAM[widgetLimit]" />
+            <param name="widgetStyle" value="$PARAM[widgetStyle]" />
+            <param name="visibility" value="$PARAM[visibility]" />
+            <param name="multiRows" value="$PARAM[multiRows]" />
+        </include>
+		<!-- Bingie  + Not Circular + Not Fixed -->
+        <include content="widget_base_normal" condition="String.IsEqual(Skin.String(HomeLayout),bingie) + !Skin.HasSetting(New_Circular) + !Skin.HasSetting(EnableFixedFocusWidgets)">
+            <param name="containerType" value="fixedlist" />   <!-- Change to wraplist to make continuous scrolling -->
+            <param name="contentStyle" value="$PARAM[contentStyle]" />
+            <param name="widgetid" value="$PARAM[widgetid]" />
+            <param name="submenuid" value="$PARAM[submenuid]" />
+            <param name="widgetTags" value="$PARAM[widgetTags]" />
+            <param name="widgetTarget" value="$PARAM[widgetTarget]" />
+            <param name="widgetPath" value="$PARAM[widgetPath]" />
+            <param name="widgetSortBy" value="$PARAM[widgetSortBy]" />
+            <param name="widgetSortOrder" value="$PARAM[widgetSortOrder]" />
+            <param name="widgetLimit" value="$PARAM[widgetLimit]" />
+            <param name="widgetStyle" value="$PARAM[widgetStyle]" />
+            <param name="visibility" value="$PARAM[visibility]" />
+            <param name="multiRows" value="$PARAM[multiRows]" />
+        </include>
+		<!-- Bingie  + New Circular + Not Fixed -->
+        <include content="widget_base_normal" condition="String.IsEqual(Skin.String(HomeLayout),bingie) + Skin.HasSetting(New_Circular) + !Skin.HasSetting(EnableFixedFocusWidgets)">
+            <param name="containerType" value="wraplist" />  
             <param name="contentStyle" value="$PARAM[contentStyle]" />
             <param name="widgetid" value="$PARAM[widgetid]" />
             <param name="submenuid" value="$PARAM[submenuid]" />
@@ -1713,7 +1745,7 @@
                 <align>left</align>
                 <aligny>top</aligny>
                 <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
-                <label>[B]$INFO[Container($PARAM[widgetid]).ListItem.Property(similartitle),$LOCALIZE[31543] ,]$INFO[Container($PARAM[widgetid]).ListItem.Property(genretitle)][/B]</label>
+                <label>$INFO[Container($PARAM[widgetid]).ListItem.Property(similartitle),$LOCALIZE[31543] ,]$INFO[Container($PARAM[widgetid]).ListItem.Property(genretitle)]</label>
                 <visible>!String.IsEmpty(Container($PARAM[widgetid]).ListItem.Property(similartitle)) | !String.IsEmpty(Container($PARAM[widgetid]).ListItem.Property(genretitle))</visible>
             </control>
             <control type="multiimage" id="$PARAM[widgetid]7">
@@ -2696,7 +2728,7 @@
 				<textcolor>white</textcolor>
                 <!-- <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor> -->
                 <!-- <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor> -->
-                <label>[B]$LOCALIZE[31185][/B]</label>
+                <label>$LOCALIZE[31185]</label>
             </control>
             <control type="image">
                 <left>2</left>

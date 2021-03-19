@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- BINGIE -->
-<addon id="skin.titan.bingie.mod" version="1.0.4.mod" name="Titan BINGIE MOD" provider-name="AchillesPunks, HugoL">
-	<requires>
+<addon id="skin.titan.bingie.mod" version="1.0.9-mod" name="Titan BINGIE MOD" provider-name="AchillesPunks, HugoL">
+<requires>
 		<import version="5.14.0" addon="xbmc.gui"/>
 		<import addon="script.bingie.helper" version="1.0.0"/>
 		<import addon="script.skinshortcuts" version="0.6.5"/>
@@ -17,14 +17,14 @@
 		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">BINGIE... The new Titan Bingie Mod Skin for Kodi Leia.</summary>
+		<summary lang="en_GB">BINGIE MOD... The new Titan skin for Kodi Leia.</summary>
 		<description>Titan is back for Kodi Leia with the new BINGIE MOD layout!</description>
 		<platform>all</platform>
 		<license>GPL v2.0</license>
-		<forum>https://forum.kodi.tv/showthread.php?tid=334820</forum>
-		<website>https://forum.kodi.tv/showthread.php?tid=334820</website>
+		<forum>https://forum.kodi.tv/showthread.php?tid=355993</forum>
+		<website>https://forum.kodi.tv/showthread.php?tid=355993</website>
 		<email></email>
-		<source>https://github.com/cartmandos/skin.titan.bingie/</source>
+		<source>https://github.com/AchillesPunks/repository.bingie.mod.git/</source>
 		<assets>
 			<icon>resources/icon.png</icon>
 			<fanart>resources/fanart.jpg</fanart>
@@ -41,7 +41,7 @@
             <screenshot>resources/screenshot010.jpg</screenshot>
 		</assets>
 		<news>
-			[B]Titan BINGIE v1[/B][CR]Follow the forum thread about the latest news for the skin.[CR]https://forum.kodi.tv/showthread.php?tid=334820
+			[B]Titan BINGIE MOD v1[/B][CR]Follow the forum thread about the latest news for the skin.[CR]https://forum.kodi.tv/showthread.php?tid=355993
 		</news>
 	</extension>
 </addon>

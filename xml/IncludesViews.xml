@@ -89,7 +89,7 @@
         
         <!-- footer bar (in front) -->
         <control type="group">
-            <visible>Control.IsVisible(507) | Control.IsVisible(513) | Control.IsVisible(514)</visible>
+            <visible>control.IsVisible(52) | Control.IsVisible(507) | Control.IsVisible(513) | Control.IsVisible(514)</visible>
             <include condition="!Skin.HasSetting(nofooterbar)">Footer</include>
         </control>
             

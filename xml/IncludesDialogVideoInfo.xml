@@ -595,10 +595,10 @@
 								<width>1150</width>
 								<height>278</height>
 								<label>$VAR[Plots]</label>
-								<textcolor>$VAR[BingiePlotTextColor]</textcolor>
+								<textcolor>darkgray</textcolor>
 								<shadowcolor></shadowcolor>
 								<align>left</align>
-								<font>Reg28</font>
+								<font>Bold24</font>
 							</control>
 
 							<control type="group">
@@ -1510,10 +1510,17 @@
 				<!-- fanart background image -->
 				<include content="BingieSpotlightCornerImage">
 					<animation effect="fade" start="100" end="80" time="150" condition="true">Conditional</animation>
-					<param name="visibility" value="!String.IsEqual(Window(Home).Property(TrailerPlaying), windowed) + !$EXP[IsPlayingRecognizedContent]" />
+					<param name="visibility" value="!String.IsEqual(Window(Home).Property(TrailerPlaying), windowed) + !$EXP[IsPlayingRecognizedContent] + !Skin.HasSetting(NewSpotlight)" />
 					<param name="image" value="$VAR[fanartBackground]" />
 				</include>
-
+				
+				<!-- Achilles Spotlight corner image -->
+				<include content="AchillesBingieSpotlightCornerImage">
+					<animation effect="fade" start="100" end="80" time="150" condition="true">Conditional</animation>
+					<param name="visibility" value="!String.IsEqual(Window(Home).Property(TrailerPlaying), windowed) + !$EXP[IsPlayingRecognizedContent] + Skin.HasSetting(NewSpotlight)" />
+					<param name="image" value="$VAR[fanartBackground]" />
+				</include>
+							
 				<!-- additional info overlay -->
 				<control type="image">
 					<visible>!String.IsEmpty(Window.Property(AdditionalInfo))</visible>
@@ -1526,9 +1533,9 @@
 				<control type="image" id="6990">
 					<visible>!String.IsEmpty(Control.GetLabel(6990)) + !Skin.HasSetting(DisableStudioLogoInfoDialog)</visible>
 					<right>40</right>
-					<width>450</width>
-					<height>160</height>
-					<bottom>20</bottom>
+					<width></width>
+					<height>100</height>
+					<bottom>0</bottom>
 					<aspectratio aligny="top" align="right">keep</aspectratio>
 					<include condition="!String.Contains(Skin.String(SkinHelper.StudioLogos.Path),colo)">videoInfoColorDiffuse</include>
 					<texture background="true">$VAR[StudioLogoImg]</texture>
@@ -1553,7 +1560,7 @@
 				<control type="grouplist">
 					<visible>!Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 					<include>BingieLeftDefs</include>
-					<top>22</top>
+					<top>10</top>
 					<width>1200</width>
 					<usecontrolcoords>true</usecontrolcoords>
 					<orientation>vertical</orientation>
@@ -1577,10 +1584,11 @@
 					<!-- Sublabel -->
 					<control type="label" id="823">
 						<visible>!String.IsEmpty(Control.GetLabel(823))</visible>
+						<animation effect="fade" start="100" end="0" time="200" condition="!String.IsEmpty(Window.Property(AdditionalInfo))">Conditional</animation>
 						<top>40</top>
 						<height>0</height>
 						<width>100%</width>
-						<font>Reg28</font>
+						<font>Plots</font>
 						<align>left</align>
 						<aligny>center</aligny>
 						<textcolor>white</textcolor>
@@ -1590,13 +1598,13 @@
 					<!-- plot -->
 					<control type="textbox">
 						<animation effect="fade" start="100" end="0" time="200" condition="!String.IsEmpty(Window.Property(AdditionalInfo))">Conditional</animation>
-						<width>850</width>
+						<width>820</width>
 						<top>25</top>
-						<height min="80" max="80">auto</height>
-						<textcolor>$VAR[BingiePlotTextColor]</textcolor>
+						<height min="110" max="160">auto</height>
+						<textcolor>darkgray</textcolor>
 						<shadowcolor></shadowcolor>
 						<align>left</align>
-						<font>Reg28</font>
+						<font>Plots</font>
 						<label>$VAR[BingieInfoDialogPlot]</label>
 					</control>
 
@@ -1725,7 +1733,7 @@
 								<left>30</left>
 								<width>270</width>
 								<height>60</height>
-								<font>Reg28</font>
+								<font>Plots</font>
 								<textcolor>$VAR[BingieInfoDialogButtonsTextColor]</textcolor>
 								<focusedcolor>$INFO[Skin.String(ViewDetailsTextColor)]</focusedcolor>
 								<texturefocus colordiffuse="$INFO[Skin.String(ViewDetailsTextColor)]">bingie/border/slimframefo.png</texturefocus>
@@ -2153,12 +2161,12 @@
 					</control>
 				</control>
 
-				<!-- plots & critics additional info -->
+				<!-- plot & critics additional info -->
 				<control type="grouplist">
 					<include>BingieLeftDefs</include>
-					<posy>400</posy>  <!--lower the plot as it was too close to TV show sublabel-->
+					<top>320</top>
 					<width>1660</width>
-					<height>60%</height>
+					<height>100%</height>
 					<orientation>vertical</orientation>
 					<visible>String.IsEqual(Window.Property(AdditionalInfo),plot)</visible>
 
@@ -2173,16 +2181,19 @@
 					<!--large plot -->
 					<control type="textbox">
 						<width>100%</width>
-						<height min="170" max="357">auto</height>
+						<height min="0" max="500">auto</height>
 						<label>$INFO[ListItem.Plot]</label>
-						<textcolor>$VAR[BingiePlotTextColor]</textcolor>
-						
-						<align>left</align>
-						<font>Reg28</font>
+						<textcolor>gray</textcolor>
+						<align>justify</align>
+						<font>Reg30</font>
 					</control>
 
 					<!-- ratings -->
-					<include>Bingie_InfoDialog_Ratings_Hor</include>
+					<include condition="!skin.HasSetting(enableNewFooter)">Bingie_InfoDialog_Ratings_Hor</include>
+				
+					<!--New Ratings Footer-->
+					<include condition="skin.HasSetting(enableNewFooter)">new_footer_VD</include>
+				
 				</control>
 
 				<!--Cast List-->
@@ -2203,7 +2214,7 @@
 				<!-- extendedinfo cast list -->
 				<control type="panel" id="351">
 					<posx>600</posx>
-					<posy>250</posy>
+					<posy>335</posy>
 					<width>800</width>
 					<height>714</height>
 					<onleft>ClearProperty(AdditionalInfo)</onleft>
@@ -2274,10 +2285,10 @@
 						<visible>Control.IsVisible(351) + Container(351).IsUpdating</visible>
 					</control>
 					<control type="group">
-						<right>50</right>
-						<posy>250</posy>
+						<right>35</right>
+						<posy>335</posy>
 						<width>530</width>
-						<height>67%</height>
+						<height>65%</height>
 						<!--Actor Image-->
 						<control type="image">
 							<description>Actor image</description>
@@ -2291,7 +2302,7 @@
 							<height>120</height>
 							<bordersize>0</bordersize>
 							<texture background="true" diffuse="diffuse/poster.png">colors/color_white.png</texture>
-							<colordiffuse>$INFO[Skin.String(TagOverlaysPanelColor)]</colordiffuse>
+							<colordiffuse>4d000000</colordiffuse>
 						</control>
 						<control type="label">
 							<left>10</left>
@@ -2578,7 +2589,7 @@
             <font>Reg26</font>
             <align>left</align>
             <label>$PARAM[label]</label>
-            <textcolor>darkgray</textcolor>
+            <textcolor>ff8d8d8d</textcolor>
             <scroll>false</scroll>
         </control>
     </include>
@@ -2598,10 +2609,10 @@
         <height>65</height>
         <aligny>center</aligny>
         <align>left</align>
-        <font>Reg31</font>  <!--better size for these buttons-->
+        <font>Plots</font>  <!--better size for these buttons-->
         <textoffsetx>55</textoffsetx>
         <textoffsety>8</textoffsety>
-		<textcolor>silver</textcolor>
+		<textcolor>darkgray</textcolor>
         <!-- <textcolor>$VAR[BingieInfoDialogButtonsTextColor]</textcolor> -->
         <!--default <focusedcolor>$INFO[Skin.String(ViewDetailsTextColor)]</focusedcolor> -->
 		<focusedcolor>white</focusedcolor>
@@ -2615,10 +2626,10 @@
 	</include>
 
     <include name="Bingie_InfoDialog_Button_Texture">
-        <textureradioonfocus colordiffuse="$INFO[Skin.String(ViewDetailsTextColor)]">$PARAM[radiotexture]</textureradioonfocus>
-        <textureradioofffocus colordiffuse="$INFO[Skin.String(ViewDetailsTextColor)]">$PARAM[radiotexture]</textureradioofffocus>
-        <textureradioonnofocus colordiffuse="$VAR[BingieInfoDialogButtonsTextColor]">$PARAM[radiotexture]</textureradioonnofocus>
-        <textureradiooffnofocus colordiffuse="$VAR[BingieInfoDialogButtonsTextColor]">$PARAM[radiotexture]</textureradiooffnofocus>
+        <textureradioonfocus colordiffuse="white">$PARAM[radiotexture]</textureradioonfocus>
+        <textureradioofffocus colordiffuse="white">$PARAM[radiotexture]</textureradioofffocus>
+        <textureradioonnofocus colordiffuse="darkgray">$PARAM[radiotexture]</textureradioonnofocus>
+        <textureradiooffnofocus colordiffuse="darkgray">$PARAM[radiotexture]</textureradiooffnofocus>
     </include>
 
     <include name="Fade_Rate_Button">

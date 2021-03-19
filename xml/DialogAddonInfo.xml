@@ -99,7 +99,7 @@
 					<disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
                 </control>
                 <control type="button">
-                    <!--Autor-->
+                    <!--Author-->
                     <width>800</width>
                     <height>60</height>
                     <align>left</align>

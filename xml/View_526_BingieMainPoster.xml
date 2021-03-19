@@ -14,19 +14,30 @@
             <!-- View 526 -->
             <control type="group">
                 <include>BingieLeftDefs</include>
-                <top>650</top>
+                <top>600</top>
                 <width>1660</width>
                 <!-- Content Header -->
                 <control type="textbox">
-                    <visible>false</visible>    <!-- Added to Remove -Movie/TV- Title -->
-					<animation effect="slide" start="0" end="0,-15" time="0" condition="Skin.HasSetting(View526_DisableFixedBingieFrame) + Skin.HasSetting(View526_EnableZoomEffect)">Conditional</animation>
+                    <animation effect="slide" start="0" end="0,-15" time="0" condition="Skin.HasSetting(View526_DisableFixedBingieFrame) + Skin.HasSetting(View526_EnableZoomEffect)">Conditional</animation>
                     <width>100%</width>
                     <height>40</height>
-                    <font>Reg29</font>
+                    <font>Bold31</font>
                     <align>left</align>
                     <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-                    <label>$VAR[BingieMainContentHeader,[B],[/B]]</label>
-                    <visible>Integer.IsGreater(Container(526).NumItems,0)</visible>
+                    <label>$VAR[BingieMainContentHeader] $INFO[Window(Home).Property(Movies.Count),(,)]</label>
+                    <visible>!Skin.HasSetting(DisableMediaCount) + Integer.IsGreater(Container(526).NumItems,0)</visible>
+					<visible>String.IsEqual(Container.FolderPath, videodb://movies/titles/)</visible>
+                </control>
+				 <control type="textbox">
+                    <animation effect="slide" start="0" end="0,-15" time="0" condition="Skin.HasSetting(View526_DisableFixedBingieFrame) + Skin.HasSetting(View526_EnableZoomEffect)">Conditional</animation>
+                    <width>100%</width>
+                    <height>40</height>
+                    <font>Bold31</font>
+                    <align>left</align>
+                    <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                    <label>$VAR[BingieMainContentHeader] $INFO[Window(Home).Property(TVshows.Count),(,)]</label>
+                    <visible>!Skin.HasSetting(DisableMediaCount) + Integer.IsGreater(Container(526).NumItems,0)</visible>
+					<visible>String.IsEqual(Container.FolderPath, videodb://tvshows/titles/)</visible>
                 </control>
 
                 <include condition="!Skin.HasSetting(View526_UseFixedLayout) | !Skin.HasSetting(View_526_HorizontalNavigation)" content="Bingie_Main_Poster_View">
@@ -98,7 +109,7 @@
                 <param name="viewtype" value="$LOCALIZE[31027]" />
             </include>
             <top>40</top>
-            <height>390</height>
+            <height>450</height>
             <width>1660</width>
             <itemgap>0</itemgap>
             <include condition="Skin.HasSetting(View_526_HorizontalNavigation)">navigation_horizontal</include>
@@ -153,7 +164,7 @@
                         </animation>
                     </control>
                     <include content="LibraryAutoTrailerButton" condition="Skin.HasSetting(DetailsAutoTrailer)">             <param name="interval" value="$INFO[Skin.String(details_auto_trailer_interval)]" />         </include>
-                    <animation effect="zoom" end="125,125" center="auto" time="100" condition="Skin.HasSetting(View526_DisableFixedBingieFrame) + Skin.HasSetting(View526_EnableZoomEffect)">focus</animation>
+                    <animation effect="zoom" end="110,110" center="auto" time="100" condition="Skin.HasSetting(View526_DisableFixedBingieFrame) + Skin.HasSetting(View526_EnableZoomEffect)">focus</animation>
                     <include>Bounce_Up</include>
                 </control>
             </focusedlayout>

@@ -2,18 +2,13 @@
 <!-- BINGIE -->
 <smartplaylist type="movies">
     <name>Marvel Movies</name>
-    <match>one</match>
+    <match>all</match>
     <rule field="studio" operator="contains">
         <value>Marvel</value>
-    </rule>
-    <rule field="title" operator="contains">
-        <value>Marvel</value>
-    </rule>
-    <rule field="title" operator="contains">
-        <value>Spider-man</value>
-        <value>Spiderman</value>
-        <value>x-men</value>
-        <value>xmen</value>
+        <value>Marvel Studios</value>
+        <value>Marvel Entertainment</value>
+        <value>Marvel Enterprises</value>
+        <value>Marvel Animation</value>
     </rule>
     <order direction="ascending">random</order>
     <limit>200</limit>
